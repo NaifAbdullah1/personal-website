@@ -1,17 +1,25 @@
 
-import reactLogo from './assets/react.svg'
+
 import './App.css'
+import Header from './Components/Header.jsx'
 
 function App() {
 
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div id="parent-container">
+      <Header/>
 
-      </div>
+      <section id="hero-section">
+        <div id="hero-container">{/*Hero content here*/}</div>
+      </section>
+
+      <section id="experience-section">
+        <div className="parallax"></div>
+      </section>
+
+
+    </div>
     </>
   )
 }
