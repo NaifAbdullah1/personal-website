@@ -1,0 +1,32 @@
+.header-navbar {
+    /*Making the color change transitional*/
+    transition: background-color 1s ease;
+    /*This font type is implemented onto everything that's on the navbar.*/
+    font-family: "League Spartan", sans-serif;
+    padding: 1rem 1.5rem;
+    min-height: 60px;
+}
+
+/* The brand name is "Naif Abdullah"*/
+.header-navbar .navbar-brand {
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+/*The clickable navigation buttons on the right side.*/
+.header-navbar .nav-link {
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/*Applies on all the links in the header.*/
+.header-navbar .navbar-nav{
+    /*Next two lines space out the elements evenly by 1rem*/
+    display: flex;
+    gap: 1rem;
+}
+
+/*A customer color for the header because our header is a bootstrap header that only has a limited set of pre-defined colors.*/
+.bg-lightslategrey {
+    background-color: rgba(31, 34, 37, 0.603);
+}

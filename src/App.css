@@ -8,7 +8,7 @@
   sure if we want to do that. Revisit 
   this again*/
   width: 100%;
-  height: 1080px;
+  height: 100vh;
   /*Need to tweak this later on*/
   background-color: transparent;
   background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
