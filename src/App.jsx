@@ -16,23 +16,27 @@ function App() {
           >
             <Col xs={12} md={6} className="intro-text">
               <div>
+                <h1 className="tagline">Solving Complex Problems with&nbsp; 
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
-                    "Solving Complex Problems with Technology",
+                    "Technology",
                     2000, // wait 1s before replacing "Mice" with "Hamsters"
-                    "Solving Complex Problems with Innovation",
+                    "Innovation",
                     2000,
-                    "Solving Complex Problems with Intellect",
+                    "Intellect",
                     2000,
-                    "Solving Complex Problems with Creativity",
+                    "Creativity",
                     2000,
                   ]}
                   wrapper="span"
+                  cursor={false}
                   speed={20}
                   className="tagline"
+                  style={{color: '#66a4e1'}} // Or #F72585
                   repeat={Infinity}
                 />
+                </h1>
               </div>
             </Col>
 
