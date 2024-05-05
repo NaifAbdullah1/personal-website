@@ -50,16 +50,6 @@
   height: auto; 
 }
 
-.parallax {
-  /* Example of a basic parallax effect using background image */
-  background-image: url('./assets/experiences.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 1080px;
-  /* Adjust as needed */
-}
 
 
 /*The two css queries below serve to fade the contents of the site in when the loading logo has finished fading out*/

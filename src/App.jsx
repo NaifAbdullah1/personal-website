@@ -1,3 +1,14 @@
+/*
+We'll follow the style of this site: https://codesandbox.io/p/sandbox/github/pmndrs/react-spring/tree/main/demo/src/sandboxes/parallax-sticky?file=%2Fsrc%2FApp.tsx%3A9%2C5-35%2C11
+
+Here's the official library: https://www.npmjs.com/package/@react-spring/parallax
+
+And here's a potentially helpful one from react-spring: https://codesandbox.io/p/sandbox/github/pmndrs/react-spring/tree/main/demo/src/sandboxes/parallax-vert?file=%2Fsrc%2FApp.tsx
+
+
+
+*/
+
 import { Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import Header from "./Components/Header.jsx";
@@ -109,10 +120,6 @@ function App() {
                   </Col>
                 </Row>
               </Container>
-            </section>
-
-            <section id="experience-section">
-              <div className="parallax"></div>
             </section>
           </div>
         </>
