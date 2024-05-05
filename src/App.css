@@ -60,3 +60,20 @@
   height: 1080px;
   /* Adjust as needed */
 }
+
+
+/*The two css queries below serve to fade the contents of the site in when the loading logo has finished fading out*/
+.fade-in {
+  opacity: 1;
+  transition: opacity 3s; /*This controls the speed of the fade in*/
+}
+
+.fade-out{
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/*Used for disabling scrolling when website contents are fading in */
+.disable-scroll {
+  overflow: hidden; /* Disables vertical and horizontal scrolling */
+}
