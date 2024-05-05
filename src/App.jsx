@@ -11,7 +11,14 @@ function App() {
       <Header/>
 
       <section id="hero-section">
-        <div id="hero-container">{/*Hero content here*/}</div>
+        <div id="hero-container">
+          <div id="intor text and button TODO">
+
+          </div>
+          <div id='logo'>
+            <img src="./assets/logo.png" alt='Brand Logo'/>
+          </div>
+        </div>
       </section>
 
       <section id="experience-section">
