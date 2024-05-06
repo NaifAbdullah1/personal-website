@@ -1,15 +1,10 @@
 /*
-We'll follow the style of this site: https://codesandbox.io/p/sandbox/github/pmndrs/react-spring/tree/main/demo/src/sandboxes/parallax-sticky?file=%2Fsrc%2FApp.tsx%3A9%2C5-35%2C11
-
-Here's the official library: https://www.npmjs.com/package/@react-spring/parallax
-
-And here's a potentially helpful one from react-spring: https://codesandbox.io/p/sandbox/github/pmndrs/react-spring/tree/main/demo/src/sandboxes/parallax-vert?file=%2Fsrc%2FApp.tsx
-
-
 - On mobile width, make the nav links a drawer. Or have the website content get pushed down. Or give it a background color.
 
 - You might need this, this can help in making a marquee: https://www.react-fast-marquee.com/
 
+
+- When you're done, see if you can consolidate your css files
 */
 
 import { useEffect, useState } from "react";
@@ -23,7 +18,7 @@ import "./App.css";
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [fadeWebsiteContentIn, setFadeWebsiteContentIn] = useState(false);
-
+  
   const handleLoadingComplete = () => {
     // This runs after the loading logo fades out
     setLoadingComplete(true);
@@ -47,7 +42,7 @@ function App() {
       document.body.classList.remove("disable-scroll"); // Cleanup on component unmount
     };
   }, []); // Empty dependency array to run only on component mount
-
+  
   return (
     <>
       <AnimatedCursor
@@ -75,7 +70,7 @@ function App() {
             className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}
           >
             <Header />
-            <section id="hero-section">
+            <section id="hero">
               <Container fluid className="hero-container">
                 <Row
                   className="d-flex align-items-center align-content-center"
@@ -121,7 +116,7 @@ function App() {
               </Container>
             </section>
 
-            <section className="about-section">
+            <section id="about" className="about-section">
               <Container>
                 <Row>
                   <Col>
@@ -134,7 +129,7 @@ function App() {
               </Container>
             </section>
 
-            <section className="experience-section">
+            <section id="experience" className="experience-section">
               <Container>
                 <Row>
                   <Col>
@@ -147,7 +142,7 @@ function App() {
               </Container>
             </section>
 
-            <section className="portfolio-section">
+            <section id="portfolio" className="portfolio-section">
               <Container>
                 <Row>
                   <Col>
@@ -160,7 +155,7 @@ function App() {
               </Container>
             </section>
 
-            <section className="contact-section">
+            <section id="contact" className="contact-section">
               <Container>
                 <Row>
                   <Col>

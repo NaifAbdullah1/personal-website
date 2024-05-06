@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-#hero-section {
+#hero {
   /*The hero container will be entirely filled with the background-image color below. We'll take up the entire width (100%) so that it's filled from side to side. With regards to the height, we'll only fill vertically as much as the user's viewport would allow us to fill. TODO: We may need to adjust this later */
   width: 100%;
   height: 1080px;

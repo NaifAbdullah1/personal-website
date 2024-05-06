@@ -5,20 +5,40 @@ import "../css/header.css";
 
 const Header = () => {
   const [navBarBackground, setNavBarBackground] = useState("transparent");
+  const [activeSection, setActiveSection] = useState("hero"); // "active section" = the section that's in the viewport
 
   /*
    Changes the background of the navbar depending on the user's scrolling action. 
   */
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.getElementById("hero-section");
+      // FIRST: Change the background of the header
+      const heroSection = document.getElementById("hero");
       const threshold = heroSection.offsetHeight;
-
       if (window.scrollY > threshold) {
         setNavBarBackground("light");
       } else {
         setNavBarBackground("transparent");
       }
+      //----------------------------------
+
+      // SECOND: Synchronize header's NavLinks with the current section
+      const sections = document.querySelectorAll("section");
+      const scrollPos = window.scrollY;
+
+      // Loop through the sections to find the one being viewed
+      let currentSection = "hero"; // because it's the default
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          currentSection = section.id;
+        }
+      });
+      setActiveSection(currentSection);
+      //----------------------------------
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,6 +47,10 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const isActive = (targetSection) => {
+    return activeSection === targetSection ? "active" : ""
+  }
 
   const navBarClass =
     navBarBackground === "transparent" ? "" : "bg-lightslategrey";
@@ -43,10 +67,28 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#about">About 📝</Nav.Link>
-            <Nav.Link href="#experience">Experience 🏢</Nav.Link>
-            <Nav.Link href="#portfolio">Portfolio 🎯</Nav.Link>
-            <Nav.Link href="#contact">Contact ✉️</Nav.Link>
+            <Nav.Link 
+              href="#about"
+              className={isActive("about")}>
+              About 📝
+            </Nav.Link>
+            <Nav.Link
+              href="#experience"
+              className={isActive("experience")}
+            >
+              Experience 🏢
+            </Nav.Link>
+            <Nav.Link
+              href="#portfolio"
+              className={isActive("portfolio")}
+            >
+              Portfolio 🎯
+            </Nav.Link>
+            <Nav.Link 
+              href="#contact"
+              className={isActive("contact")}>
+              Contact ✉️
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
