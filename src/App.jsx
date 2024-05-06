@@ -8,6 +8,8 @@ And here's a potentially helpful one from react-spring: https://codesandbox.io/p
 
 - On mobile width, make the nav links a drawer. Or have the website content get pushed down. Or give it a background color.
 
+- You might need this, this can help in making a marquee: https://www.react-fast-marquee.com/
+
 */
 
 import { Col, Container, Row } from "react-bootstrap";
@@ -70,13 +72,11 @@ function App() {
         </>
       ) : (
         <>
-          
           <div
             id="parent-container"
             className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}
           >
             <Header />
-
             <section id="hero-section">
               <Container fluid className="hero-container">
                 <Row
