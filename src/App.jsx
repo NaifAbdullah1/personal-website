@@ -12,13 +12,13 @@ And here's a potentially helpful one from react-spring: https://codesandbox.io/p
 
 */
 
-import { Col, Container, Row } from "react-bootstrap";
-import "./App.css";
-import Header from "./Components/Header.jsx";
-import { TypeAnimation } from "react-type-animation";
-import Loading from "./Components/LoadingScreen.jsx";
 import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { TypeAnimation } from "react-type-animation";
+import Header from "./Components/Header.jsx";
+import Loading from "./Components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
+import "./App.css";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -27,7 +27,6 @@ function App() {
   const handleLoadingComplete = () => {
     // This runs after the loading logo fades out
     setLoadingComplete(true);
-
     // Now, we'll fade in the website's contents
     setTimeout(() => {
       setFadeWebsiteContentIn(true);
@@ -51,20 +50,20 @@ function App() {
 
   return (
     <>
-    <AnimatedCursor
-            innerSize={8}
-            outerSize={35}
-            innerScale={1}
-            outerScale={2}
-            outerAlpha={0}
-            hasBlendMode={true}
-            innerStyle={{
-              backgroundColor: "white",
-            }}
-            outerStyle={{
-              border: "3px solid white",
-            }}
-          />
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={2}
+        outerAlpha={0}
+        hasBlendMode={true}
+        innerStyle={{
+          backgroundColor: "white",
+        }}
+        outerStyle={{
+          border: "3px solid white",
+        }}
+      />
       {!loadingComplete ? (
         <>
           <Loading onComplete={handleLoadingComplete} />
@@ -126,10 +125,10 @@ function App() {
               <Container>
                 <Row>
                   <Col>
-                  <h1>TEST1</h1>
+                    <h1>TEST1</h1>
                   </Col>
                   <Col>
-                  <h1>TEST2</h1>
+                    <h1>TEST2</h1>
                   </Col>
                 </Row>
               </Container>
@@ -139,24 +138,23 @@ function App() {
               <Container>
                 <Row>
                   <Col>
-                  <h1>TEST1 EX</h1>
+                    <h1>TEST1 EX</h1>
                   </Col>
                   <Col>
-                  <h1>TEST2 EX</h1>
+                    <h1>TEST2 EX</h1>
                   </Col>
                 </Row>
               </Container>
             </section>
-            
 
             <section className="portfolio-section">
               <Container>
                 <Row>
                   <Col>
-                  <h1>TEST1 Po</h1>
+                    <h1>TEST1 Po</h1>
                   </Col>
                   <Col>
-                  <h1>TEST2 Po</h1>
+                    <h1>TEST2 Po</h1>
                   </Col>
                 </Row>
               </Container>
@@ -166,15 +164,14 @@ function App() {
               <Container>
                 <Row>
                   <Col>
-                  <h1>TEST1 Po</h1>
+                    <h1>TEST1 Po</h1>
                   </Col>
                   <Col>
-                  <h1>TEST2 Po</h1>
+                    <h1>TEST2 Po</h1>
                   </Col>
                 </Row>
               </Container>
             </section>
-
           </div>
         </>
       )}

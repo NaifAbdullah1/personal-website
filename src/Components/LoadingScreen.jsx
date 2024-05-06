@@ -28,10 +28,9 @@ const Loading = ({ onComplete }) => {
             <img src="./assets/logo.png" alt='Loading Screen Logo' className="loading-logo"/>
         </div>
     )
-
-    
 }
 
+// Prop validation: Needed for when a child component uses a prop that was passed down from parent
 Loading.propTypes = {
     onComplete: PropTypes.func.isRequired, // Indicate that 'onComplete' is required and is a function
 }
