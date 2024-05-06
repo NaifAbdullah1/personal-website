@@ -33,24 +33,15 @@
     text-align: center; /* Center text on smaller screens */
   }
   .tagline {
-    font-size: 6vw; /* Larger on smaller screens */
+    font-size: 4.5vw; /* Larger on smaller screens */
   }
-
-  .sub-tagline {
-    font-size: 3vw; /* Smaller on smaller screens */
-  }
-
 }
-
-
 
 .responsive-logo{
   /*By setting the width OR height to 100% and the other attribute (height/widht) to auto, this will make the image maintain aspect ratio automatically.*/
   width: 90%;
   height: auto; 
 }
-
-
 
 /*The two css queries below serve to fade the contents of the site in when the loading logo has finished fading out*/
 .fade-in {

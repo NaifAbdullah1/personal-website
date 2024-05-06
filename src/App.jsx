@@ -6,6 +6,7 @@ Here's the official library: https://www.npmjs.com/package/@react-spring/paralla
 And here's a potentially helpful one from react-spring: https://codesandbox.io/p/sandbox/github/pmndrs/react-spring/tree/main/demo/src/sandboxes/parallax-vert?file=%2Fsrc%2FApp.tsx
 
 
+- On mobile width, make the nav links a drawer. Or have the website content get pushed down. Or give it a background color.
 
 */
 
@@ -77,7 +78,7 @@ function App() {
             <Header />
 
             <section id="hero-section">
-              <Container fluid className="hero-container-kek">
+              <Container fluid className="hero-container">
                 <Row
                   className="d-flex align-items-center"
                   style={{ height: "1080px" }}
