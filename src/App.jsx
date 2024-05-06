@@ -38,7 +38,6 @@ function App() {
   useEffect(() => {
     // Adding a class to the DOM that disables scrolling
     document.body.classList.add("disable-scroll");
-
     // Re-enable scrolling after a set period (e.g., 3 seconds)
     const enableScrollTimeout = setTimeout(() => {
       document.body.classList.remove("disable-scroll");
@@ -80,7 +79,7 @@ function App() {
             <section id="hero-section">
               <Container fluid className="hero-container">
                 <Row
-                  className="d-flex align-items-center"
+                  className="d-flex align-items-center align-content-center"
                   style={{ height: "1080px" }}
                 >
                   <Col xs={12} md={6} className="intro-text">
@@ -122,6 +121,60 @@ function App() {
                 </Row>
               </Container>
             </section>
+
+            <section className="about-section">
+              <Container>
+                <Row>
+                  <Col>
+                  <h1>TEST1</h1>
+                  </Col>
+                  <Col>
+                  <h1>TEST2</h1>
+                  </Col>
+                </Row>
+              </Container>
+            </section>
+
+            <section className="experience-section">
+              <Container>
+                <Row>
+                  <Col>
+                  <h1>TEST1 EX</h1>
+                  </Col>
+                  <Col>
+                  <h1>TEST2 EX</h1>
+                  </Col>
+                </Row>
+              </Container>
+            </section>
+            
+
+            <section className="portfolio-section">
+              <Container>
+                <Row>
+                  <Col>
+                  <h1>TEST1 Po</h1>
+                  </Col>
+                  <Col>
+                  <h1>TEST2 Po</h1>
+                  </Col>
+                </Row>
+              </Container>
+            </section>
+
+            <section className="contact-section">
+              <Container>
+                <Row>
+                  <Col>
+                  <h1>TEST1 Po</h1>
+                  </Col>
+                  <Col>
+                  <h1>TEST2 Po</h1>
+                  </Col>
+                </Row>
+              </Container>
+            </section>
+
           </div>
         </>
       )}

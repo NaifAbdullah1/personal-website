@@ -13,8 +13,28 @@
   
 }
 
-.hero-container{
- 
+.about-section{
+  width: 100%;
+  height: 1080px;
+  background-image: linear-gradient(180deg, #121212 0%, #121212 100%);
+}
+
+.experience-section{
+  width: 100%;
+  height: 1080px;
+  background-image: linear-gradient(180deg, #121212 0%, #210768 100%);
+}
+
+.portfolio-section{
+  width: 100%;
+  height: 1080px;
+  background-image: linear-gradient(180deg, #210768 0%, #085163 100%);
+}
+
+.contact-section{
+  width: 100%;
+  height: 1080px;
+  background-image: linear-gradient(180deg, #085163 0%, #2a8ca5 100%); 
 }
 
 .tagline{
