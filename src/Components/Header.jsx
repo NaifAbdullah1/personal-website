@@ -23,21 +23,30 @@ const Header = () => {
       //----------------------------------
 
       // SECOND: Synchronize header's NavLinks with the current section
-      const sections = document.querySelectorAll("section");
-      const scrollPos = window.scrollY;
+      setTimeout(() => {
+        const sections = document.querySelectorAll("section");
+        const scrollPos = window.scrollY;
 
-      // Loop through the sections to find the one being viewed
-      let currentSection = "hero"; // because it's the default
+        // Loop through the sections to find the one being viewed
+        let newActiveSection = "hero"; // because it's the default
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionBottom = sectionTop + sectionHeight;
 
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-          currentSection = section.id;
+          if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            newActiveSection = section.id;
+          }
+        });
+        // Check if scrolled away from previously active section
+
+        // Update activeSection based on scroll position (if different)
+        if (newActiveSection !== activeSection) {
+          setActiveSection(newActiveSection);
         }
-      });
-      setActiveSection(currentSection);
+      }, 50);
+
       //----------------------------------
     };
 
@@ -46,11 +55,15 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeSection]);
+
+  useEffect(() => {
+    console.log(activeSection);
+  }, [activeSection]);
 
   const isActive = (targetSection) => {
-    return activeSection === targetSection ? "active" : ""
-  }
+    return activeSection === targetSection ? "active" : "";
+  };
 
   const navBarClass =
     navBarBackground === "transparent" ? "" : "bg-lightslategrey";
@@ -63,30 +76,38 @@ const Header = () => {
       className={`header-navbar ${navBarClass}`}
     >
       <Container>
-        <Navbar.Brand href="#home">Naif Abdullah</Navbar.Brand>
+        <Navbar.Brand href="#hero" onClick={() => setActiveSection("hero")}>
+          Naif Abdullah
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link 
+            <Nav.Link
               href="#about"
-              className={isActive("about")}>
+              className={isActive("about")}
+              onClick={() => setActiveSection("about")}
+            >
               About 📝
             </Nav.Link>
             <Nav.Link
               href="#experience"
               className={isActive("experience")}
+              onClick={() => setActiveSection("experience")}
             >
               Experience 🏢
             </Nav.Link>
             <Nav.Link
               href="#portfolio"
               className={isActive("portfolio")}
+              onClick={() => setActiveSection("portfolio")}
             >
               Portfolio 🎯
             </Nav.Link>
-            <Nav.Link 
+            <Nav.Link
               href="#contact"
-              className={isActive("contact")}>
+              className={isActive("contact")}
+              onClick={() => setActiveSection("contact")}
+            >
               Contact ✉️
             </Nav.Link>
           </Nav>
