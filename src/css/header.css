@@ -29,5 +29,5 @@
 
 /*A customer color for the header because our header is a bootstrap header that only has a limited set of pre-defined colors.*/
 .bg-lightslategrey {
-    background-color: rgba(31, 34, 37, 0.603);
+    background-color: #1f22259a/*rgba(31, 34, 37, 0.603)*/
 }
