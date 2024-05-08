@@ -5,6 +5,10 @@
 
 
 - When you're done, see if you can consolidate your css files
+
+- Investigate ways to simplify the Header.jsx code. Make a backup copy and a commit first
+
+- Determine a minimum width for the site. Do this once you've almost done with implementing the site
 */
 
 import { useEffect, useState } from "react";
@@ -96,7 +100,7 @@ function App() {
                           cursor={false}
                           speed={20}
                           className="tagline"
-                          style={{ color: "#66a4e1" }} // Or #F72585
+                          style={{ color: "#66a4e1", fontFamily: "'Kaushan Script', cursive" }} 
                           repeat={Infinity}
                         />
                       </h1>

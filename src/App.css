@@ -45,7 +45,7 @@
   font-size: 2vw; /* Adapt font size based on viewport width */
   font-weight: bold;
   color: antiquewhite;
-  font-family: "League Spartan", sans-serif;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
 
 .responsive-logo{

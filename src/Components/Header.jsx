@@ -1,15 +1,30 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 //import { Container, Navbar, Nav } from "react-bootstrap";
-import { AppBar, Toolbar, Button } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Typography,
+  IconButton,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
+import MenuIcon from "@mui/icons-material/Menu";
 import "../css/header.css";
 
-const sections = ["hero", "about", "experience", "portfolio", "contact"];
+// This doesn't include the first section, the "hero"
+const sections = ["about", "experience", "portfolio", "contact"];
+const sectionEmojis = ["📝", "🏢", "🎯", "✉️"];
 
 const Header = () => {
   const [navBarBackground, setNavBarBackground] = useState("transparent");
   const [activeSection, setActiveSection] = useState("hero"); // "active section" = the section that's in the viewport
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   /*
    Changes the background of the navbar depending on the user's scrolling action. 
@@ -20,7 +35,7 @@ const Header = () => {
       const heroSection = document.getElementById("hero");
       const threshold = heroSection.offsetHeight;
       if (window.scrollY > threshold) {
-        setNavBarBackground("#1f22259a"); // Light grey
+        setNavBarBackground("#1f22259a "); // Light grey #1f22259a
       } else {
         setNavBarBackground("transparent");
       }
@@ -57,33 +72,105 @@ const Header = () => {
     console.log(activeSection);
   }, [activeSection]);
 
-  const isActive = (targetSection) =>
-    activeSection === targetSection;
+  const NavContent = () => (
+    <List>
+      {sections.map((section) => (
+        <ScrollLink
+          key={section}
+          to={section}
+          smooth={true}
+          offset={-50}
+          duration={500}
+        >
+          <ListItem button onClick={() => setDrawerIsOpen(false)}>
+            <ListItemText
+              className="navlink-font"
+              primary={section.charAt(0).toUpperCase() + section.slice(1)}
+            />
+          </ListItem>
+        </ScrollLink>
+      ))}
+    </List>
+  );
 
-  /*const navBarColor = navBarBackground === "transparent" ? "primary" : "bg-lightslategrey";*/
+  // Adds a light shadown on a nav link when hovering over it
+  const hoverEffect = {
+    transition: "all 0.3s", 
+    "&:hover": {
+      backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
+    }
+  }
+
+  const isActive = (targetSection) => activeSection === targetSection;
 
   return (
-    <AppBar position="fixed" 
-      style={{backgroundColor: navBarBackground}}
+    <AppBar
+      position="fixed"
+      style={{ backgroundColor: navBarBackground }}
       sx={{
-        transition: 'background-color 1s', 
-        boxShadow: "none"
+        transition: "background-color 1s",
+        boxShadow: "none",
       }}
     >
-      <Toolbar>
-        {sections.map((section) => (
-          <ScrollLink
-            key={section}
-            to={section}
-            smooth={true}
-            duration={500}
+      <Toolbar
+        sx={{
+          justifyContent: "space-around",
+          paddingX: 2,
+          alignItems: "center",
+        }}
+      >
+        <ScrollLink to="hero" smooth={true} duration={500}>
+          <Typography
+            variant="h6"
+            className="navbar-brand"
+            sx={{ flexGrow: 0, paddingY: 1, color: "#2196f3", "&:hover": {
+              color: "#2196f3"
+            } }}
           >
-            <Button color={isActive(section) ? "secondary" : "primary"}>
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Button>
-          </ScrollLink>
-        ))}
+            NAIF ABDULLAH
+          </Typography>
+        </ScrollLink>
+
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            justifyContent: "space",
+            gap: 5,
+          }}
+        >
+          {sections.map((section) => (
+            <ScrollLink key={section} to={section} smooth={true} duration={500}>
+              <Button
+                color={isActive(section) ? "secondary" : "primary"}
+                sx={hoverEffect}
+                style={{fontWeight: "bold"}}>
+                {section.charAt(0).toUpperCase() +
+                  section.slice(1) +
+                  " " +
+                  sectionEmojis[sections.indexOf(section)]}
+              </Button>
+            </ScrollLink>
+          ))}
+        </Box>
+
+        <IconButton
+          edge="end"
+          color="inherit"
+          aria-label="menu"
+          onClick={() => setDrawerIsOpen(true)}
+          sx={{ display: { xs: "block", md: "none" }, paddingY: 1 }}
+        >
+          <MenuIcon />
+        </IconButton>
       </Toolbar>
+
+      <Drawer
+        anchor="right"
+        open={drawerIsOpen}
+        onClose={() => setDrawerIsOpen(false)}
+      >
+        <NavContent />
+      </Drawer>
     </AppBar>
   );
 };
