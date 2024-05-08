@@ -20,7 +20,7 @@ const Header = () => {
       const heroSection = document.getElementById("hero");
       const threshold = heroSection.offsetHeight;
       if (window.scrollY > threshold) {
-        setNavBarBackground("#1f22259a");
+        setNavBarBackground("#1f22259a"); // Light grey
       } else {
         setNavBarBackground("transparent");
       }
@@ -65,7 +65,10 @@ const Header = () => {
   return (
     <AppBar position="fixed" 
       style={{backgroundColor: navBarBackground}}
-      sx={{transition: 'background-color 0.5s'}}
+      sx={{
+        transition: 'background-color 1s', 
+        boxShadow: "none"
+      }}
     >
       <Toolbar>
         {sections.map((section) => (
@@ -73,7 +76,6 @@ const Header = () => {
             key={section}
             to={section}
             smooth={true}
-            offset={-50}
             duration={500}
           >
             <Button color={isActive(section) ? "secondary" : "primary"}>
