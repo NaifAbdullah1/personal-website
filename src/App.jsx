@@ -58,9 +58,11 @@ function App() {
         hasBlendMode={true}
         innerStyle={{
           backgroundColor: "white",
+          zIndex: 99999,
         }}
         outerStyle={{
           border: "3px solid white",
+          zIndex: 99999,
         }}
       />
       {!loadingComplete ? (
