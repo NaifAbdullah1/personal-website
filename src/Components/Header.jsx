@@ -9,7 +9,7 @@ import {
   Box,
 } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
-import "../css/header.css";
+import "../scss/header.scss";
 
 // This doesn't include the first section, the "hero"
 const sections = ["about", "experience", "portfolio", "contact"];
@@ -67,10 +67,6 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [activeSection]);
-
-  useEffect(() => {
-    console.log(activeSection);
   }, [activeSection]);
 
   const isActive = (targetSection) => activeSection === targetSection;

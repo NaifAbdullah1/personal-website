@@ -9,6 +9,8 @@
 - Investigate ways to simplify the Header.jsx code. Make a backup copy and a commit first
 
 - Determine a minimum width for the site. Do this once you've almost done with implementing the site
+
+- Maybe make the nav links responsive to screen size instead of using css media queries? 
 */
 
 import { useEffect, useState } from "react";
@@ -17,26 +19,28 @@ import { TypeAnimation } from "react-type-animation";
 import Header from "./Components/Header.jsx";
 import Loading from "./Components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
-import "./App.css";
+import "./App.scss";
 
 function App() {
-  const [loadingComplete, setLoadingComplete] = useState(false);
-  const [fadeWebsiteContentIn, setFadeWebsiteContentIn] = useState(false);
-  
+  const [loadingComplete, setLoadingComplete] = useState(false); // Signals the completion of the intro
+  const [fadeWebsiteContentIn, setFadeWebsiteContentIn] = useState(false); // Signals the beginning of fading in the content of the site
+
+  // Runs after the initial logo intro disappears
   const handleLoadingComplete = () => {
     // This runs after the loading logo fades out
     setLoadingComplete(true);
-    // Now, we'll fade in the website's contents
+    // Now, we'll fade in the website's contents 1 sec after the logo is gone
     setTimeout(() => {
       setFadeWebsiteContentIn(true);
     }, 1000);
   };
 
-  // Disabling scrolling when website contents are fading in
+  // Disabling scrolling when website contents are fading in.
   useEffect(() => {
-    // Adding a class to the DOM that disables scrolling
+    // Adding a class to the DOM that disables scrolling upon page load
     document.body.classList.add("disable-scroll");
-    // Re-enable scrolling after a set period (e.g., 3 seconds)
+    // Re-enable scrolling after 7 seconds
+    // Since this useEffect runs on page load, we need to account for the time it takes for the animation to go away. We need to coordinate the timing of this. Hence why we chose 7 seconds (7000 ms)
     const enableScrollTimeout = setTimeout(() => {
       document.body.classList.remove("disable-scroll");
     }, 7000);
@@ -45,8 +49,8 @@ function App() {
       clearTimeout(enableScrollTimeout);
       document.body.classList.remove("disable-scroll"); // Cleanup on component unmount
     };
-  }, []); // Empty dependency array to run only on component mount
-  
+  }, []); // Empty dependency array to run only on component mount (In this case, it's the page load)
+
   return (
     <>
       <AnimatedCursor
@@ -58,7 +62,7 @@ function App() {
         hasBlendMode={true}
         innerStyle={{
           backgroundColor: "white",
-          zIndex: 99999,
+          zIndex: 99999, //Ensuring both components of cursor are on top of everything
         }}
         outerStyle={{
           border: "3px solid white",
@@ -70,111 +74,109 @@ function App() {
           <Loading onComplete={handleLoadingComplete} />
         </>
       ) : (
-        <>
-          <div
-            id="parent-container"
-            className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}
-          >
-            <Header />
-            <section id="hero">
-              <Container fluid className="hero-container">
-                <Row
-                  className="d-flex align-items-center align-content-center"
-                  style={{ height: "1080px" }}
-                >
-                  <Col xs={12} md={6} className="intro-text">
-                    <div>
-                      <h1 className="tagline">
-                        Solving Complex Problems with&nbsp;
-                        <TypeAnimation
-                          sequence={[
-                            // Same substring at the start will only be typed out once, initially
-                            "Technology",
-                            2000, // wait 1s before replacing "Mice" with "Hamsters"
-                            "Innovation",
-                            2000,
-                            "Intellect",
-                            2000,
-                            "Creativity",
-                            2000,
-                          ]}
-                          wrapper="span"
-                          cursor={false}
-                          speed={20}
-                          className="tagline"
-                          style={{ color: "#66a4e1", fontFamily: "'Kaushan Script', cursive" }} 
-                          repeat={Infinity}
-                        />
-                      </h1>
-                    </div>
-                  </Col>
-
-                  <Col xs={12} md={6} className="logo-col">
-                    <div className="logo-container">
-                      <img
-                        src="./assets/logo.png"
-                        alt="Brand Logo"
-                        className="responsive-logo"
+        <div className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}>
+          <Header />
+          <section id="hero">
+            <Container fluid className="hero-container">
+              <Row
+                className="d-flex align-items-center align-content-center"
+                style={{ height: "1080px" }}
+              >
+                <Col xs={12} md={6} className="intro-text">
+                  <div>
+                    <h1 className="tagline">
+                      Solving Complex Problems with&nbsp;
+                      <TypeAnimation
+                        sequence={[
+                          // Same substring at the start will only be typed out once, initially
+                          "Technology",
+                          2000, // wait 1s before replacing "Mice" with "Hamsters"
+                          "Innovation",
+                          2000,
+                          "Intellect",
+                          2000,
+                          "Creativity",
+                          2000,
+                        ]}
+                        wrapper="span"
+                        cursor={false}
+                        speed={20}
+                        className="tagline"
+                        style={{
+                          color: "#66a4e1",
+                          fontFamily: "'Kaushan Script', cursive",
+                        }}
+                        repeat={Infinity}
                       />
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
-            </section>
+                    </h1>
+                  </div>
+                </Col>
 
-            <section id="about" className="about-section">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1>TEST1</h1>
-                  </Col>
-                  <Col>
-                    <h1>TEST2</h1>
-                  </Col>
-                </Row>
-              </Container>
-            </section>
+                <Col xs={12} md={6}>
+                  <div className="logo-container">
+                    <img
+                      src="./assets/logo.png"
+                      alt="Brand Logo"
+                      className="responsive-logo"
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
 
-            <section id="experience" className="experience-section">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1>TEST1 EX</h1>
-                  </Col>
-                  <Col>
-                    <h1>TEST2 EX</h1>
-                  </Col>
-                </Row>
-              </Container>
-            </section>
+          <section id="about" className="about-section">
+            <Container>
+              <Row>
+                <Col>
+                  <h1>TEST1</h1>
+                </Col>
+                <Col>
+                  <h1>TEST2</h1>
+                </Col>
+              </Row>
+            </Container>
+          </section>
 
-            <section id="portfolio" className="portfolio-section">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1>TEST1 Po</h1>
-                  </Col>
-                  <Col>
-                    <h1>TEST2 Po</h1>
-                  </Col>
-                </Row>
-              </Container>
-            </section>
+          <section id="experience" className="experience-section">
+            <Container>
+              <Row>
+                <Col>
+                  <h1>TEST1 EX</h1>
+                </Col>
+                <Col>
+                  <h1>TEST2 EX</h1>
+                </Col>
+              </Row>
+            </Container>
+          </section>
 
-            <section id="contact" className="contact-section">
-              <Container>
-                <Row>
-                  <Col>
-                    <h1>TEST1 Po</h1>
-                  </Col>
-                  <Col>
-                    <h1>TEST2 Po</h1>
-                  </Col>
-                </Row>
-              </Container>
-            </section>
-          </div>
-        </>
+          <section id="portfolio" className="portfolio-section">
+            <Container>
+              <Row>
+                <Col>
+                  <h1>TEST1 Po</h1>
+                </Col>
+                <Col>
+                  <h1>TEST2 Po</h1>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+
+          <section id="contact" className="contact-section">
+            <Container>
+              <Row>
+                <Col>
+                  <h1>TEST1 Po</h1>
+                </Col>
+                <Col>
+                  <h1>TEST2 Po</h1>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </div>
       )}
     </>
   );

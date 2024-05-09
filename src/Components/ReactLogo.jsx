@@ -1,5 +1,5 @@
 import reactLogo from '../assets/react.svg'
-import  '../css/react-logo.css'
+import  '../scss/react-logo.scss'
 
 const ReactLogo = () => {
  
