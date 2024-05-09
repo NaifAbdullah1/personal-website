@@ -101,7 +101,7 @@ const Header = () => {
             variant="h6"
             className="navbar-brand"
             sx={{ flexGrow: 0, paddingY: 1, color: "#2196f3", "&:hover": {
-              color: "#2196f3"
+              color: "#2196f3" //Counteracting the color change that occurs with the brand name on hover.
             } }}
           >
             NAIF ABDULLAH
