@@ -15,11 +15,12 @@
 
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { TypeAnimation } from "react-type-animation";
 import Header from "./Components/Header.jsx";
 import Loading from "./Components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
 import "./App.scss";
+import About from "./Components/Sections/About.jsx";
+import Hero from "./Components/Sections/Hero.jsx";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false); // Signals the completion of the intro
@@ -76,70 +77,10 @@ function App() {
       ) : (
         <div className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}>
           <Header />
-          <section id="hero">
-            <Container fluid className="hero-container">
-              <Row
-                className="hero-row"
-                style={{ height: "1080px" }}
-              >
-                <Col xs={12} md={6} className="intro-text">
-                  <div>
-                    <h1 className="tagline">
-                      Solving Complex Problems with&nbsp;
-                      <TypeAnimation
-                        sequence={[
-                          // Same substring at the start will only be typed out once, initially
-                          "Technology",
-                          2000, // wait 1s before replacing "Mice" with "Hamsters"
-                          "Innovation",
-                          2000,
-                          "Intellect",
-                          2000,
-                          "Creativity",
-                          2000,
-                        ]}
-                        wrapper="span"
-                        cursor={false}
-                        speed={20}
-                        className="tagline"
-                        style={{
-                          color: "#66a4e1",
-                          fontFamily: "'Kaushan Script', cursive",
-                        }}
-                        repeat={Infinity}
-                      />
-                    </h1>
-                  </div>
-                </Col>
 
-                <Col xs={12} md={6}>
-                  <div className="logo-container">
-                    <img
-                      src="./assets/logo.png"
-                      alt="Brand Logo"
-                      className="responsive-logo"
-                    />
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <Hero/>
 
-          <section id="about" className="about-section">
-            <Container fluid >
-              <Row className="about-container">
-                <Col>
-                  <h1 style={{color: "white"}}>About Sticky Column</h1>
-                </Col>
-                <Col>
-                  <h1 style={{color: "white"}}>Content</h1>
-                </Col>
-                <Col>
-                  <h1 style={{color: "white"}}>Orbit</h1>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <About/>
 
           <section id="experience" className="experience-section">
             <Container>

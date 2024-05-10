@@ -19,65 +19,32 @@
   overflow: hidden; /* Disables vertical and horizontal scrolling */
 }
 
-/* Styles for hero section */
-#hero {
-  /*The hero container will be entirely filled with the background-image color below. We'll take up the entire width (100%) so that it's filled from side to side. With regards to the height, we'll only fill vertically as much as the user's viewport would allow us to fill. TODO: We may need to adjust this later */
-  width: 100%;
-  height: 1080px;
-  /*
-  - The first parameter is the direction of the gradient. 180 deg = top to bottom, 0 and/or 360 deg = bottom to top.
-  - The first color is the starting color, so, it's going to start with #001433 on the top and at the bottom it will be #121212
-  */
-  background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
-  display: flex;
-  align-items: center;
-  
-}
 
-.hero-row{
-  display: flex;
-  align-items: center;
-  align-content: center;
-}
 
 /* Section-specific styles with common properties consolidated */
 .section {
   width: 100%;
-  height: 1080px;
+  /*height: 1080px;*/
 }
 
-.about-section {
-  @extend .section;
-  background-image: linear-gradient(180deg, #121212 0%, #121212 100%);
-}
-
-.about-container{
-  display: flex;
-  flex-direction: row;
-}
 
 .experience-section {
   @extend .section;
-  background-image: linear-gradient(180deg, #121212 0%, #210768 100%);
+  background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
 }
 
 .portfolio-section {
   @extend .section;
-  background-image: linear-gradient(180deg, #210768 0%, #085163 100%);
+  background-image: linear-gradient(180deg, #121212 0%, #001433 100%);
 }
 
 .contact-section {
   @extend .section;
-  background-image: linear-gradient(180deg, #085163 0%, #2a8ca5a6 100%);
+  background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
 }
 
 
-.tagline{
-  font-size: 2vw; /* Adapt font size based on viewport width */
-  font-weight: bold;
-  color: antiquewhite;
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
-}
+
 
 .responsive-logo{
   /*By setting the width OR height to 100% and the other attribute (height/widht) to auto, this will make the image maintain aspect ratio automatically.*/
@@ -85,15 +52,3 @@
   height: auto; 
 }
 
-/* Responsive styles for mobile devices */
-@media (max-width: 768px){
-  .hero-container{
-    flex-direction: column; /*Arranging items vertically*/
-  }
-  .intro-text {
-    text-align: center; /* Center text on smaller screens */
-  }
-  .tagline {
-    font-size: 4.5vw; /* Larger on smaller screens */
-  }
-}

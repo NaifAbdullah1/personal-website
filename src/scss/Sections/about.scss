@@ -1,0 +1,11 @@
+.about-section {
+    width: 100%;
+    background-image: linear-gradient(180deg, #121212 0%, #001433 100%);
+  }
+
+  .about-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+  }
