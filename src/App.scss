@@ -34,6 +34,12 @@
   
 }
 
+.hero-row{
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
 /* Section-specific styles with common properties consolidated */
 .section {
   width: 100%;
@@ -43,6 +49,11 @@
 .about-section {
   @extend .section;
   background-image: linear-gradient(180deg, #121212 0%, #121212 100%);
+}
+
+.about-container{
+  display: flex;
+  flex-direction: row;
 }
 
 .experience-section {

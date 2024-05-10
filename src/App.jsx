@@ -79,7 +79,7 @@ function App() {
           <section id="hero">
             <Container fluid className="hero-container">
               <Row
-                className="d-flex align-items-center align-content-center"
+                className="hero-row"
                 style={{ height: "1080px" }}
               >
                 <Col xs={12} md={6} className="intro-text">
@@ -126,13 +126,16 @@ function App() {
           </section>
 
           <section id="about" className="about-section">
-            <Container>
-              <Row>
+            <Container fluid >
+              <Row className="about-container">
                 <Col>
-                  <h1>TEST1</h1>
+                  <h1 style={{color: "white"}}>About Sticky Column</h1>
                 </Col>
                 <Col>
-                  <h1>TEST2</h1>
+                  <h1 style={{color: "white"}}>Content</h1>
+                </Col>
+                <Col>
+                  <h1 style={{color: "white"}}>Orbit</h1>
                 </Col>
               </Row>
             </Container>
