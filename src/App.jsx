@@ -14,13 +14,15 @@
 */
 
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import Header from "./Components/Header.jsx";
-import Loading from "./Components/LoadingScreen.jsx";
+import LoadingScreen from "./Components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
-import "./App.scss";
 import About from "./Components/Sections/About.jsx";
 import Hero from "./Components/Sections/Hero.jsx";
+import Experience from "./Components/Sections/Experience.jsx";
+import Portfolio from "./Components/Sections/Portfolio.jsx";
+import Contact from "./Components/Sections/Contact.jsx";
+import "./App.scss";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false); // Signals the completion of the intro
@@ -70,56 +72,24 @@ function App() {
           zIndex: 99999,
         }}
       />
+
       {!loadingComplete ? (
         <>
-          <Loading onComplete={handleLoadingComplete} />
+          <LoadingScreen onComplete={handleLoadingComplete} />
         </>
       ) : (
         <div className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}>
           <Header />
 
-          <Hero/>
+          <Hero />
 
-          <About/>
+          <About />
 
-          <section id="experience" className="experience-section">
-            <Container>
-              <Row>
-                <Col>
-                  <h1>TEST1 EX</h1>
-                </Col>
-                <Col>
-                  <h1>TEST2 EX</h1>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <Experience />
 
-          <section id="portfolio" className="portfolio-section">
-            <Container>
-              <Row>
-                <Col>
-                  <h1>TEST1 Po</h1>
-                </Col>
-                <Col>
-                  <h1>TEST2 Po</h1>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <Portfolio />
 
-          <section id="contact" className="contact-section">
-            <Container>
-              <Row>
-                <Col>
-                  <h1>TEST1 Po</h1>
-                </Col>
-                <Col>
-                  <h1>TEST2 Po</h1>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <Contact />
         </div>
       )}
     </>

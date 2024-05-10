@@ -21,27 +21,9 @@
 
 
 
-/* Section-specific styles with common properties consolidated */
-.section {
-  width: 100%;
-  /*height: 1080px;*/
-}
 
 
-.experience-section {
-  @extend .section;
-  background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
-}
 
-.portfolio-section {
-  @extend .section;
-  background-image: linear-gradient(180deg, #121212 0%, #001433 100%);
-}
-
-.contact-section {
-  @extend .section;
-  background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
-}
 
 
 
