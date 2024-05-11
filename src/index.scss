@@ -12,8 +12,15 @@ body {
   height: 100%;
   width: 100%;
   background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
-
+  color: antiquewhite;/*Setting the default color for all fonts*/
 }
 
+/*
+Attempted to implemenet antiquewhite as the default font color, but bootstrap's default styling is overriding this rule below. Therefore, we resorted to editing bootstrap's _variables.scss file. 
 
+Update: Modifying bootstrap's _variables.scss didn't work because we weren't sure on how to recompile the file once the changes are made. Therefore, we settled for implementing the default font color per section. 
+h1, h2, h3, h4, h5, h6, p, a, span{
+  color: antiquewhite;
+}
+*/
 

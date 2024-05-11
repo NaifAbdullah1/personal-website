@@ -10,25 +10,25 @@ const Contact = () => {
                   <h1>TEST1 Co</h1>
                 </Col>
                 <Col>
-                <h1 style={{color: "white"}}>Start Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>End Content</h1>
+                <h1>Start Content</h1>
+                <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>Content</h1>
+                  <h1>End Content</h1>
                 </Col>
                 <Col>
                   <h1>TEST3 Co</h1>

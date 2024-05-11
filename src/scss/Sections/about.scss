@@ -1,6 +1,7 @@
 .about-section {
     width: 100%;
     background-image: linear-gradient(180deg, #121212 0%, #001433 100%);
+    color: antiquewhite;
   }
 
   .about-container{
@@ -8,4 +9,13 @@
     flex-direction: row;
     justify-content: center;
     width: 70%;
+  }
+
+  .about-1st-column{
+    align-items:start;
+  }
+
+  .sticky-about{
+    position: sticky;
+    top: 8%;
   }

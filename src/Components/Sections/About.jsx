@@ -1,42 +1,25 @@
-import { Container, Row, Col } from "react-bootstrap"
-import '../../scss/Sections/about.scss'
+import { Container, Row, Col } from "react-bootstrap";
+import "../../scss/Sections/about.scss";
+import LoremIpsum from "./LoremIpsum";
 
 const About = () => {
-    return (
-        <section id="about" className="about-section">
-            <Container fluid className="about-container">
-              <Row>
-                <Col>
-                  <h1 style={{color: "white"}}>About Sticky Column</h1>
-                </Col>
-                <Col>
-                  <h1 style={{color: "white"}}>Start Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>Content</h1>
-                  <h1 style={{color: "white"}}>End Content</h1>
-                </Col>
-                <Col>
-                  <h1 style={{color: "white"}}>Orbit</h1>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-    )
-}
+  return (
+    <section id="about" className="about-section">
+      <Container fluid className="about-container">
+        <Row style={{ width: "100%" }}>
+          <Col className="about-1st-column">
+            <h1 className="sticky-about">About 📝</h1>
+          </Col>
+          <Col>
+            <LoremIpsum />
+          </Col>
+          <Col>
+            <h1>Orbit</h1>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
 
 export default About;
