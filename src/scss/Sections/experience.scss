@@ -3,3 +3,15 @@
     background-image: linear-gradient(180deg, #001433 0%, #121212 100%);
     color: antiquewhite;
   }
+
+  .experience-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+  }
+
+  .sticky-experience{
+    position: sticky;
+    top: 8%;
+  }

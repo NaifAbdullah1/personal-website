@@ -21,8 +21,10 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.2",
     "react-type-animation": "^3.2.0",
-    "sass": "^1.77.0"
+    "sass": "^1.77.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

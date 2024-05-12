@@ -4,10 +4,10 @@ import '../../scss/Sections/experience.scss'
 const Experience = () =>{
     return (
         <section id="experience" className="experience-section">
-            <Container>
-              <Row>
+            <Container fluid className="experience-container">
+              <Row style={{ width: "100%" }}>
                 <Col>
-                  <h1>TEST1 EX</h1>
+                  <h1 className="sticky-experience">Experience 🏢</h1>
                 </Col>
                 <Col>
                 <h1>Start Content</h1>

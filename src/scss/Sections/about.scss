@@ -6,16 +6,18 @@
 
   .about-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 70%;
-  }
-
-  .about-1st-column{
-    align-items:start;
   }
 
   .sticky-about{
     position: sticky;
     top: 8%;
+    font-size: 2rem;
+  }
+
+  .align-text-left{
+    text-align: left;
   }
