@@ -40,7 +40,7 @@ const Hero = () => {
           <Col>
             <div className="logo-container">
               <img
-                src="./assets/logo.png"
+                src="./assets/logo2.png"
                 alt="Brand Logo"
                 className="responsive-logo"
               />
