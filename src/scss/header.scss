@@ -1,6 +1,6 @@
 /* The brand name is "Naif Abdullah"*/
 .navbar-brand {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    /*Add a fallback font onto the style={{}} of the typography element. */
     font-weight: 900;
     line-height: 1.5;
 

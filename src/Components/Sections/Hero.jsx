@@ -7,8 +7,8 @@ const Hero = () => {
     <section id="hero">
       <Container fluid className="hero-container">
         <Row className="hero-row">
-          <Col xs={12} md={6} className="intro-text">
-            <div>
+          <Col className="intro-text-col">
+            
               <h1 className="tagline">
                 Solving Complex Problems with&nbsp;
                 <TypeAnimation
@@ -34,10 +34,10 @@ const Hero = () => {
                   repeat={Infinity}
                 />
               </h1>
-            </div>
+            
           </Col>
 
-          <Col xs={12} md={6}>
+          <Col>
             <div className="logo-container">
               <img
                 src="./assets/logo.png"

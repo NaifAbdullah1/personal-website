@@ -100,7 +100,7 @@ const Header = () => {
           <Typography
             variant="h6"
             className="navbar-brand"
-            sx={{ flexGrow: 0, paddingY: 1, color: "#2196f3", "&:hover": {
+            sx={{ fontFamily: "'Kaushan Script', cursive", flexGrow: 0, paddingY: 1, color: "#2196f3", "&:hover": {
               color: "#2196f3" //Counteracting the color change that occurs with the brand name on hover.
             } }}
           >
