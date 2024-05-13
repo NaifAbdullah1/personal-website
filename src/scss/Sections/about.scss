@@ -1,23 +1,5 @@
 .about-section {
-    width: 100%;
-    background-image: linear-gradient(180deg, #121212 0%, #001433 100%);
-    color: antiquewhite;
-  }
-
-  .about-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-  }
-
-  .sticky-about{
-    position: sticky;
-    top: 8%;
-    font-size: 2rem;
-  }
-
-  .align-text-left{
-    text-align: left;
-  }
+  width: 100%;
+  background-image: linear-gradient(180deg, #121212 0%, #001433 100%);
+  color: antiquewhite;
+}

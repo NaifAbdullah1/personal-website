@@ -1,34 +1,19 @@
 import { Container, Row, Col } from "react-bootstrap";
+import LoremIpsum from "./LoremIpsum";
+
+import "../../scss/Sections/common.scss";
 import "../../scss/Sections/portfolio.scss";
 
 const Portfolio = () => {
   return (
     <section id="portfolio" className="portfolio-section">
-      <Container>
-        <Row>
-          <Col>
-            <h1>TEST1 Po</h1>
+      <Container fluid className="container-layout">
+        <Row style={{ width: "100%" }}>
+          <Col style={{ flex: "0 0 20%" }}>
+            <h1 className="sticky-1st-column">Portfolio 🎯</h1>
           </Col>
           <Col>
-            <h1>Start Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>End Content</h1>
+            <LoremIpsum/>
           </Col>
           <Col>
             <h1>TEST3 Po</h1>

@@ -1,0 +1,14 @@
+.sticky-1st-column{
+    position: sticky;
+    top: 8%;
+    font-size: 2rem;
+  }
+
+  .container-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding-top: 100px;
+  }
