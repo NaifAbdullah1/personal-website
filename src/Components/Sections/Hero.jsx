@@ -1,12 +1,12 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import '../../scss/Sections/hero.scss'
 
 const Hero = () => {
   return (
     <section id="hero">
-      <Container fluid className="hero-container">
-        <Row className="hero-row">
+        <div className=" container-fluid hero-row">
+          
           <Col className="intro-text-col">
             
               <h1 className="tagline">
@@ -38,16 +38,13 @@ const Hero = () => {
           </Col>
 
           <Col>
-            <div className="logo-container">
               <img
                 src="./assets/trimmed-logo.png"
                 alt="Brand Logo"
                 className="responsive-logo"
               />
-            </div>
           </Col>
-        </Row>
-      </Container>
+        </div>
     </section>
   );
 };
