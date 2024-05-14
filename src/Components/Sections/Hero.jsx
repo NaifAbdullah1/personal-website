@@ -37,7 +37,7 @@ const Hero = () => {
             
           </Col>
 
-          <Col>
+          <Col className="brand-col">
               <img
                 src="./assets/trimmed-logo.png"
                 alt="Brand Logo"

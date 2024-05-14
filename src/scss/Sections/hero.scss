@@ -26,17 +26,23 @@
   .hero-row {
     flex-direction: column; /*Arranging items vertically*/
   }
-  /*.hero-row{
-      height: 70%;
-    }*/
+
   .intro-text-col {
     text-align: center; /* Center text on smaller screens */
     display: flex;
     flex-direction: column;
     justify-content: center; /*Vertically align*/
     align-items: center; /*Horizontally align*/
-    
+    order: 2;
   }
+
+  .brand-col{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 100px;
+  }
+
   .tagline {
     font-size: 4.5vw; /* Larger on smaller screens */
   }
