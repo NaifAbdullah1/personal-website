@@ -28,7 +28,7 @@ const About = () => {
             </div>
           </Col>
           <Col style={{ flex: "0 0 40%" }}>
-            
+            <img src="./assets/naif.png" className="naif-image"/>
           </Col>
         </Row>
         <h1>Below row</h1>
