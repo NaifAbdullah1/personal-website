@@ -8,10 +8,10 @@ const About = () => {
     <section id="about" className="about-section">
       <Container fluid className="container-layout">
         <Row style={{ width: "100%" }}>
-          <Col style={{ flex: "0 0 20%" }}>
+          <Col xs={12} sm={12} md={12} lg={2} style={{ textAlign: "center" }}>
             <h1 className="sticky-1st-column">About 📝</h1>
           </Col>
-          <Col style={{ flex: "0 0 40%", textAlign: "left" }}>
+          <Col xs={12} sm={12} md={12} lg={6} style={{ textAlign: "left" }}>
             <div>
               <h4>Hello 👋🏻</h4>
               <br></br>
@@ -27,7 +27,7 @@ const About = () => {
               </p>
             </div>
           </Col>
-          <Col style={{ flex: "0 0 40%" }}>
+          <Col xs={12} sm={12} md={12} lg={4}>
             <img src="./assets/naif.png" className="naif-image"/>
           </Col>
         </Row>
