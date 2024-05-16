@@ -8,10 +8,10 @@ const About = () => {
     <section id="about" className="about-section">
       <Container fluid className="container-layout">
         <Row style={{ width: "100%" }}>
-          <Col xs={12} sm={12} md={12} lg={2} style={{ textAlign: "center" }}>
+          <Col xs={12} sm={12} md={12} lg={3} style={{ textAlign: "center" }}>
             <h1 className="sticky-1st-column">About 📝</h1>
           </Col>
-          <Col xs={12} sm={12} md={12} lg={6} style={{ textAlign: "left" }}>
+          <Col xs={12} sm={12} md={12} lg={9} style={{ textAlign: "left", display: "flex" }}>
             <div>
               <h4>Hello 👋🏻</h4>
               <br></br>
@@ -21,13 +21,11 @@ const About = () => {
                 As a Computer Science graduate, I&apos;ve excelled both academically
                 and as a Full Stack Web Developer. I&apos;ve contributed to critical
                 systems at my university&apos;s IT department and enhanced
-                applications at J. M. Smucker Co. I&apos;m dedicated to self-learning
+                applications at the J. M. Smucker Co. I&apos;m dedicated to self-learning
                 and collaborative problem-solving in digital
                 environments.
               </p>
             </div>
-          </Col>
-          <Col xs={12} sm={12} md={12} lg={4}>
             <img src="./assets/naif.png" className="naif-image"/>
           </Col>
         </Row>
