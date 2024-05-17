@@ -117,7 +117,6 @@ const Header = () => {
           {sections.map((section) => (
             <ScrollLink key={section} to={section} smooth={true} duration={500}>
               <Button
-              className="navlinks"
                 color={isActive(section) ? "secondary" : "primary"}
                 sx={{...hoverEffect, 
                   fontWeight: "bold", 
