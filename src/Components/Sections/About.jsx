@@ -1,4 +1,5 @@
 import { Container, Grid, Typography, Box } from "@mui/material";
+import Marquee from "react-fast-marquee";
 
 import "../../scss/Sections/common.scss";
 import "../../scss/Sections/about.scss";
@@ -25,7 +26,9 @@ const About = () => {
             sm={12}
             md={3}
             lg={3}
-            sx={{ textAlign: {xs: "center", sm: "center", md: "left", lg: "left"} }}
+            sx={{
+              textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
+            }}
           >
             <Typography variant="h1" className="sticky-1st-column">
               About 📝
@@ -70,15 +73,36 @@ const About = () => {
             </Grid>
 
             <Grid item sx={certifiedByGridItemProperties}>
-
-              <Grid container sx={{ display: "flex", flexDirection: "column"}}>
-                <Grid item sx={{mb: "30px", display: "flex",     justifyContent: { xs: "center", sm: "center", md: "start", lg: "start" }, }}>
+              <Grid container sx={{ display: "flex", flexDirection: "column" }}>
+                <Grid
+                  item
+                  sx={{
+                    mb: "30px",
+                    display: "flex",
+                    justifyContent: {
+                      xs: "center",
+                      sm: "center",
+                      md: "start",
+                      lg: "start",
+                    },
+                  }}
+                >
                   <Typography variant="h4">Certified by</Typography>
                 </Grid>
 
-                <Grid item sx={{ display: "flex", 
-                  justifyContent: {xs: "center", sm: "center", md: "start", lg: "start"}, 
-                  gap: "10px"}}>
+                <Grid
+                  item
+                  sx={{
+                    display: "flex",
+                    justifyContent: {
+                      xs: "center",
+                      sm: "center",
+                      md: "start",
+                      lg: "start",
+                    },
+                    gap: "10px",
+                  }}
+                >
                   <Box
                     component="img"
                     src="./assets/certifications/doroob-logo.jpg"
@@ -99,16 +123,38 @@ const About = () => {
                   />
                 </Grid>
               </Grid>
-
             </Grid>
           </Grid>
 
-          <Grid item sx={{pt: "50px"}}>
-            <Box
-              component="img"
-              src="./assets/about-banner/smucker-shirt.JPG"
-              width="50%"
-              height="auto"/>
+          <Grid item sx={{ pt: "100px" }}>
+            <Marquee
+              autoFill={false}
+              loop={0}
+              speed={1000}
+            >
+              <img
+                src="./assets/about-banner/doroob-logo.jpg"
+                style={{ width: "85%", height: "auto"}}
+              />
+              <img
+                src="./assets/about-banner/doroob-logo.jpg"
+                style={{ width: "85%", height: "auto"}}
+              />
+              <img
+                src="./assets/about-banner/doroob-logo.jpg"
+                style={{ width: "85%", height: "auto"}}
+              />
+              <img
+                src="./assets/about-banner/doroob-logo.jpg"
+                style={{ width: "85%", height: "auto"}}
+              />
+              <img
+                src="./assets/about-banner/doroob-logo.jpg"
+                style={{ width: "85%", height: "auto"}}
+              />
+              
+              
+            </Marquee>
           </Grid>
         </Grid>
       </Container>
