@@ -25,7 +25,7 @@ const About = () => {
             sm={12}
             md={3}
             lg={3}
-            style={{ textAlign: "center" }}
+            sx={{ textAlign: {xs: "center", sm: "center", md: "left", lg: "left"} }}
           >
             <Typography variant="h1" className="sticky-1st-column">
               About 📝
@@ -101,6 +101,14 @@ const About = () => {
               </Grid>
 
             </Grid>
+          </Grid>
+
+          <Grid item sx={{pt: "50px"}}>
+            <Box
+              component="img"
+              src="./assets/about-banner/smucker-shirt.JPG"
+              width="50%"
+              height="auto"/>
           </Grid>
         </Grid>
       </Container>
