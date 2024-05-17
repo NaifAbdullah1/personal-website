@@ -110,8 +110,9 @@ const Header = () => {
 
         <Box
           sx={{
-            display: { md: "flex" },
-            gap: 5,
+            display: { xs: "flex", md: "flex" },
+            gap: { xs: "1.5rem", md: "2rem" }, // Increased gap for smaller screens
+            alignItems: { xs: "center", md: "initial" }, // Center items for smaller screens
           }}
         >
           {sections.map((section) => (
