@@ -1,29 +1,32 @@
-import { Container, Grid, Typography, Box } from "@mui/material";
-
+import {
+  Container,
+  Grid,
+  Typography,
+  Box,
+  Dialog,
+  DialogContent,
+} from "@mui/material";
 import Marquee from "react-fast-marquee";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 import "../../scss/Sections/common.scss";
 import "../../scss/Sections/about.scss";
-
-
-
-
-const MarqueeImage = ({src}) => (
-  <Box 
-    component="img"
-    src={src}
-    sx={{ width: '90%', height: 'auto', borderRadius: '20px'}}
-    onClick={() => console.log("Clicked: " + src)}
-  />
-)
-
-// Prop validation for the component above
-MarqueeImage.propTypes = {
-  src: PropTypes.string.isRequired
-}
+import { useState } from "react";
 
 const About = () => {
+  const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
+  const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
+
+  const openMarqueeDialog = (clickedImage) => {
+    // We need to first edit the 'clickedImage' to point to teh full sized image
+    setSelectedMarqueeImage(clickedImage.replace(/\.(?=[^.]*$)/, "F.")); // A regex that finds the very last dot in a string
+    setIsMarqueeDialogOpen(true);
+  };
+
+  const closeMarqueeDialog = () => {
+    setSelectedMarqueeImage(null);
+    setIsMarqueeDialogOpen(false);
+  };
 
   const naifImageProperties = {
     height: "auto",
@@ -34,6 +37,55 @@ const About = () => {
   const certifiedByGridItemProperties = {
     display: "flex",
     pt: { xs: "2rem", sm: "2rem", md: "0px", lg: "0px" },
+  };
+
+  const MarqueeImage = ({ src, caption }) => (
+    <Box
+      sx={{ position: "relative" }}
+      onMouseEnter={(e) =>
+        (e.target.firstChild.style.filter = "brightness(0.7)")
+      }
+      onMouseLeave={(e) => (e.target.firstChild.style.filter = "brightness(1)")}
+      onClick={() => openMarqueeDialog(src)}
+    >
+      <Box
+        component="img"
+        src={src}
+        alt="Marquee image"
+        sx={{
+          width: "90%",
+          height: "auto",
+          borderRadius: "20px",
+          transition: "filter 0.5s ease-in-out",
+        }}
+      />
+
+
+      <Typography
+        variant="caption"
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          color: "#FFF",
+          textAlign: "center",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          padding: "5px",
+          borderRadius: "0 0 20px 20px",
+          width: "90%",
+        }}
+      >
+        {caption}
+      </Typography>
+
+    </Box>
+  );
+
+  // Prop validation for the component above
+  MarqueeImage.propTypes = {
+    src: PropTypes.string.isRequired,
+    caption: PropTypes.string.isRequired,
   };
 
   return (
@@ -147,16 +199,72 @@ const About = () => {
           </Grid>
 
           <Grid item sx={{ pt: "100px" }}>
-            <Marquee loop={0} speed={150} pauseOnHover={true} gradient={true} gradientColor="#03142F" gradientWidth={50}>
-              <MarqueeImage src={"./assets/marquee/smucker-shirt.jpg"}/>
-              <MarqueeImage src={"./assets/marquee/smucker-team.jpg"}/>
-              <MarqueeImage src={"./assets/marquee/recwell.jpg"}/>
-              <MarqueeImage src={"./assets/marquee/smucker-hq.jpg"}/>
-              <MarqueeImage src={"./assets/marquee/uw-madison.jpg"}/>
-              <MarqueeImage src={"./assets/marquee/doit-team.jpg"}/>
+            <Marquee
+              loop={0}
+              speed={150}
+              pauseOnHover={true}
+              gradient={true}
+              gradientColor="#03142F"
+              gradientWidth={50}
+            >
+              <MarqueeImage
+                src={"./assets/marquee/smucker-shirt.jpeg"}
+                caption={"Orientation at The J. M. Smucker Co."}
+              />
+              <MarqueeImage
+                src={"./assets/marquee/smucker-team.jpeg"}
+                caption={"J.M Smucker Co. Colleagues"}
+              />
+              <MarqueeImage
+                src={"./assets/marquee/recwell.jpeg"}
+                caption={
+                  "University of Wisconsin-Madison: Recreation and Wellbeing"
+                }
+              />
+              <MarqueeImage
+                src={"./assets/marquee/smucker-hq.jpeg"}
+                caption={"J.M. Smucker Co. HQ"}
+              />
+              <MarqueeImage
+                src={"./assets/marquee/uw-madison.jpeg"}
+                caption={"Orientation at the University of Wisconsin-Madison"}
+              />
+              <MarqueeImage
+                src={"./assets/marquee/doit-team.jpeg"}
+                caption={
+                  "Colleagues at the University of Wisconsin-Madison's Division of Information Technology"
+                }
+              />
             </Marquee>
           </Grid>
         </Grid>
+        <Dialog
+          open={isMarqueeDialogOpen}
+          onClose={closeMarqueeDialog}
+          maxWidth="lg"
+        >
+          <DialogContent
+            style={{
+              background: "#03142F",
+              overflow: "hidden",
+              margin: 0,
+              padding: 0,
+              position: "relative",
+            }}
+          >
+            <Box
+              component="img"
+              src={selectedMarqueeImage}
+              alt="Full size version of clicked marquee image"
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "20px",
+              }}
+              
+            />
+          </DialogContent>
+        </Dialog>
       </Container>
     </section>
   );

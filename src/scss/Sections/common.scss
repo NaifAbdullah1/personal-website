@@ -13,5 +13,5 @@
     We're using hardcoded units (1140px) instead of the relative units (70%) because we don't want to maintain that gap on smaller screen (which what a relative unit would do), rather, want want to eat away at the gutter as the screen shrinks*/
     max-width: 1140px; 
     /*To account for the header*/
-    padding-top: 100px; 
+    padding-top: 120px; 
   }

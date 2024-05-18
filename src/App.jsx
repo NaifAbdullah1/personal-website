@@ -11,6 +11,8 @@
 - Determine a minimum width for the site. Do this once you've almost done with implementing the site
 
 - Maybe make the nav links responsive to screen size instead of using css media queries? 
+
+- For the marquee, we're using two different sets of the same images. See if you can use a single set of images and do the resizing via css 
 */
 
 import { useEffect, useState } from "react";
