@@ -1,10 +1,30 @@
 import { Container, Grid, Typography, Box } from "@mui/material";
+
 import Marquee from "react-fast-marquee";
+import PropTypes from 'prop-types'
 
 import "../../scss/Sections/common.scss";
 import "../../scss/Sections/about.scss";
 
+
+
+
+const MarqueeImage = ({src}) => (
+  <Box 
+    component="img"
+    src={src}
+    sx={{ width: '90%', height: 'auto', borderRadius: '20px'}}
+    onClick={() => console.log("Clicked: " + src)}
+  />
+)
+
+// Prop validation for the component above
+MarqueeImage.propTypes = {
+  src: PropTypes.string.isRequired
+}
+
 const About = () => {
+
   const naifImageProperties = {
     height: "auto",
     width: { xs: "50%", sm: "50%", md: "100%", lg: "100%" },
@@ -127,33 +147,13 @@ const About = () => {
           </Grid>
 
           <Grid item sx={{ pt: "100px" }}>
-            <Marquee
-              autoFill={false}
-              loop={0}
-              speed={1000}
-            >
-              <img
-                src="./assets/about-banner/doroob-logo.jpg"
-                style={{ width: "85%", height: "auto"}}
-              />
-              <img
-                src="./assets/about-banner/doroob-logo.jpg"
-                style={{ width: "85%", height: "auto"}}
-              />
-              <img
-                src="./assets/about-banner/doroob-logo.jpg"
-                style={{ width: "85%", height: "auto"}}
-              />
-              <img
-                src="./assets/about-banner/doroob-logo.jpg"
-                style={{ width: "85%", height: "auto"}}
-              />
-              <img
-                src="./assets/about-banner/doroob-logo.jpg"
-                style={{ width: "85%", height: "auto"}}
-              />
-              
-              
+            <Marquee loop={0} speed={150} pauseOnHover={true} gradient={true} gradientColor="#03142F" gradientWidth={50}>
+              <MarqueeImage src={"./assets/marquee/smucker-shirt.jpg"}/>
+              <MarqueeImage src={"./assets/marquee/smucker-team.jpg"}/>
+              <MarqueeImage src={"./assets/marquee/recwell.jpg"}/>
+              <MarqueeImage src={"./assets/marquee/smucker-hq.jpg"}/>
+              <MarqueeImage src={"./assets/marquee/uw-madison.jpg"}/>
+              <MarqueeImage src={"./assets/marquee/doit-team.jpg"}/>
             </Marquee>
           </Grid>
         </Grid>
