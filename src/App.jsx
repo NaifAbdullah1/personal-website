@@ -13,6 +13,8 @@
 - Maybe make the nav links responsive to screen size instead of using css media queries? 
 
 - For the marquee, we're using two different sets of the same images. See if you can use a single set of images and do the resizing via css 
+
+- Work on Dialog animation
 */
 
 import { useEffect, useState } from "react";

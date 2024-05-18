@@ -13,7 +13,9 @@ import "../../scss/Sections/common.scss";
 import "../../scss/Sections/about.scss";
 import { useState } from "react";
 
+
 const About = () => {
+
   const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
   const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
   const [selectedMarqueeImageCaption, setSelectedMarqueeImageCaption] =
@@ -27,9 +29,9 @@ const About = () => {
   };
 
   const closeMarqueeDialog = () => {
+    setIsMarqueeDialogOpen(false);
     setSelectedMarqueeImage(null);
     setSelectedMarqueeImageCaption(null);
-    setIsMarqueeDialogOpen(false);
   };
 
   const naifImageProperties = {
@@ -240,10 +242,10 @@ const About = () => {
                 borderRadius: "20px",
                 // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
                 "&:hover": {
-                  "& > :nth-child(1)" : { // Selects the 1st child (image)
+                  "& > img" : { // Selects the 1st child (image)
                     filter: "brightness(0.4)",
                   },
-                  "& > :nth-child(2)": { // Selects the 2nd child (caption)
+                  "& > img + .caption-text": { // Selects .caption-text that directly follows an <img> element
                     opacity: 1, 
                   },
                 },
@@ -263,6 +265,7 @@ const About = () => {
 
               <Typography
                 variant="caption"
+                className="caption-text"
                 sx={{
                   position: "absolute",
                   top: "50%",
