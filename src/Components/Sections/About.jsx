@@ -26,12 +26,11 @@ const About = () => {
     setSelectedMarqueeImage(clickedImage.replace(/\.(?=[^.]*$)/, "F.")); // A regex that finds the very last dot in a string
     setSelectedMarqueeImageCaption(clickedImageCaption);
     setIsMarqueeDialogOpen(true);
+    // Maybe set the state variables (img and caption to null), though it will make closing less smooth
   };
 
   const closeMarqueeDialog = () => {
     setIsMarqueeDialogOpen(false);
-    setSelectedMarqueeImage(null);
-    setSelectedMarqueeImageCaption(null);
   };
 
   const naifImageProperties = {
