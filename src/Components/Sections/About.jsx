@@ -16,15 +16,19 @@ import { useState } from "react";
 const About = () => {
   const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
   const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
+  const [selectedMarqueeImageCaption, setSelectedMarqueeImageCaption] =
+    useState(null);
 
-  const openMarqueeDialog = (clickedImage) => {
+  const openMarqueeDialog = (clickedImage, clickedImageCaption) => {
     // We need to first edit the 'clickedImage' to point to teh full sized image
     setSelectedMarqueeImage(clickedImage.replace(/\.(?=[^.]*$)/, "F.")); // A regex that finds the very last dot in a string
+    setSelectedMarqueeImageCaption(clickedImageCaption);
     setIsMarqueeDialogOpen(true);
   };
 
   const closeMarqueeDialog = () => {
     setSelectedMarqueeImage(null);
+    setSelectedMarqueeImageCaption(null);
     setIsMarqueeDialogOpen(false);
   };
 
@@ -42,11 +46,7 @@ const About = () => {
   const MarqueeImage = ({ src, caption }) => (
     <Box
       sx={{ position: "relative" }}
-      onMouseEnter={(e) =>
-        (e.target.firstChild.style.filter = "brightness(0.7)")
-      }
-      onMouseLeave={(e) => (e.target.firstChild.style.filter = "brightness(1)")}
-      onClick={() => openMarqueeDialog(src)}
+      onClick={() => openMarqueeDialog(src, caption)}
     >
       <Box
         component="img"
@@ -59,26 +59,6 @@ const About = () => {
           transition: "filter 0.5s ease-in-out",
         }}
       />
-
-
-      <Typography
-        variant="caption"
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          color: "#FFF",
-          textAlign: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          padding: "5px",
-          borderRadius: "0 0 20px 20px",
-          width: "90%",
-        }}
-      >
-        {caption}
-      </Typography>
-
     </Box>
   );
 
@@ -253,16 +233,51 @@ const About = () => {
             }}
           >
             <Box
-              component="img"
-              src={selectedMarqueeImage}
-              alt="Full size version of clicked marquee image"
-              style={{
+              sx={{
+                position: "relative",
                 width: "100%",
                 height: "auto",
                 borderRadius: "20px",
+                // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
+                "&:hover": {
+                  "& > :nth-child(1)" : { // Selects the 1st child (image)
+                    filter: "brightness(0.4)",
+                  },
+                  "& > :nth-child(2)": { // Selects the 2nd child (caption)
+                    opacity: 1, 
+                  },
+                },
               }}
-              
-            />
+            >
+              <Box
+                component="img"
+                src={selectedMarqueeImage}
+                alt="Full size version of clicked marquee image"
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "20px",
+                  transition: "filter 0.5s ease-in-out", // For smooth fade-out when hovering stops
+                }}
+              />
+
+              <Typography
+                variant="caption"
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  color: "#FFF",
+                  textAlign: "center",
+                  fontSize: "larger",
+                  opacity: 0,
+                  transition: "opacity 0.5s ease-in-out", // For smooth fade-out when hovering stops
+                }}
+              >
+                {selectedMarqueeImageCaption}
+              </Typography>
+            </Box>
           </DialogContent>
         </Dialog>
       </Container>
