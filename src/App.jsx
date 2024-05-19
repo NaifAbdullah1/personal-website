@@ -15,6 +15,8 @@
 - For the marquee, we're using two different sets of the same images. See if you can use a single set of images and do the resizing via css 
 
 - Work on Dialog animation
+
+- Wasn't able to make a slideshow for mobile. We may resort to either not showing the slideshow on mobile. Or showing it but disabling the hover effect, we'll also need to make it smaller. 
 */
 
 import { useEffect, useState } from "react";

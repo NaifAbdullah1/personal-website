@@ -12,10 +12,9 @@ import PropTypes from "prop-types";
 import "../../scss/Sections/common.scss";
 import "../../scss/Sections/about.scss";
 import { useState } from "react";
-
+import { isMobile } from "react-device-detect";
 
 const About = () => {
-
   const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
   const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
   const [selectedMarqueeImageCaption, setSelectedMarqueeImageCaption] =
@@ -83,7 +82,11 @@ const About = () => {
               textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
             }}
           >
-            <Typography variant="h1" className="sticky-1st-column" sx={{ mb: {xs: 3, sm: 3, md: 0, lg: 0}}}>
+            <Typography
+              variant="h1"
+              className="sticky-1st-column"
+              sx={{ mb: { xs: 3, sm: 3, md: 0, lg: 0 } }}
+            >
               About 📝
             </Typography>
           </Grid>
@@ -179,45 +182,49 @@ const About = () => {
             </Grid>
           </Grid>
 
-          <Grid item sx={{ pt: "100px", }}>
-            <Marquee
-              loop={0}
-              speed={150}
-              pauseOnHover={true}
-              gradient={true}
-              gradientColor="#03142F"
-              gradientWidth={50}
-            >
-              <MarqueeImage
-                src={"./assets/marquee/smucker-shirt.jpeg"}
-                caption={"Orientation at The J. M. Smucker Co."}
-              />
-              <MarqueeImage
-                src={"./assets/marquee/smucker-team.jpeg"}
-                caption={"J.M Smucker Co. Colleagues"}
-              />
-              <MarqueeImage
-                src={"./assets/marquee/recwell.jpeg"}
-                caption={
-                  "University of Wisconsin-Madison: Recreation and Wellbeing"
-                }
-              />
-              <MarqueeImage
-                src={"./assets/marquee/smucker-hq.jpeg"}
-                caption={"J.M. Smucker Co. HQ"}
-              />
-              <MarqueeImage
-                src={"./assets/marquee/uw-madison.jpeg"}
-                caption={"Orientation at the University of Wisconsin-Madison"}
-              />
-              <MarqueeImage
-                src={"./assets/marquee/doit-team.jpeg"}
-                caption={
-                  "Colleagues at the University of Wisconsin-Madison's Division of Information Technology"
-                }
-              />
-            </Marquee>
-          </Grid>
+          {isMobile ? (
+            <></>
+          ) : (
+            <Grid item sx={{ pt: "100px" }}>
+              <Marquee
+                loop={0}
+                speed={150}
+                pauseOnHover={true}
+                gradient={true}
+                gradientColor="#03142F"
+                gradientWidth={50}
+              >
+                <MarqueeImage
+                  src={"./assets/marquee/smucker-shirt.jpeg"}
+                  caption={"Orientation at The J. M. Smucker Co."}
+                />
+                <MarqueeImage
+                  src={"./assets/marquee/smucker-team.jpeg"}
+                  caption={"J.M Smucker Co. Colleagues"}
+                />
+                <MarqueeImage
+                  src={"./assets/marquee/recwell.jpeg"}
+                  caption={
+                    "University of Wisconsin-Madison: Recreation and Wellbeing"
+                  }
+                />
+                <MarqueeImage
+                  src={"./assets/marquee/smucker-hq.jpeg"}
+                  caption={"J.M. Smucker Co. HQ"}
+                />
+                <MarqueeImage
+                  src={"./assets/marquee/uw-madison.jpeg"}
+                  caption={"Orientation at the University of Wisconsin-Madison"}
+                />
+                <MarqueeImage
+                  src={"./assets/marquee/doit-team.jpeg"}
+                  caption={
+                    "Colleagues at the University of Wisconsin-Madison's Division of Information Technology"
+                  }
+                />
+              </Marquee>
+            </Grid>
+          )}
         </Grid>
         <Dialog
           open={isMarqueeDialogOpen}
@@ -241,11 +248,13 @@ const About = () => {
                 borderRadius: "20px",
                 // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
                 "&:hover": {
-                  "& > img" : { // Selects the img child
+                  "& > img": {
+                    // Selects the img child
                     filter: "brightness(0.4)",
                   },
-                  "& > img + .caption-text": { // Selects .caption-text that directly follows an <img> element
-                    opacity: 1, 
+                  "& > img + .caption-text": {
+                    // Selects .caption-text that directly follows an <img> element
+                    opacity: 1,
                   },
                 },
               }}
