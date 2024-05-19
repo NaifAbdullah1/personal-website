@@ -83,7 +83,7 @@ const About = () => {
               textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
             }}
           >
-            <Typography variant="h1" className="sticky-1st-column">
+            <Typography variant="h1" className="sticky-1st-column" sx={{ mb: {xs: 3, sm: 3, md: 0, lg: 0}}}>
               About 📝
             </Typography>
           </Grid>
@@ -179,7 +179,7 @@ const About = () => {
             </Grid>
           </Grid>
 
-          <Grid item sx={{ pt: "100px" }}>
+          <Grid item sx={{ pt: "100px", }}>
             <Marquee
               loop={0}
               speed={150}
@@ -241,7 +241,7 @@ const About = () => {
                 borderRadius: "20px",
                 // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
                 "&:hover": {
-                  "& > img" : { // Selects the 1st child (image)
+                  "& > img" : { // Selects the img child
                     filter: "brightness(0.4)",
                   },
                   "& > img + .caption-text": { // Selects .caption-text that directly follows an <img> element
