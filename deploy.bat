@@ -1,20 +1,19 @@
-ECHO Deploying...
-:: Build the React application for production
-npm run build
+@echo off
+ECHO Starting Deployment
+ECHO.
 
-:: Check for build errors (optional)
-IF EXIST "%errorlevel%" (
-  ECHO Build failed! Fix errors and try again.
-  EXIT /B 1
+:: Calling build script
+call build.bat
+IF %ERRORLEVEL% NEQ 0 (
+    ECHO Build script failed! Exiting deployment.
+    EXIT /B %ERRORLEVEL%
 )
 
-ECHO Starting S3 Sync...
-aws s3 sync dist/ s3://naifsitebucket
-
-:: Check for S3 sync errors (optional)
-IF EXIST "%errorlevel%" (
-  ECHO Error uploading files to S3! Check permissions and bucket configuration.
-  EXIT /B 1
+:: Call the sync script
+call sync.bat
+IF %ERRORLEVEL% NEQ 0 (
+    ECHO Sync script failed! Exiting deployment.
+    EXIT /B %ERRORLEVEL%
 )
 
-ECHO Deployment completed!
+ECHO Deployment completed successfully!
