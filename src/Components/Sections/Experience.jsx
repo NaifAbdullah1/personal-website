@@ -16,7 +16,7 @@ const Experience = () =>{
                   <LoremIpsum/>
                 </Col>
                 <Col>
-                  <h1>Coming Soon! TEST</h1>
+                  <h1>Coming Soon!</h1>
                 </Col>
               </Row>
             </Container>
