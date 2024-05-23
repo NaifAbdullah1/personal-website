@@ -19,7 +19,7 @@ jobs:
       # used for managing dependencies of the site. This allows us to 
       # install the necessary dependencies when running a build on the site. 
       - name: Set up Node.js 
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with: 
           node-version: '20' # The node version we'll use for building the app
 
