@@ -96,6 +96,8 @@ function App() {
           <Portfolio />
 
           <Contact />
+          
+          <div className="ios-peek-bottom"></div>
         </div>
       )}
     </>
