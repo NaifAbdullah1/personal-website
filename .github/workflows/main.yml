@@ -1,0 +1,40 @@
+name: Sync with AWS' S3
+
+on: 
+  push: 
+    branches: 
+      - main #i.e., pushing onto this branch will trigger this workflow
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # We must setup Node in the Github Actions because our website 
+      # is a React app created using Vite, which is built and managed 
+      # by Node.js. Installing Node provides access to NPM, which is 
+      # used for managing dependencies of the site. This allows us to 
+      # install the necessary dependencies when running a build on the site. 
+      - name: Set up Node.js 
+      - uses: actions/setup-node@v2
+        with: 
+          node-version: '22.1.0' # The node version we're running locally
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build 
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID
+          aws-secret-access-key: ${{ssecrets.AWS_SECRET_ACCESS_KEY}}
+          aws_region: ${{secrets.AWS_REGION}}
+
+      - name: Sync with S3
+        run: aws s3 sync dist/ s3://naifsitebucket
