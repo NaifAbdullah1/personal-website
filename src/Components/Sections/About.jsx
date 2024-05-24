@@ -32,15 +32,21 @@ const About = () => {
     setIsMarqueeDialogOpen(false);
   };
 
+  const naifImageContainerProperties = {
+    display: {xs: "flex", sm: "inline"}, 
+    justifyContent: "center"
+  }
+
   const naifImageProperties = {
+    width: { xs: "50%", sm: "100%" },
     height: "auto",
-    width: { xs: "50%", sm: "50%", md: "100%", lg: "100%" },
-    pt: { xs: "2rem", sm: "2rem", md: "0px", lg: "0px" },
+    justifyContent: "center",
+    pt: { xs: "2rem", sm: "0px" },
   };
 
   const certifiedByGridItemProperties = {
     display: "flex",
-    pt: { xs: "2rem", sm: "2rem", md: "0px", lg: "0px" },
+    pt: { xs: "2rem", sm: "0px" },
   };
 
   const MarqueeImage = ({ src, caption }) => (
@@ -75,17 +81,15 @@ const About = () => {
           <Grid
             item
             xs={12}
-            sm={12}
-            md={3}
-            lg={3}
+            sm={3}
             sx={{
-              textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
+              textAlign: { xs: "center", sm: "left" },
             }}
           >
             <Typography
               variant="h1"
               className="sticky-1st-column"
-              sx={{ mb: { xs: 3, sm: 3, md: 0, lg: 0 } }}
+              sx={{ mb: { xs: 3, sm: 0 } }}
             >
               About 📝
             </Typography>
@@ -94,9 +98,7 @@ const About = () => {
           <Grid
             item
             xs={12}
-            sm={12}
-            md={9}
-            lg={9}
+            sm={9}
             style={{
               textAlign: "left",
               display: "flex",
@@ -104,7 +106,7 @@ const About = () => {
             }}
           >
             <Grid container>
-              <Grid item xs={12} sm={12} md={6} lg={6}>
+              <Grid item xs={12} sm={6}>
                 <Typography variant="h4">Hello 👋🏻</Typography>
                 <br />
                 <Typography variant="h4">My name is Naif Abdullah</Typography>
@@ -118,7 +120,7 @@ const About = () => {
                   problem-solving in digital environments.
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={6} className="center-image">
+              <Grid item xs={12} sm={6} sx={naifImageContainerProperties}>
                 <Box
                   component="img"
                   src="./assets/naif.png"
@@ -137,7 +139,7 @@ const About = () => {
                     display: "flex",
                     justifyContent: {
                       xs: "center",
-                      sm: "center",
+                      sm: "start",
                       md: "start",
                       lg: "start",
                     },
@@ -152,7 +154,7 @@ const About = () => {
                     display: "flex",
                     justifyContent: {
                       xs: "center",
-                      sm: "center",
+                      sm: "start",
                       md: "start",
                       lg: "start",
                     },

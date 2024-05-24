@@ -90,10 +90,10 @@ const Header = () => {
         sx={{
           justifyContent: "space-around",
           paddingX: 2,
-          paddingBottom: {xs: 1, md: 0},
+          paddingBottom: {xs: 1, sm: 0},
           alignItems: "center",
-          display: { xs: "flex"},
-          flexDirection: {xs: "column", md: "row"}
+          display: "flex",
+          flexDirection: {xs: "column", sm: "row"}
         }}
       >
         <ScrollLink to="hero" smooth={true} duration={500}>
@@ -110,9 +110,9 @@ const Header = () => {
 
         <Box
           sx={{
-            display: { xs: "flex", md: "flex" },
-            gap: { xs: "1.5rem", md: "2rem" }, // Increased gap for smaller screens
-            alignItems: { xs: "center", md: "initial" }, // Center items for smaller screens
+            display: "flex",
+            gap: { xs: "1.5rem", sm: "1rem", md: "3rem" }, // Increased gap for smaller screens
+            alignItems: { xs: "center", sm: "initial" }, // Center items for smaller screens
           }}
         >
           {sections.map((section) => (
@@ -121,7 +121,7 @@ const Header = () => {
                 color={isActive(section) ? "secondary" : "primary"}
                 sx={{...hoverEffect, 
                   fontWeight: "bold", 
-                  fontSize: {xs: "0.71rem", md: "1rem"}
+                  fontSize: {xs: "0.7rem", sm: "0.7rem", md: "1rem"}
                 }}
               >
                 {section.charAt(0).toUpperCase() +
