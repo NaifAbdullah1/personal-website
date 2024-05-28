@@ -32,21 +32,96 @@ const About = () => {
     setIsMarqueeDialogOpen(false);
   };
 
-  const naifImageContainerProperties = {
-    display: {xs: "flex", sm: "inline"}, 
-    justifyContent: "center"
-  }
-
-  const naifImageProperties = {
-    width: { xs: "50%", sm: "100%" },
-    height: "auto",
-    justifyContent: "center",
-    pt: { xs: "2rem", sm: "0px" },
-  };
-
-  const certifiedByGridItemProperties = {
-    display: "flex",
-    pt: { xs: "2rem", sm: "0px" },
+  const aboutStyles = {
+    parentMostGridContainer: {
+      width: "100%",
+    },
+    aboutColumn: {
+      textAlign: { xs: "center", sm: "left" },
+    },
+    aboutHeader: {
+      mb: { xs: 3, sm: 0 },
+    },
+    aboutContent: {
+      textAlign: "left",
+      display: "flex",
+      flexDirection: "column",
+    },
+    naifImageContainer: {
+      display: { xs: "flex", sm: "inline" },
+      justifyContent: "center",
+    },
+    naifImage: {
+      width: { xs: "50%", sm: "100%" },
+      height: "auto",
+      justifyContent: "center",
+      pt: { xs: "2rem", sm: "0px" },
+    },
+    certificationsGrid: {
+      display: "flex",
+      flexDirection: "column",
+      pt: { xs: "2rem", sm: "1rem" },
+    },
+    certificationHeader: {
+      mb: "30px",
+      display: "flex",
+      justifyContent: {
+        xs: "center",
+        sm: "start",
+      },
+    },
+    certificateImagesGrid: {
+      display: "flex",
+      justifyContent: {
+        xs: "center",
+        sm: "start",
+      },
+      gap: "10px",
+    },
+    marqueeParentmostGrid: {
+      pt: "100px",
+    },
+    dialogContent: {
+      background: "#03142F",
+      overflow: "hidden",
+      margin: 0,
+      padding: 0,
+      position: "relative",
+    },
+    dialogParentmostBox: {
+      position: "relative",
+      width: "100%",
+      height: "auto",
+      borderRadius: "20px",
+      // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
+      "&:hover": {
+        "& > img": {
+          // Selects the img child
+          filter: "brightness(0.4)",
+        },
+        "& > img + .caption-text": {
+          // Selects .caption-text that directly follows an <img> element
+          opacity: 1,
+        },
+      },
+    },
+    fullSizedMarqueeImage: {
+      width: "100%",
+      height: "auto",
+      borderRadius: "20px",
+      transition: "filter 0.5s ease-in-out", // For smooth fade-out when hovering stops
+    },
+    marqueeImageCaption: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      color: "#FFF",
+      textAlign: "center",
+      fontSize: "larger",
+      opacity: 0,
+      transition: "opacity 0.5s ease-in-out", // For smooth fade-out when hovering stops
+    },
   };
 
   const MarqueeImage = ({ src, caption }) => (
@@ -77,34 +152,18 @@ const About = () => {
   return (
     <section id="about" className="about-section">
       <Container maxWidth={false} className="container-layout">
-        <Grid container style={{ width: "100%" }}>
-          <Grid
-            item
-            xs={12}
-            sm={3}
-            sx={{
-              textAlign: { xs: "center", sm: "left" },
-            }}
-          >
+        <Grid container sx={aboutStyles.parentMostGridContainer}>
+          <Grid item xs={12} sm={3} sx={aboutStyles.aboutColumn}>
             <Typography
               variant="h1"
               className="sticky-1st-column"
-              sx={{ mb: { xs: 3, sm: 0 } }}
+              sx={aboutStyles.aboutHeader}
             >
               About 📝
             </Typography>
           </Grid>
 
-          <Grid
-            item
-            xs={12}
-            sm={9}
-            style={{
-              textAlign: "left",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
+          <Grid item xs={12} sm={9} sx={aboutStyles.aboutContent}>
             <Grid container>
               <Grid item xs={12} sm={6}>
                 <Typography variant="h4">Hello 👋🏻</Typography>
@@ -120,66 +179,40 @@ const About = () => {
                   problem-solving in digital environments.
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={6} sx={naifImageContainerProperties}>
+              <Grid item xs={12} sm={6} sx={aboutStyles.naifImageContainer}>
                 <Box
                   component="img"
                   src="./assets/naif.png"
                   alt="Naif Abdullah"
-                  sx={naifImageProperties}
+                  sx={aboutStyles.naifImage}
                 ></Box>
               </Grid>
             </Grid>
 
-            <Grid item sx={certifiedByGridItemProperties}>
-              <Grid container sx={{ display: "flex", flexDirection: "column" }}>
-                <Grid
-                  item
-                  sx={{
-                    mb: "30px",
-                    display: "flex",
-                    justifyContent: {
-                      xs: "center",
-                      sm: "start",
-                      md: "start",
-                      lg: "start",
-                    },
-                  }}
-                >
-                  <Typography variant="h4">Certified by</Typography>
-                </Grid>
+            <Grid item container sx={aboutStyles.certificationsGrid}>
+              <Grid item sx={aboutStyles.certificationHeader}>
+                <Typography variant="h4">Certified by</Typography>
+              </Grid>
 
-                <Grid
-                  item
-                  sx={{
-                    display: "flex",
-                    justifyContent: {
-                      xs: "center",
-                      sm: "start",
-                      md: "start",
-                      lg: "start",
-                    },
-                    gap: "10px",
+              <Grid item sx={aboutStyles.certificateImagesGrid}>
+                <Box
+                  component="img"
+                  src="./assets/certifications/doroob-logo.jpg"
+                  style={{
+                    width: "20%",
+                    height: "auto",
+                    borderRadius: "20px",
                   }}
-                >
-                  <Box
-                    component="img"
-                    src="./assets/certifications/doroob-logo.jpg"
-                    style={{
-                      width: "20%",
-                      height: "auto",
-                      borderRadius: "20px",
-                    }}
-                  />
-                  <Box
-                    component="img"
-                    src="./assets/certifications/doroob-logo.jpg"
-                    style={{
-                      width: "20%",
-                      height: "auto",
-                      borderRadius: "20px",
-                    }}
-                  />
-                </Grid>
+                />
+                <Box
+                  component="img"
+                  src="./assets/certifications/doroob-logo.jpg"
+                  style={{
+                    width: "20%",
+                    height: "auto",
+                    borderRadius: "20px",
+                  }}
+                />
               </Grid>
             </Grid>
           </Grid>
@@ -187,7 +220,7 @@ const About = () => {
           {isMobile ? (
             <></>
           ) : (
-            <Grid item sx={{ pt: "100px" }}>
+            <Grid item sx={aboutStyles.marqueeParentmostGrid}>
               <Marquee
                 loop={0}
                 speed={150}
@@ -227,72 +260,31 @@ const About = () => {
               </Marquee>
             </Grid>
           )}
-        </Grid>
-        <Dialog
-          open={isMarqueeDialogOpen}
-          onClose={closeMarqueeDialog}
-          maxWidth="lg"
-        >
-          <DialogContent
-            style={{
-              background: "#03142F",
-              overflow: "hidden",
-              margin: 0,
-              padding: 0,
-              position: "relative",
-            }}
+          <Dialog
+            open={isMarqueeDialogOpen}
+            onClose={closeMarqueeDialog}
+            maxWidth="lg"
           >
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                height: "auto",
-                borderRadius: "20px",
-                // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
-                "&:hover": {
-                  "& > img": {
-                    // Selects the img child
-                    filter: "brightness(0.4)",
-                  },
-                  "& > img + .caption-text": {
-                    // Selects .caption-text that directly follows an <img> element
-                    opacity: 1,
-                  },
-                },
-              }}
-            >
-              <Box
-                component="img"
-                src={selectedMarqueeImage}
-                alt="Full size version of clicked marquee image"
-                sx={{
-                  width: "100%",
-                  height: "auto",
-                  borderRadius: "20px",
-                  transition: "filter 0.5s ease-in-out", // For smooth fade-out when hovering stops
-                }}
-              />
+            <DialogContent style={aboutStyles.dialogContent}>
+              <Box sx={aboutStyles.dialogParentmostBox}>
+                <Box
+                  component="img"
+                  src={selectedMarqueeImage}
+                  alt="Full size version of clicked marquee image"
+                  sx={aboutStyles.fullSizedMarqueeImage}
+                />
 
-              <Typography
-                variant="caption"
-                className="caption-text"
-                sx={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  color: "#FFF",
-                  textAlign: "center",
-                  fontSize: "larger",
-                  opacity: 0,
-                  transition: "opacity 0.5s ease-in-out", // For smooth fade-out when hovering stops
-                }}
-              >
-                {selectedMarqueeImageCaption}
-              </Typography>
-            </Box>
-          </DialogContent>
-        </Dialog>
+                <Typography
+                  variant="caption"
+                  className="caption-text"
+                  sx={aboutStyles.marqueeImageCaption}
+                >
+                  {selectedMarqueeImageCaption}
+                </Typography>
+              </Box>
+            </DialogContent>
+          </Dialog>
+        </Grid>
       </Container>
     </section>
   );
