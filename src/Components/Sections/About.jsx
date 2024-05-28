@@ -31,101 +31,6 @@ const About = () => {
     setIsMarqueeDialogOpen(false);
   };
 
-  const aboutStyles = {
-    aboutContainer: {
-      backgroundImage: "linear-gradient(180deg, #121212 0%, #001433 100%)",
-    },
-    parentMostGridContainer: {
-      width: "100%",
-    },
-    aboutColumn: {
-      textAlign: { xs: "center", sm: "left" },
-    },
-    aboutHeader: {
-      mb: { xs: 3, sm: 0 },
-    },
-    aboutContent: {
-      textAlign: "left",
-      display: "flex",
-      flexDirection: "column",
-    },
-    naifImageContainer: {
-      display: { xs: "flex", sm: "inline" },
-      justifyContent: "center",
-    },
-    naifImage: {
-      width: { xs: "50%", sm: "100%" },
-      height: "auto",
-      justifyContent: "center",
-      pt: { xs: "2rem", sm: "0px" },
-    },
-    certificationsGrid: {
-      display: "flex",
-      flexDirection: "column",
-      pt: { xs: "2rem", sm: "1rem" },
-    },
-    certificationHeader: {
-      mb: "30px",
-      display: "flex",
-      justifyContent: {
-        xs: "center",
-        sm: "start",
-      },
-    },
-    certificateImagesGrid: {
-      display: "flex",
-      justifyContent: {
-        xs: "center",
-        sm: "start",
-      },
-      gap: "10px",
-    },
-    marqueeParentmostGrid: {
-      pt: "100px",
-    },
-    dialogContent: {
-      background: "#03142F",
-      overflow: "hidden",
-      margin: 0,
-      padding: 0,
-      position: "relative",
-    },
-    dialogParentmostBox: {
-      position: "relative",
-      width: "100%",
-      height: "auto",
-      borderRadius: "20px",
-      // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
-      "&:hover": {
-        "& > img": {
-          // Selects the img child
-          filter: "brightness(0.4)",
-        },
-        "& > img + .caption-text": {
-          // Selects .caption-text that directly follows an <img> element
-          opacity: 1,
-        },
-      },
-    },
-    fullSizedMarqueeImage: {
-      width: "100%",
-      height: "auto",
-      borderRadius: "20px",
-      transition: "filter 0.5s ease-in-out", // For smooth fade-out when hovering stops
-    },
-    marqueeImageCaption: {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      color: "#FFF",
-      textAlign: "center",
-      fontSize: "larger",
-      opacity: 0,
-      transition: "opacity 0.5s ease-in-out", // For smooth fade-out when hovering stops
-    },
-  };
-
   const MarqueeImage = ({ src, caption }) => (
     <Box
       sx={{ position: "relative" }}
@@ -155,11 +60,11 @@ const About = () => {
     <section id="about" style={aboutStyles.aboutContainer}>
       <Container maxWidth={false} className="container-layout">
         <Grid container sx={aboutStyles.parentMostGridContainer}>
-          <Grid item xs={12} sm={3} sx={aboutStyles.aboutColumn}>
+          <Grid item xs={12} sm={3} sx={aboutStyles.headerColumn}>
             <Typography
               variant="h1"
               className="sticky-1st-column"
-              sx={aboutStyles.aboutHeader}
+              sx={aboutStyles.header}
             >
               About 📝
             </Typography>
@@ -290,6 +195,101 @@ const About = () => {
       </Container>
     </section>
   );
+};
+
+const aboutStyles = {
+  aboutContainer: {
+    backgroundImage: "linear-gradient(180deg, #121212 0%, #001433 100%)",
+  },
+  parentMostGridContainer: {
+    width: "100%",
+  },
+  headerColumn: {
+    textAlign: { xs: "center", sm: "left" },
+  },
+  header: {
+    mb: { xs: 3, sm: 0 },
+  },
+  aboutContent: {
+    textAlign: "left",
+    display: "flex",
+    flexDirection: "column",
+  },
+  naifImageContainer: {
+    display: { xs: "flex", sm: "inline" },
+    justifyContent: "center",
+  },
+  naifImage: {
+    width: { xs: "50%", sm: "100%" },
+    height: "auto",
+    justifyContent: "center",
+    pt: { xs: "2rem", sm: "0px" },
+  },
+  certificationsGrid: {
+    display: "flex",
+    flexDirection: "column",
+    pt: { xs: "2rem", sm: "1rem" },
+  },
+  certificationHeader: {
+    mb: "30px",
+    display: "flex",
+    justifyContent: {
+      xs: "center",
+      sm: "start",
+    },
+  },
+  certificateImagesGrid: {
+    display: "flex",
+    justifyContent: {
+      xs: "center",
+      sm: "start",
+    },
+    gap: "10px",
+  },
+  marqueeParentmostGrid: {
+    pt: "100px",
+  },
+  dialogContent: {
+    background: "#03142F",
+    overflow: "hidden",
+    margin: 0,
+    padding: 0,
+    position: "relative",
+  },
+  dialogParentmostBox: {
+    position: "relative",
+    width: "100%",
+    height: "auto",
+    borderRadius: "20px",
+    // For both children, we set their brightness and opacity properties here because if we do it on a local level (on the child's code, the hover effect will occurr only when you hover exactly over the component. Rather, we want the hover effect to occurr when we hover anywhere in the image, hence we're adding these css properties on the parent-level)
+    "&:hover": {
+      "& > img": {
+        // Selects the img child
+        filter: "brightness(0.4)",
+      },
+      "& > img + .caption-text": {
+        // Selects .caption-text that directly follows an <img> element
+        opacity: 1,
+      },
+    },
+  },
+  fullSizedMarqueeImage: {
+    width: "100%",
+    height: "auto",
+    borderRadius: "20px",
+    transition: "filter 0.5s ease-in-out", // For smooth fade-out when hovering stops
+  },
+  marqueeImageCaption: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    color: "#FFF",
+    textAlign: "center",
+    fontSize: "larger",
+    opacity: 0,
+    transition: "opacity 0.5s ease-in-out", // For smooth fade-out when hovering stops
+  },
 };
 
 export default About;

@@ -17,6 +17,8 @@
 - Work on Dialog animation
 
 - Wasn't able to make a slideshow for mobile. We may resort to either not showing the slideshow on mobile. Or showing it but disabling the hover effect, we'll also need to make it smaller. 
+
+- Consider offloading the styling of the sections onto a different file/s
 */
 
 import { useEffect, useState } from "react";
@@ -96,7 +98,7 @@ function App() {
           <Portfolio />
 
           <Contact />
-          
+
           <div className="ios-peek-bottom"></div>
         </div>
       )}
