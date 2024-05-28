@@ -10,7 +10,6 @@ import Marquee from "react-fast-marquee";
 import PropTypes from "prop-types";
 
 import "../../scss/Sections/common.scss";
-import "../../scss/Sections/about.scss";
 import { useState } from "react";
 import { isMobile } from "react-device-detect";
 
@@ -33,6 +32,9 @@ const About = () => {
   };
 
   const aboutStyles = {
+    aboutContainer: {
+      backgroundImage: "linear-gradient(180deg, #121212 0%, #001433 100%)",
+    },
     parentMostGridContainer: {
       width: "100%",
     },
@@ -150,7 +152,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="about-section">
+    <section id="about" style={aboutStyles.aboutContainer}>
       <Container maxWidth={false} className="container-layout">
         <Grid container sx={aboutStyles.parentMostGridContainer}>
           <Grid item xs={12} sm={3} sx={aboutStyles.aboutColumn}>
