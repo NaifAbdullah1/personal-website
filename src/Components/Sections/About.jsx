@@ -40,7 +40,7 @@ const About = () => {
                   src="./assets/sections/about/naif.png"
                   alt="Naif Abdullah"
                   sx={aboutStyles.naifImage}
-                ></Box>
+                />
               </Grid>
             </Grid>
 

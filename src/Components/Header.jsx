@@ -1,13 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
-//import { Container, Navbar, Nav } from "react-bootstrap";
-import {
-  AppBar,
-  Toolbar,
-  Button,
-  Typography,
-  Box,
-} from "@mui/material";
+import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
 import "../scss/header.scss";
 
@@ -17,11 +10,11 @@ const sectionEmojis = ["📝", "🏢", "🎯", "✉️"];
 
 // Adds a light shadown on a nav link when hovering over it
 const hoverEffect = {
-  transition: "all 0.3s", 
+  transition: "all 0.3s",
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
-  }
-}
+  },
+};
 
 const Header = () => {
   const [navBarBackground, setNavBarBackground] = useState("transparent");
@@ -34,9 +27,9 @@ const Header = () => {
     const handleScroll = () => {
       // FIRST: Change the background of the header
       const heroSection = document.getElementById("hero");
-      const threshold = heroSection.offsetHeight-800; // -800 to make the color change a bit early
+      const threshold = heroSection.offsetHeight - 800; // -800 to make the color change a bit early
       if (window.scrollY > threshold) {
-        setNavBarBackground("#1f22259a "); // Light grey #1f22259a
+        setNavBarBackground("#1f22259a");
       } else {
         setNavBarBackground("transparent");
       }
@@ -71,14 +64,12 @@ const Header = () => {
 
   const isActive = (targetSection) => activeSection === targetSection;
 
-  
-
   return (
     <AppBar
       position="fixed"
-      style={{ 
+      style={{
         backgroundColor: navBarBackground,
-        backdropFilter: "blur(5px)", 
+        backdropFilter: "blur(5px)",
         WebkitBackdropFilter: "blur(5px)",
       }}
       sx={{
@@ -90,19 +81,25 @@ const Header = () => {
         sx={{
           justifyContent: "space-around",
           paddingX: 2,
-          paddingBottom: {xs: 1, sm: 0},
+          paddingBottom: { xs: 1, sm: 0 },
           alignItems: "center",
           display: "flex",
-          flexDirection: {xs: "column", sm: "row"}
+          flexDirection: { xs: "column", sm: "row" },
         }}
       >
         <ScrollLink to="hero" smooth={true} duration={500}>
           <Typography
             variant="h6"
             className="navbar-brand"
-            sx={{ fontFamily: "'Kaushan Script', cursive", flexGrow: 0, paddingY: 1, color: "#2196f3", "&:hover": {
-              color: "#2196f3" //Counteracting the color change that occurs with the brand name on hover.
-            } }}
+            sx={{
+              fontFamily: "'Kaushan Script', cursive",
+              flexGrow: 0,
+              paddingY: 1,
+              color: "#2196f3",
+              "&:hover": {
+                color: "#2196f3", //Counteracting the color change that occurs with the brand name on hover.
+              },
+            }}
           >
             NAIF ABDULLAH
           </Typography>
@@ -119,9 +116,10 @@ const Header = () => {
             <ScrollLink key={section} to={section} smooth={true} duration={500}>
               <Button
                 color={isActive(section) ? "secondary" : "primary"}
-                sx={{...hoverEffect, 
-                  fontWeight: "bold", 
-                  fontSize: {xs: "0.7rem", sm: "0.7rem", md: "1rem"}
+                sx={{
+                  ...hoverEffect,
+                  fontWeight: "bold",
+                  fontSize: { xs: "0.7rem", sm: "0.7rem", md: "1rem" },
                 }}
               >
                 {section.charAt(0).toUpperCase() +

@@ -10,9 +10,9 @@ function LoremIpsum() {
       consequat euismod, dolor velit iaculis purus, at tincidunt nisi urna vel
       turpis. Nullam consectetur enim sit amet metus mollis, eu molestie ante
       sodales. Aenean ullamcorper arcu quis magna facilisis, eu molestie metus
-      sollicitudin. 
+      sollicitudin.
     </p>
   );
 }
 
-export default LoremIpsum
+export default LoremIpsum;

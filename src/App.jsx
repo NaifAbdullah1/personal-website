@@ -22,6 +22,7 @@
 */
 
 import { useEffect, useState } from "react";
+import ProgressBar from "react-scroll-progress-bar";
 import Header from "./Components/Header.jsx";
 import LoadingScreen from "./Components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
@@ -87,6 +88,8 @@ function App() {
         </>
       ) : (
         <div className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}>
+          <ProgressBar height="6" bgcolor="#2196f3" duration="0.25" />
+
           <Header />
 
           <Hero />
