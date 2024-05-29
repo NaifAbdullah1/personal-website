@@ -29,7 +29,7 @@ const Loading = ({ onComplete }) => {
   return (
     <div className={`loading-container ${fadeState}`}>
       <img
-        src="./assets/logo.png"
+        src="./assets/MISC/logo.png"
         alt="Loading Screen Logo"
         className="loading-logo"
       />

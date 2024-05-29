@@ -10,7 +10,7 @@ const Hero = () => {
     justifyContent: "center" /*Vertically align*/,
     alignItems: "center" /*Horizontally align*/,
     mt: { xs: 4, sm: 0 }, // margin top only when in mobile width
-    order: { xs: 2, sm: 1}, // if browser width > md, then it will be first (left hand side), if it's between xs and md, it will be second (combine that with the column flex direction, this makes it below the logo). This works in congruency with logoProperties' order prop
+    order: { xs: 2, sm: 1 }, // if browser width > md, then it will be first (left hand side), if it's between xs and md, it will be second (combine that with the column flex direction, this makes it below the logo). This works in congruency with logoProperties' order prop
   };
 
   const taglineHeaderProperties = {
@@ -62,7 +62,7 @@ const Hero = () => {
 
           <Grid item xs={12} sm={6} sx={logoProperties}>
             <img
-              src="./assets/trimmed-logo.png"
+              src="./assets/sections/hero/trimmed-logo.png"
               alt="Brand Logo"
               className="responsive-logo"
             />

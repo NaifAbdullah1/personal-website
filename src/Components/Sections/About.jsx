@@ -89,7 +89,7 @@ const About = () => {
               <Grid item xs={12} sm={6} sx={aboutStyles.naifImageContainer}>
                 <Box
                   component="img"
-                  src="./assets/naif.png"
+                  src="./assets/sections/about/naif.png"
                   alt="Naif Abdullah"
                   sx={aboutStyles.naifImage}
                 ></Box>
@@ -104,7 +104,7 @@ const About = () => {
               <Grid item sx={aboutStyles.certificateImagesGrid}>
                 <Box
                   component="img"
-                  src="./assets/certifications/doroob-logo.jpg"
+                  src="./assets/sections/about/certifications/doroob-logo.jpg"
                   style={{
                     width: "20%",
                     height: "auto",
@@ -113,7 +113,7 @@ const About = () => {
                 />
                 <Box
                   component="img"
-                  src="./assets/certifications/doroob-logo.jpg"
+                  src="./assets/sections/about/certifications/doroob-logo.jpg"
                   style={{
                     width: "20%",
                     height: "auto",
@@ -137,29 +137,29 @@ const About = () => {
                 gradientWidth={50}
               >
                 <MarqueeImage
-                  src={"./assets/marquee/smucker-shirt.jpeg"}
+                  src={"./assets/MISC/marquee/smucker-shirt.jpeg"}
                   caption={"Orientation at The J. M. Smucker Co."}
                 />
                 <MarqueeImage
-                  src={"./assets/marquee/smucker-team.jpeg"}
+                  src={"./assets/MISC/marquee/smucker-team.jpeg"}
                   caption={"J.M Smucker Co. Colleagues"}
                 />
                 <MarqueeImage
-                  src={"./assets/marquee/recwell.jpeg"}
+                  src={"./assets/MISC/marquee/recwell.jpeg"}
                   caption={
                     "University of Wisconsin-Madison: Recreation and Wellbeing"
                   }
                 />
                 <MarqueeImage
-                  src={"./assets/marquee/smucker-hq.jpeg"}
+                  src={"./assets/MISC/marquee/smucker-hq.jpeg"}
                   caption={"J.M. Smucker Co. HQ"}
                 />
                 <MarqueeImage
-                  src={"./assets/marquee/uw-madison.jpeg"}
+                  src={"./assets/MISC/marquee/uw-madison.jpeg"}
                   caption={"Orientation at the University of Wisconsin-Madison"}
                 />
                 <MarqueeImage
-                  src={"./assets/marquee/doit-team.jpeg"}
+                  src={"./assets/MISC/marquee/doit-team.jpeg"}
                   caption={
                     "Colleagues at the University of Wisconsin-Madison's Division of Information Technology"
                   }
