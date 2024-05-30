@@ -28,20 +28,22 @@ const Experience = () => {
               <Grid item xs={12} sm={3}>
                 <Box
                   component="img"
-                  src="./assets/sections/experience/doit-grey-center.png"
+                  src="./assets/sections/experience/doit-color-center.png"
                   alt="Grey DoIT Logo"
                   className="sticky-1st-column"
                   sx={experienceStyles.doitLogo}
                 />
               </Grid>
 
-              <Grid item xs={12} sm={9}>
-                <LoremIpsum />
-                <LoremIpsum />
-                <LoremIpsum />
+              <Grid item xs={12} sm={9} style={{ textAlign: "left" }}>
+                <Typography variant="h4">Highlighted Projects:</Typography>
                 <br />
-                <br />
-                <br />
+                <Typography variant="body1">
+                  At UW-Madison&apos;s DoIT, I developed web utilities for
+                  scheduling, asset management, and budgeting, enhancing
+                  efficiency and user satisfaction. I also created a ReactJS
+                  training course, improving team consistency and project speed.
+                </Typography>
                 <br />
               </Grid>
             </Grid>
@@ -50,8 +52,8 @@ const Experience = () => {
               <Grid item xs={12} sm={3}>
                 <Box
                   component="img"
-                  src="./assets/sections/experience/doit-grey-center.png"
-                  alt="Grey DoIT Logo"
+                  src="./assets/sections/experience/smucker-color-white.png"
+                  alt="Grey Smucker Logo"
                   className="sticky-1st-column"
                   sx={experienceStyles.doitLogo}
                 />
@@ -83,15 +85,17 @@ const experienceStyles = {
   },
   headerColumn: {
     textAlign: { xs: "center", sm: "left" },
-    position: "sticky",
+    position: { sm: "sticky" },
     top: "12%",
   },
   header: {
-    mb: { xs: 3, sm: 5 },
+    mb: { xs: 5, sm: 5 },
   },
   doitLogo: {
-    width: "100%",
+    width: { xs: "75%", sm: "100%" },
     height: "auto",
+    top: "47%",
+    mb: { xs: 3, sm: 0 },
   },
 };
 
