@@ -1,16 +1,9 @@
 /*
-- On mobile width, make the nav links a drawer. Or have the website content get pushed down. Or give it a background color.
-
-- You might need this, this can help in making a marquee: https://www.react-fast-marquee.com/
-
-
 - When you're done, see if you can consolidate your css files
 
 - Investigate ways to simplify the Header.jsx code. Make a backup copy and a commit first
 
 - Determine a minimum width for the site. Do this once you've almost done with implementing the site
-
-- Maybe make the nav links responsive to screen size instead of using css media queries? 
 
 - For the marquee, we're using two different sets of the same images. See if you can use a single set of images and do the resizing via css 
 
@@ -19,6 +12,11 @@
 - Wasn't able to make a slideshow for mobile. We may resort to either not showing the slideshow on mobile. Or showing it but disabling the hover effect, we'll also need to make it smaller. 
 
 - Consider offloading the styling of the sections onto a different file/s
+
+- Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners
+
+- For the remaining sections, consider implementing this: https://codesandbox.io/p/sandbox/sticky-parallax-3hsg6?file=%2Fsrc%2Findex.tsx
+Here's the full doc: https://www.react-spring.dev/docs/components/parallax
 */
 
 import { useEffect, useState } from "react";
