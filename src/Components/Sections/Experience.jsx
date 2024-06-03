@@ -24,20 +24,40 @@ const Experience = () => {
             sm={9}
             className="###experiencesParentmostContainer"
           >
+            <Grid item container xs={12} sm={12} className="###saudiagrid">
+              <Grid item xs={12} sm={3}>
+                <Box
+                  component="img"
+                  src="./assets/sections/experience/saudia-color.png"
+                  alt="Saudia Logo"
+                  className="sticky-1st-column"
+                  sx={experienceStyles.doitLogo}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={9}>
+                <LoremIpsum />
+                <LoremIpsum />
+                <LoremIpsum />
+                <br />
+                <br />
+                <br />
+                <br />
+              </Grid>
+            </Grid>
+
             <Grid item container xs={12} sm={12} className="###doitgrid">
               <Grid item xs={12} sm={3}>
                 <Box
                   component="img"
                   src="./assets/sections/experience/doit-color-center.png"
-                  alt="Grey DoIT Logo"
+                  alt="DoIT Logo"
                   className="sticky-1st-column"
                   sx={experienceStyles.doitLogo}
                 />
               </Grid>
 
               <Grid item xs={12} sm={9} style={{ textAlign: "left" }}>
-                <Typography variant="h4">Highlighted Projects:</Typography>
-                <br />
                 <Typography variant="body1">
                   At UW-Madison&apos;s DoIT, I developed web utilities for
                   scheduling, asset management, and budgeting, enhancing
@@ -45,15 +65,17 @@ const Experience = () => {
                   training course, improving team consistency and project speed.
                 </Typography>
                 <br />
+                <Typography variant="h4">Highlighted Projects:</Typography>
+                <br />
               </Grid>
             </Grid>
 
-            <Grid item container xs={12} sm={12} className="###2nddoitgrid">
+            <Grid item container xs={12} sm={12} className="###smuckergrid">
               <Grid item xs={12} sm={3}>
                 <Box
                   component="img"
                   src="./assets/sections/experience/smucker-color-white.png"
-                  alt="Grey Smucker Logo"
+                  alt="Smucker Logo"
                   className="sticky-1st-column"
                   sx={experienceStyles.doitLogo}
                 />
