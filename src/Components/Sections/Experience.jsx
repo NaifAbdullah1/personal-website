@@ -34,11 +34,8 @@ const Experience = () => {
           >
             <Grid item container className="###saudiagrid">
               <Grid item xs={12} sm={12}>
-                <Card
-                  sx={experienceStyles.logoCard}
-                  className="position-adjustment"
-                >
-                  <CardContent>
+                <Card sx={experienceStyles.logoCard}>
+                  <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
                     <Box
                       component="img"
                       src="./assets/sections/experience/saudia-skyteam.png"
@@ -61,7 +58,7 @@ const Experience = () => {
             <Grid item container className="###doitgrid">
               <Grid item xs={12} sm={12}>
                 <Card sx={experienceStyles.logoCard}>
-                  <CardContent>
+                  <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
                     <Box
                       component="img"
                       src="./assets/sections/experience/doit-color-center.png"
@@ -81,9 +78,48 @@ const Experience = () => {
                   <br />
                   <Typography variant="h4">Highlighted Projects:</Typography>
 
-                  <Grid container>
-                    <Grid item></Grid>
-                    <Grid item></Grid>
+                  <Grid
+                    container
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      mt: 3,
+                    }}
+                  >
+                    <Grid item xs={12} sm={4}>
+                      <Card sx={experienceStyles.jobDescriptionCard}>
+                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                          <h1> left col</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={7}>
+                      <Card sx={experienceStyles.jobDescriptionCard}>
+                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                          <h1> right col</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  </Grid>
+
+                  <Grid
+                    container
+                    sx={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <Grid item xs={12} sm={7}>
+                      <Card sx={experienceStyles.jobDescriptionCard}>
+                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                          <h1> left col</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                      <Card sx={experienceStyles.jobDescriptionCard}>
+                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                          <h1> right col</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
                   </Grid>
                 </Grid>
                 <br />
@@ -98,7 +134,7 @@ const Experience = () => {
             <Grid item container className="###smuckergrid">
               <Grid item xs={12} sm={12}>
                 <Card sx={experienceStyles.logoCard}>
-                  <CardContent>
+                  <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
                     <Box
                       component="img"
                       src="./assets/sections/experience/smucker-color-white.png"
@@ -140,7 +176,7 @@ const experienceStyles = {
     mb: { xs: 5, sm: 5 },
   },
   logoSizing: {
-    width: { xs: "75%", sm: "30%" },
+    width: { xs: "55%", sm: "30%" },
     height: "auto",
   },
   logoCard: {
@@ -150,8 +186,15 @@ const experienceStyles = {
     backgroundColor: "#1f22259a",
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
-    pb: 1,
-    pt: 0.5,
+    mb: 4,
+    borderRadius: 5,
+    zIndex: 1,
+  },
+  jobDescriptionCard: {
+    boxShadow: "none",
+    backgroundColor: "#1f22259a",
+    backdropFilter: "blur(5px)",
+    WebkitBackdropFilter: "blur(5px)",
     mb: 4,
     borderRadius: 5,
   },
