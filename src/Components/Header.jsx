@@ -117,7 +117,8 @@ const Header = () => {
                 sx={{
                   ...hoverEffect,
                   fontWeight: "bold",
-                  fontSize: { xs: "0.7rem", sm: "0.7rem", md: "1rem" },
+                  fontSize: { xs: "0.7rem", md: "1rem" },
+                  whiteSpace: "nowrap",
                 }}
               >
                 {section.charAt(0).toUpperCase() +

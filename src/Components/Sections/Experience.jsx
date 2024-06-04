@@ -32,9 +32,12 @@ const Experience = () => {
             sm={9}
             className="###RightSideParentContainer"
           >
-            <Grid item container xs={12} sm={12} className="###saudiagrid">
+            <Grid item container className="###saudiagrid">
               <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.saudiaLogoCard}>
+                <Card
+                  sx={experienceStyles.logoCard}
+                  className="position-adjustment"
+                >
                   <CardContent>
                     <Box
                       component="img"
@@ -55,9 +58,9 @@ const Experience = () => {
               </Grid>
             </Grid>
 
-            <Grid item container xs={12} sm={12} className="###doitgrid">
+            <Grid item container className="###doitgrid">
               <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.saudiaLogoCard}>
+                <Card sx={experienceStyles.logoCard}>
                   <CardContent>
                     <Box
                       component="img"
@@ -67,14 +70,22 @@ const Experience = () => {
                     />
                   </CardContent>
                 </Card>
-                <Typography variant="body1">
-                  At UW-Madison&apos;s DoIT, I developed web utilities for
-                  scheduling, asset management, and budgeting, enhancing
-                  efficiency and user satisfaction. I also created a ReactJS
-                  training course, improving team consistency and project speed.
-                </Typography>
-                <br />
-                <Typography variant="h4">Highlighted Projects:</Typography>
+                <Grid sx={{ textAlign: { xs: "center", sm: "left" } }}>
+                  <Typography variant="body1">
+                    At UW-Madison&apos;s DoIT, I developed web utilities for
+                    scheduling, asset management, and budgeting, enhancing
+                    efficiency and user satisfaction. I also created a ReactJS
+                    training course, improving team consistency and project
+                    speed.
+                  </Typography>
+                  <br />
+                  <Typography variant="h4">Highlighted Projects:</Typography>
+
+                  <Grid container>
+                    <Grid item></Grid>
+                    <Grid item></Grid>
+                  </Grid>
+                </Grid>
                 <br />
                 <br />
                 <br />
@@ -84,9 +95,9 @@ const Experience = () => {
               </Grid>
             </Grid>
 
-            <Grid item container xs={12} sm={12} className="###smuckergrid">
+            <Grid item container className="###smuckergrid">
               <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.saudiaLogoCard}>
+                <Card sx={experienceStyles.logoCard}>
                   <CardContent>
                     <Box
                       component="img"
@@ -131,15 +142,18 @@ const experienceStyles = {
   logoSizing: {
     width: { xs: "75%", sm: "30%" },
     height: "auto",
-    mb: { xs: 3, sm: 0 },
   },
-  saudiaLogoCard: {
+  logoCard: {
     position: "sticky",
-    top: "6.2%",
+    top: { xs: "87px", sm: "60px" },
     boxShadow: "none",
     backgroundColor: "#1f22259a",
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
+    pb: 1,
+    pt: 0.5,
+    mb: 4,
+    borderRadius: 5,
   },
 };
 
