@@ -28,11 +28,9 @@ const Header = () => {
       // FIRST: Change the background of the header
       const heroSection = document.getElementById("hero");
       const threshold = heroSection.offsetHeight - 800; // -800 to make the color change a bit early
-      if (window.scrollY > threshold) {
-        setNavBarBackground("#1f22259a");
-      } else {
-        setNavBarBackground("transparent");
-      }
+      setNavBarBackground(
+        window.scrollY > threshold ? "#1f22259a" : "transparent"
+      );
       //----------------------------------
 
       // SECOND: Synchronize header's NavLinks with the current section{
