@@ -17,10 +17,6 @@ const CustomMarquee = () => {
     // Maybe set the state variables (img and caption to null), though it will make closing less smooth
   };
 
-  const closeMarqueeDialog = () => {
-    setIsMarqueeDialogOpen(false);
-  };
-
   const MarqueeImage = ({ src, caption }) => (
     <Box
       sx={{ position: "relative" }}
@@ -90,7 +86,7 @@ const CustomMarquee = () => {
 
       <Dialog
         open={isMarqueeDialogOpen}
-        onClose={closeMarqueeDialog}
+        onClose={() => setIsMarqueeDialogOpen(false)}
         maxWidth="lg"
       >
         <DialogContent style={marqueeStyles.dialogContent}>

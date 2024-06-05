@@ -6,16 +6,25 @@ import {
   Card,
   CardContent,
   Button,
+  Dialog,
+  DialogContent,
 } from "@mui/material";
 
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import InfoIcon from "@mui/icons-material/Info";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
+import { useEffect, useState } from "react";
 
 const Experience = () => {
+  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(isLearnMoreModalOpen);
+  }, [isLearnMoreModalOpen]);
+
   return (
     <section id="experience" style={experienceStyles.experienceContainer}>
       <Container maxWidth={false} className="container-layout">
@@ -91,7 +100,10 @@ const Experience = () => {
                     }}
                   >
                     <Grid item xs={12} sm={7}>
-                      <Card sx={experienceStyles.jobDescriptionCard}>
+                      <Card
+                        sx={experienceStyles.jobDescriptionCard}
+                        className="##FinancialForecastCard"
+                      >
                         <CardContent
                           sx={{
                             backgroundImage:
@@ -131,16 +143,9 @@ const Experience = () => {
                           <br />
                           <Button
                             variant="outlined"
-                            endIcon={<InfoIcon />}
-                            sx={{
-                              color: "antiquewhite",
-                              borderRadius: "10px",
-                              border: " 1px solid antiquewhite",
-                              "&:hover": {
-                                border: " 1px solid antiquewhite",
-                                backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
-                              },
-                            }}
+                            endIcon={<ArrowForwardIosIcon />}
+                            sx={experienceStyles.doitLearnMoreBtn}
+                            onClick={() => setIsLearnMoreModalOpen(true)}
                           >
                             Learn more
                           </Button>
@@ -205,6 +210,50 @@ const Experience = () => {
               </Grid>
             </Grid>
           </Grid>
+
+          <Dialog
+            open={isLearnMoreModalOpen}
+            onClose={() => setIsLearnMoreModalOpen(false)}
+            maxWidth="lg"
+          >
+            <DialogContent
+              sx={experienceStyles.doitLearnMoreDialogContent}
+              className="###DialogCont"
+            >
+              <div>
+                <Box
+                  component="img"
+                  src="./assets/sections/experience/doit/forecast80-horizontal.png"
+                  alt="Financial Forecasting Background"
+                  sx={{ width: "100%", height: "auto" }}
+                  className="###BoxImage"
+                />
+                <Grid
+                  container
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "100%",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Card>
+                    <CardContent>
+                      {/* Add your card content here */}
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </div>
+
+              <Grid container>
+                <Card>
+                  <CardContent></CardContent>
+                </Card>
+              </Grid>
+            </DialogContent>
+          </Dialog>
         </Grid>
       </Container>
     </section>
@@ -248,6 +297,25 @@ const experienceStyles = {
     WebkitBackdropFilter: "blur(5px)",
     mb: 4,
     borderRadius: 5,
+  },
+  doitLearnMoreBtn: {
+    color: "antiquewhite",
+    borderRadius: "10px",
+    border: " 1px solid antiquewhite",
+    lineHeight: "normal",
+    "&:hover": {
+      border: " 1px solid antiquewhite",
+      backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
+    },
+  },
+  doitLearnMoreDialogContent: {
+    backgroundColor: "#091322",
+    display: "flex",
+    flexDirection: "column",
+    pt: 0,
+    pl: 0,
+    pr: 0,
+    gap: 6,
   },
 };
 
