@@ -23,7 +23,7 @@ Consider addign some hover animation on the company logo cards wherein if the us
 Alternatively, we can make clicking the card result in expanding it with further information  
 */
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProgressBar from "react-scroll-progress-bar";
 import Header from "./Components/Header.jsx";
 import LoadingScreen from "./Components/LoadingScreen.jsx";
@@ -33,6 +33,7 @@ import About from "./Components/Sections/About.jsx";
 import Experience from "./Components/Sections/Experience.jsx";
 import Portfolio from "./Components/Sections/Portfolio.jsx";
 import Contact from "./Components/Sections/Contact.jsx";
+
 import "./App.scss";
 
 function App() {
@@ -48,22 +49,6 @@ function App() {
       setFadeWebsiteContentIn(true);
     }, 1000);
   };
-
-  // Disabling scrolling when website contents are fading in.
-  useEffect(() => {
-    // Adding a class to the DOM that disables scrolling upon page load
-    document.body.classList.add("disable-scroll");
-    // Re-enable scrolling after 7 seconds
-    // Since this useEffect runs on page load, we need to account for the time it takes for the animation to go away. We need to coordinate the timing of this. Hence why we chose 7 seconds (7000 ms)
-    const enableScrollTimeout = setTimeout(() => {
-      document.body.classList.remove("disable-scroll");
-    }, 7000);
-
-    return () => {
-      clearTimeout(enableScrollTimeout);
-      document.body.classList.remove("disable-scroll"); // Cleanup on component unmount
-    };
-  }, []); // Empty dependency array to run only on component mount (In this case, it's the page load)
 
   return (
     <>

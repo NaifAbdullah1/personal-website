@@ -9,14 +9,9 @@
   transition: opacity 3s; /*This controls the speed of the fade in*/
 }
 
-.fade-out{
+.fade-out {
   opacity: 0;
   transition: opacity 1s;
-}
-
-/*Used for disabling scrolling when website contents are fading in */
-.disable-scroll {
-  overflow: hidden; /* Disables vertical and horizontal scrolling */
 }
 
 // Prevents the appearance of the white backdrop due to IOS' elastic scrolling/overscrolling at the bottom of the page
