@@ -5,7 +5,13 @@ import {
   Box,
   Card,
   CardContent,
+  Button,
 } from "@mui/material";
+
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import InfoIcon from "@mui/icons-material/Info";
+
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
 
@@ -24,7 +30,6 @@ const Experience = () => {
             </Typography>
           </Grid>
 
-          <>{/*Right side: Logos and descriptions*/}</>
           <Grid
             item
             container
@@ -38,7 +43,7 @@ const Experience = () => {
                   <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
                     <Box
                       component="img"
-                      src="./assets/sections/experience/saudia-skyteam.png"
+                      src="./assets/sections/experience/saudia/saudia-skyteam.png"
                       alt="Saudia Logo"
                       sx={experienceStyles.logoSizing}
                     />
@@ -61,7 +66,7 @@ const Experience = () => {
                   <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
                     <Box
                       component="img"
-                      src="./assets/sections/experience/doit-color-center.png"
+                      src="./assets/sections/experience/doit/doit-color-center.png"
                       alt="DoIT Logo"
                       sx={experienceStyles.logoSizing}
                     />
@@ -81,41 +86,87 @@ const Experience = () => {
                   <Grid
                     container
                     sx={{
-                      display: "flex",
                       justifyContent: "space-between",
                       mt: 3,
                     }}
                   >
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={7}>
                       <Card sx={experienceStyles.jobDescriptionCard}>
-                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
-                          <h1> left col</h1>
+                        <CardContent
+                          sx={{
+                            backgroundImage:
+                              "url(./assets/sections/experience/doit/forecast95.jpg)",
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                          }}
+                        >
+                          <Grid
+                            className="icons"
+                            sx={{ color: "antiquewhite" }}
+                          >
+                            <QueryStatsIcon
+                              sx={{ width: "70px", height: "auto" }}
+                            />
+                            <AttachMoneyIcon
+                              sx={{ width: "70px", height: "auto" }}
+                            />
+                          </Grid>
+
+                          <Typography
+                            variant="h4"
+                            sx={{ color: "antiquewhite" }}
+                          >
+                            Financial Forecasting System
+                          </Typography>
+                          <br />
+                          <Typography
+                            variant="body1"
+                            sx={{ color: "antiquewhite" }}
+                          >
+                            Developed an advanced Budgeting System that replaced
+                            manual processes, provided detailed spending
+                            analyses, and improved budget forecasting and fiscal
+                            control for better financial decision-making.
+                          </Typography>
+                          <br />
+                          <Button
+                            variant="outlined"
+                            endIcon={<InfoIcon />}
+                            sx={{
+                              color: "antiquewhite",
+                              borderRadius: "10px",
+                              border: " 1px solid antiquewhite",
+                              "&:hover": {
+                                border: " 1px solid antiquewhite",
+                                backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
+                              },
+                            }}
+                          >
+                            Learn more
+                          </Button>
                         </CardContent>
                       </Card>
                     </Grid>
-                    <Grid item xs={12} sm={7}>
+                    <Grid item xs={12} sm={4}>
                       <Card sx={experienceStyles.jobDescriptionCard}>
-                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                        <CardContent>
                           <h1> right col</h1>
                         </CardContent>
                       </Card>
                     </Grid>
                   </Grid>
 
-                  <Grid
-                    container
-                    sx={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <Grid item xs={12} sm={7}>
+                  <Grid container sx={{ justifyContent: "space-between" }}>
+                    <Grid item xs={12} sm={4}>
                       <Card sx={experienceStyles.jobDescriptionCard}>
-                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                        <CardContent>
                           <h1> left col</h1>
                         </CardContent>
                       </Card>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={7}>
                       <Card sx={experienceStyles.jobDescriptionCard}>
-                        <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                        <CardContent>
                           <h1> right col</h1>
                         </CardContent>
                       </Card>
@@ -137,7 +188,7 @@ const Experience = () => {
                   <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
                     <Box
                       component="img"
-                      src="./assets/sections/experience/smucker-color-white.png"
+                      src="./assets/sections/experience/smucker/smucker-color-white.png"
                       alt="Smucker Logo"
                       sx={experienceStyles.logoSizing}
                     />
