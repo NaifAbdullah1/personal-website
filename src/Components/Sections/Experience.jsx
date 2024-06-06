@@ -225,23 +225,21 @@ const Experience = () => {
                   component="img"
                   src="./assets/sections/experience/doit/forecast80-horizontal.png"
                   alt="Financial Forecasting Background"
-                  sx={{ width: "100%", height: "auto" }}
-                  className="###BoxImage"
+                  sx={experienceStyles.forecastBoxImg}
                 />
-                <Grid
-                  container
-                  sx={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    width: "100%",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Card>
-                    <CardContent>
-                      {/* Add your card content here */}
+                <Grid container sx={experienceStyles.dialogCardGrid}>
+                  <Card sx={experienceStyles.dialogCardOverlay}>
+                    <CardContent
+                      style={{
+                        padding: "7.5px 0px 12px 0px",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                      className="###cardContent"
+                    >
+                      <Typography variant="h4" sx={{ color: "antiquewhite" }}>
+                        Financial Forecasting System
+                      </Typography>
                     </CardContent>
                   </Card>
                 </Grid>
@@ -312,10 +310,31 @@ const experienceStyles = {
     backgroundColor: "#091322",
     display: "flex",
     flexDirection: "column",
-    pt: 0,
-    pl: 0,
-    pr: 0,
     gap: 6,
+  },
+  forecastBoxImg: {
+    width: "100%",
+    height: "auto",
+  },
+  dialogCardGrid: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  dialogCardOverlay: {
+    boxShadow: "none",
+    backgroundColor: "#1f22259a",
+    backdropFilter: "blur(5px)",
+    WebkitBackdropFilter: "blur(5px)",
+    width: "auto",
+    display: "inline-flex",
+    justifyContent: "center", // Center content horizontally
+    alignItems: "center", // Center content vertically
+    borderRadius: 5,
+    zIndex: 1,
   },
 };
 
