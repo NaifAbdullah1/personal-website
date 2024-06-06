@@ -220,7 +220,7 @@ const Experience = () => {
               sx={experienceStyles.doitLearnMoreDialogContent}
               className="###DialogCont"
             >
-              <div>
+              <div style={{ position: "relative" }}>
                 <Box
                   component="img"
                   src="./assets/sections/experience/doit/forecast80-horizontal.png"
@@ -228,15 +228,11 @@ const Experience = () => {
                   sx={experienceStyles.forecastBoxImg}
                 />
                 <Grid container sx={experienceStyles.dialogCardGrid}>
-                  <Card sx={experienceStyles.dialogCardOverlay}>
-                    <CardContent
-                      style={{
-                        padding: "7.5px 0px 12px 0px",
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                      className="###cardContent"
-                    >
+                  <Card
+                    sx={experienceStyles.dialogCardOverlay}
+                    className="CARD"
+                  >
+                    <CardContent sx={{ pt: 3 }} className="###cardContent">
                       <Typography variant="h4" sx={{ color: "antiquewhite" }}>
                         Financial Forecasting System
                       </Typography>
@@ -315,6 +311,7 @@ const experienceStyles = {
   forecastBoxImg: {
     width: "100%",
     height: "auto",
+    position: "relative",
   },
   dialogCardGrid: {
     position: "absolute",
@@ -325,6 +322,10 @@ const experienceStyles = {
     alignItems: "center",
   },
   dialogCardOverlay: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)", // Center the card
     boxShadow: "none",
     backgroundColor: "#1f22259a",
     backdropFilter: "blur(5px)",
