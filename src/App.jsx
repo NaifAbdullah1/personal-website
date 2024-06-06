@@ -21,6 +21,8 @@ Here's the full doc: https://www.react-spring.dev/docs/components/parallax
 -In the experience section, we want to display company, tenure, and company link info, rle name, etc... 
 Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
 Alternatively, we can make clicking the card result in expanding it with further information  
+
+- We'll really need to clean and consolidate our CSS and styling. 
 */
 
 import { useState } from "react";
@@ -33,6 +35,7 @@ import About from "./Components/Sections/About.jsx";
 import Experience from "./Components/Sections/Experience.jsx";
 import Portfolio from "./Components/Sections/Portfolio.jsx";
 import Contact from "./Components/Sections/Contact.jsx";
+import { isMobileOnly } from "react-device-detect";
 
 import "./App.scss";
 
@@ -52,22 +55,26 @@ function App() {
 
   return (
     <>
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={35}
-        innerScale={1}
-        outerScale={2}
-        outerAlpha={0}
-        hasBlendMode={true}
-        innerStyle={{
-          backgroundColor: "white",
-          zIndex: 99999, //Ensuring both components of cursor are on top of everything
-        }}
-        outerStyle={{
-          border: "3px solid white",
-          zIndex: 99999,
-        }}
-      />
+      {!isMobileOnly ? (
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={2}
+          outerAlpha={0}
+          hasBlendMode={true}
+          innerStyle={{
+            backgroundColor: "white",
+            zIndex: 99999, //Ensuring both components of cursor are on top of everything
+          }}
+          outerStyle={{
+            border: "3px solid white",
+            zIndex: 99999,
+          }}
+        />
+      ) : (
+        <></>
+      )}
 
       {!loadingComplete ? (
         <>

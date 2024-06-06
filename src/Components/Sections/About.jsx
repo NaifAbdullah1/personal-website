@@ -90,7 +90,12 @@ const aboutStyles = {
     textAlign: { xs: "center", sm: "left" },
   },
   header: {
-    mb: { xs: 3, sm: 0 },
+    mb: { xs: 5, sm: 5 },
+    fontSize: {
+      xs: "2rem",
+      sm: "1.75rem",
+      md: "2rem",
+    },
   },
   aboutContent: {
     textAlign: "left",

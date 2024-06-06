@@ -8,6 +8,8 @@ import {
   Button,
   Dialog,
   DialogContent,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
@@ -20,6 +22,9 @@ import { useEffect, useState } from "react";
 
 const Experience = () => {
   const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false);
+
+  const theme = useTheme();
+  const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     console.log(isLearnMoreModalOpen);
@@ -214,12 +219,10 @@ const Experience = () => {
           <Dialog
             open={isLearnMoreModalOpen}
             onClose={() => setIsLearnMoreModalOpen(false)}
+            fullScreen={fullScreenDialog}
             maxWidth="lg"
           >
-            <DialogContent
-              sx={experienceStyles.doitLearnMoreDialogContent}
-              className="###DialogCont"
-            >
+            <DialogContent sx={experienceStyles.doitLearnMoreDialogContent}>
               <div style={{ position: "relative" }}>
                 <Box
                   component="img"
@@ -228,12 +231,9 @@ const Experience = () => {
                   sx={experienceStyles.forecastBoxImg}
                 />
                 <Grid container sx={experienceStyles.dialogCardGrid}>
-                  <Card
-                    sx={experienceStyles.dialogCardOverlay}
-                    className="CARD"
-                  >
-                    <CardContent sx={{ pt: 3 }} className="###cardContent">
-                      <Typography variant="h4" sx={{ color: "antiquewhite" }}>
+                  <Card sx={experienceStyles.dialogCardOverlay}>
+                    <CardContent sx={experienceStyles.overlayCardContent}>
+                      <Typography variant="h4" sx={experienceStyles.cardTitle}>
                         Financial Forecasting System
                       </Typography>
                     </CardContent>
@@ -268,6 +268,11 @@ const experienceStyles = {
   },
   header: {
     mb: { xs: 5, sm: 5 },
+    fontSize: {
+      xs: "2rem",
+      sm: "1.75rem",
+      md: "2rem",
+    },
   },
   logoSizing: {
     width: { xs: "55%", sm: "30%" },
@@ -336,6 +341,16 @@ const experienceStyles = {
     alignItems: "center",
     borderRadius: 5,
     zIndex: 1,
+  },
+  overlayCardContent: {
+    pt: 3,
+    pr: 1,
+    pl: 1,
+  },
+  cardTitle: {
+    color: "antiquewhite",
+    fontSize: { xs: "1.25rem", md: "2rem" },
+    whiteSpace: "nowrap",
   },
 };
 
