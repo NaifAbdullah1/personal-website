@@ -23,6 +23,11 @@ Consider addign some hover animation on the company logo cards wherein if the us
 Alternatively, we can make clicking the card result in expanding it with further information  
 
 - We'll really need to clean and consolidate our CSS and styling. 
+
+- Some of the commonly used codes: 
+-> hoverEffect object
+-> the "header" style
+-> useTheme (though we're not sure if we can consolidate it, doesn't hurt to try though)
 */
 
 import { useState } from "react";

@@ -10,15 +10,17 @@ import {
   DialogContent,
   useMediaQuery,
   useTheme,
+  IconButton,
 } from "@mui/material";
 
+import CloseIcon from "@mui/icons-material/Close";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Experience = () => {
   const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false);
@@ -26,9 +28,14 @@ const Experience = () => {
   const theme = useTheme();
   const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm"));
 
-  useEffect(() => {
-    console.log(isLearnMoreModalOpen);
-  }, [isLearnMoreModalOpen]);
+  // Adds a light shadown on a nav link when hovering over it
+  const hoverEffect = {
+    transition: "all 0.3s",
+    borderRadius: "20px",
+    "&:hover": {
+      backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
+    },
+  };
 
   return (
     <section id="experience" style={experienceStyles.experienceContainer}>
@@ -223,6 +230,25 @@ const Experience = () => {
             maxWidth="lg"
           >
             <DialogContent sx={experienceStyles.doitLearnMoreDialogContent}>
+              <IconButton
+                aria-label="Close"
+                onClick={() => setIsLearnMoreModalOpen(false)}
+                sx={{
+                  position: "relative",
+                  top: 0,
+                  right: 0,
+                  m: 0,
+                  ml: "auto",
+                }}
+              >
+                <CloseIcon
+                  fontSize="large"
+                  sx={{
+                    ...hoverEffect,
+                    color: "#2196f3",
+                  }}
+                />
+              </IconButton>
               <div style={{ position: "relative" }}>
                 <Box
                   component="img"
