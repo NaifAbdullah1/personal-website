@@ -17,6 +17,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import LockIcon from "@mui/icons-material/Lock";
 
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
@@ -267,8 +268,29 @@ const Experience = () => {
                 </Grid>
               </div>
 
-              <Grid container>
-                <Card>
+              <Grid
+                container
+                sx={{ display: "flex", justifyContent: "space-around", mt: 15 }}
+              >
+                <Card sx={experienceStyles.dialogCards}>
+                  <CardContent>
+                    <LockIcon
+                      color="error"
+                      sx={{ width: "50px", height: "auto" }}
+                    />
+                    <Typography variant="h2">
+                      Non-Disclosure Agreement
+                    </Typography>
+                    <br />
+                    <Typography variant="body1">
+                      Due to the sensitive nature of this project, I am unable
+                      to disclose specific details. However, I can provide a
+                      high-level overview of my responsibilities and the
+                      project&apos;s outcomes.
+                    </Typography>
+                  </CardContent>
+                </Card>
+                <Card sx={experienceStyles.dialogCards}>
                   <CardContent></CardContent>
                 </Card>
               </Grid>
@@ -337,7 +359,8 @@ const experienceStyles = {
     backgroundColor: "#091322",
     display: "flex",
     flexDirection: "column",
-    gap: 6,
+    gap: 0,
+    pt: 0,
   },
   forecastBoxImg: {
     width: "100%",
@@ -370,13 +393,25 @@ const experienceStyles = {
   },
   overlayCardContent: {
     pt: 3,
-    pr: 1,
-    pl: 1,
+    pr: 4,
+    pl: 4,
   },
   cardTitle: {
     color: "antiquewhite",
     fontSize: { xs: "1.25rem", md: "2rem" },
     whiteSpace: "nowrap",
+  },
+  dialogCards: {
+    boxShadow: "none",
+    backgroundColor: "#1f22259a",
+    backdropFilter: "blur(5px)",
+    WebkitBackdropFilter: "blur(5px)",
+    width: "50%",
+    display: "flex",
+    justifyContent: "center", // Center content horizontally
+    alignItems: "center",
+    borderRadius: 5,
+    zIndex: 1,
   },
 };
 

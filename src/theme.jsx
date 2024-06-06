@@ -17,8 +17,15 @@ const theme = createTheme({
     h1: {
       fontWeight: "bold",
     },
+    h2: {
+      fontSize: "1.5rem",
+      color: "antiquewhite",
+    },
     h4: {
       fontSize: "1.7rem",
+    },
+    body1: {
+      color: "antiquewhite",
     },
   },
 });
