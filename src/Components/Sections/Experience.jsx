@@ -333,7 +333,7 @@ const experienceStyles = {
     width: "auto",
     display: "inline-flex",
     justifyContent: "center", // Center content horizontally
-    alignItems: "center", // Center content vertically
+    alignItems: "center",
     borderRadius: 5,
     zIndex: 1,
   },
