@@ -1,6 +1,6 @@
 import { Grid, Typography, Box } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-import { FONTS, COLORS } from "../../constants.jsx";
+import { FONTS, COLORS, BACKGROUNDS } from "../../constants.jsx";
 
 const Hero = () => {
   const typeAnimationSequence = [
@@ -47,11 +47,7 @@ const Hero = () => {
 
 const heroStyles = {
   heroSection: {
-    /*
-    - The first parameter is the direction of the gradient. 180 deg = top to bottom, 0 and/or 360 deg = bottom to top.
-    - The first color is the starting color, so, it's going to start with #001433 on the top and at the bottom it will be #121212
-    */
-    backgroundImage: "linear-gradient(180deg, #001433 0%, #121212 100%)",
+    backgroundImage: BACKGROUNDS.blueToBlackBackground,
   },
   heroRow: {
     display: "flex",
@@ -60,7 +56,6 @@ const heroStyles = {
     height: "100vh", // all of the user's viewport
   },
   taglineGridContainer: {
-    textAlign: "center" /* Center text on smaller screens */,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center" /*Vertically align*/,

@@ -16,8 +16,19 @@ export const COLORS = {
   },
 };
 
-export const VALUES = {
+export const BACKGROUNDS = {
+  darkBlue: "#001433",
+  black: "#121212",
+  /*
+    - The first parameter is the direction of the gradient. 180 deg = top to bottom, 0 and/or 360 deg = bottom to top.
+    - The first color is the starting color, so, it's going to start with #001433 on the top and at the bottom it will be #121212
+    */
+  blueToBlackBackground: "linear-gradient(180deg, #001433 0%, #121212 100%)",
+};
+
+export const Z_INDICES = {
   maxZIndex: 99999,
+  loadingScreen: 3,
 };
 
 export const FONTS = {

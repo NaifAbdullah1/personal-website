@@ -22,6 +22,8 @@ Here's the full doc: https://www.react-spring.dev/docs/components/parallax
 Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
 Alternatively, we can make clicking the card result in expanding it with further information  
 
+- The "About" section's text left-aligns when in Mobile, fix that. 
+
 - We'll really need to clean and consolidate our CSS and styling. 
 
 - Some of the commonly used codes: 
@@ -43,11 +45,11 @@ import Contact from "./Components/Sections/Contact.jsx";
 import { isMobileOnly } from "react-device-detect";
 
 import "./App.scss";
-import { COLORS, VALUES } from "./constants.jsx";
+import { COLORS, Z_INDICES } from "./constants.jsx";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false); // Signals the completion of the intro
-  const [fadeWebsiteContentIn, setFadeWebsiteContentIn] = useState(false); // Signals the beginning of fading in the content of the site
+  const [websiteContentFadeState, setWebsiteContentFadeState] = useState("out"); // Signals the beginning of fading in the content of the site: "out" = website content faded out, not visible. "In" = website content faded in, visible to user
 
   // Runs after the initial logo intro disappears
   const handleLoadingComplete = () => {
@@ -55,7 +57,7 @@ function App() {
     setLoadingComplete(true);
     // Now, we'll fade in the website's contents 1 sec after the logo is gone
     setTimeout(() => {
-      setFadeWebsiteContentIn(true);
+      setWebsiteContentFadeState("in"); // Time to fade website content in
     }, 1000);
   };
 
@@ -81,9 +83,7 @@ function App() {
           <LoadingScreen onComplete={handleLoadingComplete} />
         </>
       ) : (
-        <div
-          style={fadeWebsiteContentIn ? appStyles.fadeIn : appStyles.fadeOut}
-        >
+        <div style={appStyles.fade[websiteContentFadeState]}>
           <ProgressBar height="6" bgcolor={COLORS.lightBlue} duration="0.25" />
 
           <Header />
@@ -108,20 +108,22 @@ function App() {
 const appStyles = {
   animatedCursorInner: {
     backgroundColor: COLORS.lightGray,
-    zIndex: VALUES.maxZIndex, //Ensuring both components of cursor are on top of everything
+    zIndex: Z_INDICES.maxZIndex, //Ensuring both components of cursor are on top of everything
   },
   animatedCursorOuter: {
     border: `3px solid ${COLORS.lightGray}`,
-    zIndex: VALUES.maxZIndex,
+    zIndex: Z_INDICES.maxZIndex,
   },
   /*The two css queries below serve to fade the contents of the site in when the loading logo has finished fading out*/
-  fadeIn: {
-    opacity: "1",
-    transition: "opacity 3s" /*This controls the speed of the fade in*/,
-  },
-  fadeOut: {
-    opacity: "0",
-    transition: "opacity 1s",
+  fade: {
+    in: {
+      opacity: "1",
+      transition: "opacity 3s" /*This controls the speed of the fade in*/,
+    },
+    out: {
+      opacity: "0",
+      transition: "opacity 1s",
+    },
   },
   // Prevents the appearance of the white backdrop due to IOS' elastic scrolling/overscrolling at the bottom of the page
   iosPeekbBottom: {
