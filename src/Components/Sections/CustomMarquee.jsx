@@ -115,18 +115,16 @@ const CustomMarquee = () => {
 const marqueeStyles = {
   marqueeImage: {
     position: "relative",
-    width: "90%",
+    width: "90%", // smaller width will give us space between marquee images
     height: "auto",
     borderRadius: "20px",
     transition: "filter 0.5s ease-in-out",
   },
   marqueeParentmostGrid: {
-    pt: "100px",
+    mt: "100px", // Spacing the marquee away from the certifications
   },
   dialogContent: {
     background: "#03142F",
-    overflow: "hidden",
-    margin: 0,
     padding: 0,
     position: "relative",
   },
