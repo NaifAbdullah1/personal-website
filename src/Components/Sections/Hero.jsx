@@ -2,19 +2,19 @@ import { Grid, Typography, Box } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 import { FONTS, COLORS, BACKGROUNDS } from "../../constants.jsx";
 
-const Hero = () => {
-  const typeAnimationSequence = [
-    // Same substring at the start will only be typed out once, initially
-    "Technology",
-    2000, // wait 1s before replacing "Mice" with "Hamsters"
-    "Innovation",
-    2000,
-    "Intellect",
-    2000,
-    "Creativity",
-    2000,
-  ];
+const animationDuration = 2000;
+const typeAnimationSequence = [
+  "Technology",
+  animationDuration,
+  "Innovation",
+  animationDuration,
+  "Intellect",
+  animationDuration,
+  "Creativity",
+  animationDuration,
+];
 
+const Hero = () => {
   return (
     <section id="hero" style={heroStyles.heroSection}>
       <Grid container sx={heroStyles.heroRow}>
