@@ -15,17 +15,19 @@ const theme = createTheme({
   typography: {
     fontFamily: "'League Spartan', sans-serif",
     h1: {
+      color: "#D3D3D3",
       fontWeight: "bold",
     },
     h2: {
       fontSize: "1.5rem",
-      color: "antiquewhite",
+      color: "#D3D3D3",
     },
     h4: {
       fontSize: "1.7rem",
+      color: "#D3D3D3",
     },
     body1: {
-      color: "antiquewhite",
+      color: "#D3D3D3",
     },
   },
 });

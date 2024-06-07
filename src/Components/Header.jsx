@@ -2,19 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
-import "../scss/header.scss";
+import { COLORS, FONTS } from "../constants.jsx";
 
 // This doesn't include the first section, the "hero"
 const sections = ["about", "experience", "portfolio", "contact"];
 const sectionEmojis = ["📝", "🏢", "🎯", "✉️"];
 
-// Adds a light shadown on a nav link when hovering over it
-const hoverEffect = {
-  transition: "all 0.3s",
-  "&:hover": {
-    backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
-  },
-};
+// eslint-disable-next-line no-unused-vars
+const { backgroundColor, ...restOfStyles } = COLORS.grayBlurBackground;
 
 const Header = () => {
   const [navBarBackground, setNavBarBackground] = useState("transparent");
@@ -29,7 +24,9 @@ const Header = () => {
       const heroSection = document.getElementById("hero");
       const threshold = heroSection.offsetHeight - 800; // -800 to make the color change a bit early
       setNavBarBackground(
-        window.scrollY > threshold ? "#1f22259a" : "transparent"
+        window.scrollY > threshold
+          ? COLORS.grayBlurBackground.backgroundColor
+          : "transparent"
       );
       //----------------------------------
 
@@ -65,60 +62,22 @@ const Header = () => {
   return (
     <AppBar
       position="fixed"
-      style={{
-        backgroundColor: navBarBackground,
-        backdropFilter: "blur(5px)",
-        WebkitBackdropFilter: "blur(5px)",
-      }}
-      sx={{
-        transition: "background-color 1s",
-        boxShadow: "none",
-      }}
+      sx={{ ...headerStyles.appBar, backgroundColor: navBarBackground }}
     >
-      <Toolbar
-        sx={{
-          justifyContent: "space-around",
-          paddingX: 2,
-          paddingBottom: { xs: 1, sm: 0 },
-          alignItems: "center",
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-        }}
-      >
+      <Toolbar sx={headerStyles.toolbar}>
         <ScrollLink to="hero" smooth={true} duration={500}>
-          <Typography
-            variant="h6"
-            className="navbar-brand"
-            sx={{
-              fontFamily: "'Kaushan Script', cursive",
-              flexGrow: 0,
-              paddingY: 1,
-              color: "#2196f3",
-              "&:hover": {
-                color: "#2196f3", //Counteracting the color change that occurs with the brand name on hover.
-              },
-            }}
-          >
+          <Typography variant="h6" sx={headerStyles.brand}>
             NAIF ABDULLAH
           </Typography>
         </ScrollLink>
 
-        <Box
-          sx={{
-            display: "flex",
-            gap: { xs: "1.5rem", sm: "1rem", md: "3rem" }, // Increased gap for smaller screens
-            alignItems: { xs: "center", sm: "initial" }, // Center items for smaller screens
-          }}
-        >
+        <Box sx={headerStyles.navLinksBox}>
           {sections.map((section) => (
             <ScrollLink key={section} to={section} smooth={true} duration={500}>
               <Button
-                color={isActive(section) ? "secondary" : "primary"}
                 sx={{
-                  ...hoverEffect,
-                  fontWeight: "bold",
-                  fontSize: { xs: "0.7rem", md: "1rem" },
-                  whiteSpace: "nowrap",
+                  ...headerStyles.navLinks,
+                  color: isActive(section) ? COLORS.purple : COLORS.lightBlue,
                 }}
               >
                 {section.charAt(0).toUpperCase() +
@@ -132,6 +91,44 @@ const Header = () => {
       </Toolbar>
     </AppBar>
   );
+};
+
+const headerStyles = {
+  appBar: {
+    transition: "background-color 1s",
+    boxShadow: "none",
+    ...restOfStyles,
+  },
+  toolbar: {
+    display: "flex",
+    flexDirection: { xs: "column", sm: "row" },
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingX: 2,
+    paddingBottom: { xs: 1, sm: 0 },
+  },
+  brand: {
+    fontWeight: 900,
+    lineHeight: 1.5,
+    fontFamily: FONTS.cursive,
+    flexGrow: 0,
+    paddingY: 1,
+    color: COLORS.lightBlue,
+    "&:hover": {
+      color: COLORS.lightBlue, //Counteracting the color change that occurs with the brand name on hover.
+    },
+  },
+  navLinksBox: {
+    display: "flex",
+    alignItems: { xs: "center", sm: "initial" }, // Center items for smaller screens
+    gap: { xs: "1.5rem", sm: "1rem", md: "3rem" }, // Increased gap for smaller screens
+  },
+  navLinks: {
+    ...COLORS.buttonHoverEffect,
+    fontWeight: "bold",
+    fontSize: { xs: "0.7rem", md: "1rem" },
+    whiteSpace: "nowrap",
+  },
 };
 
 export default Header;

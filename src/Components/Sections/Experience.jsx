@@ -22,21 +22,13 @@ import LockIcon from "@mui/icons-material/Lock";
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
 import { useState } from "react";
+import { COLORS } from "../../constants.jsx";
 
 const Experience = () => {
   const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false);
 
   const theme = useTheme();
   const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm"));
-
-  // Adds a light shadown on a nav link when hovering over it
-  const hoverEffect = {
-    transition: "all 0.3s",
-    borderRadius: "20px",
-    "&:hover": {
-      backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
-    },
-  };
 
   return (
     <section id="experience" style={experienceStyles.experienceContainer}>
@@ -137,17 +129,11 @@ const Experience = () => {
                             />
                           </Grid>
 
-                          <Typography
-                            variant="h4"
-                            sx={{ color: "antiquewhite" }}
-                          >
+                          <Typography variant="h4">
                             Financial Forecasting System
                           </Typography>
                           <br />
-                          <Typography
-                            variant="body1"
-                            sx={{ color: "antiquewhite" }}
-                          >
+                          <Typography variant="body1">
                             Developed an advanced Budgeting System that replaced
                             manual processes, provided detailed spending
                             analyses, and improved budget forecasting and fiscal
@@ -245,7 +231,8 @@ const Experience = () => {
                 <CloseIcon
                   fontSize="large"
                   sx={{
-                    ...hoverEffect,
+                    ...COLORS.buttonHoverEffect,
+                    borderRadius: "20px",
                     color: "#2196f3",
                   }}
                 />
@@ -351,8 +338,8 @@ const experienceStyles = {
     border: " 1px solid antiquewhite",
     lineHeight: "normal",
     "&:hover": {
-      border: " 1px solid antiquewhite",
-      backgroundColor: "rgba(255, 255, 255, 0.1)", // Light background change
+      border: " 1px solid antiquewhite", // To counteract the default blue color
+      backgroundColor: COLORS.buttonHoverColor, // Light background change
     },
   },
   doitLearnMoreDialogContent: {
@@ -397,7 +384,6 @@ const experienceStyles = {
     pl: 4,
   },
   cardTitle: {
-    color: "antiquewhite",
     fontSize: { xs: "1.25rem", md: "2rem" },
     whiteSpace: "nowrap",
   },

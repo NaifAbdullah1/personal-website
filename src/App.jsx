@@ -43,6 +43,7 @@ import Contact from "./Components/Sections/Contact.jsx";
 import { isMobileOnly } from "react-device-detect";
 
 import "./App.scss";
+import { COLORS, VALUES } from "./constants.jsx";
 
 function App() {
   const [loadingComplete, setLoadingComplete] = useState(false); // Signals the completion of the intro
@@ -68,14 +69,8 @@ function App() {
           outerScale={2}
           outerAlpha={0}
           hasBlendMode={true}
-          innerStyle={{
-            backgroundColor: "white",
-            zIndex: 99999, //Ensuring both components of cursor are on top of everything
-          }}
-          outerStyle={{
-            border: "3px solid white",
-            zIndex: 99999,
-          }}
+          innerStyle={appStyles.animatedCursorInner}
+          outerStyle={appStyles.animatedCursorOuter}
         />
       ) : (
         <></>
@@ -86,8 +81,10 @@ function App() {
           <LoadingScreen onComplete={handleLoadingComplete} />
         </>
       ) : (
-        <div className={fadeWebsiteContentIn ? "fade-in" : "fade-out"}>
-          <ProgressBar height="6" bgcolor="#2196f3" duration="0.25" />
+        <div
+          style={fadeWebsiteContentIn ? appStyles.fadeIn : appStyles.fadeOut}
+        >
+          <ProgressBar height="6" bgcolor={COLORS.lightBlue} duration="0.25" />
 
           <Header />
 
@@ -101,11 +98,40 @@ function App() {
 
           <Contact />
 
-          <div className="ios-peek-bottom"></div>
+          <div style={appStyles.iosPeekbBottom}></div>
         </div>
       )}
     </>
   );
 }
 
+const appStyles = {
+  animatedCursorInner: {
+    backgroundColor: COLORS.lightGray,
+    zIndex: VALUES.maxZIndex, //Ensuring both components of cursor are on top of everything
+  },
+  animatedCursorOuter: {
+    border: `3px solid ${COLORS.lightGray}`,
+    zIndex: VALUES.maxZIndex,
+  },
+  /*The two css queries below serve to fade the contents of the site in when the loading logo has finished fading out*/
+  fadeIn: {
+    opacity: "1",
+    transition: "opacity 3s" /*This controls the speed of the fade in*/,
+  },
+  fadeOut: {
+    opacity: "0",
+    transition: "opacity 1s",
+  },
+  // Prevents the appearance of the white backdrop due to IOS' elastic scrolling/overscrolling at the bottom of the page
+  iosPeekbBottom: {
+    position: "fixed",
+    zIndex: "-1",
+    bottom: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
+    backgroundImage: "linear-gradient(180deg, #121212 0%, #121212 100%)",
+  },
+};
 export default App;

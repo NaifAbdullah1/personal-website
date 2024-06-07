@@ -1,6 +1,8 @@
+import { Typography } from "@mui/material";
+
 function LoremIpsum() {
   return (
-    <p>
+    <Typography variant="body1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus
       magna lectus, id bibendum lectus rutrum quis. Morbi semper erat non
       ultricies cursus. Phasellus urna sem, aliquam volutpat malesuada et,
@@ -11,7 +13,7 @@ function LoremIpsum() {
       turpis. Nullam consectetur enim sit amet metus mollis, eu molestie ante
       sodales. Aenean ullamcorper arcu quis magna facilisis, eu molestie metus
       sollicitudin.
-    </p>
+    </Typography>
   );
 }
 

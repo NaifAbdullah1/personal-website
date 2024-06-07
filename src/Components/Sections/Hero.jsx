@@ -1,31 +1,8 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-import "../../scss/Sections/hero.scss";
+import { FONTS, COLORS } from "../../constants.jsx";
 
 const Hero = () => {
-  const taglineGridContainerProperties = {
-    textAlign: "center" /* Center text on smaller screens */,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center" /*Vertically align*/,
-    alignItems: "center" /*Horizontally align*/,
-    mt: { xs: 4, sm: 0 }, // margin top only when in mobile width
-    order: { xs: 2, sm: 1 }, // if browser width > md, then it will be first (left hand side), if it's between xs and md, it will be second (combine that with the column flex direction, this makes it below the logo). This works in congruency with logoProperties' order prop
-  };
-
-  const taglineHeaderProperties = {
-    fontWeight: "bold",
-    color: "antiquewhite",
-    fontSize: { xs: "4.5vw", sm: "2.25vw" },
-  };
-
-  const logoProperties = {
-    display: "flex",
-    justifyContent: "center",
-    paddingTop: { xs: 10, sm: 0 }, // Padding top only when in mobile width
-    order: { xs: 1, sm: 2 },
-  };
-
   const typeAnimationSequence = [
     // Same substring at the start will only be typed out once, initially
     "Technology",
@@ -39,38 +16,77 @@ const Hero = () => {
   ];
 
   return (
-    <section id="hero">
-      <div className=" container-fluid hero-row">
-        <Grid container className="hero-row">
-          <Grid item xs={12} sm={6} sx={taglineGridContainerProperties}>
-            <Typography variant="h1" sx={taglineHeaderProperties}>
-              Solving Complex Problems with&nbsp;
-              <TypeAnimation
-                sequence={typeAnimationSequence}
-                wrapper="span"
-                cursor={false}
-                speed={20}
-                className="tagline"
-                style={{
-                  color: "#66a4e1",
-                  fontFamily: "'Kaushan Script', cursive",
-                }}
-                repeat={Infinity}
-              />
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} sm={6} sx={logoProperties}>
-            <img
-              src="./assets/sections/hero/trimmed-logo.png"
-              alt="Brand Logo"
-              className="responsive-logo"
+    <section id="hero" style={heroStyles.heroSection}>
+      <Grid container sx={heroStyles.heroRow}>
+        <Grid item xs={12} sm={6} sx={heroStyles.taglineGridContainer}>
+          <Typography variant="h1" sx={heroStyles.taglineHeader}>
+            Solving Complex Problems with&nbsp;
+            <TypeAnimation
+              sequence={typeAnimationSequence}
+              wrapper="span"
+              cursor={false}
+              speed={20}
+              style={heroStyles.typeAnimation}
+              repeat={Infinity}
             />
-          </Grid>
+          </Typography>
         </Grid>
-      </div>
+
+        <Grid item xs={12} sm={6} sx={heroStyles.logoGrid}>
+          <Box
+            component="img"
+            src="./assets/sections/hero/trimmed-logo.png"
+            alt="Brand Logo"
+            sx={heroStyles.logoImage}
+          />
+        </Grid>
+      </Grid>
     </section>
   );
+};
+
+const heroStyles = {
+  heroSection: {
+    /*
+    - The first parameter is the direction of the gradient. 180 deg = top to bottom, 0 and/or 360 deg = bottom to top.
+    - The first color is the starting color, so, it's going to start with #001433 on the top and at the bottom it will be #121212
+    */
+    backgroundImage: "linear-gradient(180deg, #001433 0%, #121212 100%)",
+  },
+  heroRow: {
+    display: "flex",
+    alignItems: "center",
+    alignContent: "center",
+    height: "100vh", // all of the user's viewport
+  },
+  taglineGridContainer: {
+    textAlign: "center" /* Center text on smaller screens */,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center" /*Vertically align*/,
+    alignItems: "center" /*Horizontally align*/,
+    mt: { xs: 4, sm: 0 }, // margin top only when in mobile width
+    order: { xs: 2, sm: 1 }, // if browser width > md, then it will be first (left hand side), if it's between xs and md, it will be second (combine that with the column flex direction, this makes it below the logo). This works in congruency with logoProperties' order prop
+  },
+  taglineHeader: {
+    //color: "antiquewhite",
+    fontSize: { xs: "4.5vw", sm: "2.25vw" },
+  },
+  typeAnimation: {
+    color: COLORS.lightBlue,
+    fontFamily: FONTS.cursive,
+  },
+  logoGrid: {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: { xs: 10, sm: 0 }, // Padding top only when in mobile width
+    order: { xs: 1, sm: 2 },
+  },
+  logoImage: {
+    /*By setting the width OR height to 100% and the other attribute (height/widht) to auto, this will make the image maintain aspect ratio automatically.*/
+    width: "90%",
+    height: "auto",
+  },
 };
 
 export default Hero;
