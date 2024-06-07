@@ -4,17 +4,23 @@ import Marquee from "react-fast-marquee";
 import PropTypes from "prop-types";
 
 const CustomMarquee = () => {
-  const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
-  const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
-  const [selectedMarqueeImageCaption, setSelectedMarqueeImageCaption] =
-    useState(null);
+  const [dialogState, setDialogState] = useState({
+    isOpen: false,
+    selectedImage: null,
+    selectedImageCaption: null,
+  });
+
+  //const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
+  //const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
+  //const [selectedMarqueeImageCaption, setSelectedMarqueeImageCaption] =
+  useState(null);
 
   const openMarqueeDialog = (clickedImage, clickedImageCaption) => {
-    // We need to first edit the 'clickedImage' to point to teh full sized image
-    setSelectedMarqueeImage(clickedImage.replace(/\.(?=[^.]*$)/, "F.")); // A regex that finds the very last dot in a string
-    setSelectedMarqueeImageCaption(clickedImageCaption);
-    setIsMarqueeDialogOpen(true);
-    // Maybe set the state variables (img and caption to null), though it will make closing less smooth
+    setDialogState({
+      isOpen: true,
+      selectedImage: clickedImage.replace(/\.(?=[^.]*$)/, "F."), // We need to first edit the 'clickedImage' to point to teh full sized image
+      selectedImageCaption: clickedImageCaption, // A regex that finds the very last dot in a string
+    });
   };
 
   const MarqueeImage = ({ src, caption }) => (
@@ -76,15 +82,15 @@ const CustomMarquee = () => {
       </Grid>
 
       <Dialog
-        open={isMarqueeDialogOpen}
-        onClose={() => setIsMarqueeDialogOpen(false)}
+        open={dialogState.isOpen}
+        onClose={() => setDialogState({ ...dialogState, isOpen: false })}
         maxWidth="lg"
       >
         <DialogContent style={marqueeStyles.dialogContent}>
           <Box sx={marqueeStyles.dialogParentmostBox}>
             <Box
               component="img"
-              src={selectedMarqueeImage}
+              src={dialogState.selectedImage}
               alt="Full size version of clicked marquee image"
               sx={marqueeStyles.fullSizedMarqueeImage}
             />
@@ -94,7 +100,7 @@ const CustomMarquee = () => {
               className="caption-text"
               sx={marqueeStyles.marqueeImageCaption}
             >
-              {selectedMarqueeImageCaption}
+              {dialogState.selectedImageCaption}
             </Typography>
           </Box>
         </DialogContent>
