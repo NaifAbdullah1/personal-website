@@ -1,19 +1,16 @@
 import { Container, Grid, Typography, Box } from "@mui/material";
 import { isMobile } from "react-device-detect";
 import CustomMarquee from "./CustomMarquee.jsx";
+import { BACKGROUNDS, GLOBAL_STYLING } from "../../constants.jsx";
 import "../../scss/Sections/common.scss";
 
 const About = () => {
   return (
     <section id="about" style={aboutStyles.aboutContainer}>
-      <Container maxWidth={false} className="container-layout">
+      <Container maxWidth={false} sx={GLOBAL_STYLING.containerLayout}>
         <Grid container sx={aboutStyles.parentMostGridContainer}>
           <Grid item xs={12} sm={3} sx={aboutStyles.headerColumn}>
-            <Typography
-              variant="h1"
-              className="sticky-1st-column"
-              sx={aboutStyles.header}
-            >
+            <Typography variant="h1" sx={GLOBAL_STYLING.stickySectionHeader}>
               About 📝
             </Typography>
           </Grid>
@@ -81,21 +78,13 @@ const About = () => {
 
 const aboutStyles = {
   aboutContainer: {
-    backgroundImage: "linear-gradient(180deg, #121212 0%, #001433 100%)",
+    backgroundImage: BACKGROUNDS.blackToBlueBackground,
   },
   parentMostGridContainer: {
     width: "100%",
   },
   headerColumn: {
     textAlign: { xs: "center", sm: "left" },
-  },
-  header: {
-    mb: { xs: 5, sm: 5 },
-    fontSize: {
-      xs: "2rem",
-      sm: "1.75rem",
-      md: "2rem",
-    },
   },
   aboutContent: {
     textAlign: "left",

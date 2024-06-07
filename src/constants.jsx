@@ -24,6 +24,7 @@ export const BACKGROUNDS = {
     - The first color is the starting color, so, it's going to start with #001433 on the top and at the bottom it will be #121212
     */
   blueToBlackBackground: "linear-gradient(180deg, #001433 0%, #121212 100%)",
+  blackToBlueBackground: "linear-gradient(180deg, #121212 0%, #001433 100%)",
 };
 
 export const Z_INDICES = {
@@ -33,4 +34,29 @@ export const Z_INDICES = {
 
 export const FONTS = {
   cursive: "'Kaushan Script', cursive",
+};
+
+export const GLOBAL_STYLING = {
+  containerLayout: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    /*We want the website's content to be smaller than the entire width
+    We're using hardcoded units (1140px) instead of the relative units (70%) because we don't want to maintain that gap on smaller screen (which what a relative unit would do), rather, want want to eat away at the gutter as the screen shrinks*/
+    maxWidth: "1140px",
+    /*To account for the header*/
+    paddingTop: "120px",
+    width: "100%",
+  },
+  stickySectionHeader: {
+    position: "sticky",
+    top: "90px",
+    mb: { xs: 5, sm: 5 },
+    fontSize: {
+      xs: "2rem",
+      sm: "1.75rem",
+      md: "2rem",
+    },
+  },
 };
