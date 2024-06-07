@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
 import { COLORS, FONTS } from "../constants.jsx";
@@ -18,47 +18,50 @@ const Header = () => {
   /*
    Changes the background of the navbar depending on the user's scrolling action. 
   */
-  useEffect(() => {
-    const handleScroll = () => {
-      // FIRST: Change the background of the header
-      const heroSection = document.getElementById("hero");
-      const threshold = heroSection.offsetHeight - 800; // -800 to make the color change a bit early
-      setNavBarBackground(
-        window.scrollY > threshold
-          ? COLORS.grayBlurBackground.backgroundColor
-          : "transparent"
-      );
-      //----------------------------------
+  const handleScroll = useCallback(() => {
+    // FIRST: Change the background of the header
+    const heroSection = document.getElementById("hero");
+    const threshold = heroSection.offsetHeight - 800; // -800 to make the color change a bit early
+    setNavBarBackground(
+      window.scrollY > threshold
+        ? COLORS.grayBlurBackground.backgroundColor
+        : "transparent"
+    );
+    //----------------------------------
 
-      // SECOND: Synchronize header's NavLinks with the current section{
-      const sections = document.querySelectorAll("section");
-      const scrollPos = window.scrollY;
-      // Loop through the sections to find the one being viewed
-      let newActiveSection = "hero"; // because it's the default
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionBottom = sectionTop + sectionHeight;
-        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-          newActiveSection = section.id;
-        }
-      });
-      // Update activeSection based on scroll position (if different)
-      if (newActiveSection !== activeSection) {
-        setActiveSection(newActiveSection);
+    // SECOND: Synchronize header's NavLinks with the current section{
+    const sections = document.querySelectorAll("section");
+    const scrollPos = window.scrollY;
+    // Loop through the sections to find the one being viewed
+    let newActiveSection = "hero"; // because it's the default
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionBottom = sectionTop + sectionHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+        newActiveSection = section.id;
       }
-      //----------------------------------
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    });
+    // Update activeSection based on scroll position (if different)
+    if (newActiveSection !== activeSection) {
+      setActiveSection(newActiveSection);
+    }
+    //----------------------------------
   }, [activeSection]);
 
-  const isActive = (targetSection) => activeSection === targetSection;
+  // Debouncing the scroll event listener to prevent redundant checks of scroll position
+  useEffect(() => {
+    const handleScrollDebounced = debounce(handleScroll, 100);
+    window.addEventListener("scroll", handleScrollDebounced);
+    return () => {
+      window.removeEventListener("scroll", handleScrollDebounced);
+    };
+  }, [handleScroll]);
 
+  const isActive = useCallback(
+    (targetSection) => activeSection === targetSection,
+    [activeSection]
+  );
   return (
     <AppBar
       position="fixed"
@@ -92,6 +95,18 @@ const Header = () => {
     </AppBar>
   );
 };
+
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
 
 const headerStyles = {
   appBar: {
