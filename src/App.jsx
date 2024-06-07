@@ -63,7 +63,7 @@ function App() {
 
   return (
     <>
-      {!isMobileOnly ? (
+      {!isMobileOnly && (
         <AnimatedCursor
           innerSize={8}
           outerSize={35}
@@ -74,8 +74,6 @@ function App() {
           innerStyle={appStyles.animatedCursorInner}
           outerStyle={appStyles.animatedCursorOuter}
         />
-      ) : (
-        <></>
       )}
 
       {!loadingComplete ? (
