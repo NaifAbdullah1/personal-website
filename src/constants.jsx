@@ -1,6 +1,6 @@
 export const COLORS = {
-  lightBlue: "#66A4E1", // For header's nav links
-  purple: "#9C27B0",
+  lightBlue: "#66A4E1", // Primary Theme Color: For header's nav links
+  purple: "#9C27B0", // Secondary Theme Color
   lightGray: "#D3D3D3", // For most text
   buttonHoverColor: "rgba(255, 255, 255, 0.1)",
   buttonHoverEffect: {
