@@ -8,8 +8,8 @@ const About = () => {
   return (
     <section id="about" style={aboutStyles.aboutContainer}>
       <Container maxWidth={false} sx={GLOBAL_STYLING.containerLayout}>
-        <Grid container sx={aboutStyles.parentMostGridContainer}>
-          <Grid item xs={12} sm={3} sx={aboutStyles.headerColumn}>
+        <Grid container>
+          <Grid item xs={12} sm={3}>
             <Typography variant="h1" sx={GLOBAL_STYLING.stickySectionHeader}>
               About 📝
             </Typography>
@@ -80,16 +80,10 @@ const aboutStyles = {
   aboutContainer: {
     backgroundImage: BACKGROUNDS.blackToBlueBackground,
   },
-  parentMostGridContainer: {
-    width: "100%",
-  },
-  headerColumn: {
-    textAlign: { xs: "center", sm: "left" },
-  },
   aboutContent: {
-    textAlign: "left",
     display: "flex",
     flexDirection: "column",
+    textAlign: { xs: "center", sm: "left" },
   },
   naifImageContainer: {
     display: { xs: "flex", sm: "inline" },
@@ -98,7 +92,6 @@ const aboutStyles = {
   naifImage: {
     width: { xs: "50%", sm: "100%" },
     height: "auto",
-    justifyContent: "center",
     pt: { xs: "2rem", sm: "0px" },
   },
   certificationsGrid: {

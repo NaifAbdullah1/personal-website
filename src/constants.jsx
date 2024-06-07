@@ -53,6 +53,7 @@ export const GLOBAL_STYLING = {
     position: "sticky",
     top: "90px",
     mb: { xs: 5, sm: 5 },
+    textAlign: { xs: "center", sm: "left" },
     fontSize: {
       xs: "2rem",
       sm: "1.75rem",

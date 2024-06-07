@@ -19,21 +19,12 @@ const CustomMarquee = () => {
 
   const MarqueeImage = ({ src, caption }) => (
     <Box
-      sx={{ position: "relative" }}
+      component="img"
+      src={src}
+      alt="Marquee image"
       onClick={() => openMarqueeDialog(src, caption)}
-    >
-      <Box
-        component="img"
-        src={src}
-        alt="Marquee image"
-        sx={{
-          width: "90%",
-          height: "auto",
-          borderRadius: "20px",
-          transition: "filter 0.5s ease-in-out",
-        }}
-      />
-    </Box>
+      sx={marqueeStyles.marqueeImage}
+    />
   );
 
   // Prop validation for the component above
@@ -113,6 +104,13 @@ const CustomMarquee = () => {
 };
 
 const marqueeStyles = {
+  marqueeImage: {
+    position: "relative",
+    width: "90%",
+    height: "auto",
+    borderRadius: "20px",
+    transition: "filter 0.5s ease-in-out",
+  },
   marqueeParentmostGrid: {
     pt: "100px",
   },
