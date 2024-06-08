@@ -13,6 +13,7 @@ export const COLORS = {
     backgroundColor: "#1F22259A",
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
+    boxShadow: "none",
   },
 };
 
@@ -29,11 +30,18 @@ export const BACKGROUNDS = {
 
 export const Z_INDICES = {
   maxZIndex: 99999,
+  default: 1,
   loadingScreen: 3,
 };
 
 export const FONTS = {
   cursive: "'Kaushan Script', cursive",
+  regular: "'League Spartan', sans-serif",
+};
+export const RESPONSIVE_STYLING = {
+  mobileResponsiveTextAlignment: {
+    textAlign: { xs: "center", sm: "left" },
+  },
 };
 
 export const GLOBAL_STYLING = {
@@ -50,14 +58,29 @@ export const GLOBAL_STYLING = {
     width: "100%",
   },
   stickySectionHeader: {
+    ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
     position: "sticky",
     top: "90px",
     mb: { xs: 5, sm: 5 },
-    textAlign: { xs: "center", sm: "left" },
     fontSize: {
       xs: "2rem",
       sm: "1.75rem",
       md: "2rem",
+    },
+  },
+  card: {
+    ...COLORS.grayBlurBackground,
+    mb: 4,
+    borderRadius: 5,
+    zIndex: Z_INDICES.default,
+  },
+  closeIcon: {
+    color: COLORS.lightBlue,
+    borderRadius: "20px",
+    ...COLORS.buttonHoverEffect,
+    "&:hover": {
+      ...COLORS.buttonHoverEffect["&:hover"], // Inheriting the hover effect from COLORS
+      color: COLORS.purple, // Plus adding a color change to the inherited effects
     },
   },
 };

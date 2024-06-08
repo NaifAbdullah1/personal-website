@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import { COLORS, FONTS } from "./constants";
 
 const theme = createTheme({
   breakpoints: {
@@ -13,21 +14,21 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "'League Spartan', sans-serif",
+    fontFamily: FONTS.regular,
     h1: {
-      color: "#D3D3D3",
       fontWeight: "bold",
+      color: COLORS.lightGray,
     },
     h2: {
       fontSize: "1.5rem",
-      color: "#D3D3D3",
+      color: COLORS.lightGray,
     },
     h4: {
       fontSize: "1.7rem",
-      color: "#D3D3D3",
+      color: COLORS.lightGray,
     },
     body1: {
-      color: "#D3D3D3",
+      color: COLORS.lightGray,
     },
   },
 });

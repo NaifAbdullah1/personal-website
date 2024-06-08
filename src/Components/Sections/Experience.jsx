@@ -13,53 +13,51 @@ import {
   IconButton,
 } from "@mui/material";
 
-import CloseIcon from "@mui/icons-material/Close";
-import QueryStatsIcon from "@mui/icons-material/QueryStats";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import LockIcon from "@mui/icons-material/Lock";
+import {
+  Close as CloseIcon,
+  QueryStats as QueryStatsIcon,
+  AttachMoney as AttachMoneyIcon,
+  ArrowForwardIos as ArrowForwardIosIcon,
+  Lock as LockIcon,
+} from "@mui/icons-material";
 
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
 import { useState } from "react";
-import { COLORS } from "../../constants.jsx";
+import {
+  COLORS,
+  BACKGROUNDS,
+  GLOBAL_STYLING,
+  RESPONSIVE_STYLING,
+} from "../../constants.jsx";
 
 const Experience = () => {
-  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false);
+  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false); // we might have to make this an object, just like what we did with the marquee. We store the information of each card in a JSON, and when the user clicks the Lear More btn, we pass in the ID of the opened dialog, then we display the information accordingly.
 
   const theme = useTheme();
-  const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm"));
+  const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm")); // true if the viewport is in sm or smaller width. false otherwise.
 
   return (
     <section id="experience" style={experienceStyles.experienceContainer}>
-      <Container maxWidth={false} className="container-layout">
-        <Grid container sx={experienceStyles.parentMostGridContainer}>
-          <Grid item xs={12} sm={3} sx={experienceStyles.headerColumn}>
-            <Typography
-              variant="h1"
-              className="sticky-1st-column"
-              sx={experienceStyles.header}
-            >
+      <Container maxWidth={false} sx={GLOBAL_STYLING.containerLayout}>
+        <Grid container>
+          <Grid item xs={12} sm={3}>
+            <Typography variant="h1" sx={GLOBAL_STYLING.stickySectionHeader}>
               Experience 🏢
             </Typography>
           </Grid>
 
-          <Grid
-            item
-            container
-            xs={12}
-            sm={9}
-            className="###RightSideParentContainer"
-          >
-            <Grid item container className="###saudiagrid">
+          {/*Parent grid for all work experiences*/}
+          <Grid item container xs={12} sm={9}>
+            <Grid item container>
               <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.logoCard}>
-                  <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                <Card sx={experienceStyles.companyLogoCard}>
+                  <CardContent style={experienceStyles.companyLogoCardPadding}>
                     <Box
                       component="img"
                       src="./assets/sections/experience/saudia/saudia-skyteam.png"
                       alt="Saudia Logo"
-                      sx={experienceStyles.logoSizing}
+                      sx={experienceStyles.companyLogoSizing}
                     />
                   </CardContent>
                 </Card>
@@ -74,19 +72,19 @@ const Experience = () => {
               </Grid>
             </Grid>
 
-            <Grid item container className="###doitgrid">
+            <Grid item container>
               <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.logoCard}>
-                  <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                <Card sx={experienceStyles.companyLogoCard}>
+                  <CardContent style={experienceStyles.companyLogoCardPadding}>
                     <Box
                       component="img"
                       src="./assets/sections/experience/doit/doit-color-center.png"
                       alt="DoIT Logo"
-                      sx={experienceStyles.logoSizing}
+                      sx={experienceStyles.companyLogoSizing}
                     />
                   </CardContent>
                 </Card>
-                <Grid sx={{ textAlign: { xs: "center", sm: "left" } }}>
+                <Grid sx={RESPONSIVE_STYLING.mobileResponsiveTextAlignment}>
                   <Typography variant="body1">
                     At UW-Madison&apos;s DoIT, I developed web utilities for
                     scheduling, asset management, and budgeting, enhancing
@@ -97,35 +95,18 @@ const Experience = () => {
                   <br />
                   <Typography variant="h4">Highlighted Projects:</Typography>
 
-                  <Grid
-                    container
-                    sx={{
-                      justifyContent: "space-between",
-                      mt: 3,
-                    }}
-                  >
+                  <Grid container sx={experienceStyles.doit.doitProjectsCards}>
                     <Grid item xs={12} sm={7}>
-                      <Card
-                        sx={experienceStyles.jobDescriptionCard}
-                        className="##FinancialForecastCard"
-                      >
+                      <Card sx={GLOBAL_STYLING.card}>
                         <CardContent
-                          sx={{
-                            backgroundImage:
-                              "url(./assets/sections/experience/doit/forecast95.jpg)",
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                          }}
+                          sx={experienceStyles.doit.forecastCardContent}
                         >
-                          <Grid
-                            className="icons"
-                            sx={{ color: "antiquewhite" }}
-                          >
-                            <QueryStatsIcon
-                              sx={{ width: "70px", height: "auto" }}
-                            />
+                          <Grid sx={experienceStyles.doit.forecastIconsGrid}>
                             <AttachMoneyIcon
-                              sx={{ width: "70px", height: "auto" }}
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                            <QueryStatsIcon
+                              sx={experienceStyles.doit.forecastIcons}
                             />
                           </Grid>
 
@@ -143,7 +124,7 @@ const Experience = () => {
                           <Button
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
-                            sx={experienceStyles.doitLearnMoreBtn}
+                            sx={extendedStyles.doitLearnMoreBtn}
                             onClick={() => setIsLearnMoreModalOpen(true)}
                           >
                             Learn more
@@ -151,8 +132,9 @@ const Experience = () => {
                         </CardContent>
                       </Card>
                     </Grid>
+
                     <Grid item xs={12} sm={4}>
-                      <Card sx={experienceStyles.jobDescriptionCard}>
+                      <Card sx={GLOBAL_STYLING.card}>
                         <CardContent>
                           <h1> right col</h1>
                         </CardContent>
@@ -160,16 +142,16 @@ const Experience = () => {
                     </Grid>
                   </Grid>
 
-                  <Grid container sx={{ justifyContent: "space-between" }}>
+                  <Grid container sx={experienceStyles.doit.doitProjectsCards}>
                     <Grid item xs={12} sm={4}>
-                      <Card sx={experienceStyles.jobDescriptionCard}>
+                      <Card sx={GLOBAL_STYLING.card}>
                         <CardContent>
-                          <h1> left col</h1>
+                          <h1> left cols</h1>
                         </CardContent>
                       </Card>
                     </Grid>
                     <Grid item xs={12} sm={7}>
-                      <Card sx={experienceStyles.jobDescriptionCard}>
+                      <Card sx={GLOBAL_STYLING.card}>
                         <CardContent>
                           <h1> right col</h1>
                         </CardContent>
@@ -186,15 +168,15 @@ const Experience = () => {
               </Grid>
             </Grid>
 
-            <Grid item container className="###smuckergrid">
+            <Grid item container>
               <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.logoCard}>
-                  <CardContent style={{ padding: "7.5px 0px 12px 0px" }}>
+                <Card sx={experienceStyles.companyLogoCard}>
+                  <CardContent style={experienceStyles.companyLogoCardPadding}>
                     <Box
                       component="img"
                       src="./assets/sections/experience/smucker/smucker-color-white.png"
                       alt="Smucker Logo"
-                      sx={experienceStyles.logoSizing}
+                      sx={experienceStyles.companyLogoSizing}
                     />
                   </CardContent>
                 </Card>
@@ -216,55 +198,42 @@ const Experience = () => {
             fullScreen={fullScreenDialog}
             maxWidth="lg"
           >
-            <DialogContent sx={experienceStyles.doitLearnMoreDialogContent}>
+            <DialogContent
+              sx={experienceStyles.doit.doitLearnMoreDialogContent}
+            >
               <IconButton
                 aria-label="Close"
                 onClick={() => setIsLearnMoreModalOpen(false)}
-                sx={{
-                  position: "relative",
-                  top: 0,
-                  right: 0,
-                  m: 0,
-                  ml: "auto",
-                }}
+                sx={experienceStyles.iconButton}
               >
-                <CloseIcon
-                  fontSize="large"
-                  sx={{
-                    ...COLORS.buttonHoverEffect,
-                    borderRadius: "20px",
-                    color: "#2196f3",
-                  }}
-                />
+                <CloseIcon fontSize="large" sx={GLOBAL_STYLING.closeIcon} />
               </IconButton>
-              <div style={{ position: "relative" }}>
+
+              <Grid sx={experienceStyles.dialogImageParentGrid}>
                 <Box
                   component="img"
                   src="./assets/sections/experience/doit/forecast80-horizontal.png"
                   alt="Financial Forecasting Background"
-                  sx={experienceStyles.forecastBoxImg}
+                  sx={experienceStyles.doit.forecastBoxImg}
                 />
-                <Grid container sx={experienceStyles.dialogCardGrid}>
-                  <Card sx={experienceStyles.dialogCardOverlay}>
-                    <CardContent sx={experienceStyles.overlayCardContent}>
-                      <Typography variant="h4" sx={experienceStyles.cardTitle}>
+                <Grid container sx={experienceStyles.doit.dialogCardGrid}>
+                  <Card sx={experienceStyles.doit.dialogCardOverlay}>
+                    <CardContent sx={experienceStyles.doit.overlayCardContent}>
+                      <Typography
+                        variant="h4"
+                        sx={experienceStyles.doit.cardTitle}
+                      >
                         Financial Forecasting System
                       </Typography>
                     </CardContent>
                   </Card>
                 </Grid>
-              </div>
+              </Grid>
 
-              <Grid
-                container
-                sx={{ display: "flex", justifyContent: "space-around", mt: 15 }}
-              >
-                <Card sx={experienceStyles.dialogCards}>
+              <Grid container sx={experienceStyles.doit.dialogCardsParentGrid}>
+                <Card sx={experienceStyles.doit.dialogCards}>
                   <CardContent>
-                    <LockIcon
-                      color="error"
-                      sx={{ width: "50px", height: "auto" }}
-                    />
+                    <LockIcon color="error" sx={experienceStyles.lockIcon} />
                     <Typography variant="h2">
                       Non-Disclosure Agreement
                     </Typography>
@@ -277,7 +246,7 @@ const Experience = () => {
                     </Typography>
                   </CardContent>
                 </Card>
-                <Card sx={experienceStyles.dialogCards}>
+                <Card sx={experienceStyles.doit.dialogCards}>
                   <CardContent></CardContent>
                 </Card>
               </Grid>
@@ -291,113 +260,121 @@ const Experience = () => {
 
 const experienceStyles = {
   experienceContainer: {
-    backgroundImage: "linear-gradient(180deg, #001433 0%, #121212 100%)",
+    backgroundImage: BACKGROUNDS.blueToBlackBackground,
   },
-  parentMostGridContainer: {
-    width: "100%",
-  },
-  headerColumn: {
-    textAlign: { xs: "center", sm: "left" },
-    position: { sm: "sticky" },
-    top: "12%",
-  },
-  header: {
-    mb: { xs: 5, sm: 5 },
-    fontSize: {
-      xs: "2rem",
-      sm: "1.75rem",
-      md: "2rem",
-    },
-  },
-  logoSizing: {
-    width: { xs: "55%", sm: "30%" },
-    height: "auto",
-  },
-  logoCard: {
+  companyLogoCard: {
     position: "sticky",
     top: { xs: "87px", sm: "60px" },
     boxShadow: "none",
-    backgroundColor: "#1f22259a",
-    backdropFilter: "blur(5px)",
-    WebkitBackdropFilter: "blur(5px)",
-    mb: 4,
-    borderRadius: 5,
-    zIndex: 1,
+    ...GLOBAL_STYLING.card,
   },
-  jobDescriptionCard: {
-    boxShadow: "none",
-    backgroundColor: "#1f22259a",
-    backdropFilter: "blur(5px)",
-    WebkitBackdropFilter: "blur(5px)",
-    mb: 4,
-    borderRadius: 5,
+  companyLogoCardPadding: {
+    padding: "7.5px 0px 12px 0px",
   },
-  doitLearnMoreBtn: {
-    color: "antiquewhite",
+  companyLogoSizing: {
+    width: { xs: "55%", sm: "30%" },
+    height: "auto",
+  },
+  iconButton: {
+    position: "relative",
+    top: 0,
+    right: 0,
+    m: 0,
+    ml: "auto",
+  },
+  dialogImageParentGrid: {
+    // This parent grid is needed to center the card in the middle of the image
+    position: "relative",
+  },
+  lockIcon: { width: "50px", height: "auto" },
+  doit: {
+    doitProjectsCards: {
+      justifyContent: "space-between",
+      mt: 3,
+    },
+    doitLearnMoreDialogContent: {
+      backgroundColor: "#091322",
+      display: "flex",
+      flexDirection: "column",
+      gap: 0,
+      pt: 0,
+    },
+    forecastBoxImg: {
+      width: "100%",
+      height: "auto",
+    },
+    dialogCardGrid: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    dialogCardOverlay: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)", // Center the card
+      ...GLOBAL_STYLING.card,
+      width: "auto",
+      display: "inline-flex",
+      justifyContent: "center", // Center content horizontally
+      alignItems: "center",
+    },
+    overlayCardContent: {
+      pt: 3,
+      pr: 4,
+      pl: 4,
+    },
+    cardTitle: {
+      fontSize: { xs: "1.25rem", md: "2rem" },
+      whiteSpace: "nowrap",
+    },
+    dialogCardsParentGrid: {
+      display: "flex",
+      justifyContent: "space-around",
+      mt: 7,
+    },
+    dialogCards: {
+      ...GLOBAL_STYLING.card,
+      width: "50%",
+      display: "flex",
+      justifyContent: "center", // Center content horizontally
+      alignItems: "center",
+    },
+    forecastCardContent: {
+      backgroundImage: "url(./assets/sections/experience/doit/forecast95.jpg)",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+    },
+    forecastIconsGrid: {
+      color: COLORS.lightGray,
+    },
+    forecastIcons: {
+      width: "70px",
+      height: "auto",
+    },
+  },
+};
+
+const experienceBaseStyles = {
+  learnMoreBtn: {
     borderRadius: "10px",
-    border: " 1px solid antiquewhite",
     lineHeight: "normal",
     "&:hover": {
-      border: " 1px solid antiquewhite", // To counteract the default blue color
+      border: `1px solid ${COLORS.purple}`, // To counteract the default blue color
+      color: COLORS.purple,
       backgroundColor: COLORS.buttonHoverColor, // Light background change
     },
   },
-  doitLearnMoreDialogContent: {
-    backgroundColor: "#091322",
-    display: "flex",
-    flexDirection: "column",
-    gap: 0,
-    pt: 0,
-  },
-  forecastBoxImg: {
-    width: "100%",
-    height: "auto",
-    position: "relative",
-  },
-  dialogCardGrid: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  dialogCardOverlay: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)", // Center the card
-    boxShadow: "none",
-    backgroundColor: "#1f22259a",
-    backdropFilter: "blur(5px)",
-    WebkitBackdropFilter: "blur(5px)",
-    width: "auto",
-    display: "inline-flex",
-    justifyContent: "center", // Center content horizontally
-    alignItems: "center",
-    borderRadius: 5,
-    zIndex: 1,
-  },
-  overlayCardContent: {
-    pt: 3,
-    pr: 4,
-    pl: 4,
-  },
-  cardTitle: {
-    fontSize: { xs: "1.25rem", md: "2rem" },
-    whiteSpace: "nowrap",
-  },
-  dialogCards: {
-    boxShadow: "none",
-    backgroundColor: "#1f22259a",
-    backdropFilter: "blur(5px)",
-    WebkitBackdropFilter: "blur(5px)",
-    width: "50%",
-    display: "flex",
-    justifyContent: "center", // Center content horizontally
-    alignItems: "center",
-    borderRadius: 5,
-    zIndex: 1,
+};
+
+const extendedStyles = {
+  doitLearnMoreBtn: {
+    ...experienceBaseStyles.learnMoreBtn,
+    color: COLORS.lightGray,
+    border: `1px solid ${COLORS.lightGray}`,
   },
 };
 

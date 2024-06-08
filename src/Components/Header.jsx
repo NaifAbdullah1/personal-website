@@ -8,9 +8,6 @@ import { COLORS, FONTS } from "../constants.jsx";
 const sections = ["about", "experience", "portfolio", "contact"];
 const sectionEmojis = ["📝", "🏢", "🎯", "✉️"];
 
-// eslint-disable-next-line no-unused-vars
-const { backgroundColor, ...restOfStyles } = COLORS.grayBlurBackground;
-
 const Header = () => {
   const [navBarBackground, setNavBarBackground] = useState("transparent");
   const [activeSection, setActiveSection] = useState("hero"); // "active section" = the section that's in the viewport
@@ -111,8 +108,7 @@ function debounce(func, wait) {
 const headerStyles = {
   appBar: {
     transition: "background-color 1s",
-    boxShadow: "none",
-    ...restOfStyles,
+    ...COLORS.grayBlurBackground,
   },
   toolbar: {
     display: "flex",
