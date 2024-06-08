@@ -47,7 +47,6 @@ const Experience = () => {
             </Typography>
           </Grid>
 
-          {/*Parent grid for all work experiences*/}
           <Grid item container xs={12} sm={9}>
             <Grid item container>
               <Grid item xs={12} sm={12}>
@@ -338,7 +337,7 @@ const experienceStyles = {
     },
     dialogCards: {
       ...GLOBAL_STYLING.card,
-      width: "50%",
+      width: "30%",
       display: "flex",
       justifyContent: "center", // Center content horizontally
       alignItems: "center",
