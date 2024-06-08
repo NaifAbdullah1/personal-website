@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 
 import {
+  BusinessCenter as BusinessCenterIcon,
   Close as CloseIcon,
   QueryStats as QueryStatsIcon,
   AttachMoney as AttachMoneyIcon,
@@ -92,9 +93,9 @@ const Experience = () => {
                     speed.
                   </Typography>
                   <br />
-                  <Typography variant="h4">Highlighted Projects:</Typography>
+                  <Typography variant="h2">Highlighted Projects:</Typography>
 
-                  <Grid container sx={experienceStyles.doit.doitProjectsCards}>
+                  <Grid container sx={experienceStyles.doit.projectsCards}>
                     <Grid item xs={12} sm={7}>
                       <Card sx={GLOBAL_STYLING.card}>
                         <CardContent
@@ -109,7 +110,7 @@ const Experience = () => {
                             />
                           </Grid>
 
-                          <Typography variant="h4">
+                          <Typography variant="h2">
                             Financial Forecasting System
                           </Typography>
                           <br />
@@ -141,7 +142,7 @@ const Experience = () => {
                     </Grid>
                   </Grid>
 
-                  <Grid container sx={experienceStyles.doit.doitProjectsCards}>
+                  <Grid container sx={experienceStyles.doit.projectsCards}>
                     <Grid item xs={12} sm={4}>
                       <Card sx={GLOBAL_STYLING.card}>
                         <CardContent>
@@ -197,9 +198,7 @@ const Experience = () => {
             fullScreen={fullScreenDialog}
             maxWidth="lg"
           >
-            <DialogContent
-              sx={experienceStyles.doit.doitLearnMoreDialogContent}
-            >
+            <DialogContent sx={experienceStyles.doit.learnMoreDialogContent}>
               <IconButton
                 aria-label="Close"
                 onClick={() => setIsLearnMoreModalOpen(false)}
@@ -219,7 +218,7 @@ const Experience = () => {
                   <Card sx={experienceStyles.doit.dialogCardOverlay}>
                     <CardContent sx={experienceStyles.doit.overlayCardContent}>
                       <Typography
-                        variant="h4"
+                        variant="h2"
                         sx={experienceStyles.doit.cardTitle}
                       >
                         Financial Forecasting System
@@ -230,24 +229,42 @@ const Experience = () => {
               </Grid>
 
               <Grid container sx={experienceStyles.doit.dialogCardsParentGrid}>
-                <Card sx={experienceStyles.doit.dialogCards}>
-                  <CardContent>
-                    <LockIcon color="error" sx={experienceStyles.lockIcon} />
-                    <Typography variant="h2">
-                      Non-Disclosure Agreement
-                    </Typography>
-                    <br />
-                    <Typography variant="body1">
-                      Due to the sensitive nature of this project, I am unable
-                      to disclose specific details. However, I can provide a
-                      high-level overview of my responsibilities and the
-                      project&apos;s outcomes.
-                    </Typography>
-                  </CardContent>
-                </Card>
-                <Card sx={experienceStyles.doit.dialogCards}>
-                  <CardContent></CardContent>
-                </Card>
+                <Grid item xs={12} sm={4}>
+                  <Card sx={experienceStyles.doit.dialogCards}>
+                    <CardContent>
+                      <LockIcon color="error" sx={extendedStyles.lockIcon} />
+                      <Typography variant="h2">
+                        Non-Disclosure Agreement
+                      </Typography>
+                      <br />
+                      <Typography variant="body2">
+                        Due to the sensitive nature of this project, I am unable
+                        to disclose specific details. However, I can provide a
+                        high-level overview of my responsibilities and the
+                        project&apos;s outcomes.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                <Grid item xs={12} sm={4}>
+                  <Card sx={experienceStyles.doit.dialogCards}>
+                    <CardContent>
+                      <BusinessCenterIcon
+                        sx={extendedStyles.businessCenterIcon}
+                      />
+                      <Typography variant="h2">Project Role</Typography>
+                      <br />
+                      <Typography variant="body2">
+                        I spearheaded the development of an advanced Budgeting
+                        System that automated data entry and calculations,
+                        provided detailed spending analyses, and significantly
+                        improved budget forecasting and fiscal control for the
+                        department.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
               </Grid>
             </DialogContent>
           </Dialog>
@@ -275,24 +292,24 @@ const experienceStyles = {
     height: "auto",
   },
   iconButton: {
-    position: "relative",
+    position: "sticky",
     top: 0,
     right: 0,
     m: 0,
     ml: "auto",
+    zIndex: 1,
   },
   dialogImageParentGrid: {
     // This parent grid is needed to center the card in the middle of the image
     position: "relative",
   },
-  lockIcon: { width: "50px", height: "auto" },
   doit: {
-    doitProjectsCards: {
+    projectsCards: {
       justifyContent: "space-between",
       mt: 3,
     },
-    doitLearnMoreDialogContent: {
-      backgroundColor: "#091322",
+    learnMoreDialogContent: {
+      backgroundColor: COLORS.dialogBackground,
       display: "flex",
       flexDirection: "column",
       gap: 0,
@@ -331,13 +348,12 @@ const experienceStyles = {
       whiteSpace: "nowrap",
     },
     dialogCardsParentGrid: {
-      display: "flex",
+      ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
       justifyContent: "space-around",
       mt: 7,
     },
     dialogCards: {
       ...GLOBAL_STYLING.card,
-      width: "30%",
       display: "flex",
       justifyContent: "center", // Center content horizontally
       alignItems: "center",
@@ -367,6 +383,7 @@ const experienceBaseStyles = {
       backgroundColor: COLORS.buttonHoverColor, // Light background change
     },
   },
+  iconSizing: { width: "50px", height: "auto" },
 };
 
 const extendedStyles = {
@@ -374,6 +391,13 @@ const extendedStyles = {
     ...experienceBaseStyles.learnMoreBtn,
     color: COLORS.lightGray,
     border: `1px solid ${COLORS.lightGray}`,
+  },
+  lockIcon: {
+    ...experienceBaseStyles.iconSizing,
+  },
+  businessCenterIcon: {
+    ...experienceBaseStyles.iconSizing,
+    color: COLORS.lightBlue,
   },
 };
 

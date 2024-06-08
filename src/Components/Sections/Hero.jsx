@@ -50,7 +50,7 @@ const heroStyles = {
     backgroundImage: BACKGROUNDS.blueToBlackBackground,
   },
   heroRow: {
-    display: "flex",
+    // Because that Grid has the "container" prop, it becomes a flex container, which means it will have display: flex and since flex has a default flex direction of "row", it means its flex-direction will be "row"
     alignItems: "center",
     alignContent: "center",
     height: "100vh", // all of the user's viewport

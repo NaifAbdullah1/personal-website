@@ -2,6 +2,8 @@ export const COLORS = {
   lightBlue: "#66A4E1", // Primary Theme Color: For header's nav links
   purple: "#9C27B0", // Secondary Theme Color
   lightGray: "#D3D3D3", // For most text
+  silver: "#A9A9A9",
+  dialogBackground: "#091322",
   buttonHoverColor: "rgba(255, 255, 255, 0.1)",
   buttonHoverEffect: {
     transition: "all 0.3s",
@@ -62,11 +64,6 @@ export const GLOBAL_STYLING = {
     position: "sticky",
     top: "90px",
     mb: { xs: 5, sm: 5 },
-    fontSize: {
-      xs: "2rem",
-      sm: "1.75rem",
-      md: "2rem",
-    },
   },
   card: {
     ...COLORS.grayBlurBackground,
