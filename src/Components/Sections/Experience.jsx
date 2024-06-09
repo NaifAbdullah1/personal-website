@@ -20,6 +20,7 @@ import {
   AttachMoney as AttachMoneyIcon,
   ArrowForwardIos as ArrowForwardIosIcon,
   Lock as LockIcon,
+  AccessAlarm as AccessAlarmIcon,
 } from "@mui/icons-material";
 
 import "../../scss/Sections/common.scss";
@@ -48,9 +49,15 @@ const Experience = () => {
             </Typography>
           </Grid>
 
-          <Grid item container xs={12} sm={9}>
+          <Grid
+            item
+            container
+            xs={12}
+            sm={9}
+            sx={experienceStyles.spacingBetweenTenures}
+          >
             <Grid item container>
-              <Grid item xs={12} sm={12}>
+              <Grid item xs={12} sm={12} className="Saudia Grid">
                 <Card sx={experienceStyles.companyLogoCard}>
                   <CardContent style={experienceStyles.companyLogoCardPadding}>
                     <Box
@@ -65,130 +72,124 @@ const Experience = () => {
                 <LoremIpsum />
                 <LoremIpsum />
                 <LoremIpsum />
-                <br />
-                <br />
-                <br />
-                <br />
               </Grid>
             </Grid>
 
-            <Grid item container>
-              <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.companyLogoCard}>
-                  <CardContent style={experienceStyles.companyLogoCardPadding}>
-                    <Box
-                      component="img"
-                      src="./assets/sections/experience/doit/doit-color-center.png"
-                      alt="DoIT Logo"
-                      sx={experienceStyles.companyLogoSizing}
-                    />
-                  </CardContent>
-                </Card>
-                <Grid sx={RESPONSIVE_STYLING.mobileResponsiveTextAlignment}>
-                  <Typography variant="body1">
-                    At UW-Madison&apos;s DoIT, I developed web utilities for
-                    scheduling, asset management, and budgeting, enhancing
-                    efficiency and user satisfaction. I also created a ReactJS
-                    training course, improving team consistency and project
-                    speed.
-                  </Typography>
-                  <br />
-                  <Typography variant="h2">Highlighted Projects:</Typography>
+            <Grid
+              container
+              item
+              xs={12}
+              sm={12}
+              sx={
+                experienceStyles.spacingBetweenCompanyLogoCardsAndTenureDetails
+              }
+            >
+              <Card sx={experienceStyles.companyLogoCard}>
+                <CardContent style={experienceStyles.companyLogoCardPadding}>
+                  <Box
+                    component="img"
+                    src="./assets/sections/experience/doit/doit-color-center.png"
+                    alt="DoIT Logo"
+                    sx={experienceStyles.companyLogoSizing}
+                  />
+                </CardContent>
+              </Card>
+              <Grid sx={RESPONSIVE_STYLING.mobileResponsiveTextAlignment}>
+                <Typography variant="body1">
+                  At UW-Madison&apos;s DoIT, I developed web utilities for
+                  scheduling, asset management, and budgeting, enhancing
+                  efficiency and user satisfaction. I also created a ReactJS
+                  training course, improving team consistency and project speed.
+                </Typography>
+                <br />
+                <br />
+                <Typography variant="h3">Highlighted Projects:</Typography>
 
-                  <Grid container sx={experienceStyles.doit.projectsCards}>
-                    <Grid item xs={12} sm={7}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent
-                          sx={experienceStyles.doit.forecastCardContent}
+                <Grid container sx={experienceStyles.doit.projectsCards}>
+                  <Grid item xs={12} sm={7}>
+                    <Card sx={GLOBAL_STYLING.card}>
+                      <CardContent
+                        sx={experienceStyles.doit.forecastCardContent}
+                      >
+                        <Grid sx={experienceStyles.doit.forecastIconsGrid}>
+                          <AttachMoneyIcon
+                            sx={experienceStyles.doit.forecastIcons}
+                          />
+                          <QueryStatsIcon
+                            sx={experienceStyles.doit.forecastIcons}
+                          />
+                        </Grid>
+
+                        <Typography variant="h3">
+                          Financial Forecasting System
+                        </Typography>
+                        <br />
+                        <Typography variant="body1">
+                          Developed an advanced Budgeting System that replaced
+                          manual processes, provided detailed spending analyses,
+                          and improved budget forecasting and fiscal control for
+                          better financial decision-making.
+                        </Typography>
+                        <br />
+                        <Button
+                          variant="outlined"
+                          endIcon={<ArrowForwardIosIcon />}
+                          sx={extendedStyles.doitLearnMoreBtn}
+                          onClick={() => setIsLearnMoreModalOpen(true)}
                         >
-                          <Grid sx={experienceStyles.doit.forecastIconsGrid}>
-                            <AttachMoneyIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
-                            <QueryStatsIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
-                          </Grid>
-
-                          <Typography variant="h2">
-                            Financial Forecasting System
-                          </Typography>
-                          <br />
-                          <Typography variant="body1">
-                            Developed an advanced Budgeting System that replaced
-                            manual processes, provided detailed spending
-                            analyses, and improved budget forecasting and fiscal
-                            control for better financial decision-making.
-                          </Typography>
-                          <br />
-                          <Button
-                            variant="outlined"
-                            endIcon={<ArrowForwardIosIcon />}
-                            sx={extendedStyles.doitLearnMoreBtn}
-                            onClick={() => setIsLearnMoreModalOpen(true)}
-                          >
-                            Learn more
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-
-                    <Grid item xs={12} sm={4}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent>
-                          <h1> right col</h1>
-                        </CardContent>
-                      </Card>
-                    </Grid>
+                          Learn more
+                        </Button>
+                      </CardContent>
+                    </Card>
                   </Grid>
 
-                  <Grid container sx={experienceStyles.doit.projectsCards}>
-                    <Grid item xs={12} sm={4}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent>
-                          <h1> left cols</h1>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={7}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent>
-                          <h1> right col</h1>
-                        </CardContent>
-                      </Card>
-                    </Grid>
+                  <Grid item xs={12} sm={4}>
+                    <Card sx={GLOBAL_STYLING.card}>
+                      <CardContent>
+                        <h1> right col</h1>
+                      </CardContent>
+                    </Card>
                   </Grid>
                 </Grid>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <LoremIpsum />
+
+                <Grid container sx={experienceStyles.doit.projectsCards}>
+                  <Grid item xs={12} sm={4}>
+                    <Card sx={GLOBAL_STYLING.card}>
+                      <CardContent>
+                        <h1> left cols</h1>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={12} sm={7}>
+                    <Card sx={GLOBAL_STYLING.card}>
+                      <CardContent>
+                        <h1> right col</h1>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
 
-            <Grid item container>
-              <Grid item xs={12} sm={12}>
-                <Card sx={experienceStyles.companyLogoCard}>
-                  <CardContent style={experienceStyles.companyLogoCardPadding}>
-                    <Box
-                      component="img"
-                      src="./assets/sections/experience/smucker/smucker-color-white.png"
-                      alt="Smucker Logo"
-                      sx={experienceStyles.companyLogoSizing}
-                    />
-                  </CardContent>
-                </Card>
+            <Grid item container xs={12} sm={12}>
+              <Card sx={experienceStyles.companyLogoCard}>
+                <CardContent style={experienceStyles.companyLogoCardPadding}>
+                  <Box
+                    component="img"
+                    src="./assets/sections/experience/smucker/smucker-color-white.png"
+                    alt="Smucker Logo"
+                    sx={experienceStyles.companyLogoSizing}
+                  />
+                </CardContent>
+              </Card>
 
-                <LoremIpsum />
-                <LoremIpsum />
-                <LoremIpsum />
-                <br />
-                <br />
-                <br />
-                <br />
-              </Grid>
+              <LoremIpsum />
+              <LoremIpsum />
+              <LoremIpsum />
+              <br />
+              <br />
+              <br />
+              <br />
             </Grid>
           </Grid>
 
@@ -196,7 +197,7 @@ const Experience = () => {
             open={isLearnMoreModalOpen}
             onClose={() => setIsLearnMoreModalOpen(false)}
             fullScreen={fullScreenDialog}
-            maxWidth="lg"
+            maxWidth="xl"
           >
             <DialogContent sx={experienceStyles.doit.learnMoreDialogContent}>
               <IconButton
@@ -207,63 +208,190 @@ const Experience = () => {
                 <CloseIcon fontSize="large" sx={GLOBAL_STYLING.closeIcon} />
               </IconButton>
 
-              <Grid sx={experienceStyles.dialogImageParentGrid}>
-                <Box
-                  component="img"
-                  src="./assets/sections/experience/doit/forecast80-horizontal.png"
-                  alt="Financial Forecasting Background"
-                  sx={experienceStyles.doit.forecastBoxImg}
-                />
-                <Grid container sx={experienceStyles.doit.dialogCardGrid}>
-                  <Card sx={experienceStyles.doit.dialogCardOverlay}>
-                    <CardContent sx={experienceStyles.doit.overlayCardContent}>
-                      <Typography
-                        variant="h2"
-                        sx={experienceStyles.doit.cardTitle}
+              <Grid
+                container
+                sx={experienceStyles.spacingBetweenImageAndDialogItems}
+              >
+                {/*Image and Card Overlay here*/}
+                <Grid
+                  item
+                  container
+                  sx={experienceStyles.dialogImageParentGrid}
+                >
+                  <Box
+                    component="img"
+                    src="./assets/sections/experience/doit/forecast80-horizontal.png"
+                    alt="Financial Forecasting Background"
+                    sx={experienceStyles.doit.forecastBoxImg}
+                  />
+                  <Grid sx={experienceStyles.doit.dialogOverlayCardGrid}>
+                    <Card sx={experienceStyles.doit.dialogCardOverlay}>
+                      <CardContent
+                        sx={experienceStyles.doit.overlayCardContent}
                       >
-                        Financial Forecasting System
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              </Grid>
-
-              <Grid container sx={experienceStyles.doit.dialogCardsParentGrid}>
-                <Grid item xs={12} sm={4}>
-                  <Card sx={experienceStyles.doit.dialogCards}>
-                    <CardContent>
-                      <LockIcon color="error" sx={extendedStyles.lockIcon} />
-                      <Typography variant="h2">
-                        Non-Disclosure Agreement
-                      </Typography>
-                      <br />
-                      <Typography variant="body2">
-                        Due to the sensitive nature of this project, I am unable
-                        to disclose specific details. However, I can provide a
-                        high-level overview of my responsibilities and the
-                        project&apos;s outcomes.
-                      </Typography>
-                    </CardContent>
-                  </Card>
+                        <Typography
+                          variant="h3"
+                          sx={experienceStyles.doit.cardTitle}
+                        >
+                          Financial Forecasting System
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
                 </Grid>
 
-                <Grid item xs={12} sm={4}>
-                  <Card sx={experienceStyles.doit.dialogCards}>
-                    <CardContent>
-                      <BusinessCenterIcon
-                        sx={extendedStyles.businessCenterIcon}
-                      />
-                      <Typography variant="h2">Project Role</Typography>
-                      <br />
-                      <Typography variant="body2">
-                        I spearheaded the development of an advanced Budgeting
-                        System that automated data entry and calculations,
-                        provided detailed spending analyses, and significantly
-                        improved budget forecasting and fiscal control for the
-                        department.
-                      </Typography>
-                    </CardContent>
-                  </Card>
+                <Grid
+                  item
+                  container
+                  sx={experienceStyles.dialogContentBelowImageGrid}
+                  className="Dialog Content below image"
+                >
+                  <Grid
+                    item
+                    container
+                    sx={experienceStyles.doit.dialogNDAandPRCardsParentGrid}
+                    className="First Row of cards: NDA & PR"
+                  >
+                    <Grid
+                      item
+                      xs={12}
+                      md={5}
+                      sx={experienceStyles.doit.dialogCardGrid}
+                    >
+                      <Card sx={experienceStyles.doit.dialogCards}>
+                        <CardContent>
+                          <LockIcon
+                            color="error"
+                            sx={extendedStyles.lockIcon}
+                          />
+                          <Typography variant="h3">
+                            Non-Disclosure Agreement
+                          </Typography>
+                          <br />
+                          <Typography variant="body2">
+                            Due to the sensitive nature of this project, I am
+                            unable to disclose specific details. However, I can
+                            provide a high-level overview of my responsibilities
+                            and the project&apos;s outcomes.
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+
+                    <Grid
+                      item
+                      xs={12}
+                      md={5}
+                      sx={experienceStyles.doit.dialogCardGrid}
+                    >
+                      <Card sx={experienceStyles.doit.dialogCards}>
+                        <CardContent>
+                          <BusinessCenterIcon
+                            sx={extendedStyles.businessCenterIcon}
+                          />
+                          <Typography variant="h3">Project Role</Typography>
+                          <br />
+                          <Typography variant="body2">
+                            I spearheaded the development of an advanced
+                            Budgeting System that automated data entry and
+                            calculations, provided detailed spending analyses,
+                            and significantly improved budget forecasting and
+                            fiscal control for the department.
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  </Grid>
+
+                  <Grid
+                    item
+                    container
+                    sx={experienceStyles.accomplishmentsGrid}
+                    className="Accomplishments Grid"
+                  >
+                    <Typography variant="h2">Accomplishments:</Typography>
+                    <Grid
+                      item
+                      container
+                      sx={experienceStyles.accomplishmentsCardsRow}
+                      className="Accomplishments Cards Row"
+                    >
+                      <Grid
+                        item
+                        xs={12}
+                        md={3.5}
+                        sx={experienceStyles.doit.dialogCardGrid}
+                      >
+                        <Card sx={experienceStyles.doit.dialogCards}>
+                          <CardContent>
+                            <AttachMoneyIcon
+                              sx={extendedStyles.accomplishmentsIcon}
+                            />
+                            <Typography variant="h3">
+                              Non-Disclosure Agreement
+                            </Typography>
+                            <br />
+                            <Typography variant="body2">
+                              Due to the sensitive nature of this project, I am
+                              unable to disclose specific details. However, I
+                              can provide a high-level overview of my
+                              responsibilities and the project&apos;s outcomes.
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+
+                      <Grid
+                        item
+                        xs={12}
+                        md={3.5}
+                        sx={experienceStyles.doit.dialogCardGrid}
+                      >
+                        <Card sx={experienceStyles.doit.dialogCards}>
+                          <CardContent>
+                            <QueryStatsIcon
+                              sx={extendedStyles.accomplishmentsIcon}
+                            />
+                            <Typography variant="h3">
+                              Non-Disclosure Agreement
+                            </Typography>
+                            <br />
+                            <Typography variant="body2">
+                              Due to the sensitive nature of this project, I am
+                              unable to disclose specific details. However, I
+                              can provide a high-level overview of my
+                              responsibilities and the project&apos;s outcomes.
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+
+                      <Grid
+                        item
+                        xs={12}
+                        md={3.5}
+                        sx={experienceStyles.doit.dialogCardGrid}
+                      >
+                        <Card sx={experienceStyles.doit.dialogCards}>
+                          <CardContent>
+                            <AccessAlarmIcon
+                              sx={extendedStyles.accomplishmentsIcon}
+                            />
+                            <Typography variant="h3">
+                              Non-Disclosure Agreement
+                            </Typography>
+                            <br />
+                            <Typography variant="body2">
+                              Due to the sensitive nature of this project, I am
+                              unable to disclose specific details. However, I
+                              can provide a high-level overview of my
+                              responsibilities and the project&apos;s outcomes.
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+                    </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
             </DialogContent>
@@ -277,6 +405,17 @@ const Experience = () => {
 const experienceStyles = {
   experienceContainer: {
     backgroundImage: BACKGROUNDS.blueToBlackBackground,
+  },
+  spacingBetweenTenures: {
+    gap: 15,
+  },
+  spacingBetweenCompanyLogoCardsAndTenureDetails: {
+    gap: 5,
+  },
+  spacingBetweenImageAndDialogItems: {
+    gap: 5,
+    justifyContent: "center",
+    ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
   },
   companyLogoCard: {
     position: "sticky",
@@ -299,9 +438,20 @@ const experienceStyles = {
     ml: "auto",
     zIndex: 1,
   },
+  dialogContentBelowImageGrid: {
+    width: "75%",
+    gap: 10,
+  },
+  accomplishmentsGrid: {
+    gap: 3,
+  },
   dialogImageParentGrid: {
     // This parent grid is needed to center the card in the middle of the image
     position: "relative",
+  },
+  accomplishmentsCardsRow: {
+    justifyContent: "space-between",
+    ...GLOBAL_STYLING.spacingBetweenAccomplishmentsCards,
   },
   doit: {
     projectsCards: {
@@ -319,13 +469,11 @@ const experienceStyles = {
       width: "100%",
       height: "auto",
     },
-    dialogCardGrid: {
+    dialogOverlayCardGrid: {
       position: "absolute",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      justifyContent: "center",
-      alignItems: "center",
     },
     dialogCardOverlay: {
       position: "absolute",
@@ -347,16 +495,15 @@ const experienceStyles = {
       fontSize: { xs: "1.25rem", md: "2rem" },
       whiteSpace: "nowrap",
     },
-    dialogCardsParentGrid: {
-      ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
-      justifyContent: "space-around",
-      mt: 7,
+    dialogNDAandPRCardsParentGrid: {
+      alignItems: "stretch",
+      justifyContent: "space-between",
+      ...GLOBAL_STYLING.spacingBetweenNDAandPRCards,
     },
+    dialogCardGrid: { display: "flex" },
     dialogCards: {
       ...GLOBAL_STYLING.card,
-      display: "flex",
-      justifyContent: "center", // Center content horizontally
-      alignItems: "center",
+      height: "100%", // Ensures that cards are the same length
     },
     forecastCardContent: {
       backgroundImage: "url(./assets/sections/experience/doit/forecast95.jpg)",
@@ -396,6 +543,10 @@ const extendedStyles = {
     ...experienceBaseStyles.iconSizing,
   },
   businessCenterIcon: {
+    ...experienceBaseStyles.iconSizing,
+    color: COLORS.purple,
+  },
+  accomplishmentsIcon: {
     ...experienceBaseStyles.iconSizing,
     color: COLORS.lightBlue,
   },

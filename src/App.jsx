@@ -30,6 +30,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 -> hoverEffect object
 -> the "header" style
 -> useTheme (though we're not sure if we can consolidate it, doesn't hurt to try though)
+
+- Inspect the parts where the code generates repitive components. (E.g., the marquee, the company cards, especially the dialog cards) and see if we can simplify that code by employing the map() function. Just like what we did with the marquee
 */
 
 import { useState } from "react";

@@ -31,15 +31,21 @@ const createCustomTheme = () => {
       },
       h2: {
         fontWeight: "bold",
+        color: COLORS.lightGray,
+        fontSize: "2.5rem",
+      },
+      h3: {
+        fontWeight: "bold",
         fontSize: "1.7rem",
         color: COLORS.lightGray,
       },
       body1: {
         color: COLORS.lightGray,
+        fontSize: "1.25rem",
       },
       body2: {
         color: COLORS.silver,
-        fontSize: "1rem",
+        fontSize: "1.1rem",
         lineHeight: 1.5,
       },
     },

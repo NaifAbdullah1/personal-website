@@ -1,6 +1,6 @@
 export const COLORS = {
   lightBlue: "#66A4E1", // Primary Theme Color: For header's nav links
-  purple: "#9C27B0", // Secondary Theme Color
+  purple: "#9C27B0", // Secondary Theme Color 9C27B0
   lightGray: "#D3D3D3", // For most text
   silver: "#A9A9A9",
   dialogBackground: "#091322",
@@ -67,9 +67,15 @@ export const GLOBAL_STYLING = {
   },
   card: {
     ...COLORS.grayBlurBackground,
-    mb: 4,
+
     borderRadius: 5,
     zIndex: Z_INDICES.default,
+  },
+  spacingBetweenNDAandPRCards: {
+    gap: { xs: 5, md: 0 },
+  },
+  spacingBetweenAccomplishmentsCards: {
+    gap: { xs: 5, md: 0 },
   },
   closeIcon: {
     color: COLORS.lightBlue,
