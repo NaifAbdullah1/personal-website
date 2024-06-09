@@ -20,7 +20,7 @@ import {
   AttachMoney as AttachMoneyIcon,
   ArrowForwardIos as ArrowForwardIosIcon,
   Lock as LockIcon,
-  AccessAlarm as AccessAlarmIcon,
+  Verified as VerifiedIcon,
 } from "@mui/icons-material";
 
 import "../../scss/Sections/common.scss";
@@ -328,14 +328,16 @@ const Experience = () => {
                               sx={extendedStyles.accomplishmentsIcon}
                             />
                             <Typography variant="h3">
-                              Non-Disclosure Agreement
+                              Streamlined Budgeting Process
                             </Typography>
                             <br />
                             <Typography variant="body2">
-                              Due to the sensitive nature of this project, I am
-                              unable to disclose specific details. However, I
-                              can provide a high-level overview of my
-                              responsibilities and the project&apos;s outcomes.
+                              Developed an advanced Budgeting System that
+                              eliminated the need for manual data entry and
+                              calculations, thereby streamlining the budgeting
+                              process and significantly reducing errors. This
+                              automation led to increased efficiency and
+                              accuracy in financial data management.
                             </Typography>
                           </CardContent>
                         </Card>
@@ -353,14 +355,16 @@ const Experience = () => {
                               sx={extendedStyles.accomplishmentsIcon}
                             />
                             <Typography variant="h3">
-                              Non-Disclosure Agreement
+                              Comprehensive Spending Analysis
                             </Typography>
                             <br />
                             <Typography variant="body2">
-                              Due to the sensitive nature of this project, I am
-                              unable to disclose specific details. However, I
-                              can provide a high-level overview of my
-                              responsibilities and the project&apos;s outcomes.
+                              Implemented a feature that provided detailed,
+                              multi-faceted spending analyses, enabling managers
+                              to break down costs by shift type and closely
+                              monitor operational cost trends. This granular
+                              insight empowered managers to better understand
+                              and control departmental expenses.
                             </Typography>
                           </CardContent>
                         </Card>
@@ -374,18 +378,21 @@ const Experience = () => {
                       >
                         <Card sx={experienceStyles.doit.dialogCards}>
                           <CardContent>
-                            <AccessAlarmIcon
+                            <VerifiedIcon
                               sx={extendedStyles.accomplishmentsIcon}
                             />
                             <Typography variant="h3">
-                              Non-Disclosure Agreement
+                              Enhanced Financial Decision-Making
                             </Typography>
                             <br />
                             <Typography variant="body2">
-                              Due to the sensitive nature of this project, I am
-                              unable to disclose specific details. However, I
-                              can provide a high-level overview of my
-                              responsibilities and the project&apos;s outcomes.
+                              Introduced advanced analytics and forecasting
+                              capabilities that improved budget forecasting and
+                              fiscal control. This innovation offered
+                              comprehensive financial insights, reducing the
+                              manual workload and helping the department make
+                              more informed financial decisions, leading to more
+                              efficient budget planning and resource allocation.
                             </Typography>
                           </CardContent>
                         </Card>
