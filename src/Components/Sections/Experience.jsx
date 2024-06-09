@@ -464,6 +464,8 @@ const experienceStyles = {
       flexDirection: "column",
       gap: 0,
       pt: 0,
+      pl: 0,
+      pr: 0,
     },
     forecastBoxImg: {
       width: "100%",
