@@ -230,7 +230,7 @@ const Experience = () => {
                         sx={experienceStyles.doit.overlayCardContent}
                       >
                         <Typography
-                          variant="h3"
+                          variant="h2"
                           sx={experienceStyles.doit.cardTitle}
                         >
                           Financial Forecasting System
@@ -267,7 +267,7 @@ const Experience = () => {
                           <Typography variant="h3">
                             Non-Disclosure Agreement
                           </Typography>
-                          <br />
+
                           <Typography variant="body2">
                             Due to the sensitive nature of this project, I am
                             unable to disclose specific details. However, I can
@@ -290,7 +290,6 @@ const Experience = () => {
                             sx={extendedStyles.businessCenterIcon}
                           />
                           <Typography variant="h3">Project Role</Typography>
-                          <br />
                           <Typography variant="body2">
                             I spearheaded the development of an advanced
                             Budgeting System that automated data entry and
@@ -309,7 +308,12 @@ const Experience = () => {
                     sx={experienceStyles.accomplishmentsGrid}
                     className="Accomplishments Grid"
                   >
-                    <Typography variant="h2">Accomplishments:</Typography>
+                    <Grid
+                      container
+                      sx={experienceStyles.accomplishmentsHeaderGrid}
+                    >
+                      <Typography variant="h2">Accomplishments:</Typography>
+                    </Grid>
                     <Grid
                       item
                       container
@@ -330,7 +334,6 @@ const Experience = () => {
                             <Typography variant="h3">
                               Streamlined Budgeting Process
                             </Typography>
-                            <br />
                             <Typography variant="body2">
                               Developed an advanced Budgeting System that
                               eliminated the need for manual data entry and
@@ -357,7 +360,6 @@ const Experience = () => {
                             <Typography variant="h3">
                               Comprehensive Spending Analysis
                             </Typography>
-                            <br />
                             <Typography variant="body2">
                               Implemented a feature that provided detailed,
                               multi-faceted spending analyses, enabling managers
@@ -384,7 +386,6 @@ const Experience = () => {
                             <Typography variant="h3">
                               Enhanced Financial Decision-Making
                             </Typography>
-                            <br />
                             <Typography variant="body2">
                               Introduced advanced analytics and forecasting
                               capabilities that improved budget forecasting and
@@ -422,11 +423,11 @@ const experienceStyles = {
   spacingBetweenImageAndDialogItems: {
     gap: 5,
     justifyContent: "center",
-    ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
+    ...RESPONSIVE_STYLING.mobileResponsiveDialogContent,
   },
   companyLogoCard: {
     position: "sticky",
-    top: { xs: "87px", sm: "60px" },
+    top: { xs: "85px", sm: "60px" },
     boxShadow: "none",
     ...GLOBAL_STYLING.card,
   },
@@ -459,6 +460,9 @@ const experienceStyles = {
   accomplishmentsCardsRow: {
     justifyContent: "space-between",
     ...GLOBAL_STYLING.spacingBetweenAccomplishmentsCards,
+  },
+  accomplishmentsHeaderGrid: {
+    justifyContent: { xs: "center", md: "start" },
   },
   doit: {
     projectsCards: {

@@ -44,6 +44,9 @@ export const RESPONSIVE_STYLING = {
   mobileResponsiveTextAlignment: {
     textAlign: { xs: "center", sm: "left" },
   },
+  mobileResponsiveDialogContent: {
+    textAlign: { xs: "center", md: "left" },
+  },
 };
 
 export const GLOBAL_STYLING = {
@@ -67,7 +70,6 @@ export const GLOBAL_STYLING = {
   },
   card: {
     ...COLORS.grayBlurBackground,
-
     borderRadius: 5,
     zIndex: Z_INDICES.default,
   },

@@ -37,6 +37,7 @@ const createCustomTheme = () => {
       h3: {
         fontWeight: "bold",
         fontSize: "1.7rem",
+        marginBottom: "10px",
         color: COLORS.lightGray,
       },
       body1: {
