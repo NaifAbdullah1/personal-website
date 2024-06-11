@@ -42,7 +42,10 @@ const Experience = () => {
   return (
     <section id="experience" style={experienceStyles.experienceContainer}>
       <Container maxWidth={false} sx={GLOBAL_STYLING.containerLayout}>
-        <Grid container>
+        <Grid
+          container
+          sx={RESPONSIVE_STYLING.spacingBetweenSectionTitleAndSectionContent}
+        >
           <Grid item xs={12} sm={3}>
             <Typography variant="h1" sx={GLOBAL_STYLING.stickySectionHeader}>
               Experience 🏢
@@ -105,67 +108,72 @@ const Experience = () => {
                 <br />
                 <Typography variant="h3">Highlighted Projects:</Typography>
 
-                <Grid container sx={experienceStyles.doit.projectsCards}>
-                  <Grid item xs={12} sm={7}>
-                    <Card sx={GLOBAL_STYLING.card}>
-                      <CardContent
-                        sx={experienceStyles.doit.forecastCardContent}
-                      >
-                        <Grid sx={experienceStyles.doit.forecastIconsGrid}>
-                          <AttachMoneyIcon
-                            sx={experienceStyles.doit.forecastIcons}
-                          />
-                          <QueryStatsIcon
-                            sx={experienceStyles.doit.forecastIcons}
-                          />
-                        </Grid>
-
-                        <Typography variant="h3">
-                          Financial Forecasting System
-                        </Typography>
-                        <br />
-                        <Typography variant="body1">
-                          Developed an advanced Budgeting System that replaced
-                          manual processes, provided detailed spending analyses,
-                          and improved budget forecasting and fiscal control for
-                          better financial decision-making.
-                        </Typography>
-                        <br />
-                        <Button
-                          variant="outlined"
-                          endIcon={<ArrowForwardIosIcon />}
-                          sx={extendedStyles.doitLearnMoreBtn}
-                          onClick={() => setIsLearnMoreModalOpen(true)}
+                <Grid
+                  container
+                  sx={experienceStyles.doit.highlightedProjectsCards}
+                >
+                  <Grid container sx={experienceStyles.doit.projectsCardsRow}>
+                    <Grid item xs={12} sm={7}>
+                      <Card sx={GLOBAL_STYLING.card}>
+                        <CardContent
+                          sx={experienceStyles.doit.forecastCardContent}
                         >
-                          Learn more
-                        </Button>
-                      </CardContent>
-                    </Card>
+                          <Grid sx={experienceStyles.doit.forecastIconsGrid}>
+                            <AttachMoneyIcon
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                            <QueryStatsIcon
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                          </Grid>
+
+                          <Typography variant="h3">
+                            Financial Forecasting System
+                          </Typography>
+                          <br />
+                          <Typography variant="body1">
+                            Developed an advanced Budgeting System that replaced
+                            manual processes, provided detailed spending
+                            analyses, and improved budget forecasting and fiscal
+                            control for better financial decision-making.
+                          </Typography>
+                          <br />
+                          <Button
+                            variant="outlined"
+                            endIcon={<ArrowForwardIosIcon />}
+                            sx={extendedStyles.doitLearnMoreBtn}
+                            onClick={() => setIsLearnMoreModalOpen(true)}
+                          >
+                            Learn more
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+
+                    <Grid item xs={12} sm={4}>
+                      <Card sx={GLOBAL_STYLING.card}>
+                        <CardContent>
+                          <h1> right col</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
                   </Grid>
 
-                  <Grid item xs={12} sm={4}>
-                    <Card sx={GLOBAL_STYLING.card}>
-                      <CardContent>
-                        <h1> right col</h1>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </Grid>
-
-                <Grid container sx={experienceStyles.doit.projectsCards}>
-                  <Grid item xs={12} sm={4}>
-                    <Card sx={GLOBAL_STYLING.card}>
-                      <CardContent>
-                        <h1> left cols</h1>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                  <Grid item xs={12} sm={7}>
-                    <Card sx={GLOBAL_STYLING.card}>
-                      <CardContent>
-                        <h1> right col</h1>
-                      </CardContent>
-                    </Card>
+                  <Grid container sx={experienceStyles.doit.projectsCardsRow}>
+                    <Grid item xs={12} sm={4}>
+                      <Card sx={GLOBAL_STYLING.card}>
+                        <CardContent>
+                          <h1> left cols</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={7}>
+                      <Card sx={GLOBAL_STYLING.card}>
+                        <CardContent>
+                          <h1> right col</h1>
+                        </CardContent>
+                      </Card>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
@@ -459,15 +467,17 @@ const experienceStyles = {
   },
   accomplishmentsCardsRow: {
     justifyContent: "space-between",
-    ...GLOBAL_STYLING.spacingBetweenAccomplishmentsCards,
+    ...RESPONSIVE_STYLING.spacingBetweenAccomplishmentsCards,
   },
   accomplishmentsHeaderGrid: {
     justifyContent: { xs: "center", md: "start" },
   },
   doit: {
-    projectsCards: {
+    highlightedProjectsCards: {
+      gap: 5, // Space between the two rows of DoIT's "Highlighted Projects"
+    },
+    projectsCardsRow: {
       justifyContent: "space-between",
-      mt: 3,
     },
     learnMoreDialogContent: {
       backgroundColor: COLORS.dialogBackground,
@@ -511,7 +521,7 @@ const experienceStyles = {
     dialogNDAandPRCardsParentGrid: {
       alignItems: "stretch",
       justifyContent: "space-between",
-      ...GLOBAL_STYLING.spacingBetweenNDAandPRCards,
+      ...RESPONSIVE_STYLING.spacingBetweenNDAandPRCards,
     },
     dialogCardGrid: { display: "flex" },
     dialogCards: {

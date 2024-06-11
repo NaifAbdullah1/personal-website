@@ -40,12 +40,22 @@ export const FONTS = {
   cursive: "'Kaushan Script', cursive",
   regular: "'League Spartan', sans-serif",
 };
+
 export const RESPONSIVE_STYLING = {
   mobileResponsiveTextAlignment: {
     textAlign: { xs: "center", sm: "left" },
   },
   mobileResponsiveDialogContent: {
     textAlign: { xs: "center", md: "left" },
+  },
+  spacingBetweenSectionTitleAndSectionContent: {
+    gap: { xs: 10, sm: 0 },
+  },
+  spacingBetweenNDAandPRCards: {
+    gap: { xs: 5, md: 0 },
+  },
+  spacingBetweenAccomplishmentsCards: {
+    gap: { xs: 5, md: 0 },
   },
 };
 
@@ -66,19 +76,13 @@ export const GLOBAL_STYLING = {
     ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
     position: "sticky",
     top: "90px",
-    mb: { xs: 5, sm: 5 },
   },
   card: {
     ...COLORS.grayBlurBackground,
     borderRadius: 5,
     zIndex: Z_INDICES.default,
   },
-  spacingBetweenNDAandPRCards: {
-    gap: { xs: 5, md: 0 },
-  },
-  spacingBetweenAccomplishmentsCards: {
-    gap: { xs: 5, md: 0 },
-  },
+
   closeIcon: {
     color: COLORS.lightBlue,
     borderRadius: "20px",

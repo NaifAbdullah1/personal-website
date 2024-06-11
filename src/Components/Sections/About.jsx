@@ -12,7 +12,10 @@ const About = () => {
   return (
     <section id="about" style={aboutStyles.aboutContainer}>
       <Container maxWidth={false} sx={GLOBAL_STYLING.containerLayout}>
-        <Grid container>
+        <Grid
+          container
+          sx={RESPONSIVE_STYLING.spacingBetweenSectionTitleAndSectionContent}
+        >
           <Grid item xs={12} sm={3}>
             <Typography variant="h1" sx={GLOBAL_STYLING.stickySectionHeader}>
               About 📝
@@ -20,10 +23,9 @@ const About = () => {
           </Grid>
 
           <Grid item xs={12} sm={9} sx={aboutStyles.aboutContent}>
-            <Grid container>
+            <Grid container sx={aboutStyles.spaceBetweenNaifImageandBio}>
               <Grid item xs={12} sm={6}>
                 <Typography variant="h3">Hello 👋🏻</Typography>
-                <br />
                 <Typography variant="h3">My name is Naif Abdullah</Typography>
                 <br />
                 <Typography variant="body1">
@@ -35,7 +37,7 @@ const About = () => {
                   problem-solving in digital environments.
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={6} sx={aboutStyles.naifImageContainer}>
+              <Grid item xs={12} sm={6} sx={aboutStyles.naifImageGrid}>
                 <Box
                   component="img"
                   src="./assets/sections/about/naif.png"
@@ -88,23 +90,25 @@ const aboutStyles = {
     display: "flex",
     flexDirection: "column",
     ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
+    gap: 5,
   },
-  naifImageContainer: {
+  spaceBetweenNaifImageandBio: {
+    gap: { xs: 5, sm: 0 },
+  },
+  naifImageGrid: {
     display: { xs: "flex", sm: "inline" },
     justifyContent: "center",
   },
   naifImage: {
     width: { xs: "50%", sm: "100%" },
     height: "auto",
-    pt: { xs: "2rem", sm: "0px" },
   },
   certificationsGrid: {
     display: "flex",
     flexDirection: "column",
-    pt: { xs: "2rem", sm: "1rem" },
+    gap: 1,
   },
   certificationHeader: {
-    mb: "30px",
     display: "flex",
     justifyContent: {
       xs: "center",
@@ -117,7 +121,7 @@ const aboutStyles = {
       xs: "center",
       sm: "start",
     },
-    gap: "10px",
+    gap: 2,
   },
 };
 
