@@ -115,7 +115,7 @@ const Experience = () => {
                   sx={experienceStyles.doit.highlightedProjectsCards}
                 >
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={6} className="ForecastCard">
+                    <Grid item xs={12} sm={5.5} className="ForecastCard">
                       <Card sx={experienceStyles.doit.card}>
                         <CardContent
                           sx={experienceStyles.doit.forecastCardContent}
@@ -150,7 +150,7 @@ const Experience = () => {
                       </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={5} className="InventoryCard">
+                    <Grid item xs={12} sm={5.8} className="InventoryCard">
                       <Card sx={experienceStyles.doit.card}>
                         <CardContent
                           sx={experienceStyles.doit.inventoryCardContent}

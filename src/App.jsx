@@ -32,6 +32,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 -> useTheme (though we're not sure if we can consolidate it, doesn't hurt to try though)
 
 - Inspect the parts where the code generates repitive components. (E.g., the marquee, the company cards, especially the dialog cards) and see if we can simplify that code by employing the map() function. Just like what we did with the marquee
+
+- Failed to match the forecast and inventory card. Figure it out later. Look at the card in the dialog, they might give you an idea. You may also need to adjust the height of the forecast background image. you may also need to make it a flex container, which would stretch the button to the full width of the card. You may also consider resorting to making the cards the same size
 */
 
 import { useState } from "react";
