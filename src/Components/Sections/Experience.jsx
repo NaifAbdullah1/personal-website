@@ -21,6 +21,8 @@ import {
   ArrowForwardIos as ArrowForwardIosIcon,
   Lock as LockIcon,
   Verified as VerifiedIcon,
+  Inventory as InventoryIcon,
+  ContentPasteSearch as ContentPasteSearchIcon,
 } from "@mui/icons-material";
 
 import "../../scss/Sections/common.scss";
@@ -34,7 +36,7 @@ import {
 } from "../../constants.jsx";
 
 const Experience = () => {
-  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false); // we might have to make this an object, just like what we did with the marquee. We store the information of each card in a JSON, and when the user clicks the Lear More btn, we pass in the ID of the opened dialog, then we display the information accordingly.
+  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false); // TODO: we might have to make this an object, just like what we did with the marquee. We store the information of each card in a JSON, and when the user clicks the Lear More btn, we pass in the ID of the opened dialog, then we display the information accordingly.
 
   const theme = useTheme();
   const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm")); // true if the viewport is in sm or smaller width. false otherwise.
@@ -113,29 +115,64 @@ const Experience = () => {
                   sx={experienceStyles.doit.highlightedProjectsCards}
                 >
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={7}>
-                      <Card sx={GLOBAL_STYLING.card}>
+                    <Grid item xs={12} sm={6} className="ForecastCard">
+                      <Card sx={experienceStyles.doit.card}>
                         <CardContent
                           sx={experienceStyles.doit.forecastCardContent}
                         >
-                          <Grid sx={experienceStyles.doit.forecastIconsGrid}>
+                          <Grid>
                             <AttachMoneyIcon
                               sx={experienceStyles.doit.forecastIcons}
                             />
                             <QueryStatsIcon
                               sx={experienceStyles.doit.forecastIcons}
                             />
+                            <Typography variant="h3">
+                              Financial Forecasting System
+                            </Typography>
                           </Grid>
 
-                          <Typography variant="h3">
-                            Financial Forecasting System
-                          </Typography>
-                          <br />
                           <Typography variant="body1">
                             Developed an advanced Budgeting System that replaced
                             manual processes, provided detailed spending
                             analyses, and improved budget forecasting and fiscal
                             control for better financial decision-making.
+                          </Typography>
+
+                          <Button
+                            variant="outlined"
+                            endIcon={<ArrowForwardIosIcon />}
+                            sx={extendedStyles.doitLearnMoreBtn}
+                            onClick={() => setIsLearnMoreModalOpen(true)}
+                          >
+                            Learn more
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+
+                    <Grid item xs={12} sm={5} className="InventoryCard">
+                      <Card sx={experienceStyles.doit.card}>
+                        <CardContent
+                          sx={experienceStyles.doit.inventoryCardContent}
+                        >
+                          <Grid sx={experienceStyles.doit.forecastIconsGrid}>
+                            <InventoryIcon
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                            <ContentPasteSearchIcon
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                          </Grid>
+                          <Typography variant="h3">
+                            Inventory Management System
+                          </Typography>
+                          <br />
+                          <Typography variant="body1">
+                            Developed an automated Inventory Management System
+                            that streamlined asset tracking, improved resource
+                            accountability, and enhanced compliance with
+                            departmental policies.
                           </Typography>
                           <br />
                           <Button
@@ -149,25 +186,17 @@ const Experience = () => {
                         </CardContent>
                       </Card>
                     </Grid>
-
-                    <Grid item xs={12} sm={4}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent>
-                          <h1> right col</h1>
-                        </CardContent>
-                      </Card>
-                    </Grid>
                   </Grid>
 
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={5}>
                       <Card sx={GLOBAL_STYLING.card}>
                         <CardContent>
                           <h1> left cols</h1>
                         </CardContent>
                       </Card>
                     </Grid>
-                    <Grid item xs={12} sm={7}>
+                    <Grid item xs={12} sm={6}>
                       <Card sx={GLOBAL_STYLING.card}>
                         <CardContent>
                           <h1> right col</h1>
@@ -205,7 +234,7 @@ const Experience = () => {
             open={isLearnMoreModalOpen}
             onClose={() => setIsLearnMoreModalOpen(false)}
             fullScreen={fullScreenDialog}
-            maxWidth="xl"
+            maxWidth="lg"
           >
             <DialogContent sx={experienceStyles.doit.learnMoreDialogContent}>
               <IconButton
@@ -266,7 +295,7 @@ const Experience = () => {
                       md={5}
                       sx={experienceStyles.doit.dialogCardGrid}
                     >
-                      <Card sx={experienceStyles.doit.dialogCards}>
+                      <Card sx={experienceStyles.doit.card}>
                         <CardContent>
                           <LockIcon
                             color="error"
@@ -292,7 +321,7 @@ const Experience = () => {
                       md={5}
                       sx={experienceStyles.doit.dialogCardGrid}
                     >
-                      <Card sx={experienceStyles.doit.dialogCards}>
+                      <Card sx={experienceStyles.doit.card}>
                         <CardContent>
                           <BusinessCenterIcon
                             sx={extendedStyles.businessCenterIcon}
@@ -334,7 +363,7 @@ const Experience = () => {
                         md={3.5}
                         sx={experienceStyles.doit.dialogCardGrid}
                       >
-                        <Card sx={experienceStyles.doit.dialogCards}>
+                        <Card sx={experienceStyles.doit.card}>
                           <CardContent>
                             <AttachMoneyIcon
                               sx={extendedStyles.accomplishmentsIcon}
@@ -360,7 +389,7 @@ const Experience = () => {
                         md={3.5}
                         sx={experienceStyles.doit.dialogCardGrid}
                       >
-                        <Card sx={experienceStyles.doit.dialogCards}>
+                        <Card sx={experienceStyles.doit.card}>
                           <CardContent>
                             <QueryStatsIcon
                               sx={extendedStyles.accomplishmentsIcon}
@@ -386,7 +415,7 @@ const Experience = () => {
                         md={3.5}
                         sx={experienceStyles.doit.dialogCardGrid}
                       >
-                        <Card sx={experienceStyles.doit.dialogCards}>
+                        <Card sx={experienceStyles.doit.card}>
                           <CardContent>
                             <VerifiedIcon
                               sx={extendedStyles.accomplishmentsIcon}
@@ -519,17 +548,24 @@ const experienceStyles = {
       whiteSpace: "nowrap",
     },
     dialogNDAandPRCardsParentGrid: {
-      alignItems: "stretch",
+      //alignItems: "stretch",
       justifyContent: "space-between",
       ...RESPONSIVE_STYLING.spacingBetweenNDAandPRCards,
     },
     dialogCardGrid: { display: "flex" },
-    dialogCards: {
+    card: {
       ...GLOBAL_STYLING.card,
-      height: "100%", // Ensures that cards are the same length
     },
     forecastCardContent: {
       backgroundImage: "url(./assets/sections/experience/doit/forecast95.jpg)",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      display: "grid",
+      gap: 6.5,
+    },
+    inventoryCardContent: {
+      backgroundImage:
+        "url(./assets/sections/experience/doit/inventory-room.jpg)",
       backgroundPosition: "center",
       backgroundSize: "cover",
     },
@@ -537,6 +573,7 @@ const experienceStyles = {
       color: COLORS.lightGray,
     },
     forecastIcons: {
+      color: COLORS.lightGray,
       width: "70px",
       height: "auto",
     },

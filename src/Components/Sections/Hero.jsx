@@ -64,7 +64,6 @@ const heroStyles = {
     order: { xs: 2, sm: 1 }, // if browser width > md, then it will be first (left hand side), if it's between xs and md, it will be second (combine that with the column flex direction, this makes it below the logo). This works in congruency with logoProperties' order prop
   },
   taglineHeader: {
-    //color: "antiquewhite",
     fontSize: { xs: "4.5vw", sm: "2.25vw" },
   },
   typeAnimation: {
