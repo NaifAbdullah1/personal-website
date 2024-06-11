@@ -57,6 +57,9 @@ export const RESPONSIVE_STYLING = {
   spacingBetweenAccomplishmentsCards: {
     gap: { xs: 5, md: 0 },
   },
+  spacingBetweenProjectsCards: {
+    gap: { xs: 5, sm: 0 },
+  },
 };
 
 export const GLOBAL_STYLING = {
