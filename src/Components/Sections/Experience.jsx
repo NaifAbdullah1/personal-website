@@ -120,17 +120,16 @@ const Experience = () => {
                         <CardContent
                           sx={experienceStyles.doit.forecastCardContent}
                         >
-                          <Grid>
-                            <AttachMoneyIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
-                            <QueryStatsIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
-                            <Typography variant="h3">
-                              Financial Forecasting System
-                            </Typography>
-                          </Grid>
+                          <AttachMoneyIcon
+                            sx={experienceStyles.doit.forecastIcons}
+                          />
+                          <QueryStatsIcon
+                            sx={experienceStyles.doit.forecastIcons}
+                          />
+                          <Typography variant="h3">
+                            Financial Forecasting System
+                          </Typography>
+                          <br />
 
                           <Typography variant="body1">
                             Developed an advanced Budgeting System that replaced
@@ -138,7 +137,7 @@ const Experience = () => {
                             analyses, and improved budget forecasting and fiscal
                             control for better financial decision-making.
                           </Typography>
-
+                          <br />
                           <Button
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
@@ -560,8 +559,6 @@ const experienceStyles = {
       backgroundImage: "url(./assets/sections/experience/doit/forecast95.jpg)",
       backgroundPosition: "center",
       backgroundSize: "cover",
-      display: "grid",
-      gap: 6.5,
     },
     inventoryCardContent: {
       backgroundImage:
