@@ -369,7 +369,7 @@ const Experience = () => {
                   </Grid>
 
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={5} className="Course Card">
+                    <Grid item xs={12} sm={12} className="Course Card">
                       <Card sx={experienceStyles.doit.courseCard}>
                         <CardContent
                           sx={experienceStyles.doit.courseCardContent}
@@ -403,13 +403,6 @@ const Experience = () => {
                           >
                             Learn more
                           </Button>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent>
-                          <h1> right col</h1>
                         </CardContent>
                       </Card>
                     </Grid>
