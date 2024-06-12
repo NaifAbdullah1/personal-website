@@ -25,6 +25,9 @@ import {
   ContentPasteSearch as ContentPasteSearchIcon,
   MarkUnreadChatAlt as MarkUnreadChatAltIcon,
   LocalPolice as LocalPoliceIcon,
+  School as SchoolIcon,
+  Diversity3 as Diversity3Icon,
+  AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
 import "../../scss/Sections/common.scss";
@@ -72,7 +75,7 @@ const Experience = () => {
       overlayImageAltText: "Financial Forecasting Background",
       overlayTitle: "Financial Forecasting System",
       projectRole:
-        "I spearheaded the development of an advanced Budgeting System that automated data entry and calculations, provided detailed spending analyses, and significantly improved budget forecasting and fiscal control for the department.",
+        "I led the development of an advanced budgeting system by integrating various APIs to retrieve employee pay details and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control.",
       accomplishments: {
         first: {
           icon: <AttachMoneyIcon sx={extendedStyles.accomplishmentsIcon} />,
@@ -96,7 +99,8 @@ const Experience = () => {
     };
 
     const inventoryManagementSystem = {
-      overlayImage: "./assets/sections/experience/doit/inventory80.png",
+      overlayImage:
+        "./assets/sections/experience/doit/inventory80-horizontal.png",
       overlayImageAltText: "Inventory Management Background",
       overlayTitle: "Inventory Management System",
       projectRole:
@@ -128,25 +132,29 @@ const Experience = () => {
     };
 
     const reactJsCourse = {
-      overlayImage: "",
-      overlayImageAltText: "",
-      overlayTitle: "",
-      projectRole: "",
+      overlayImage: "./assets/sections/experience/doit/group80-horizontal.jpg",
+      overlayImageAltText: "Group meeting",
+      overlayTitle: "ReactJS Training Course",
+      projectRole:
+        "I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality.",
       accomplishments: {
         first: {
-          icon: <></>,
-          title: "",
-          description: "",
+          icon: <SchoolIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Tailored Curriculum Design",
+          description:
+            "The ReactJS training program tailored to the varied experience levels of the development team, covering essential topics such as HTTP requests, component creation, and inter-component communication, cookie management, and so much more. The curriculum ensured a unified approach to web development while catering to both experienced developers and new recruits.",
         },
         second: {
-          icon: <></>,
-          title: "",
-          description: "",
+          icon: <AutoFixHighIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Interactive Learning Experience",
+          description:
+            "Crafted an interactive training program featuring peer-to-peer learning, practical exercises, code challenges, group discussions, and live coding sessions. Leveraged previous teaching experience to employ diverse teaching methods, fostering high engagement and effective learning outcomes among team members.",
         },
         third: {
-          icon: <></>,
-          title: "",
-          description: "",
+          icon: <Diversity3Icon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Boosted Team Efficiency",
+          description:
+            "The ReactJS training course significantly enhanced team efficiency and code quality, resulting in faster project completion times and a consistent development approach. This initiative played a pivotal role in unifying the team's skill set and establishing a standardized framework for web development, driving success across projects.",
         },
       },
     };
@@ -361,10 +369,40 @@ const Experience = () => {
                   </Grid>
 
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={5}>
-                      <Card sx={GLOBAL_STYLING.card}>
-                        <CardContent>
-                          <h1> left cols</h1>
+                    <Grid item xs={12} sm={5} className="Course Card">
+                      <Card sx={experienceStyles.doit.courseCard}>
+                        <CardContent
+                          sx={experienceStyles.doit.courseCardContent}
+                        >
+                          <Grid>
+                            <Grid sx={experienceStyles.doit.projectIconsGrid}>
+                              <SchoolIcon
+                                sx={experienceStyles.doit.projectIcons}
+                              />
+                            </Grid>
+                            <Typography variant="h3">
+                              ReactJS Training Course
+                            </Typography>
+
+                            <Typography variant="body1">
+                              A holistic training initiative designed to unify
+                              the team&apos;s approach to web development,
+                              covering key web development topics. It includes
+                              interactive elements like peer-to-peer learning,
+                              practical exercises, and live coding sessions,
+                              resulting in improved team efficiency and code
+                              quality.
+                            </Typography>
+                          </Grid>
+
+                          <Button
+                            variant="outlined"
+                            endIcon={<ArrowForwardIosIcon />}
+                            sx={extendedStyles.doitLearnMoreBtn}
+                            onClick={() => handleOpenDialog("reactJsCourse")}
+                          >
+                            Learn more
+                          </Button>
                         </CardContent>
                       </Card>
                     </Grid>
@@ -727,7 +765,7 @@ const experienceStyles = {
       ...GLOBAL_STYLING.card,
       height: "100%",
       backgroundImage:
-        "url(./assets/sections/experience/doit/forecast-vert.png)",
+        "url(./assets/sections/experience/doit/forecast95-vert.png)",
       backgroundPosition: "center",
       backgroundSize: "cover",
     },
@@ -738,6 +776,19 @@ const experienceStyles = {
       justifyContent: "space-between",
     },
     inventoryCardContent: {
+      height: "90%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+    },
+    courseCard: {
+      ...GLOBAL_STYLING.card,
+      height: "100%",
+      backgroundImage: "url(./assets/sections/experience/doit/group95.jpg)",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+    },
+    courseCardContent: {
       height: "90%",
       display: "flex",
       flexDirection: "column",
