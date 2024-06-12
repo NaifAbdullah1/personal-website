@@ -115,29 +115,31 @@ const Experience = () => {
                   sx={experienceStyles.doit.highlightedProjectsCards}
                 >
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={5.5} className="ForecastCard">
-                      <Card sx={experienceStyles.doit.card}>
+                    <Grid item xs={12} sm={6} className="ForecastCard">
+                      <Card sx={experienceStyles.doit.forecastCard}>
                         <CardContent
                           sx={experienceStyles.doit.forecastCardContent}
                         >
-                          <AttachMoneyIcon
-                            sx={experienceStyles.doit.forecastIcons}
-                          />
-                          <QueryStatsIcon
-                            sx={experienceStyles.doit.forecastIcons}
-                          />
-                          <Typography variant="h3">
-                            Financial Forecasting System
-                          </Typography>
-                          <br />
+                          <Grid>
+                            <AttachMoneyIcon
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                            <QueryStatsIcon
+                              sx={experienceStyles.doit.forecastIcons}
+                            />
+                            <Typography variant="h3">
+                              Financial Forecasting System
+                            </Typography>
 
-                          <Typography variant="body1">
-                            Developed an advanced Budgeting System that replaced
-                            manual processes, provided detailed spending
-                            analyses, and improved budget forecasting and fiscal
-                            control for better financial decision-making.
-                          </Typography>
-                          <br />
+                            <Typography variant="body1">
+                              Developed an advanced Budgeting System that
+                              replaced manual processes, provided detailed
+                              spending analyses, and improved budget forecasting
+                              and fiscal control for better financial
+                              decision-making.
+                            </Typography>
+                          </Grid>
+
                           <Button
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
@@ -150,30 +152,32 @@ const Experience = () => {
                       </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={5.8} className="InventoryCard">
-                      <Card sx={experienceStyles.doit.card}>
+                    <Grid item xs={12} sm={5} className="InventoryCard">
+                      <Card sx={experienceStyles.doit.inventoryCard}>
                         <CardContent
                           sx={experienceStyles.doit.inventoryCardContent}
                         >
-                          <Grid sx={experienceStyles.doit.forecastIconsGrid}>
-                            <InventoryIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
-                            <ContentPasteSearchIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
+                          <Grid>
+                            <Grid sx={experienceStyles.doit.forecastIconsGrid}>
+                              <InventoryIcon
+                                sx={experienceStyles.doit.forecastIcons}
+                              />
+                              <ContentPasteSearchIcon
+                                sx={experienceStyles.doit.forecastIcons}
+                              />
+                            </Grid>
+                            <Typography variant="h3">
+                              Inventory Management System
+                            </Typography>
+
+                            <Typography variant="body1">
+                              Developed an automated Inventory Management System
+                              that streamlined asset tracking, improved resource
+                              accountability, and enhanced compliance with
+                              departmental policies.
+                            </Typography>
                           </Grid>
-                          <Typography variant="h3">
-                            Inventory Management System
-                          </Typography>
-                          <br />
-                          <Typography variant="body1">
-                            Developed an automated Inventory Management System
-                            that streamlined asset tracking, improved resource
-                            accountability, and enhanced compliance with
-                            departmental policies.
-                          </Typography>
-                          <br />
+
                           <Button
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
@@ -505,6 +509,7 @@ const experienceStyles = {
       gap: 5, // Space between the two rows of DoIT's "Highlighted Projects"
     },
     projectsCardsRow: {
+      ...RESPONSIVE_STYLING.spacingBetweenProjectsCards,
       justifyContent: "space-between",
     },
     learnMoreDialogContent: {
@@ -554,17 +559,27 @@ const experienceStyles = {
     dialogCardGrid: { display: "flex" },
     card: {
       ...GLOBAL_STYLING.card,
+      height: "100%",
+    },
+    forecastCard: {
+      ...GLOBAL_STYLING.card,
+      height: "100%",
+      backgroundImage:
+        "url(./assets/sections/experience/doit/forecast-vert.png)",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
     },
     forecastCardContent: {
-      backgroundImage: "url(./assets/sections/experience/doit/forecast95.jpg)",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
+      height: "90%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
     },
     inventoryCardContent: {
-      backgroundImage:
-        "url(./assets/sections/experience/doit/inventory-room.jpg)",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
+      height: "90%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
     },
     forecastIconsGrid: {
       color: COLORS.lightGray,
@@ -573,6 +588,14 @@ const experienceStyles = {
       color: COLORS.lightGray,
       width: "70px",
       height: "auto",
+    },
+    inventoryCard: {
+      ...GLOBAL_STYLING.card,
+      height: "100%",
+      backgroundImage:
+        "url(./assets/sections/experience/doit/inventory-room.jpg)",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
     },
   },
 };
