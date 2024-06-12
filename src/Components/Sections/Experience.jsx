@@ -23,11 +23,13 @@ import {
   Verified as VerifiedIcon,
   Inventory as InventoryIcon,
   ContentPasteSearch as ContentPasteSearchIcon,
+  MarkUnreadChatAlt as MarkUnreadChatAltIcon,
+  LocalPolice as LocalPoliceIcon,
 } from "@mui/icons-material";
 
 import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   COLORS,
   BACKGROUNDS,
@@ -36,10 +38,178 @@ import {
 } from "../../constants.jsx";
 
 const Experience = () => {
-  const [isLearnMoreModalOpen, setIsLearnMoreModalOpen] = useState(false); // TODO: we might have to make this an object, just like what we did with the marquee. We store the information of each card in a JSON, and when the user clicks the Lear More btn, we pass in the ID of the opened dialog, then we display the information accordingly.
+  const [learnMoreDialog, setLearnMoreDialog] = useState({
+    isOpen: false,
+    overlayImage: "",
+    overlayTitle: "",
+    projectRole: "",
+    accomplishments: {
+      first: {
+        icon: <></>,
+        title: "",
+        description: "",
+      },
+      second: {
+        icon: <></>,
+        title: "",
+        description: "",
+      },
+      third: {
+        icon: <></>,
+        title: "",
+        description: "",
+      },
+    },
+  });
 
   const theme = useTheme();
   const fullScreenDialog = useMediaQuery(theme.breakpoints.down("sm")); // true if the viewport is in sm or smaller width. false otherwise.
+
+  const doitCards = useMemo(() => {
+    const financialForecastingSystem = {
+      overlayImage:
+        "./assets/sections/experience/doit/forecast80-horizontal.png",
+      overlayImageAltText: "Financial Forecasting Background",
+      overlayTitle: "Financial Forecasting System",
+      projectRole:
+        "I spearheaded the development of an advanced Budgeting System that automated data entry and calculations, provided detailed spending analyses, and significantly improved budget forecasting and fiscal control for the department.",
+      accomplishments: {
+        first: {
+          icon: <AttachMoneyIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Streamlined Budgeting Process",
+          description:
+            "Developed an advanced Budgeting System that eliminated the need for manual data entry and calculations, thereby streamlining the budgeting process and significantly reducing errors. This automation led to increased efficiency and accuracy in financial data management.",
+        },
+        second: {
+          icon: <QueryStatsIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Comprehensive Spending Analysis",
+          description:
+            "Implemented a feature that provided detailed, multi-faceted spending analyses, enabling managers to break down costs by shift type and closely monitor operational cost trends. This granular insight empowered managers to better understand and control departmental expenses.",
+        },
+        third: {
+          icon: <VerifiedIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Enhanced Financial Decision-Making",
+          description:
+            "Introduced advanced analytics and forecasting capabilities that improved budget forecasting and fiscal control. This innovation offered comprehensive financial insights, reducing the manual workload and helping the department make more informed financial decisions, leading to more efficient budget planning and resource allocation.",
+        },
+      },
+    };
+
+    const inventoryManagementSystem = {
+      overlayImage: "./assets/sections/experience/doit/inventory80.png",
+      overlayImageAltText: "Inventory Management Background",
+      overlayTitle: "Inventory Management System",
+      projectRole:
+        "I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss.",
+      accomplishments: {
+        first: {
+          icon: (
+            <ContentPasteSearchIcon sx={extendedStyles.accomplishmentsIcon} />
+          ),
+          title: "Automated Asset Tracking",
+          description:
+            "Developed an Inventory Management System that automated asset tracking by linking issued equipment to employee records via a comprehensive database schema using foreign keys. This automation reduced manual tracking efforts and enhanced the accuracy of asset management.",
+        },
+        second: {
+          icon: (
+            <MarkUnreadChatAltIcon sx={extendedStyles.accomplishmentsIcon} />
+          ),
+          title: "Equipment Return Reminders",
+          description:
+            "Implemented an automated reminder system that issued equipment return notifications to employees at the end of their employment. This proactive measure mitigated equipment loss, ensuring timely returns and safeguarding departmental resources.",
+        },
+        third: {
+          icon: <LocalPoliceIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Enhanced Policy Compliance",
+          description:
+            "The system significantly improved compliance with departmental policies by providing a reliable and transparent process for managing equipment returns. This initiative minimized asset losses and enhanced resource accountability, leading to greater operational efficiency.",
+        },
+      },
+    };
+
+    const reactJsCourse = {
+      overlayImage: "",
+      overlayImageAltText: "",
+      overlayTitle: "",
+      projectRole: "",
+      accomplishments: {
+        first: {
+          icon: <></>,
+          title: "",
+          description: "",
+        },
+        second: {
+          icon: <></>,
+          title: "",
+          description: "",
+        },
+        third: {
+          icon: <></>,
+          title: "",
+          description: "",
+        },
+      },
+    };
+
+    // RECONSIDER WHETHER WE SHOULD IMPLEMENT THIS 4TH CARD
+    const gitlabIssues = {
+      overlayImage: "",
+      overlayImageAltText: "",
+      overlayTitle: "",
+      projectRole: "",
+      accomplishments: {
+        first: {
+          icon: <></>,
+          title: "",
+          description: "",
+        },
+        second: {
+          icon: <></>,
+          title: "",
+          description: "",
+        },
+        third: {
+          icon: <></>,
+          title: "",
+          description: "",
+        },
+      },
+    };
+
+    return {
+      financialForecastingSystem,
+      inventoryManagementSystem,
+      reactJsCourse,
+      gitlabIssues,
+    };
+  }, []);
+
+  const handleOpenDialog = (cardId) => {
+    setLearnMoreDialog({
+      isOpen: true,
+      overlayImage: doitCards[cardId].overlayImage,
+      overlayImageAltText: doitCards[cardId].overlayImageAltText,
+      overlayTitle: doitCards[cardId].overlayTitle,
+      projectRole: doitCards[cardId].projectRole,
+      accomplishments: {
+        first: {
+          icon: doitCards[cardId].accomplishments.first.icon,
+          title: doitCards[cardId].accomplishments.first.title,
+          description: doitCards[cardId].accomplishments.first.description,
+        },
+        second: {
+          icon: doitCards[cardId].accomplishments.second.icon,
+          title: doitCards[cardId].accomplishments.second.title,
+          description: doitCards[cardId].accomplishments.second.description,
+        },
+        third: {
+          icon: doitCards[cardId].accomplishments.third.icon,
+          title: doitCards[cardId].accomplishments.third.title,
+          description: doitCards[cardId].accomplishments.third.description,
+        },
+      },
+    });
+  };
 
   return (
     <section id="experience" style={experienceStyles.experienceContainer}>
@@ -122,21 +292,18 @@ const Experience = () => {
                         >
                           <Grid>
                             <AttachMoneyIcon
-                              sx={experienceStyles.doit.forecastIcons}
+                              sx={experienceStyles.doit.projectIcons}
                             />
-                            <QueryStatsIcon
-                              sx={experienceStyles.doit.forecastIcons}
-                            />
+
                             <Typography variant="h3">
                               Financial Forecasting System
                             </Typography>
 
                             <Typography variant="body1">
-                              Developed an advanced Budgeting System that
-                              replaced manual processes, provided detailed
-                              spending analyses, and improved budget forecasting
-                              and fiscal control for better financial
-                              decision-making.
+                              An advanced Budgeting System that replaced manual
+                              processes, provides detailed spending analyses,
+                              and improves budget forecasting and fiscal control
+                              for better financial decision-making.
                             </Typography>
                           </Grid>
 
@@ -144,7 +311,9 @@ const Experience = () => {
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
                             sx={extendedStyles.doitLearnMoreBtn}
-                            onClick={() => setIsLearnMoreModalOpen(true)}
+                            onClick={() =>
+                              handleOpenDialog("financialForecastingSystem")
+                            }
                           >
                             Learn more
                           </Button>
@@ -158,12 +327,9 @@ const Experience = () => {
                           sx={experienceStyles.doit.inventoryCardContent}
                         >
                           <Grid>
-                            <Grid sx={experienceStyles.doit.forecastIconsGrid}>
+                            <Grid sx={experienceStyles.doit.projectIconsGrid}>
                               <InventoryIcon
-                                sx={experienceStyles.doit.forecastIcons}
-                              />
-                              <ContentPasteSearchIcon
-                                sx={experienceStyles.doit.forecastIcons}
+                                sx={experienceStyles.doit.projectIcons}
                               />
                             </Grid>
                             <Typography variant="h3">
@@ -171,10 +337,11 @@ const Experience = () => {
                             </Typography>
 
                             <Typography variant="body1">
-                              Developed an automated Inventory Management System
-                              that streamlined asset tracking, improved resource
-                              accountability, and enhanced compliance with
-                              departmental policies.
+                              An automated solution that links issued equipment
+                              to employees, sends automatic return reminders,
+                              and improves compliance with departmental
+                              policies, reducing equipment loss and manual
+                              tracking efforts.
                             </Typography>
                           </Grid>
 
@@ -182,7 +349,9 @@ const Experience = () => {
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
                             sx={extendedStyles.doitLearnMoreBtn}
-                            onClick={() => setIsLearnMoreModalOpen(true)}
+                            onClick={() =>
+                              handleOpenDialog("inventoryManagementSystem")
+                            }
                           >
                             Learn more
                           </Button>
@@ -234,15 +403,25 @@ const Experience = () => {
           </Grid>
 
           <Dialog
-            open={isLearnMoreModalOpen}
-            onClose={() => setIsLearnMoreModalOpen(false)}
+            open={learnMoreDialog.isOpen}
+            onClose={() =>
+              setLearnMoreDialog({
+                ...learnMoreDialog,
+                isOpen: false,
+              })
+            }
             fullScreen={fullScreenDialog}
             maxWidth="lg"
           >
             <DialogContent sx={experienceStyles.doit.learnMoreDialogContent}>
               <IconButton
                 aria-label="Close"
-                onClick={() => setIsLearnMoreModalOpen(false)}
+                onClick={() =>
+                  setLearnMoreDialog({
+                    ...learnMoreDialog,
+                    isOpen: false,
+                  })
+                }
                 sx={experienceStyles.iconButton}
               >
                 <CloseIcon fontSize="large" sx={GLOBAL_STYLING.closeIcon} />
@@ -260,9 +439,9 @@ const Experience = () => {
                 >
                   <Box
                     component="img"
-                    src="./assets/sections/experience/doit/forecast80-horizontal.png"
-                    alt="Financial Forecasting Background"
-                    sx={experienceStyles.doit.forecastBoxImg}
+                    src={learnMoreDialog.overlayImage}
+                    alt={learnMoreDialog.overlayImageAltText}
+                    sx={experienceStyles.doit.dialogHeaderImage}
                   />
                   <Grid sx={experienceStyles.doit.dialogOverlayCardGrid}>
                     <Card sx={experienceStyles.doit.dialogCardOverlay}>
@@ -273,7 +452,7 @@ const Experience = () => {
                           variant="h2"
                           sx={experienceStyles.doit.cardTitle}
                         >
-                          Financial Forecasting System
+                          {learnMoreDialog.overlayTitle}
                         </Typography>
                       </CardContent>
                     </Card>
@@ -331,11 +510,7 @@ const Experience = () => {
                           />
                           <Typography variant="h3">Project Role</Typography>
                           <Typography variant="body2">
-                            I spearheaded the development of an advanced
-                            Budgeting System that automated data entry and
-                            calculations, provided detailed spending analyses,
-                            and significantly improved budget forecasting and
-                            fiscal control for the department.
+                            {learnMoreDialog.projectRole}
                           </Typography>
                         </CardContent>
                       </Card>
@@ -368,19 +543,15 @@ const Experience = () => {
                       >
                         <Card sx={experienceStyles.doit.card}>
                           <CardContent>
-                            <AttachMoneyIcon
-                              sx={extendedStyles.accomplishmentsIcon}
-                            />
+                            {learnMoreDialog.accomplishments.first.icon}
                             <Typography variant="h3">
-                              Streamlined Budgeting Process
+                              {learnMoreDialog.accomplishments.first.title}
                             </Typography>
                             <Typography variant="body2">
-                              Developed an advanced Budgeting System that
-                              eliminated the need for manual data entry and
-                              calculations, thereby streamlining the budgeting
-                              process and significantly reducing errors. This
-                              automation led to increased efficiency and
-                              accuracy in financial data management.
+                              {
+                                learnMoreDialog.accomplishments.first
+                                  .description
+                              }
                             </Typography>
                           </CardContent>
                         </Card>
@@ -394,19 +565,15 @@ const Experience = () => {
                       >
                         <Card sx={experienceStyles.doit.card}>
                           <CardContent>
-                            <QueryStatsIcon
-                              sx={extendedStyles.accomplishmentsIcon}
-                            />
+                            {learnMoreDialog.accomplishments.second.icon}
                             <Typography variant="h3">
-                              Comprehensive Spending Analysis
+                              {learnMoreDialog.accomplishments.second.title}
                             </Typography>
                             <Typography variant="body2">
-                              Implemented a feature that provided detailed,
-                              multi-faceted spending analyses, enabling managers
-                              to break down costs by shift type and closely
-                              monitor operational cost trends. This granular
-                              insight empowered managers to better understand
-                              and control departmental expenses.
+                              {
+                                learnMoreDialog.accomplishments.second
+                                  .description
+                              }
                             </Typography>
                           </CardContent>
                         </Card>
@@ -420,20 +587,15 @@ const Experience = () => {
                       >
                         <Card sx={experienceStyles.doit.card}>
                           <CardContent>
-                            <VerifiedIcon
-                              sx={extendedStyles.accomplishmentsIcon}
-                            />
+                            {learnMoreDialog.accomplishments.third.icon}
                             <Typography variant="h3">
-                              Enhanced Financial Decision-Making
+                              {learnMoreDialog.accomplishments.third.title}
                             </Typography>
                             <Typography variant="body2">
-                              Introduced advanced analytics and forecasting
-                              capabilities that improved budget forecasting and
-                              fiscal control. This innovation offered
-                              comprehensive financial insights, reducing the
-                              manual workload and helping the department make
-                              more informed financial decisions, leading to more
-                              efficient budget planning and resource allocation.
+                              {
+                                learnMoreDialog.accomplishments.third
+                                  .description
+                              }
                             </Typography>
                           </CardContent>
                         </Card>
@@ -521,7 +683,7 @@ const experienceStyles = {
       pl: 0,
       pr: 0,
     },
-    forecastBoxImg: {
+    dialogHeaderImage: {
       width: "100%",
       height: "auto",
     },
@@ -581,10 +743,10 @@ const experienceStyles = {
       flexDirection: "column",
       justifyContent: "space-between",
     },
-    forecastIconsGrid: {
+    projectIconsGrid: {
       color: COLORS.lightGray,
     },
-    forecastIcons: {
+    projectIcons: {
       color: COLORS.lightGray,
       width: "70px",
       height: "auto",
@@ -592,8 +754,7 @@ const experienceStyles = {
     inventoryCard: {
       ...GLOBAL_STYLING.card,
       height: "100%",
-      backgroundImage:
-        "url(./assets/sections/experience/doit/inventory-room.jpg)",
+      backgroundImage: "url(./assets/sections/experience/doit/inventory95.jpg)",
       backgroundPosition: "center",
       backgroundSize: "cover",
     },
