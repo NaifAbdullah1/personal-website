@@ -18,7 +18,7 @@ const CustomMarquee = () => {
   const openMarqueeDialog = (clickedImage, clickedImageCaption) => {
     setDialogState({
       isOpen: true,
-      selectedImage: clickedImage.replace(/\.(?=[^.]*$)/, "F."), // We need to first edit the 'clickedImage' to point to teh full sized image
+      selectedImage: clickedImage.replace(/\.(?=[^.]*$)/, "-cmprsdF."), // We need to first edit the 'clickedImage' to point to teh full sized image
       selectedImageCaption: clickedImageCaption, // A regex that finds the very last dot in a string
     });
   };

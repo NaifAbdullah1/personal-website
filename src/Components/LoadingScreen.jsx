@@ -36,7 +36,7 @@ const Loading = ({ onComplete }) => {
     >
       <Box
         component="img"
-        src="./assets/MISC/logo.png"
+        src="./assets/sections/hero/trimmed-logo-cmprsd.png"
         alt="Loading Screen Logo"
         sx={loadingScreenStyles.loadingLogo}
       />

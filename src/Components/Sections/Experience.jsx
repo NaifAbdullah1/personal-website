@@ -160,36 +160,10 @@ const Experience = () => {
       },
     };
 
-    // RECONSIDER WHETHER WE SHOULD IMPLEMENT THIS 4TH CARD
-    const gitlabIssues = {
-      overlayImage: "",
-      overlayImageAltText: "",
-      overlayTitle: "",
-      projectRole: "",
-      accomplishments: {
-        first: {
-          icon: <></>,
-          title: "",
-          description: "",
-        },
-        second: {
-          icon: <></>,
-          title: "",
-          description: "",
-        },
-        third: {
-          icon: <></>,
-          title: "",
-          description: "",
-        },
-      },
-    };
-
     return {
       financialForecastingSystem,
       inventoryManagementSystem,
       reactJsCourse,
-      gitlabIssues,
     };
   }, []);
 

@@ -35,7 +35,7 @@ const Hero = () => {
         <Grid item xs={12} sm={6} sx={heroStyles.logoGrid}>
           <Box
             component="img"
-            src="./assets/sections/hero/trimmed-logo.png"
+            src="./assets/sections/hero/trimmed-logo-cmprsd.png"
             alt="Brand Logo"
             sx={heroStyles.logoImage}
           />

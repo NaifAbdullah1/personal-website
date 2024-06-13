@@ -1,1 +1,0 @@
-The number at the end of the images' title corresponds to the "Brightness" value that appears when you edit the image using Windows' photos
