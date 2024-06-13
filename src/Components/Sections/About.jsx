@@ -6,7 +6,6 @@ import {
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
 } from "../../constants.jsx";
-import "../../scss/Sections/common.scss";
 
 const About = () => {
   return (

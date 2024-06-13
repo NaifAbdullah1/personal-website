@@ -1,27 +1,46 @@
-import { Container, Row, Col } from "react-bootstrap";
-import LoremIpsum from "./LoremIpsum";
-
-import "../../scss/Sections/common.scss";
-import "../../scss/Sections/portfolio.scss";
+import { Container, Grid, Typography } from "@mui/material";
+import LoremIpsum from "./LoremIpsum.jsx";
+import {
+  BACKGROUNDS,
+  GLOBAL_STYLING,
+  RESPONSIVE_STYLING,
+} from "../../constants.jsx";
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="portfolio-section">
-      <Container fluid className="container-layout">
-        <Row style={{ width: "100%" }}>
-          <Col style={{ flex: "0 0 20%" }}>
-            <h1 className="sticky-1st-column">Portfolio 🎯</h1>
-          </Col>
-          <Col>
-            <LoremIpsum/>
-          </Col>
-          <Col>
-            <h1>Coming Soon!</h1>
-          </Col>
-        </Row>
+    <section id="portfolio" style={portfolioStyles.portfolioContainer}>
+      <Container maxWidth={false} sx={GLOBAL_STYLING.containerLayout}>
+        <Grid
+          container
+          sx={RESPONSIVE_STYLING.spacingBetweenSectionTitleAndSectionContent}
+        >
+          <Grid item xs={12} sm={3}>
+            <Typography variant="h1" sx={GLOBAL_STYLING.stickySectionHeader}>
+              Portfolio 🎯
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            container
+            xs={12}
+            sm={9}
+            sx={GLOBAL_STYLING.spacingBetweenSubsections}
+          >
+            <LoremIpsum />
+            <LoremIpsum />
+            <LoremIpsum />
+          </Grid>
+        </Grid>
       </Container>
     </section>
   );
+};
+
+const portfolioStyles = {
+  portfolioContainer: {
+    backgroundImage: BACKGROUNDS.blackToBlueBackground,
+  },
 };
 
 export default Portfolio;

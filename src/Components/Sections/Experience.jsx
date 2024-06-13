@@ -30,7 +30,6 @@ import {
   AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
-import "../../scss/Sections/common.scss";
 import LoremIpsum from "./LoremIpsum";
 import { useMemo, useState } from "react";
 import {
@@ -212,7 +211,7 @@ const Experience = () => {
             container
             xs={12}
             sm={9}
-            sx={experienceStyles.spacingBetweenTenures}
+            sx={GLOBAL_STYLING.spacingBetweenSubsections}
           >
             <Grid item container>
               <Grid item xs={12} sm={12} className="Saudia Grid">
@@ -621,9 +620,6 @@ const Experience = () => {
 const experienceStyles = {
   experienceContainer: {
     backgroundImage: BACKGROUNDS.blueToBlackBackground,
-  },
-  spacingBetweenTenures: {
-    gap: 15,
   },
   spacingBetweenCompanyLogoCardsAndTenureDetails: {
     gap: 5,

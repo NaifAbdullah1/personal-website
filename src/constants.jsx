@@ -94,4 +94,7 @@ export const GLOBAL_STYLING = {
       color: COLORS.purple, // Plus adding a color change to the inherited effects
     },
   },
+  spacingBetweenSubsections: {
+    gap: 15,
+  },
 };
