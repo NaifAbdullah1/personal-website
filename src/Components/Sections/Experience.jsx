@@ -38,6 +38,7 @@ import {
   BACKGROUNDS,
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
+  Z_INDICES,
 } from "../../constants.jsx";
 
 const Experience = () => {
@@ -294,9 +295,9 @@ const Experience = () => {
                 >
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
                     <Grid item xs={12} sm={6} className="ForecastCard">
-                      <Card sx={experienceStyles.doit.forecastCard}>
+                      <Card sx={extendedStyles.forecastCard}>
                         <CardContent
-                          sx={experienceStyles.doit.forecastCardContent}
+                          sx={experienceStyles.doit.projectCardContent}
                         >
                           <Grid>
                             <AttachMoneyIcon
@@ -330,9 +331,9 @@ const Experience = () => {
                     </Grid>
 
                     <Grid item xs={12} sm={5} className="InventoryCard">
-                      <Card sx={experienceStyles.doit.inventoryCard}>
+                      <Card sx={extendedStyles.inventoryCard}>
                         <CardContent
-                          sx={experienceStyles.doit.inventoryCardContent}
+                          sx={experienceStyles.doit.projectCardContent}
                         >
                           <Grid>
                             <Grid sx={experienceStyles.doit.projectIconsGrid}>
@@ -370,9 +371,9 @@ const Experience = () => {
 
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
                     <Grid item xs={12} sm={12} className="Course Card">
-                      <Card sx={experienceStyles.doit.courseCard}>
+                      <Card sx={extendedStyles.courseCard}>
                         <CardContent
-                          sx={experienceStyles.doit.courseCardContent}
+                          sx={experienceStyles.doit.projectCardContent}
                         >
                           <Grid>
                             <Grid sx={experienceStyles.doit.projectIconsGrid}>
@@ -654,15 +655,15 @@ const experienceStyles = {
     gap: 5,
   },
   spacingBetweenImageAndDialogItems: {
+    ...RESPONSIVE_STYLING.mobileResponsiveDialogContent,
     gap: 5,
     justifyContent: "center",
-    ...RESPONSIVE_STYLING.mobileResponsiveDialogContent,
   },
   companyLogoCard: {
+    ...GLOBAL_STYLING.card,
     position: "sticky",
     top: { xs: "85px", sm: "60px" },
     boxShadow: "none",
-    ...GLOBAL_STYLING.card,
   },
   companyLogoCardPadding: {
     padding: "7.5px 0px 12px 0px",
@@ -677,7 +678,7 @@ const experienceStyles = {
     right: 0,
     m: 0,
     ml: "auto",
-    zIndex: 1,
+    zIndex: Z_INDICES.default,
   },
   dialogContentBelowImageGrid: {
     width: "75%",
@@ -691,8 +692,8 @@ const experienceStyles = {
     position: "relative",
   },
   accomplishmentsCardsRow: {
-    justifyContent: "space-between",
     ...RESPONSIVE_STYLING.spacingBetweenAccomplishmentsCards,
+    justifyContent: "space-between",
   },
   accomplishmentsHeaderGrid: {
     justifyContent: { xs: "center", md: "start" },
@@ -725,11 +726,11 @@ const experienceStyles = {
       transform: "translate(-50%, -50%)",
     },
     dialogCardOverlay: {
+      ...GLOBAL_STYLING.card,
       position: "absolute",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)", // Center the card
-      ...GLOBAL_STYLING.card,
       width: "auto",
       display: "inline-flex",
       justifyContent: "center", // Center content horizontally
@@ -745,43 +746,15 @@ const experienceStyles = {
       whiteSpace: "nowrap",
     },
     dialogNDAandPRCardsParentGrid: {
-      //alignItems: "stretch",
-      justifyContent: "space-between",
       ...RESPONSIVE_STYLING.spacingBetweenNDAandPRCards,
+      justifyContent: "space-between",
     },
     dialogCardGrid: { display: "flex" },
     card: {
       ...GLOBAL_STYLING.card,
       height: "100%",
     },
-    forecastCard: {
-      ...GLOBAL_STYLING.card,
-      height: "100%",
-      backgroundImage:
-        "url(./assets/sections/experience/doit/forecast95-vert.png)",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
-    },
-    forecastCardContent: {
-      height: "90%",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-    },
-    inventoryCardContent: {
-      height: "90%",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-    },
-    courseCard: {
-      ...GLOBAL_STYLING.card,
-      height: "100%",
-      backgroundImage: "url(./assets/sections/experience/doit/group95.jpg)",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
-    },
-    courseCardContent: {
+    projectCardContent: {
       height: "90%",
       display: "flex",
       flexDirection: "column",
@@ -794,13 +767,6 @@ const experienceStyles = {
       color: COLORS.lightGray,
       width: "70px",
       height: "auto",
-    },
-    inventoryCard: {
-      ...GLOBAL_STYLING.card,
-      height: "100%",
-      backgroundImage: "url(./assets/sections/experience/doit/inventory95.jpg)",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
     },
   },
 };
@@ -816,6 +782,12 @@ const experienceBaseStyles = {
     },
   },
   iconSizing: { width: "50px", height: "auto" },
+  projectCard: {
+    ...GLOBAL_STYLING.card,
+    height: "100%",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  },
 };
 
 const extendedStyles = {
@@ -834,6 +806,19 @@ const extendedStyles = {
   accomplishmentsIcon: {
     ...experienceBaseStyles.iconSizing,
     color: COLORS.lightBlue,
+  },
+  forecastCard: {
+    ...experienceBaseStyles.projectCard,
+    backgroundImage:
+      "url(./assets/sections/experience/doit/forecast95-vert.png)",
+  },
+  inventoryCard: {
+    ...experienceBaseStyles.projectCard,
+    backgroundImage: "url(./assets/sections/experience/doit/inventory95.jpg)",
+  },
+  courseCard: {
+    ...experienceBaseStyles.projectCard,
+    backgroundImage: "url(./assets/sections/experience/doit/group95.jpg)",
   },
 };
 

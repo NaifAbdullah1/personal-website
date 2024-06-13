@@ -85,7 +85,6 @@ export const GLOBAL_STYLING = {
     borderRadius: 5,
     zIndex: Z_INDICES.default,
   },
-
   closeIcon: {
     color: COLORS.lightBlue,
     borderRadius: "20px",

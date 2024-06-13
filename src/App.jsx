@@ -36,6 +36,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 - Failed to match the forecast and inventory card. Figure it out later. Look at the card in the dialog, they might give you an idea. You may also need to adjust the height of the forecast background image. you may also need to make it a flex container, which would stretch the button to the full width of the card. You may also consider resorting to making the cards the same size
 
 - Make your alt texts more descriptive
+
+- The forecast and the inventory cards are asymmetric. Think about whether you want to make them symmetric (both get 5.5 width or something close to that) or if you want to keep them asymmetric as a styling thing. 
 */
 
 import { useState } from "react";
