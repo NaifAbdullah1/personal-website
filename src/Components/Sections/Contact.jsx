@@ -2,36 +2,20 @@ import {
   Container,
   Grid,
   Typography,
-  TextField,
-  Button,
+  FormControl,
+  FormHelperText,
   Card,
   CardContent,
-  CardActions,
+  TextField,
 } from "@mui/material";
-
-import { useState } from "react";
-
-import { motion } from "framer-motion";
 
 import {
   BACKGROUNDS,
+  COLORS,
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
 } from "../../constants.jsx";
-
-const containerVariants = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const formVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { delay: 0.5, duration: 0.5 } },
-};
-
-const buttonVariants = {
-  hover: { scale: 1.05, transition: { yoyo: Infinity, duration: 0.3 } },
-};
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,15 +24,8 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+  const handleSubmit = () => {
+    console.log();
   };
 
   return (
@@ -71,79 +48,48 @@ const Contact = () => {
             sm={9}
             sx={GLOBAL_STYLING.spacingBetweenSubsections}
           >
-            <Container maxWidth="sm" sx={{ mt: 5 }}>
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <Card sx={{ boxShadow: 3 }}>
-                  <motion.div
-                    variants={formVariants}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <CardContent>
-                      <Typography variant="h4" gutterBottom align="center">
-                        Contact Us
-                      </Typography>
-                      <form onSubmit={handleSubmit}>
-                        <Grid container spacing={2}>
-                          <Grid item xs={12}>
-                            <TextField
-                              fullWidth
-                              label="Name"
-                              name="name"
-                              value={formData.name}
-                              onChange={handleChange}
-                              required
-                            />
-                          </Grid>
-                          <Grid item xs={12}>
-                            <TextField
-                              fullWidth
-                              label="Email"
-                              name="email"
-                              type="email"
-                              value={formData.email}
-                              onChange={handleChange}
-                              required
-                            />
-                          </Grid>
-                          <Grid item xs={12}>
-                            <TextField
-                              fullWidth
-                              label="Message"
-                              name="message"
-                              multiline
-                              rows={4}
-                              value={formData.message}
-                              onChange={handleChange}
-                              required
-                            />
-                          </Grid>
-                        </Grid>
-                        <CardActions sx={{ justifyContent: "center", mt: 2 }}>
-                          <motion.div
-                            variants={buttonVariants}
-                            whileHover="hover"
-                          >
-                            <Button
-                              type="submit"
-                              variant="contained"
-                              color="primary"
-                              sx={{ borderRadius: 5, px: 4 }}
-                            >
-                              Send
-                            </Button>
-                          </motion.div>
-                        </CardActions>
-                      </form>
-                    </CardContent>
-                  </motion.div>
-                </Card>
-              </motion.div>
-            </Container>
+            <Card sx={GLOBAL_STYLING.card}>
+              <CardContent>
+                <form onSubmit={handleSubmit}>
+                  <FormControl fullWidth margin="normal">
+                    <TextField
+                      label="Name"
+                      variant="outlined"
+                      name="name"
+                      helperText={
+                        <FormHelperText sx={{ color: COLORS.lightGray }}>
+                          What should I call you?
+                        </FormHelperText>
+                      }
+                      value={formData.name}
+                    />
+                  </FormControl>
+
+                  <FormControl fullWidth margin="normal">
+                    <TextField
+                      label="Email address"
+                      variant="outlined"
+                      name="emailAddress"
+                      helperText={
+                        <FormHelperText sx={{ color: COLORS.lightGray }}>
+                          We&apos;ll never share your email.
+                        </FormHelperText>
+                      }
+                      value={formData.email}
+                    />
+                  </FormControl>
+
+                  <FormControl fullWidth margin="normal">
+                    <TextField
+                      label="Message"
+                      variant="outlined"
+                      name="messageBody"
+                      value={formData.message}
+                    />
+                  </FormControl>
+                </form>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Container>

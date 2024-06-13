@@ -41,7 +41,9 @@ Alternatively, we can make clicking the card result in expanding it with further
 
 - Add a button that takes you all the way up
 
-- for the phone's slideshow, one of the libraries you could use is react slick. But search for slideshow libraries that are targeting mobile platforms. 
+- for the phone's slideshow, one of the libraries you could use is react slick. But search for slideshow libraries that are targeting mobile platforms.
+
+- The border color of the form isn't exactly like the standard color COLORS.lightBlue, think about whether you need to change it to the standard color or is it that no one will notice and it's not worth it? 
 */
 
 import { useState } from "react";
