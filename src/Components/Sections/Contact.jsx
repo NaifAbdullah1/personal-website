@@ -3,10 +3,9 @@ import {
   Grid,
   Typography,
   FormControl,
-  FormHelperText,
   Card,
   CardContent,
-  TextField,
+  Box,
 } from "@mui/material";
 
 import {
@@ -16,6 +15,8 @@ import {
   RESPONSIVE_STYLING,
 } from "../../constants.jsx";
 import { useState } from "react";
+import CustomTextField from "./CustomTextField.jsx";
+import CustomButton from "./CustomButton.jsx";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,8 +25,18 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = () => {
-    console.log();
+  const handleChange = (eventTarget) => {
+    const { name, value } = eventTarget;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevents page from refreshing
+    console.log("Submitted!");
+    console.log(formData);
   };
 
   return (
@@ -50,43 +61,48 @@ const Contact = () => {
           >
             <Card sx={GLOBAL_STYLING.card}>
               <CardContent>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(event) => handleSubmit(event)}>
                   <FormControl fullWidth margin="normal">
-                    <TextField
+                    <CustomTextField
                       label="Name"
-                      variant="outlined"
                       name="name"
-                      helperText={
-                        <FormHelperText sx={{ color: COLORS.lightGray }}>
-                          What should I call you?
-                        </FormHelperText>
-                      }
+                      autoComplete="name"
                       value={formData.name}
+                      onChange={(event) => handleChange(event.target)}
+                      helperText="What should I call you?"
+                      FormHelperTextProps={{ sx: { color: COLORS.lightGray } }}
                     />
                   </FormControl>
 
                   <FormControl fullWidth margin="normal">
-                    <TextField
-                      label="Email address"
-                      variant="outlined"
-                      name="emailAddress"
-                      helperText={
-                        <FormHelperText sx={{ color: COLORS.lightGray }}>
-                          We&apos;ll never share your email.
-                        </FormHelperText>
-                      }
+                    <CustomTextField
+                      label="Email Address"
+                      name="email"
+                      autoComplete="email"
                       value={formData.email}
+                      onChange={(event) => handleChange(event.target)}
+                      helperText="We'll never share your email."
+                      FormHelperTextProps={{ sx: { color: COLORS.lightGray } }}
                     />
                   </FormControl>
 
                   <FormControl fullWidth margin="normal">
-                    <TextField
+                    <CustomTextField
                       label="Message"
-                      variant="outlined"
-                      name="messageBody"
+                      name="message"
                       value={formData.message}
+                      onChange={(event) => handleChange(event.target)}
+                      multiline
                     />
                   </FormControl>
+
+                  <Box
+                    sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}
+                  >
+                    <CustomButton type="submit" variant="outlined">
+                      Send Message
+                    </CustomButton>
+                  </Box>
                 </form>
               </CardContent>
             </Card>
@@ -100,6 +116,20 @@ const Contact = () => {
 const contactStyles = {
   contactContainer: {
     backgroundImage: BACKGROUNDS.blueToBlackBackground,
+  },
+
+  textField: {
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: COLORS.lightGray,
+      },
+      "&:hover fieldset": {
+        borderColor: COLORS.lightGray,
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "primary.main",
+      },
+    },
   },
 };
 
