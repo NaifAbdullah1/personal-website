@@ -30,7 +30,7 @@ import {
   AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
-import LoremIpsum from "./LoremIpsum";
+import ComingSoon from "./ComingSoon.jsx";
 import { useMemo, useState } from "react";
 import {
   COLORS,
@@ -213,28 +213,24 @@ const Experience = () => {
             sm={9}
             sx={GLOBAL_STYLING.spacingBetweenSubsections}
           >
-            <Grid item container>
-              <Grid item xs={12} sm={12} className="Saudia Grid">
-                <Card sx={experienceStyles.companyLogoCard}>
-                  <CardContent style={experienceStyles.companyLogoCardPadding}>
-                    <Box
-                      component="img"
-                      src="./assets/sections/experience/saudia/saudia-skyteam.png"
-                      alt="Saudia Logo"
-                      sx={experienceStyles.companyLogoSizing}
-                    />
-                  </CardContent>
-                </Card>
+            <Grid item container xs={12} sm={12}>
+              <Card sx={experienceStyles.companyLogoCard}>
+                <CardContent style={experienceStyles.companyLogoCardPadding}>
+                  <Box
+                    component="img"
+                    src="./assets/sections/experience/saudia/saudia-skyteam.png"
+                    alt="Saudia Logo"
+                    sx={experienceStyles.companyLogoSizing}
+                  />
+                </CardContent>
+              </Card>
 
-                <LoremIpsum />
-                <LoremIpsum />
-                <LoremIpsum />
-              </Grid>
+              <ComingSoon />
             </Grid>
 
             <Grid
-              container
               item
+              container
               xs={12}
               sm={12}
               sx={
@@ -267,7 +263,7 @@ const Experience = () => {
                   sx={experienceStyles.doit.highlightedProjectsCards}
                 >
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={6} className="ForecastCard">
+                    <Grid item xs={12} sm={6}>
                       <Card sx={extendedStyles.forecastCard}>
                         <CardContent
                           sx={experienceStyles.doit.projectCardContent}
@@ -303,7 +299,7 @@ const Experience = () => {
                       </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={5} className="InventoryCard">
+                    <Grid item xs={12} sm={5}>
                       <Card sx={extendedStyles.inventoryCard}>
                         <CardContent
                           sx={experienceStyles.doit.projectCardContent}
@@ -343,7 +339,7 @@ const Experience = () => {
                   </Grid>
 
                   <Grid container sx={experienceStyles.doit.projectsCardsRow}>
-                    <Grid item xs={12} sm={12} className="Course Card">
+                    <Grid item xs={12} sm={12}>
                       <Card sx={extendedStyles.courseCard}>
                         <CardContent
                           sx={experienceStyles.doit.projectCardContent}
@@ -397,13 +393,7 @@ const Experience = () => {
                 </CardContent>
               </Card>
 
-              <LoremIpsum />
-              <LoremIpsum />
-              <LoremIpsum />
-              <br />
-              <br />
-              <br />
-              <br />
+              <ComingSoon />
             </Grid>
           </Grid>
 
@@ -468,13 +458,11 @@ const Experience = () => {
                   item
                   container
                   sx={experienceStyles.dialogContentBelowImageGrid}
-                  className="Dialog Content below image"
                 >
                   <Grid
                     item
                     container
                     sx={experienceStyles.doit.dialogNDAandPRCardsParentGrid}
-                    className="First Row of cards: NDA & PR"
                   >
                     <Grid
                       item
@@ -526,7 +514,6 @@ const Experience = () => {
                     item
                     container
                     sx={experienceStyles.accomplishmentsGrid}
-                    className="Accomplishments Grid"
                   >
                     <Grid
                       container
@@ -538,7 +525,6 @@ const Experience = () => {
                       item
                       container
                       sx={experienceStyles.accomplishmentsCardsRow}
-                      className="Accomplishments Cards Row"
                     >
                       <Grid
                         item

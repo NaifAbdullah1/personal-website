@@ -40,6 +40,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 - The forecast and the inventory cards are asymmetric. Think about whether you want to make them symmetric (both get 5.5 width or something close to that) or if you want to keep them asymmetric as a styling thing. 
 
 - Add a button that takes you all the way up
+
+- for the phone's slideshow, one of the libraries you could use is react slick. But search for slideshow libraries that are targeting mobile platforms. 
 */
 
 import { useState } from "react";

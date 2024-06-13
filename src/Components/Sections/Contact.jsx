@@ -1,6 +1,6 @@
 import { Container, Grid, Typography } from "@mui/material";
 
-import LoremIpsum from "./LoremIpsum";
+import ComingSoon from "./ComingSoon.jsx";
 import {
   BACKGROUNDS,
   GLOBAL_STYLING,
@@ -28,9 +28,7 @@ const Contact = () => {
             sm={9}
             sx={GLOBAL_STYLING.spacingBetweenSubsections}
           >
-            <LoremIpsum />
-            <LoremIpsum />
-            <LoremIpsum />
+            <ComingSoon />
           </Grid>
         </Grid>
       </Container>
