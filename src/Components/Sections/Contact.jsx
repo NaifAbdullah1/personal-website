@@ -73,7 +73,15 @@ const Contact = () => {
               alignItems: "center",
             }}
           >
-            <Card sx={{ ...GLOBAL_STYLING.card, mb: 10 }} xs={12} sm={12}>
+            <Card
+              sx={{
+                ...GLOBAL_STYLING.card,
+                mb: 10,
+                width: "100%",
+              }}
+              xs={12}
+              sm={12}
+            >
               <CardContent
                 xs={12}
                 sm={12}
