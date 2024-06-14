@@ -51,8 +51,12 @@ const Contact = () => {
     }, 1000); // Give some time for the form to fade out before rendering the animation.
 
     setTimeout(() => {
-      setShowAnimation(false);
       setIsSubmitted(false);
+    }, 4000);
+
+    setTimeout(() => {
+      setShowAnimation(false);
+
       setFormData({ name: "", email: "", message: "" }); // Reset form after 3 seconds
     }, 3000);
   };
@@ -102,25 +106,29 @@ const Contact = () => {
               >
                 <CSSTransition
                   in={showAnimation}
-                  timeout={4000}
+                  timeout={1000}
                   classNames="fade"
                   unmountOnExit
                 >
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: {
-                        xs: "395.812px",
-                        sm: "355.812px",
-                      },
-                    }}
-                  >
-                    <LottieAnimation animationData={animationData} />
+                  <Grid>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={12}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: {
+                          xs: "314.08px",
+                          //sm: "314.08px",
+                        },
+                        width: "auto",
+                      }}
+                    >
+                      <LottieAnimation animationData={animationData} />
+                    </Grid>
+                    <Typography variant="h3">Message Sent!</Typography>
                   </Grid>
                 </CSSTransition>
 
