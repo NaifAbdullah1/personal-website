@@ -66,21 +66,39 @@ const Contact = () => {
             container
             xs={12}
             sm={9}
-            sx={GLOBAL_STYLING.spacingBetweenSubsections}
+            sx={{
+              ...GLOBAL_STYLING.spacingBetweenSubsections,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <Card sx={GLOBAL_STYLING.card}>
-              <CardContent>
+            <Card sx={{ ...GLOBAL_STYLING.card, mb: 10 }} xs={12} sm={12}>
+              <CardContent
+                xs={12}
+                sm={12}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 {isSubmitted ? (
-                  <div
-                    style={{
+                  <Grid
+                    xs={12}
+                    sm={12}
+                    sx={{
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      height: "200px",
+                      height: {
+                        xs: "395.812px",
+                        sm: "355.812px",
+                      },
                     }}
                   >
                     <LottieAnimation animationData={animationData} />
-                  </div>
+                  </Grid>
                 ) : (
                   <form onSubmit={handleSubmit}>
                     <FormControl fullWidth margin="normal">
