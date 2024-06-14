@@ -21,9 +21,9 @@ const LottieAnimation = ({ animationData, loop = false, autoplay = true }) => {
 };
 
 LottieAnimation.propTypes = {
-  animationData: PropTypes.string.isRequired,
-  loop: PropTypes.boolean,
-  autoplay: PropTypes.boolean,
+  animationData: PropTypes.object.isRequired,
+  loop: PropTypes.func,
+  autoplay: PropTypes.func,
 };
 
 export default LottieAnimation;

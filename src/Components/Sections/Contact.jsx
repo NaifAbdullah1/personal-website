@@ -18,6 +18,8 @@ import { useState } from "react";
 import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
 import LottieAnimation from "./LottieAnimation.jsx";
+import { CSSTransition } from "react-transition-group";
+import "./contact.css";
 
 import animationData from "../../lotAn.json";
 
@@ -28,6 +30,7 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
 
   const handleChange = (eventTarget) => {
     const { name, value } = eventTarget;
@@ -41,8 +44,14 @@ const Contact = () => {
     event.preventDefault(); // Prevents page from refreshing
     console.log("Submitted!");
     console.log(formData);
-    setIsSubmitted(true);
+
+    setIsSubmitted(true); // Starts to make the form fade out
     setTimeout(() => {
+      setShowAnimation(true);
+    }, 1000); // Give some time for the form to fade out before rendering the animation.
+
+    setTimeout(() => {
+      setShowAnimation(false);
       setIsSubmitted(false);
       setFormData({ name: "", email: "", message: "" }); // Reset form after 3 seconds
     }, 3000);
@@ -91,8 +100,14 @@ const Contact = () => {
                   alignItems: "center",
                 }}
               >
-                {isSubmitted ? (
+                <CSSTransition
+                  in={showAnimation}
+                  timeout={4000}
+                  classNames="fade"
+                  unmountOnExit
+                >
                   <Grid
+                    item
                     xs={12}
                     sm={12}
                     sx={{
@@ -107,7 +122,14 @@ const Contact = () => {
                   >
                     <LottieAnimation animationData={animationData} />
                   </Grid>
-                ) : (
+                </CSSTransition>
+
+                <CSSTransition
+                  in={!isSubmitted}
+                  timeout={1000}
+                  classNames="fade"
+                  unmountOnExit
+                >
                   <form onSubmit={handleSubmit}>
                     <FormControl fullWidth margin="normal">
                       <CustomTextField
@@ -159,7 +181,7 @@ const Contact = () => {
                       </CustomButton>
                     </Box>
                   </form>
-                )}
+                </CSSTransition>
               </CardContent>
             </Card>
           </Grid>
