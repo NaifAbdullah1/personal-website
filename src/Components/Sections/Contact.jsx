@@ -17,6 +17,9 @@ import {
 import { useState } from "react";
 import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
+import LottieAnimation from "./LottieAnimation.jsx";
+
+import animationData from "../../lotAn.json";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +27,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (eventTarget) => {
     const { name, value } = eventTarget;
@@ -37,6 +41,11 @@ const Contact = () => {
     event.preventDefault(); // Prevents page from refreshing
     console.log("Submitted!");
     console.log(formData);
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({ name: "", email: "", message: "" }); // Reset form after 3 seconds
+    }, 3000);
   };
 
   return (
@@ -61,49 +70,70 @@ const Contact = () => {
           >
             <Card sx={GLOBAL_STYLING.card}>
               <CardContent>
-                <form onSubmit={(event) => handleSubmit(event)}>
-                  <FormControl fullWidth margin="normal">
-                    <CustomTextField
-                      label="Name"
-                      name="name"
-                      autoComplete="name"
-                      value={formData.name}
-                      onChange={(event) => handleChange(event.target)}
-                      helperText="What should I call you?"
-                      FormHelperTextProps={{ sx: { color: COLORS.lightGray } }}
-                    />
-                  </FormControl>
-
-                  <FormControl fullWidth margin="normal">
-                    <CustomTextField
-                      label="Email Address"
-                      name="email"
-                      autoComplete="email"
-                      value={formData.email}
-                      onChange={(event) => handleChange(event.target)}
-                      helperText="We'll never share your email."
-                      FormHelperTextProps={{ sx: { color: COLORS.lightGray } }}
-                    />
-                  </FormControl>
-
-                  <FormControl fullWidth margin="normal">
-                    <CustomTextField
-                      label="Message"
-                      name="message"
-                      value={formData.message}
-                      onChange={(event) => handleChange(event.target)}
-                      multiline
-                    />
-                  </FormControl>
-
-                  <Box
-                    sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}
+                {isSubmitted ? (
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "200px",
+                    }}
                   >
-                    <CustomButton type="submit" variant="outlined">
-                      Send Message
-                    </CustomButton>
-                  </Box>
-                </form>
+                    <LottieAnimation animationData={animationData} />
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <FormControl fullWidth margin="normal">
+                      <CustomTextField
+                        label="Name"
+                        name="name"
+                        autoComplete="name"
+                        value={formData.name}
+                        onChange={(event) => handleChange(event.target)}
+                        helperText="What should I call you?"
+                        FormHelperTextProps={{
+                          sx: { color: COLORS.lightGray },
+                        }}
+                      />
+                    </FormControl>
+
+                    <FormControl fullWidth margin="normal">
+                      <CustomTextField
+                        label="Email Address"
+                        name="email"
+                        autoComplete="email"
+                        value={formData.email}
+                        onChange={(event) => handleChange(event.target)}
+                        helperText="We'll never share your email."
+                        FormHelperTextProps={{
+                          sx: { color: COLORS.lightGray },
+                        }}
+                      />
+                    </FormControl>
+
+                    <FormControl fullWidth margin="normal">
+                      <CustomTextField
+                        label="Message"
+                        name="message"
+                        value={formData.message}
+                        onChange={(event) => handleChange(event.target)}
+                        multiline
+                      />
+                    </FormControl>
+
+                    <Box
+                      sx={{
+                        mt: 2,
+                        display: "flex",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <CustomButton type="submit" variant="outlined">
+                        Send Message
+                      </CustomButton>
+                    </Box>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </Grid>
