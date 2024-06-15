@@ -6,6 +6,7 @@ import {
   Card,
   CardContent,
   Box,
+  CircularProgress,
 } from "@mui/material";
 
 import {
@@ -39,6 +40,7 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false); // Whether the user has clicked the "Send Message" button in the contact form
   const [showAnimation, setShowAnimation] = useState(false); // Start fading in the animation.
   const [stabilizeCardHeight, setStabilizeCardHeight] = useState("");
+  const [sendingEmailInProgress, setSendingEmailInProgress] = useState("");
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const namePattern = /^(?=.{1,})(?!-+$)[A-Za-z-]+$/; // Matches if it contains only alphabet (capital or small letters) and/or hyphens (but no lone hyphens)
@@ -89,10 +91,9 @@ const Contact = () => {
 
     if (isNameError || isEmailError || isMessageError) {
       return;
+    } else {
+      setSendingEmailInProgress(true);
     }
-
-    console.log("Submitted!");
-    console.log(formData);
 
     emailjs.init("KfYaBNTYu2G023mwM"); // Obtained from my EmailJS dashboard
 
@@ -120,6 +121,7 @@ const Contact = () => {
           }, 4500);
 
           setTimeout(() => {
+            setSendingEmailInProgress(false);
             setShowAnimation(false);
 
             setFormData({
@@ -228,9 +230,13 @@ const Contact = () => {
                     </FormControl>
 
                     <Box sx={contactStyles.buttonBox}>
-                      <CustomButton type="submit" variant="outlined">
-                        Send Message
-                      </CustomButton>
+                      {sendingEmailInProgress ? (
+                        <CircularProgress />
+                      ) : (
+                        <CustomButton type="submit" variant="outlined">
+                          Send Message
+                        </CustomButton>
+                      )}
                     </Box>
                   </form>
                 </CSSTransition>
