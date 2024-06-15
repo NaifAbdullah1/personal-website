@@ -29,8 +29,9 @@ const Contact = () => {
     email: "",
     message: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [showAnimation, setShowAnimation] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false); // Whether the user has clicked the "Send Message" button in the contact form
+  const [showAnimation, setShowAnimation] = useState(false); // Start fading in the animation.
+  const [stabilizeCardHeight, setStabilizeCardHeight] = useState("");
 
   const handleChange = (eventTarget) => {
     const { name, value } = eventTarget;
@@ -52,7 +53,7 @@ const Contact = () => {
 
     setTimeout(() => {
       setIsSubmitted(false);
-    }, 4000);
+    }, 4500);
 
     setTimeout(() => {
       setShowAnimation(false);
@@ -81,7 +82,12 @@ const Contact = () => {
             sm={9}
             sx={contactStyles.parentContentGrid}
           >
-            <Card sx={contactStyles.formCard}>
+            <Card
+              sx={{
+                ...contactStyles.formCard,
+                height: stabilizeCardHeight ? "395.812px" : "auto",
+              }}
+            >
               <CardContent sx={contactStyles.formCardContent}>
                 <CSSTransition
                   in={showAnimation}
@@ -90,16 +96,7 @@ const Contact = () => {
                   unmountOnExit
                 >
                   <Grid>
-                    <Grid
-                      item
-                      sx={{
-                        height: {
-                          xs: "314.08px",
-                          //sm: "314.08px",
-                        },
-                        width: "auto",
-                      }}
-                    >
+                    <Grid item sx={contactStyles.animationParentGrid}>
                       <LottieAnimation animationData={animationData} />
                     </Grid>
                     <Typography variant="h3">Message Sent!</Typography>
@@ -111,6 +108,8 @@ const Contact = () => {
                   timeout={1000}
                   classNames="fade"
                   unmountOnExit
+                  onExited={() => setStabilizeCardHeight(true)}
+                  onEntered={() => setStabilizeCardHeight(false)}
                 >
                   <form onSubmit={handleSubmit}>
                     <FormControl fullWidth margin="normal">
@@ -121,9 +120,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={(event) => handleChange(event.target)}
                         helperText="What should I call you?"
-                        FormHelperTextProps={{
-                          sx: { color: COLORS.lightGray },
-                        }}
+                        FormHelperTextProps={contactStyles.fieldsHelperText}
                       />
                     </FormControl>
 
@@ -135,9 +132,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={(event) => handleChange(event.target)}
                         helperText="We'll never share your email."
-                        FormHelperTextProps={{
-                          sx: { color: COLORS.lightGray },
-                        }}
+                        FormHelperTextProps={contactStyles.fieldsHelperText}
                       />
                     </FormControl>
 
@@ -151,13 +146,7 @@ const Contact = () => {
                       />
                     </FormControl>
 
-                    <Box
-                      sx={{
-                        mt: 2,
-                        display: "flex",
-                        justifyContent: "flex-end",
-                      }}
-                    >
+                    <Box sx={contactStyles.buttonBox}>
                       <CustomButton type="submit" variant="outlined">
                         Send Message
                       </CustomButton>
@@ -194,18 +183,19 @@ const contactStyles = {
     justifyContent: "center",
     alignItems: "center",
   },
-  textField: {
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: COLORS.lightGray,
-      },
-      "&:hover fieldset": {
-        borderColor: COLORS.lightGray,
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "primary.main",
-      },
+  animationParentGrid: {
+    height: {
+      xs: "314.08px",
+      //sm: "314.08px",
     },
+  },
+  fieldsHelperText: {
+    sx: { color: COLORS.lightGray },
+  },
+  buttonBox: {
+    mt: 2,
+    display: "flex",
+    justifyContent: "flex-end", // To get the button aligned to the right of the container
   },
 };
 
