@@ -44,6 +44,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 - for the phone's slideshow, one of the libraries you could use is react slick. But search for slideshow libraries that are targeting mobile platforms.
 
 - The border color of the form isn't exactly like the standard color COLORS.lightBlue, think about whether you need to change it to the standard color or is it that no one will notice and it's not worth it? 
+
+- The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
 */
 
 import { useState } from "react";

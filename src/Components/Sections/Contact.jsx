@@ -19,6 +19,8 @@ import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
 import LottieAnimation from "./LottieAnimation.jsx";
 import { CSSTransition } from "react-transition-group";
+import emailjs from "@emailjs/browser";
+
 import "../../scss/contact.scss";
 
 import animationData from "../../lotAn.json";
@@ -46,20 +48,41 @@ const Contact = () => {
     console.log("Submitted!");
     console.log(formData);
 
-    setIsSubmitted(true); // Starts to make the form fade out
-    setTimeout(() => {
-      setShowAnimation(true);
-    }, 1000); // Give some time for the form to fade out before rendering the animation.
+    emailjs.init("KfYaBNTYu2G023mwM"); // Obtained from my EmailJS dashboard
 
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 4500);
+    emailjs
+      .send(
+        "service_03dtbvt",
+        "template_st7yfqd",
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message,
+        },
+        "KfYaBNTYu2G023mwM"
+      )
+      .then(
+        (response) => {
+          console.log("Email sent", response.status, response.text);
+          setIsSubmitted(true); // Starts to make the form fade out
+          setTimeout(() => {
+            setShowAnimation(true);
+          }, 1000); // Give some time for the form to fade out before rendering the animation.
 
-    setTimeout(() => {
-      setShowAnimation(false);
+          setTimeout(() => {
+            setIsSubmitted(false);
+          }, 4500);
 
-      setFormData({ name: "", email: "", message: "" }); // Reset form after 3 seconds
-    }, 3000);
+          setTimeout(() => {
+            setShowAnimation(false);
+
+            setFormData({ name: "", email: "", message: "" }); // Reset form after 3 seconds
+          }, 3000);
+        },
+        (error) => {
+          console.log("Failed to send email: ", error);
+        }
+      );
   };
 
   return (
