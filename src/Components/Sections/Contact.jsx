@@ -19,7 +19,7 @@ import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
 import LottieAnimation from "./LottieAnimation.jsx";
 import { CSSTransition } from "react-transition-group";
-import "./contact.css";
+import "../../scss/contact.scss";
 
 import animationData from "../../lotAn.json";
 
@@ -79,31 +79,10 @@ const Contact = () => {
             container
             xs={12}
             sm={9}
-            sx={{
-              ...GLOBAL_STYLING.spacingBetweenSubsections,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            sx={contactStyles.parentContentGrid}
           >
-            <Card
-              sx={{
-                ...GLOBAL_STYLING.card,
-                mb: 10,
-                width: "100%",
-              }}
-              xs={12}
-              sm={12}
-            >
-              <CardContent
-                xs={12}
-                sm={12}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+            <Card sx={contactStyles.formCard}>
+              <CardContent sx={contactStyles.formCardContent}>
                 <CSSTransition
                   in={showAnimation}
                   timeout={1000}
@@ -113,12 +92,7 @@ const Contact = () => {
                   <Grid>
                     <Grid
                       item
-                      xs={12}
-                      sm={12}
                       sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
                         height: {
                           xs: "314.08px",
                           //sm: "314.08px",
@@ -203,7 +177,23 @@ const contactStyles = {
   contactContainer: {
     backgroundImage: BACKGROUNDS.blueToBlackBackground,
   },
-
+  parentContentGrid: {
+    ...GLOBAL_STYLING.spacingBetweenSubsections,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  formCard: {
+    ...GLOBAL_STYLING.card,
+    mb: 10,
+    width: "100%", // Prevents the card's width from shrinking when the Lottie animation is ran
+  },
+  formCardContent: {
+    // Helps us center the form's text fields and the animation when ran
+    display: "flex", // TODO: BIG NOTE HERE, REMOVING THOSE WILL EAT UP THE MARGINS, IT WILL ALSO CAUSE THE SPLIT SECOND RENDER. MAYBE THE SOLUTION WITH THE SPLIT SECOND RENDER ON ANIMATION LOADING HAS TO DO WITH STYLING?
+    justifyContent: "center",
+    alignItems: "center",
+  },
   textField: {
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
