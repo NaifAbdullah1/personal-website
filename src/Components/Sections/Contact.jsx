@@ -14,7 +14,7 @@ import {
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
 } from "../../constants.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
 import LottieAnimation from "./LottieAnimation.jsx";
@@ -30,21 +30,67 @@ const Contact = () => {
     name: "",
     email: "",
     message: "",
+    error: {
+      isNameError: false,
+      isEmailError: false,
+      isMessageError: false,
+    },
   });
   const [isSubmitted, setIsSubmitted] = useState(false); // Whether the user has clicked the "Send Message" button in the contact form
   const [showAnimation, setShowAnimation] = useState(false); // Start fading in the animation.
   const [stabilizeCardHeight, setStabilizeCardHeight] = useState("");
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const namePattern = /^(?=.{1,})(?!-+$)[A-Za-z-]+$/; // Matches if it contains only alphabet (capital or small letters) and/or hyphens (but no lone hyphens)
+  const messagePattern = /^(?=.*\S).+$/; // Matches if it contains at least one non-whitespace character.
+
+  useEffect(() => {
+    console.log(formData.error);
+  }, [formData]);
 
   const handleChange = (eventTarget) => {
     const { name, value } = eventTarget;
     setFormData({
       ...formData,
       [name]: value,
+      error: {
+        isNameError:
+          name === "name"
+            ? !namePattern.test(value)
+            : formData.error.isNameError,
+        isEmailError:
+          name === "email"
+            ? !emailPattern.test(value)
+            : formData.error.isEmailError,
+        isMessageError:
+          name === "message"
+            ? !messagePattern.test(value)
+            : formData.error.isMessageError,
+      },
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevents page from refreshing
+
+    let isNameError = !namePattern.test(formData.name);
+    let isEmailError = !emailPattern.test(formData.email);
+    let isMessageError = !messagePattern.test(formData.message);
+
+    // Although we can simply do {...formData, [REST_OF_ATTRIBUTES]}, it's recommended to use the function form below because it gives you the most up to date values from the formData
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      error: {
+        isNameError: isNameError,
+        isEmailError: isEmailError,
+        isMessageError: isMessageError,
+      },
+    }));
+
+    if (isNameError || isEmailError || isMessageError) {
+      return;
+    }
+
     console.log("Submitted!");
     console.log(formData);
 
@@ -76,7 +122,16 @@ const Contact = () => {
           setTimeout(() => {
             setShowAnimation(false);
 
-            setFormData({ name: "", email: "", message: "" }); // Reset form after 3 seconds
+            setFormData({
+              name: "",
+              email: "",
+              message: "",
+              error: {
+                isNameError: false,
+                isEmailError: false,
+                isMessageError: false,
+              },
+            }); // No need to reset form because email was successful.
           }, 3000);
         },
         (error) => {
@@ -141,6 +196,7 @@ const Contact = () => {
                         name="name"
                         autoComplete="name"
                         value={formData.name}
+                        error={formData.error.isNameError}
                         onChange={(event) => handleChange(event.target)}
                         helperText="What should I call you?"
                         FormHelperTextProps={contactStyles.fieldsHelperText}
@@ -153,6 +209,7 @@ const Contact = () => {
                         name="email"
                         autoComplete="email"
                         value={formData.email}
+                        error={formData.error.isEmailError}
                         onChange={(event) => handleChange(event.target)}
                         helperText="We'll never share your email."
                         FormHelperTextProps={contactStyles.fieldsHelperText}
@@ -164,6 +221,7 @@ const Contact = () => {
                         label="Message"
                         name="message"
                         value={formData.message}
+                        error={formData.error.isMessageError}
                         onChange={(event) => handleChange(event.target)}
                         multiline
                       />
