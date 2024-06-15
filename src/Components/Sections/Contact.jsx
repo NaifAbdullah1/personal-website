@@ -42,8 +42,10 @@ const Contact = () => {
   const [stabilizeCardHeight, setStabilizeCardHeight] = useState("");
   const [sendingEmailInProgress, setSendingEmailInProgress] = useState("");
 
+  const namePattern = /^(?=.{1,})(?!^\s+$)[A-Za-z\s-]+$/;
+  // Matches if it contains only alphabet (capital or small letters) and/or hyphens (but no lone hyphens)
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const namePattern = /^(?=.{1,})(?!-+$)[A-Za-z-]+$/; // Matches if it contains only alphabet (capital or small letters) and/or hyphens (but no lone hyphens)
+
   const messagePattern = /^(?=.*\S).+$/; // Matches if it contains at least one non-whitespace character.
 
   useEffect(() => {
@@ -102,9 +104,9 @@ const Contact = () => {
         "service_03dtbvt",
         "template_st7yfqd",
         {
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
+          from_name: formData.name.trim(),
+          reply_to: formData.email.trim(),
+          message: formData.message.trim(),
         },
         "KfYaBNTYu2G023mwM"
       )
@@ -231,7 +233,13 @@ const Contact = () => {
 
                     <Box sx={contactStyles.buttonBox}>
                       {sendingEmailInProgress ? (
-                        <CircularProgress />
+                        <Grid
+                          item
+                          container
+                          sx={contactStyles.circularProgressGrid}
+                        >
+                          <CircularProgress />
+                        </Grid>
                       ) : (
                         <CustomButton type="submit" variant="outlined">
                           Send Message
@@ -271,10 +279,7 @@ const contactStyles = {
     alignItems: "center",
   },
   animationParentGrid: {
-    height: {
-      xs: "314.08px",
-      //sm: "314.08px",
-    },
+    height: "314.08px",
   },
   fieldsHelperText: {
     sx: { color: COLORS.lightGray },
@@ -283,6 +288,11 @@ const contactStyles = {
     mt: 2,
     display: "flex",
     justifyContent: "flex-end", // To get the button aligned to the right of the container
+  },
+  circularProgressGrid: {
+    // This is so that the circular progress animation sits in the center of where the "Send Message" button is located.
+    width: "127.469px", // "Send Message" button's width
+    justifyContent: "center",
   },
 };
 
