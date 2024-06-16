@@ -77,7 +77,7 @@ import Portfolio from "./Components/Sections/Portfolio/Portfolio.jsx";
 import Contact from "./Components/Sections/Contact/Contact.jsx";
 import { isMobileOnly } from "react-device-detect";
 
-import "./App.scss";
+import "./scss/App.scss";
 import { COLORS, Z_INDICES } from "./constants.jsx";
 
 function App() {
