@@ -52,6 +52,10 @@ Alternatively, we can make clicking the card result in expanding it with further
 - EmailJS has a private key that we can use to secure our mailing service. Look into how we can incorporate it. This sounds like a security token. Also, investigate all security concerns from this contact form. I heard people can email other using YOUR email address. 
 
 - Make sure to understand how styled components work. Especially the Resume one. 
+
+- Organize all of your files in the project directory. Establish a naming convention for all the files per their types. 
+
+- Resolve any console errors or suppress them if needed. 
 */
 
 import { useState } from "react";
