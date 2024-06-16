@@ -160,6 +160,13 @@ const Contact = () => {
             sm={9}
             sx={contactStyles.parentContentGrid}
           >
+            <Grid container sx={contactStyles.contactCallToAction}>
+              <Typography variant="h3">Collaboration opportunities:</Typography>
+              <Typography variant="body1">
+                Keen to partner on transformative initiatives? Let&apos;s
+                explore mutual interests and connect!
+              </Typography>
+            </Grid>
             <Card
               sx={{
                 ...contactStyles.formCard,
@@ -260,9 +267,9 @@ const contactStyles = {
     backgroundImage: BACKGROUNDS.blueToBlackBackground,
   },
   parentContentGrid: {
-    ...GLOBAL_STYLING.spacingBetweenSubsections,
+    gap: 5,
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "start",
     alignItems: "center",
   },
   formCard: {
@@ -293,6 +300,10 @@ const contactStyles = {
     justifyContent: "center",
   },
   circularProgress: { color: COLORS.lightBlue },
+  contactCallToAction: {
+    ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
+    justifyContent: { xs: "center", sm: "start" },
+  },
 };
 
 export default Contact;

@@ -213,6 +213,7 @@ const Experience = () => {
             sm={9}
             sx={GLOBAL_STYLING.spacingBetweenSubsections}
           >
+            {/*
             <Grid item container xs={12} sm={12}>
               <Card sx={experienceStyles.companyLogoCard}>
                 <CardContent style={experienceStyles.companyLogoCardPadding}>
@@ -233,6 +234,7 @@ const Experience = () => {
                 <ComingSoonAnimation />
               </Grid>
             </Grid>
+            */}
 
             <Grid
               item

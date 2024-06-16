@@ -59,6 +59,10 @@ Alternatively, we can make clicking the card result in expanding it with further
 - In teh contact form, consider making the Message TextFielf with 3-4 rows. You'll then have to adjust the sizing of the contact form for the animation. 
 
 - The problem with the unstable card height with the contact form still persists. Check it again (low priority)
+
+- Minimize the amount of upfront text as much as you can. Other examples can be seen with minimal text upfront. All the text is offloaded behind "learn more" buttons where they belong
+
+- Make sure we have non-skipping headers. In the About section, the "Hello" and "My name is Naif Abdullah" should realisticly have h2, but they're using h3. Re-evaluate whether this is okay. Though h2 is way too big
 */
 
 import { useState } from "react";
