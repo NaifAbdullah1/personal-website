@@ -22,7 +22,7 @@ import LottieAnimation from "./LottieAnimation.jsx";
 import { CSSTransition } from "react-transition-group";
 import emailjs from "@emailjs/browser";
 
-import "../../scss/contact.scss";
+import "../../scss/transition-animation.scss";
 
 import successAnimation from "../../LottieAnimations/Success.json";
 
