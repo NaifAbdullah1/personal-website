@@ -1,11 +1,11 @@
 import { Container, Grid, Typography } from "@mui/material";
-import ComingSoonAnimation from "./ComingSoonAnimation.jsx";
+import ComingSoonAnimation from "../../Misc/ComingSoonAnimation.jsx";
 
 import {
   BACKGROUNDS,
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
-} from "../../constants.jsx";
+} from "../../../constants.jsx";
 
 const Portfolio = () => {
   return (

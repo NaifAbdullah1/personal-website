@@ -1,6 +1,6 @@
 import { styled, alpha } from "@mui/material/styles";
 import { Button } from "@mui/material";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../../constants";
 
 const CustomButton = styled(Button)(({ theme }) => ({
   backgroundColor: "transparent", // TODO: Why do we need this?

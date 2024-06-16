@@ -1,6 +1,6 @@
 import { Grid, Typography, Box } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-import { FONTS, COLORS, BACKGROUNDS } from "../../constants.jsx";
+import { FONTS, COLORS, BACKGROUNDS } from "../../../constants.jsx";
 
 const animationDuration = 2000;
 const typeAnimationSequence = [

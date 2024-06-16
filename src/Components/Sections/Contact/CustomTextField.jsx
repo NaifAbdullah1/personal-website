@@ -1,6 +1,6 @@
 import { styled, alpha } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../../constants";
 
 const CustomTextField = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {

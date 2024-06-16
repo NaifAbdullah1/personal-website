@@ -70,11 +70,11 @@ import ProgressBar from "react-scroll-progress-bar";
 import Header from "./Components/Header.jsx";
 import LoadingScreen from "./Components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
-import Hero from "./Components/Sections/Hero.jsx";
-import About from "./Components/Sections/About.jsx";
-import Experience from "./Components/Sections/Experience.jsx";
-import Portfolio from "./Components/Sections/Portfolio.jsx";
-import Contact from "./Components/Sections/Contact.jsx";
+import Hero from "./Components/Sections/Hero/Hero.jsx";
+import About from "./Components/Sections/About/About.jsx";
+import Experience from "./Components/Sections/Experience/Experience.jsx";
+import Portfolio from "./Components/Sections/Portfolio/Portfolio.jsx";
+import Contact from "./Components/Sections/Contact/Contact.jsx";
 import { isMobileOnly } from "react-device-detect";
 
 import "./App.scss";

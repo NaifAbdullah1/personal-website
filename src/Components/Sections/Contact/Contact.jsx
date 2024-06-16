@@ -14,17 +14,17 @@ import {
   COLORS,
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
-} from "../../constants.jsx";
+} from "../../../constants.jsx";
 import { useState } from "react";
 import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
-import LottieAnimation from "./LottieAnimation.jsx";
+import LottieAnimation from "../../Misc/LottieAnimation.jsx";
 import { CSSTransition } from "react-transition-group";
 import emailjs from "@emailjs/browser";
 
-import "../../scss/transition-animation.scss";
+import "../../../scss/transition-animation.scss";
 
-import successAnimation from "../../LottieAnimations/Success.json";
+import successAnimation from "../../../LottieAnimations/Success.json";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

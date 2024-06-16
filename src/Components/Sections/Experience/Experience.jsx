@@ -30,7 +30,7 @@ import {
   AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
-import ComingSoonAnimation from "./ComingSoonAnimation.jsx";
+import ComingSoonAnimation from "../../Misc/ComingSoonAnimation.jsx";
 import { useMemo, useState } from "react";
 import {
   COLORS,
@@ -38,7 +38,7 @@ import {
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
   Z_INDICES,
-} from "../../constants.jsx";
+} from "../../../constants.jsx";
 
 const Experience = () => {
   const [learnMoreDialog, setLearnMoreDialog] = useState({

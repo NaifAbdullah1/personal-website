@@ -5,7 +5,7 @@ import {
   BACKGROUNDS,
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
-} from "../../constants.jsx";
+} from "../../../constants.jsx";
 import ResumeButton from "./ResumeButton.jsx";
 
 const About = () => {
