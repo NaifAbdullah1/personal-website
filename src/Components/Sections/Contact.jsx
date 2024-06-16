@@ -15,7 +15,7 @@ import {
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
 } from "../../constants.jsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
 import LottieAnimation from "./LottieAnimation.jsx";
@@ -24,7 +24,7 @@ import emailjs from "@emailjs/browser";
 
 import "../../scss/contact.scss";
 
-import animationData from "../../lotAn.json";
+import successAnimation from "../../LottieAnimations/Success.json";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -47,10 +47,6 @@ const Contact = () => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const messagePattern = /^(?=.*\S).+$/; // Matches if it contains at least one non-whitespace character.
-
-  useEffect(() => {
-    console.log(formData.error);
-  }, [formData]);
 
   const handleChange = (eventTarget) => {
     const { name, value } = eventTarget;
@@ -179,7 +175,7 @@ const Contact = () => {
                 >
                   <Grid>
                     <Grid item sx={contactStyles.animationParentGrid}>
-                      <LottieAnimation animationData={animationData} />
+                      <LottieAnimation animationData={successAnimation} />
                     </Grid>
                     <Typography variant="h3">Message Sent!</Typography>
                   </Grid>

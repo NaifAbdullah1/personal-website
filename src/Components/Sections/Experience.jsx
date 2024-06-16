@@ -30,7 +30,7 @@ import {
   AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
-import ComingSoon from "./ComingSoon.jsx";
+import ComingSoonAnimation from "./ComingSoonAnimation.jsx";
 import { useMemo, useState } from "react";
 import {
   COLORS,
@@ -225,7 +225,13 @@ const Experience = () => {
                 </CardContent>
               </Card>
 
-              <ComingSoon />
+              <Grid
+                item
+                container
+                sx={{ justifyContent: "center", alignItems: "center" }}
+              >
+                <ComingSoonAnimation />
+              </Grid>
             </Grid>
 
             <Grid
@@ -393,7 +399,13 @@ const Experience = () => {
                 </CardContent>
               </Card>
 
-              <ComingSoon />
+              <Grid
+                item
+                container
+                sx={{ justifyContent: "center", alignItems: "center" }}
+              >
+                <ComingSoonAnimation />
+              </Grid>
             </Grid>
           </Grid>
 

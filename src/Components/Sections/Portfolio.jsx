@@ -1,5 +1,6 @@
 import { Container, Grid, Typography } from "@mui/material";
-import ComingSoon from "./ComingSoon.jsx";
+import ComingSoonAnimation from "./ComingSoonAnimation.jsx";
+
 import {
   BACKGROUNDS,
   GLOBAL_STYLING,
@@ -25,9 +26,13 @@ const Portfolio = () => {
             container
             xs={12}
             sm={9}
-            sx={GLOBAL_STYLING.spacingBetweenSubsections}
+            sx={{
+              ...GLOBAL_STYLING.spacingBetweenSubsections,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <ComingSoon />
+            <ComingSoonAnimation />
           </Grid>
         </Grid>
       </Container>
