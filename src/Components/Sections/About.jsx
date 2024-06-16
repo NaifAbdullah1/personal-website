@@ -6,6 +6,7 @@ import {
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
 } from "../../constants.jsx";
+import ResumeButton from "./ResumeButton.jsx";
 
 const About = () => {
   return (
@@ -48,10 +49,12 @@ const About = () => {
 
             <Grid item container sx={aboutStyles.certificationsGrid}>
               <Grid item sx={aboutStyles.certificationHeader}>
-                <Typography variant="h3">Certified by</Typography>
+                <Typography variant="h3">My Résumé:</Typography>
               </Grid>
 
               <Grid item sx={aboutStyles.certificateImagesGrid}>
+                <ResumeButton />
+                {/*
                 <Box
                   component="img"
                   src="./assets/sections/about/certifications/doroob-logo.jpg"
@@ -70,6 +73,7 @@ const About = () => {
                     borderRadius: "20px",
                   }}
                 />
+                */}
               </Grid>
             </Grid>
           </Grid>

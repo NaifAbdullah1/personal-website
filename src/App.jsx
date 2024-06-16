@@ -50,6 +50,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 -On mobile, when we scroll over the DoIT projects, the performance takes a hit. Investigate why this is happening. Maybe we need to compress the images or heavily reduce the text on there (we can offload any important details to the dialog.)
 
 - EmailJS has a private key that we can use to secure our mailing service. Look into how we can incorporate it. This sounds like a security token. Also, investigate all security concerns from this contact form. I heard people can email other using YOUR email address. 
+
+- Make sure to understand how styled components work. Especially the Resume one. 
 */
 
 import { useState } from "react";
