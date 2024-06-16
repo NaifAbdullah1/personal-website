@@ -189,7 +189,7 @@ const Contact = () => {
                   onExited={() => setStabilizeCardHeight(true)}
                   onEntered={() => setStabilizeCardHeight(false)}
                 >
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit} aria-label="contact-form">
                     <FormControl fullWidth margin="normal">
                       <CustomTextField
                         label="Name"
@@ -223,7 +223,6 @@ const Contact = () => {
                         value={formData.message}
                         error={formData.error.isMessageError}
                         onChange={(event) => handleChange(event.target)}
-                        multiline
                       />
                     </FormControl>
 
@@ -234,7 +233,10 @@ const Contact = () => {
                           container
                           sx={contactStyles.circularProgressGrid}
                         >
-                          <CircularProgress />
+                          <CircularProgress
+                            size={36.5}
+                            sx={contactStyles.circularProgress}
+                          />
                         </Grid>
                       ) : (
                         <CustomButton type="submit" variant="outlined">
@@ -290,6 +292,7 @@ const contactStyles = {
     width: "127.469px", // "Send Message" button's width
     justifyContent: "center",
   },
+  circularProgress: { color: COLORS.lightBlue },
 };
 
 export default Contact;

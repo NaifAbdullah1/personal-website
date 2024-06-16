@@ -1,5 +1,4 @@
 /*
-- When you're done, see if you can consolidate your css files
 
 - Investigate ways to simplify the Header.jsx code. Make a backup copy and a commit first
 
@@ -56,6 +55,14 @@ Alternatively, we can make clicking the card result in expanding it with further
 - Organize all of your files in the project directory. Establish a naming convention for all the files per their types. 
 
 - Resolve any console errors or suppress them if needed. 
+
+- Look into meta-data you could add. Other components should have their equivalent of "alt text", an example is adding the aria-label
+
+-Use both WAVE AND Lighthouse to check the quality of your site and implement the suggested fixes. 
+
+- In teh contact form, consider making the Message TextFielf with 3-4 rows. You'll then have to adjust the sizing of the contact form for the animation. 
+
+- The problem with the unstable card height with the contact form still persists. Check it again (low priority)
 */
 
 import { useState } from "react";
