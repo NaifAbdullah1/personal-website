@@ -78,7 +78,11 @@ const About = () => {
             </Grid>
           </Grid>
 
-          {!isMobile && <CustomMarquee />}
+          {!isMobile && (
+            <>
+              <CustomMarquee />
+            </>
+          )}
         </Grid>
       </Container>
     </section>

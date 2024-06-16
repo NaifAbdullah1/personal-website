@@ -69,7 +69,7 @@ const CustomMarquee = () => {
 
   return (
     <>
-      <Grid item sx={marqueeStyles.marqueeParentmostGrid}>
+      <Grid item container sx={marqueeStyles.marqueeParentmostGrid}>
         <Marquee
           loop={0}
           speed={100}
@@ -82,6 +82,11 @@ const CustomMarquee = () => {
             <MarqueeImage key={index} src={item.src} caption={item.caption} />
           ))}
         </Marquee>
+        <Typography variant="body2" sx={marqueeStyles.quote}>
+          “Students who study computer science unlock a world of opportunities
+          for themselves.”
+          <br /> - Dr. John Deasy
+        </Typography>
       </Grid>
 
       <Dialog
@@ -122,6 +127,8 @@ const marqueeStyles = {
   },
   marqueeParentmostGrid: {
     mt: "100px", // Spacing the marquee away from the certifications
+    gap: 2,
+    justifyContent: "center",
   },
   dialogContent: {
     background: "#03142F",
@@ -161,6 +168,9 @@ const marqueeStyles = {
     fontSize: "larger",
     opacity: 0,
     transition: "opacity 0.5s ease-in-out", // For smooth fade-out when hovering stops
+  },
+  quote: {
+    width: "80%",
   },
 };
 
