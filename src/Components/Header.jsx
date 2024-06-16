@@ -93,6 +93,12 @@ const Header = () => {
   );
 };
 
+/**
+ * Debouncing the scroll event listener so optimize performance
+ * @param {*} func a callback function to debounce
+ * @param {*} wait how long (in ms) before running the function
+ * @returns
+ */
 function debounce(func, wait) {
   let timeout;
   return function (...args) {

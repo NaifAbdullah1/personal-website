@@ -1,7 +1,5 @@
 /*
 
-- Investigate ways to simplify the Header.jsx code. Make a backup copy and a commit first
-
 - Determine a minimum width for the site. Do this once you've almost done with implementing the site
 
 - For the marquee, we're using two different sets of the same images. See if you can use a single set of images and do the resizing via css 
