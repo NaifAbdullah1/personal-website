@@ -13,7 +13,7 @@ const CustomMarquee = () => {
   const openMarqueeDialog = (clickedImage, clickedImageCaption) => {
     setDialogState({
       isOpen: true,
-      selectedImage: clickedImage.replace(/\.(?=[^.]*$)/, "-cmprsdF."), // We need to first edit the 'clickedImage' to point to teh full sized image
+      selectedImage: clickedImage,
       selectedImageCaption: clickedImageCaption, // A regex that finds the very last dot in a string
     });
   };
@@ -115,8 +115,9 @@ const CustomMarquee = () => {
 const marqueeStyles = {
   marqueeImage: {
     position: "relative",
-    width: "90%", // smaller width will give us space between marquee images
-    height: "auto",
+    width: "500px", // Standard image width is 600px
+    height: "250px", // Standard image height is 300px
+    mr: 5, // To give us space between marquee images
     borderRadius: "20px",
     transition: "filter 0.5s ease-in-out",
   },
