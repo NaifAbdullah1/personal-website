@@ -8,7 +8,7 @@ function ComingSoonAnimation() {
       <Grid item>
         <LottieAnimation animationData={comingSoonAnimationData} loop={true} />
       </Grid>
-      <Typography variant="h3">Coming Soon!</Typography>
+      <Typography variant="h2">Coming Soon!</Typography>
     </Grid>
   );
 }

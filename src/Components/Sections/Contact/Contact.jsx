@@ -161,7 +161,7 @@ const Contact = () => {
             sx={contactStyles.parentContentGrid}
           >
             <Grid container sx={contactStyles.contactCallToAction}>
-              <Typography variant="h3">Collaboration opportunities:</Typography>
+              <Typography variant="h2">Collaboration opportunities:</Typography>
               <Typography variant="body1">
                 Keen to partner on transformative initiatives? Let&apos;s
                 explore mutual interests and connect!
@@ -184,7 +184,7 @@ const Contact = () => {
                     <Grid item sx={contactStyles.animationParentGrid}>
                       <LottieAnimation animationData={successAnimation} />
                     </Grid>
-                    <Typography variant="h3">Message Sent!</Typography>
+                    <Typography variant="h2">Message Sent!</Typography>
                   </Grid>
                 </CSSTransition>
 

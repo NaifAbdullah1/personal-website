@@ -25,8 +25,8 @@ const About = () => {
           <Grid item xs={12} sm={9} sx={aboutStyles.aboutContent}>
             <Grid container sx={aboutStyles.spaceBetweenNaifImageandBio}>
               <Grid item xs={12} sm={6}>
-                <Typography variant="h3">Hello 👋🏻</Typography>
-                <Typography variant="h3">My name is Naif Abdullah</Typography>
+                <Typography variant="h2">Hello 👋🏻</Typography>
+                <Typography variant="h2">My name is Naif Abdullah</Typography>
                 <br />
                 <Typography variant="body1">
                   As a Computer Science graduate, I&apos;ve excelled both
@@ -49,7 +49,7 @@ const About = () => {
 
             <Grid item container sx={aboutStyles.certificationsGrid}>
               <Grid item sx={aboutStyles.certificationHeader}>
-                <Typography variant="h3">My Résumé:</Typography>
+                <Typography variant="h2">My Résumé:</Typography>
               </Grid>
 
               <Grid item sx={aboutStyles.certificateImagesGrid}>

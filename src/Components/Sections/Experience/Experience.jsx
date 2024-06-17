@@ -270,8 +270,8 @@ const Experience = () => {
                 </Typography>
                 <br />
                 <br />
-                <Typography variant="h3">Highlighted Projects:</Typography>
-
+                <Typography variant="h2">Highlighted Projects:</Typography>
+                <br />
                 <Grid
                   container
                   sx={experienceStyles.doit.highlightedProjectsCards}
@@ -287,7 +287,7 @@ const Experience = () => {
                               sx={experienceStyles.doit.projectIcons}
                             />
 
-                            <Typography variant="h3">
+                            <Typography variant="h2">
                               Financial Forecasting System
                             </Typography>
 
@@ -324,7 +324,7 @@ const Experience = () => {
                                 sx={experienceStyles.doit.projectIcons}
                               />
                             </Grid>
-                            <Typography variant="h3">
+                            <Typography variant="h2">
                               Inventory Management System
                             </Typography>
 
@@ -364,7 +364,7 @@ const Experience = () => {
                                 sx={experienceStyles.doit.projectIcons}
                               />
                             </Grid>
-                            <Typography variant="h3">
+                            <Typography variant="h2">
                               ReactJS Training Course
                             </Typography>
 
@@ -499,7 +499,7 @@ const Experience = () => {
                             color="error"
                             sx={extendedStyles.lockIcon}
                           />
-                          <Typography variant="h3">
+                          <Typography variant="h2">
                             Non-Disclosure Agreement
                           </Typography>
 
@@ -524,7 +524,7 @@ const Experience = () => {
                           <BusinessCenterIcon
                             sx={extendedStyles.businessCenterIcon}
                           />
-                          <Typography variant="h3">Project Role</Typography>
+                          <Typography variant="h2">Project Role</Typography>
                           <Typography variant="body2">
                             {learnMoreDialog.projectRole}
                           </Typography>
@@ -558,7 +558,7 @@ const Experience = () => {
                         <Card sx={experienceStyles.doit.card}>
                           <CardContent>
                             {learnMoreDialog.accomplishments.first.icon}
-                            <Typography variant="h3">
+                            <Typography variant="h2">
                               {learnMoreDialog.accomplishments.first.title}
                             </Typography>
                             <Typography variant="body2">
@@ -580,7 +580,7 @@ const Experience = () => {
                         <Card sx={experienceStyles.doit.card}>
                           <CardContent>
                             {learnMoreDialog.accomplishments.second.icon}
-                            <Typography variant="h3">
+                            <Typography variant="h2">
                               {learnMoreDialog.accomplishments.second.title}
                             </Typography>
                             <Typography variant="body2">
@@ -602,7 +602,7 @@ const Experience = () => {
                         <Card sx={experienceStyles.doit.card}>
                           <CardContent>
                             {learnMoreDialog.accomplishments.third.icon}
-                            <Typography variant="h3">
+                            <Typography variant="h2">
                               {learnMoreDialog.accomplishments.third.title}
                             </Typography>
                             <Typography variant="body2">

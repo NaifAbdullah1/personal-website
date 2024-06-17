@@ -112,7 +112,7 @@ export default function ResumeButton() {
           <Image>
             <Typography
               component="span"
-              variant="h3"
+              variant="h2"
               color="inherit"
               sx={{
                 position: "relative",
