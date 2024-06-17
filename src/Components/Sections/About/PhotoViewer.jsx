@@ -43,7 +43,7 @@ const PhotoViewer = () => {
             position: "absolute",
             bottom: "60px",
             left: "50%", // This will make the start of the text located at 50% of the viewport's width. Which will make the text not exactly centered. Therefore, we'll use the "transform" property below.
-            transform: "translateX(-50%)", //  is used to translate (move) an element horizontally along the X-axis by a percentage of its own width.
+            transform: "translateX(-50%)", //  is used to translate (move) an element horizontally along the X-axis by a percentage of its own width..
             textAlign: "center",
             zIndex: 10,
             background: "rgba(0, 0, 0, 0.5)",
