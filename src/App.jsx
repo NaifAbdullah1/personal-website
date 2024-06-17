@@ -61,6 +61,8 @@ Alternatively, we can make clicking the card result in expanding it with further
 - Minimize the amount of upfront text as much as you can. Other examples can be seen with minimal text upfront. All the text is offloaded behind "learn more" buttons where they belong
 
 - Make sure we have non-skipping headers. In the About section, the "Hello" and "My name is Naif Abdullah" should realisticly have h2, but they're using h3. Re-evaluate whether this is okay. Though h2 is way too big
+
+- Dig through your hard drive for professional photos to add
 */
 
 import { useState } from "react";
@@ -147,7 +149,7 @@ const appStyles = {
   fade: {
     in: {
       opacity: "1",
-      transition: "opacity 3s" /*This controls the speed of the fade in*/,
+      transition: "opacity 1s" /*This controls the speed of the fade in*/,
     },
     out: {
       opacity: "0",

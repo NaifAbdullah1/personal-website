@@ -1,0 +1,19 @@
+.tetris-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Three columns */
+  grid-auto-rows: minmax(200px, auto); /* Automatic row height */
+  gap: 10px; /* Gap between grid items */
+  width: 95%;
+}
+
+.tetris-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.tetris-grid :nth-child(1),
+.tetris-grid :nth-child(4) {
+  grid-row: span 2;
+}
