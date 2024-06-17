@@ -1,12 +1,13 @@
 import { Container, Grid, Typography, Box } from "@mui/material";
-import { isMobile } from "react-device-detect";
-import CustomMarquee from "./CustomMarquee.jsx";
+//import { isMobile } from "react-device-detect";
+//import CustomMarquee from "./CustomMarquee.jsx";
 import {
   BACKGROUNDS,
   GLOBAL_STYLING,
   RESPONSIVE_STYLING,
 } from "../../../constants.jsx";
 import ResumeButton from "./ResumeButton.jsx";
+import PhotoViewer from "./PhotoViewer.jsx";
 
 const About = () => {
   return (
@@ -78,9 +79,9 @@ const About = () => {
             </Grid>
           </Grid>
 
-          {!isMobile && (
+          {!false && (
             <>
-              <CustomMarquee />
+              <PhotoViewer />
             </>
           )}
         </Grid>
