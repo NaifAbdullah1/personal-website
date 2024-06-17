@@ -67,17 +67,17 @@ Alternatively, we can make clicking the card result in expanding it with further
 
 import { useState } from "react";
 import ProgressBar from "react-scroll-progress-bar";
-import Header from "./Components/Header.jsx";
-import LoadingScreen from "./Components/LoadingScreen.jsx";
+import Header from "./components/Header.jsx";
+import LoadingScreen from "./components/LoadingScreen.jsx";
 import AnimatedCursor from "react-animated-cursor";
-import Hero from "./Components/Sections/Hero/Hero.jsx";
-import About from "./Components/Sections/About/About.jsx";
-import Experience from "./Components/Sections/Experience/Experience.jsx";
-import Portfolio from "./Components/Sections/Portfolio/Portfolio.jsx";
-import Contact from "./Components/Sections/Contact/Contact.jsx";
+import Hero from "./components/sections/hero/Hero.jsx";
+import About from "./components/sections/about/About.jsx";
+import Experience from "./components/sections/experience/Experience.jsx";
+import Portfolio from "./components/sections/portfolio/Portfolio.jsx";
+import Contact from "./components/sections/contact/Contact.jsx";
 import { isMobileOnly } from "react-device-detect";
 
-import "./scss/App.scss";
+import "./scss/app.scss";
 import { COLORS, Z_INDICES } from "./constants.jsx";
 
 function App() {

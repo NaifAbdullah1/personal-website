@@ -1,5 +1,5 @@
 import { Container, Grid, Typography } from "@mui/material";
-import ComingSoonAnimation from "../../Misc/ComingSoonAnimation.jsx";
+import ComingSoonAnimation from "../../misc/ComingSoonAnimation.jsx";
 
 import {
   BACKGROUNDS,

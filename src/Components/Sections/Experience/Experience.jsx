@@ -30,7 +30,7 @@ import {
   AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
-import ComingSoonAnimation from "../../Misc/ComingSoonAnimation.jsx";
+import ComingSoonAnimation from "../../misc/ComingSoonAnimation.jsx";
 import { useMemo, useState } from "react";
 import {
   COLORS,

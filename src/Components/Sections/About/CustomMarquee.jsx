@@ -10,11 +10,6 @@ const CustomMarquee = () => {
     selectedImageCaption: null,
   });
 
-  //const [isMarqueeDialogOpen, setIsMarqueeDialogOpen] = useState(false);
-  //const [selectedMarqueeImage, setSelectedMarqueeImage] = useState(null);
-  //const [selectedMarqueeImageCaption, setSelectedMarqueeImageCaption] =
-  useState(null);
-
   const openMarqueeDialog = (clickedImage, clickedImageCaption) => {
     setDialogState({
       isOpen: true,
@@ -41,27 +36,27 @@ const CustomMarquee = () => {
 
   const marqueeData = [
     {
-      src: "./assets/MISC/marquee/smucker-shirt.jpeg",
+      src: "./assets/misc/marquee/smucker-shirt.jpeg",
       caption: "Orientation at The J. M. Smucker Co.",
     },
     {
-      src: "./assets/MISC/marquee/smucker-team.jpeg",
+      src: "./assets/misc/marquee/smucker-team.jpeg",
       caption: "J.M Smucker Co. Colleagues",
     },
     {
-      src: "./assets/MISC/marquee/recwell.jpeg",
+      src: "./assets/misc/marquee/recwell.jpeg",
       caption: "University of Wisconsin-Madison: Recreation and Wellbeing",
     },
     {
-      src: "./assets/MISC/marquee/smucker-hq.jpeg",
+      src: "./assets/misc/marquee/smucker-hq.jpeg",
       caption: "J.M. Smucker Co. HQ",
     },
     {
-      src: "./assets/MISC/marquee/uw-madison.jpeg",
+      src: "./assets/misc/marquee/uw-madison.jpeg",
       caption: "Orientation at the University of Wisconsin-Madison",
     },
     {
-      src: "./assets/MISC/marquee/doit-team.jpeg",
+      src: "./assets/misc/marquee/doit-team.jpeg",
       caption:
         "Colleagues at the University of Wisconsin-Madison's Division of Information Technology",
     },

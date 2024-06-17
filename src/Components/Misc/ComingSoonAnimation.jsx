@@ -1,5 +1,5 @@
 import { Typography, Grid } from "@mui/material";
-import comingSoonAnimationData from "../../LottieAnimations/ComingSoon.json";
+import comingSoonAnimationData from "../../lottie-animations/ComingSoon.json";
 import LottieAnimation from "./LottieAnimation.jsx";
 
 function ComingSoonAnimation() {

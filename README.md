@@ -24,10 +24,10 @@ The website is built with React and styled using SCSS, incorporating several adv
 
 ## Project Structure
 
-- **`src/Components/`**: Contains all the individual React components.
+- **`src/components/`**: Contains all the individual React components.
   - **`Header.jsx`**: The header component.
   - **`LoadingScreen.jsx`**: The loading screen component.
-  - **`Sections/`**: Contains the main sections of the website.
+  - **`sections/`**: Contains the main sections of the website.
     - **`About.jsx`**: The About section.
     - **`Hero.jsx`**: The Hero section.
     - **`Experience.jsx`**: The Experience section.
