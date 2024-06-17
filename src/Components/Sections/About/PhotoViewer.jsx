@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-//import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 
 const PhotoViewer = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,7 +38,7 @@ const PhotoViewer = () => {
       speed={() => 500}
       onIndexChange={(index) => setCurrentIndex(index)}
       overlayRender={() => (
-        <div
+        <Grid
           style={{
             position: "absolute",
             bottom: "60px",
@@ -54,21 +54,22 @@ const PhotoViewer = () => {
           }}
         >
           {images[currentIndex].caption}
-        </div>
+        </Grid>
       )}
     >
-      <div>
+      <Grid>
         {images.map((imageObj, index) => (
           <PhotoView key={index} src={imageObj.src}>
-            <img
+            <Box
+              component="img"
               src={imageObj.src}
               alt={imageObj.caption}
-              style={{ width: "40%", height: "auto", objectFit: "cover" }}
+              sx={{ width: "40%", height: "auto", objectFit: "cover" }}
               onClick={() => setCurrentIndex(index)}
             />
           </PhotoView>
         ))}
-      </div>
+      </Grid>
     </PhotoProvider>
   );
 };
