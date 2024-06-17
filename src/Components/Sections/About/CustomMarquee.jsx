@@ -22,7 +22,7 @@ const CustomMarquee = () => {
     <Box
       component="img"
       src={src}
-      alt="Marquee image"
+      alt={caption}
       onClick={() => openMarqueeDialog(src, caption)}
       sx={marqueeStyles.marqueeImage}
     />
@@ -94,7 +94,7 @@ const CustomMarquee = () => {
             <Box
               component="img"
               src={dialogState.selectedImage}
-              alt="Full size version of clicked marquee image"
+              alt={`${dialogState.selectedImageCaption} - (Full sized)`}
               sx={marqueeStyles.fullSizedMarqueeImage}
             />
 

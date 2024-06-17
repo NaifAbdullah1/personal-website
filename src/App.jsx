@@ -1,8 +1,8 @@
 /*
 
-- 
-
 - Wasn't able to make a slideshow for mobile. We may resort to either not showing the slideshow on mobile. Or showing it but disabling the hover effect, we'll also need to make it smaller. 
+EDIT Jun 17th: This library is amazing: https://www.npmjs.com/package/react-photo-view
+We might even replace the marquee with this one if it will offer significant performance boost. 
 
 - Consider offloading the styling of the sections onto a different file/s
 
