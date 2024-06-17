@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 
 const PhotoViewer = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,16 +44,16 @@ const PhotoViewer = () => {
             bottom: "60px",
             left: "50%", // This will make the start of the text located at 50% of the viewport's width. Which will make the text not exactly centered. Therefore, we'll use the "transform" property below.
             transform: "translateX(-50%)", //  is used to translate (move) an element horizontally along the X-axis by a percentage of its own width. Here’s a detailed explanation:
-            color: "white",
             textAlign: "center",
-            fontSize: "20px",
             zIndex: 10,
             background: "rgba(0, 0, 0, 0.5)",
             padding: "10px 20px",
             borderRadius: "10px",
           }}
         >
-          {images[currentIndex].caption}
+          <Typography variant="body1">
+            {images[currentIndex].caption}
+          </Typography>
         </Grid>
       )}
     >
