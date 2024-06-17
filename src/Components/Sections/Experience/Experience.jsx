@@ -40,6 +40,12 @@ import {
   Z_INDICES,
 } from "../../../constants.jsx";
 
+import React from "react";
+import Slide from "@mui/material/Slide";
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 const Experience = () => {
   const [learnMoreDialog, setLearnMoreDialog] = useState({
     isOpen: false,
@@ -413,6 +419,9 @@ const Experience = () => {
 
           <Dialog
             open={learnMoreDialog.isOpen}
+            TransitionComponent={Transition}
+            aria-labelledby="Learn more about the project"
+            aria-describedby="Dialog of clicked project"
             onClose={() =>
               setLearnMoreDialog({
                 ...learnMoreDialog,
