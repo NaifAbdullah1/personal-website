@@ -46,10 +46,9 @@ Alternatively, we can make clicking the card result in expanding it with further
 - See if you can do away with the gallery's css and make it css in js instead
 */
 
-import { useState } from "react";
 import ProgressBar from "react-scroll-progress-bar";
 import Header from "./components/Header.jsx";
-import LoadingScreen from "./components/LoadingScreen.jsx";
+
 import AnimatedCursor from "react-animated-cursor";
 import Hero from "./components/sections/hero/Hero.jsx";
 import About from "./components/sections/about/About.jsx";
@@ -62,19 +61,6 @@ import "./scss/app.scss";
 import { COLORS, Z_INDICES } from "./constants.jsx";
 
 function App() {
-  const [loadingComplete, setLoadingComplete] = useState(false); // Signals the completion of the intro
-  const [websiteContentFadeState, setWebsiteContentFadeState] = useState("out"); // Signals the beginning of fading in the content of the site: "out" = website content faded out, not visible. "In" = website content faded in, visible to user
-
-  // Runs after the initial logo intro disappears
-  const handleLoadingComplete = () => {
-    // This runs after the loading logo fades out
-    setLoadingComplete(true);
-    // Now, we'll fade in the website's contents 1 sec after the logo is gone
-    setTimeout(() => {
-      setWebsiteContentFadeState("in"); // Time to fade website content in
-    }, 1000);
-  };
-
   return (
     <>
       {!isMobileOnly && (
@@ -90,29 +76,21 @@ function App() {
         />
       )}
 
-      {!loadingComplete ? (
-        <>
-          <LoadingScreen onComplete={handleLoadingComplete} />
-        </>
-      ) : (
-        <div style={appStyles.fade[websiteContentFadeState]}>
-          <ProgressBar height="6" bgcolor={COLORS.lightBlue} duration="0.25" />
+      <ProgressBar height="6" bgcolor={COLORS.lightBlue} duration="0.25" />
 
-          <Header />
+      <Header />
 
-          <Hero />
+      <Hero />
 
-          <About />
+      <About />
 
-          <Experience />
+      <Experience />
 
-          <Portfolio />
+      <Portfolio />
 
-          <Contact />
+      <Contact />
 
-          <div style={appStyles.iosPeekbBottom}></div>
-        </div>
-      )}
+      <div style={appStyles.iosPeekbBottom}></div>
     </>
   );
 }
