@@ -44,11 +44,12 @@ Alternatively, we can make clicking the card result in expanding it with further
 - Dig through your hard drive for professional photos to add
 
 - See if you can do away with the gallery's css and make it css in js instead
+
+- Image gallery not displaying properly on iPhones. Maybe make a slightly different formation for xs widths? maybe another special width for sm? Maybe a different width for each level? 
 */
 
 import ProgressBar from "react-scroll-progress-bar";
 import Header from "./components/Header.jsx";
-
 import AnimatedCursor from "react-animated-cursor";
 import Hero from "./components/sections/hero/Hero.jsx";
 import About from "./components/sections/about/About.jsx";

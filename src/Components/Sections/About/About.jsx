@@ -79,11 +79,7 @@ const About = () => {
             </Grid>
           </Grid>
 
-          {!false && (
-            <>
-              <PhotoViewer />
-            </>
-          )}
+          <PhotoViewer />
         </Grid>
       </Container>
     </section>
