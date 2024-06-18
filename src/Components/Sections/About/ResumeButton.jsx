@@ -6,7 +6,7 @@ import { COLORS } from "../../../constants";
 
 const images = [
   {
-    url: "/assets/sections/about/certifications/resume-thumbnail.png",
+    url: "/assets/sections/about/certifications/resume-thumbnail.webp",
     title: "View Résumé",
     width: "40%",
     documentUrl: "assets/sections/about/certifications/naif-resume.pdf",

@@ -77,7 +77,7 @@ const Experience = () => {
   const doitCards = useMemo(() => {
     const financialForecastingSystem = {
       overlayImage:
-        "./assets/sections/experience/doit/forecast80-horizontal.png",
+        "./assets/sections/experience/doit/forecast80-horizontal.webp",
       overlayImageAltText: "Financial Forecasting Background",
       overlayTitle: "Financial Forecasting System",
       projectRole:
@@ -106,7 +106,7 @@ const Experience = () => {
 
     const inventoryManagementSystem = {
       overlayImage:
-        "./assets/sections/experience/doit/inventory80-horizontal.png",
+        "./assets/sections/experience/doit/inventory80-horizontal.webp",
       overlayImageAltText: "Inventory Management Background",
       overlayTitle: "Inventory Management System",
       projectRole:
@@ -138,7 +138,7 @@ const Experience = () => {
     };
 
     const reactJsCourse = {
-      overlayImage: "./assets/sections/experience/doit/group80-horizontal.jpg",
+      overlayImage: "./assets/sections/experience/doit/group80-horizontal.webp",
       overlayImageAltText: "Group meeting",
       overlayTitle: "ReactJS Training Course",
       projectRole:
@@ -255,7 +255,7 @@ const Experience = () => {
                 <CardContent style={experienceStyles.companyLogoCardPadding}>
                   <Box
                     component="img"
-                    src="./assets/sections/experience/doit/doit-color-center.png"
+                    src="./assets/sections/experience/doit/doit-color-center.webp"
                     alt="DoIT Logo"
                     sx={experienceStyles.companyLogoSizing}
                   />
@@ -400,7 +400,7 @@ const Experience = () => {
                 <CardContent style={experienceStyles.companyLogoCardPadding}>
                   <Box
                     component="img"
-                    src="./assets/sections/experience/smucker/smucker-color-white.png"
+                    src="./assets/sections/experience/smucker/smucker-color-white.webp"
                     alt="Smucker Logo"
                     sx={experienceStyles.companyLogoSizing}
                   />
@@ -789,15 +789,15 @@ const extendedStyles = {
   forecastCard: {
     ...experienceBaseStyles.projectCard,
     backgroundImage:
-      "url(./assets/sections/experience/doit/forecast95-vert.png)",
+      "url(./assets/sections/experience/doit/forecast95-vert.webp)",
   },
   inventoryCard: {
     ...experienceBaseStyles.projectCard,
-    backgroundImage: "url(./assets/sections/experience/doit/inventory95.jpg)",
+    backgroundImage: "url(./assets/sections/experience/doit/inventory95.webp)",
   },
   courseCard: {
     ...experienceBaseStyles.projectCard,
-    backgroundImage: "url(./assets/sections/experience/doit/group95.jpg)",
+    backgroundImage: "url(./assets/sections/experience/doit/group95.webp)",
   },
 };
 

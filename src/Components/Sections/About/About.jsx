@@ -39,7 +39,7 @@ const About = () => {
               <Grid item xs={12} sm={6} sx={aboutStyles.naifImageGrid}>
                 <Box
                   component="img"
-                  src="./assets/sections/about/naif-cmprsd.png"
+                  src="./assets/sections/about/naif-cmprsd.webp"
                   alt="Naif Abdullah"
                   sx={aboutStyles.naifImage}
                 />

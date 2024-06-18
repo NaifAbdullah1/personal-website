@@ -8,29 +8,29 @@ const PhotoViewer = () => {
 
   const images = [
     {
-      src: "./assets/misc/gallery/smucker-shirt.jpeg",
+      src: "./assets/misc/gallery/smucker-shirt.webp",
       caption: "Orientation at The J. M. Smucker Co.",
     },
     {
-      src: "./assets/misc/gallery/uw-madison.jpeg",
+      src: "./assets/misc/gallery/uw-madison.webp",
       caption: "Orientation at the University of Wisconsin-Madison",
     },
     {
-      src: "./assets/misc/gallery/smucker-team.jpeg",
+      src: "./assets/misc/gallery/smucker-team.webp",
       caption: "J.M Smucker Co. Colleagues",
     },
 
     {
-      src: "./assets/misc/gallery/recwell.jpeg",
+      src: "./assets/misc/gallery/recwell.webp",
       caption: "University of Wisconsin-Madison: Recreation and Wellbeing",
     },
     {
-      src: "./assets/misc/gallery/doit-team.jpeg",
+      src: "./assets/misc/gallery/doit-team.webp",
       caption:
         "Colleagues at the University of Wisconsin-Madison's Division of Information Technology",
     },
     {
-      src: "./assets/misc/gallery/smucker-hq.jpeg",
+      src: "./assets/misc/gallery/smucker-hq.webp",
       caption: "J.M. Smucker Co. Headquarters",
     },
   ];
