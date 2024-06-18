@@ -1,12 +1,12 @@
 import { Typography, Grid } from "@mui/material";
 import comingSoonAnimationData from "../../lottie-animations/ComingSoon.json";
-import LottieAnimation from "./LottieAnimation.jsx";
+import Lottie from "react-lottie-player";
 
 function ComingSoonAnimation() {
   return (
     <Grid>
       <Grid item>
-        <LottieAnimation animationData={comingSoonAnimationData} loop={true} />
+        <Lottie play animationData={comingSoonAnimationData} loop={true} />
       </Grid>
       <Typography variant="h2">Coming Soon!</Typography>
     </Grid>

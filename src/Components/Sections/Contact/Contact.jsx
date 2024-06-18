@@ -18,7 +18,7 @@ import {
 import { useState } from "react";
 import CustomTextField from "./CustomTextField.jsx";
 import CustomButton from "./CustomButton.jsx";
-import LottieAnimation from "../../misc/LottieAnimation.jsx";
+import Lottie from "react-lottie-player";
 import { CSSTransition } from "react-transition-group";
 import emailjs from "@emailjs/browser";
 
@@ -182,7 +182,12 @@ const Contact = () => {
                 >
                   <Grid>
                     <Grid item sx={contactStyles.animationParentGrid}>
-                      <LottieAnimation animationData={successAnimation} />
+                      <Lottie
+                        play
+                        animationData={successAnimation}
+                        loop={false}
+                        style={{ width: "100%", height: "100%" }}
+                      />
                     </Grid>
                     <Typography variant="h2">Message Sent!</Typography>
                   </Grid>
