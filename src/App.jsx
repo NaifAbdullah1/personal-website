@@ -52,14 +52,26 @@ import ProgressBar from "react-scroll-progress-bar";
 import Header from "./components/Header.jsx";
 import AnimatedCursor from "react-animated-cursor";
 import Hero from "./components/sections/hero/Hero.jsx";
-import About from "./components/sections/about/About.jsx";
-import Experience from "./components/sections/experience/Experience.jsx";
-import Portfolio from "./components/sections/portfolio/Portfolio.jsx";
-import Contact from "./components/sections/contact/Contact.jsx";
 import { isMobileOnly } from "react-device-detect";
 
 import "./scss/app.scss";
 import { COLORS, Z_INDICES } from "./constants.jsx";
+
+// We ran into a problem where the .js bundle created upon building is too big (1.1 KB). We'll break it up into smaller chunks that are loaded on-demand. We'll use dynamic imports using React's 'Suspense' and React.Lazy, hence the following import:
+import React, { Suspense } from "react";
+
+// Lzy-loaded components:
+//const Hero = React.lazy(() => import("./components/sections/hero/Hero.jsx"));
+const About = React.lazy(() => import("./components/sections/about/About.jsx"));
+const Experience = React.lazy(() =>
+  import("./components/sections/experience/Experience.jsx")
+);
+const Portfolio = React.lazy(() =>
+  import("./components/sections/portfolio/Portfolio.jsx")
+);
+const Contact = React.lazy(() =>
+  import("./components/sections/contact/Contact.jsx")
+);
 
 function App() {
   return (
@@ -83,13 +95,12 @@ function App() {
 
       <Hero />
 
-      <About />
-
-      <Experience />
-
-      <Portfolio />
-
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <About />
+        <Experience />
+        <Portfolio />
+        <Contact />
+      </Suspense>
 
       <div style={appStyles.iosPeekbBottom}></div>
     </>
@@ -104,17 +115,6 @@ const appStyles = {
   animatedCursorOuter: {
     border: `3px solid ${COLORS.lightGray}`,
     zIndex: Z_INDICES.maxZIndex,
-  },
-  /*The two css queries below serve to fade the contents of the site in when the loading logo has finished fading out*/
-  fade: {
-    in: {
-      opacity: "1",
-      transition: "opacity 1s" /*This controls the speed of the fade in*/,
-    },
-    out: {
-      opacity: "0",
-      transition: "opacity 1s",
-    },
   },
   // Prevents the appearance of the white backdrop due to IOS' elastic scrolling/overscrolling at the bottom of the page
   iosPeekbBottom: {
