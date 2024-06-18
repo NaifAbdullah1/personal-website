@@ -1,6 +1,4 @@
 import { Container, Grid, Typography, Box } from "@mui/material";
-//import { isMobile } from "react-device-detect";
-//import CustomMarquee from "./CustomMarquee.jsx";
 import {
   BACKGROUNDS,
   GLOBAL_STYLING,

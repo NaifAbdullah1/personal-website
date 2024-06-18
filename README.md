@@ -19,7 +19,7 @@ The website is built with React and styled using SCSS, incorporating several adv
 - **React:** For building the user interface.
 - **SCSS:** For styling the components.
 - **Material-UI:** For UI components and layout.
-- **React-Fast-Marquee:** For the Marquee component.
+- **React-Photo-Viewer:** For the Gallery component.
 - **React-Animated-Cursor:** For the animated cursor.
 
 ## Project Structure
