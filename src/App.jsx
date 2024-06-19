@@ -1,12 +1,5 @@
 /*
 
-- Consider offloading the styling of the sections onto a different file/s
-
-- Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners
-
-- For the remaining sections, consider implementing this: https://codesandbox.io/p/sandbox/sticky-parallax-3hsg6?file=%2Fsrc%2Findex.tsx
-Here's the full doc: https://www.react-spring.dev/docs/components/parallax
-
 -In the experience section, we want to display company, tenure, and company link info, rle name, etc... 
 Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
 Alternatively, we can make clicking the card result in expanding it with further information  
@@ -46,6 +39,15 @@ Alternatively, we can make clicking the card result in expanding it with further
 - See if you can do away with the gallery's css and make it css in js instead
 
 - Image gallery not displaying properly on iPhones. Maybe make a slightly different formation for xs widths? maybe another special width for sm? Maybe a different width for each level? 
+
+- Add the animated extending-downwards line beneath the section headers
+
+- Delayed, maybe ask reddit: Consider offloading the styling of the sections onto a different file/s
+
+- Delayed, maybe at a later stage when we want to step up our website's quality: Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners
+
+- Delayed, maybe at a later stage when we want to step up our website's quality: For the remaining sections, consider implementing this: https://codesandbox.io/p/sandbox/sticky-parallax-3hsg6?file=%2Fsrc%2Findex.tsx
+Here's the full doc: https://www.react-spring.dev/docs/components/parallax
 */
 
 import ProgressBar from "react-scroll-progress-bar";
