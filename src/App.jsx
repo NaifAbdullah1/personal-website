@@ -1,10 +1,6 @@
 /*
 
--In the experience section, we want to display company, tenure, and company link info, rle name, etc... 
-Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
-Alternatively, we can make clicking the card result in expanding it with further information  
 
-- Inspect the parts where the code generates repitive components. (E.g., the marquee, the company cards, especially the dialog cards) and see if we can simplify that code by employing the map() function. Just like what we did with the marquee
 
 - Make your alt texts more descriptive
 
@@ -48,6 +44,11 @@ Alternatively, we can make clicking the card result in expanding it with further
 
 - Delayed, maybe at a later stage when we want to step up our website's quality: For the remaining sections, consider implementing this: https://codesandbox.io/p/sandbox/sticky-parallax-3hsg6?file=%2Fsrc%2Findex.tsx
 Here's the full doc: https://www.react-spring.dev/docs/components/parallax
+
+-Delayed: In the experience section, we want to display company, tenure, and company link info, rle name, etc...
+Refer to the conversation with the consultant 
+Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
+Alternatively, we can make clicking the card result in expanding it with further information  
 */
 
 import ProgressBar from "react-scroll-progress-bar";
