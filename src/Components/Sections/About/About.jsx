@@ -40,7 +40,7 @@ const About = () => {
                 <Box
                   component="img"
                   src="./assets/sections/about/naif-cmprsd.webp"
-                  alt="Naif Abdullah"
+                  alt="Naif Abdullah's portrait"
                   sx={aboutStyles.naifImage}
                 />
               </Grid>

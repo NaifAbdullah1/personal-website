@@ -1,9 +1,5 @@
 /*
 
-
-
-- Make your alt texts more descriptive
-
 - Add a button that takes you all the way up
 
 - The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.

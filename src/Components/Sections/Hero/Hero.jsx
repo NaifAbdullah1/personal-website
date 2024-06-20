@@ -36,7 +36,7 @@ const Hero = () => {
           <Box
             component="img"
             src="./assets/sections/hero/trimmed-logo-cmprsd.webp"
-            alt="Brand Logo"
+            alt="Naif's Brand Logo"
             sx={heroStyles.logoImage}
           />
         </Grid>
