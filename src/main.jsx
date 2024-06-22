@@ -5,6 +5,7 @@ import theme from "./theme.jsx";
 import { ThemeProvider } from "@mui/material/styles";
 import "./scss/index.scss"; // Our custom global styles
 import "react-photo-view/dist/react-photo-view.css";
+import "normalize.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

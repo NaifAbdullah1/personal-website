@@ -34,6 +34,10 @@
 
 - Add the animated extending-downwards line beneath the section headers
 
+- Lazy loading is problematic. Consider finding another alternative to the code-splitting problem or just do away with it. 
+
+- See if you can use BrowserStack for testing across different browsers
+
 - Delayed, maybe ask reddit: Consider offloading the styling of the sections onto a different file/s
 
 - Delayed, maybe at a later stage when we want to step up our website's quality: Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners
