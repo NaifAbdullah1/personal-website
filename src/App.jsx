@@ -1,6 +1,6 @@
 /*
 
-- Add a button that takes you all the way up
+- Test "back to top" btn on mobile.
 
 - The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
 
@@ -56,8 +56,11 @@ import { isMobileOnly } from "react-device-detect";
 import "./scss/app.scss";
 import { COLORS, Z_INDICES } from "./constants.jsx";
 
+import { CssBaseline } from "@mui/material";
+
 // We ran into a problem where the .js bundle created upon building is too big (1.1 KB). We'll break it up into smaller chunks that are loaded on-demand. We'll use dynamic imports using React's 'Suspense' and React.Lazy, hence the following import:
 import React, { Suspense } from "react";
+import BackToTopButton from "./components/misc/BackToTopButton.jsx";
 
 // Lzy-loaded components:
 //const Hero = React.lazy(() => import("./components/sections/hero/Hero.jsx"));
@@ -101,6 +104,8 @@ function App() {
         <Contact />
       </Suspense>
 
+      <CssBaseline />
+      <BackToTopButton />
       <div style={appStyles.iosPeekbBottom}></div>
     </>
   );

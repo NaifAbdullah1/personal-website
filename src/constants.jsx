@@ -1,5 +1,5 @@
 export const COLORS = {
-  lightBlue: "#66A4E1", // Primary Theme Color: For header's nav links
+  lightBlue: "#66A4E1", // Primary Theme Color
   purple: "#9C27B0", // Secondary Theme Color 9C27B0
   lightGray: "#D3D3D3", // For most text
   silver: "#A9A9A9",
