@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 const StyledFab = styled(Fab)(({ theme, show }) => ({
   position: "fixed",
-  bottom: theme.spacing(-1),
-  right: theme.spacing(-1),
+  bottom: theme.spacing(0), // -1 look better, but it would make it cutoff in iphones.
+  right: theme.spacing(0),
   width: 56,
   height: 56,
   borderRadius: "100% 0% 0 0", // to acheive a circular button
