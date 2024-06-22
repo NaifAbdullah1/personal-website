@@ -227,6 +227,7 @@ const Contact = () => {
 
                     <FormControl fullWidth margin="normal">
                       <CustomTextField
+                        multiline
                         label="Message"
                         name="message"
                         value={formData.message}

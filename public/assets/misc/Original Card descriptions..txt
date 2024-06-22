@@ -1,0 +1,17 @@
+Original description
+-
+Original Project role
+
+An advanced Budgeting System that replaced manual processes, provides detailed spending analyses, and improves budget forecasting and fiscal control for better financial decision-making.
+-
+I led the development of an advanced budgeting system by integrating various APIs to retrieve employee pay details and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control.
+
+
+An automated solution that links issued equipment to employees, sends automatic return reminders, and improves compliance with departmental policies, reducing equipment loss and manual tracking efforts.
+-
+I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss.
+
+
+A holistic training initiative designed to unify the team&apos;s approach to web development, covering key web development topics. It includes interactive elements like peer-to-peer learning, practical exercises, and live coding sessions, resulting in improved team efficiency and code quality.
+-
+I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality.

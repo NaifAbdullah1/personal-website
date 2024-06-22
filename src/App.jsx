@@ -1,26 +1,14 @@
 /*
 
--On mobile, when we scroll over the DoIT projects, the performance takes a hit. Investigate why this is happening. Maybe we need to compress the images or heavily reduce the text on there (we can offload any important details to the dialog.)
+- Summarize "Project Role"s
+
+- Complete the smucker cards
 
 - EmailJS has a private key that we can use to secure our mailing service. Look into how we can incorporate it. This sounds like a security token. Also, investigate all security concerns from this contact form. I heard people can email other using YOUR email address. 
 
 - Make sure to understand how styled components work. Especially the Resume one. 
 
-- Organize all of your files in the project directory. Establish a naming convention for all the files per their types. 
-
 - Resolve any console errors or suppress them if needed. 
-
-- Look into meta-data you could add. Other components should have their equivalent of "alt text", an example is adding the aria-label
-
--Use both WAVE AND Lighthouse to check the quality of your site and implement the suggested fixes. 
-
-- In teh contact form, consider making the Message TextFielf with 3-4 rows. You'll then have to adjust the sizing of the contact form for the animation. 
-
-- The problem with the unstable card height with the contact form still persists. Check it again (low priority)
-
-- Minimize the amount of upfront text as much as you can. Other examples can be seen with minimal text upfront. All the text is offloaded behind "learn more" buttons where they belong
-
-- Make sure we have non-skipping headers. In the About section, the "Hello" and "My name is Naif Abdullah" should realisticly have h2, but they're using h3. Re-evaluate whether this is okay. Though h2 is way too big
 
 - Dig through your hard drive for professional photos to add
 
@@ -48,11 +36,13 @@ Refer to the conversation with the consultant
 Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
 Alternatively, we can make clicking the card result in expanding it with further information  
 
-- Delayed for quality control phase: The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
+- Delayed: In teh contact form, consider making the Message TextFielf with 3-4 rows. You'll then have to adjust the sizing of the contact form for the animation. 
+- Delayed: The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
 
 - Delayed: We made a change to COLORS.grayBlurBackground. First, try to revert that change to see if it's actually causing us problems in IOS. 
 If the reversion of that change did cause problems with the blurryness of the cards' background, then implement that change again (use RGBA colors) and ensure that this change won't cause any problems for working platforms. Test on the live site only. 
 
+- Delayed: Look into meta-data you could add. Other components should have their equivalent of "alt text", an example is adding the aria-label 
 */
 
 import ProgressBar from "react-scroll-progress-bar";

@@ -51,6 +51,8 @@ const BackToTopButton = () => {
 
   return (
     <StyledFab
+      aria-label="Back to Top"
+      type="button"
       show={showButton ? "true" : undefined}
       onClick={handleScrollToTop}
     >

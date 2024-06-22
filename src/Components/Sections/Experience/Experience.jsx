@@ -81,7 +81,7 @@ const Experience = () => {
       overlayImageAltText: "Financial Forecasting Background",
       overlayTitle: "Financial Forecasting System",
       projectRole:
-        "I led the development of an advanced budgeting system by integrating various APIs to retrieve employee pay details and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control.",
+        "I led the development of an advanced budgeting system by integrating various APIs to retrieve employee pay details and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control. The system replaced manual processes, providing detailed spending analyses and improving budget forecasting and fiscal control for better financial decision-making.",
       accomplishments: {
         first: {
           icon: <AttachMoneyIcon sx={extendedStyles.accomplishmentsIcon} />,
@@ -110,7 +110,7 @@ const Experience = () => {
       overlayImageAltText: "Inventory Management Background",
       overlayTitle: "Inventory Management System",
       projectRole:
-        "I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss.",
+        "I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss. The automated solution links issued equipment to employees, sends automatic return reminders, and improves compliance with departmental policies, reducing equipment loss and manual tracking efforts.",
       accomplishments: {
         first: {
           icon: (
@@ -142,7 +142,7 @@ const Experience = () => {
       overlayImageAltText: "Group meeting",
       overlayTitle: "ReactJS Training Course",
       projectRole:
-        "I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality.",
+        "I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality. The holistic training initiative designed to unify the team's approach to web development covers key topics in web development, incorporating interactive elements like peer-to-peer learning, practical exercises, and live coding sessions, resulting in improved team efficiency and code quality.",
       accomplishments: {
         first: {
           icon: <SchoolIcon sx={extendedStyles.accomplishmentsIcon} />,
@@ -292,10 +292,9 @@ const Experience = () => {
                             </Typography>
 
                             <Typography variant="body1">
-                              An advanced Budgeting System that replaced manual
-                              processes, provides detailed spending analyses,
-                              and improves budget forecasting and fiscal control
-                              for better financial decision-making.
+                              An advanced Budgeting System which improves budget
+                              forecasting for enhancing financial
+                              decision-making.
                             </Typography>
                           </Grid>
 
@@ -329,11 +328,9 @@ const Experience = () => {
                             </Typography>
 
                             <Typography variant="body1">
-                              An automated solution that links issued equipment
-                              to employees, sends automatic return reminders,
-                              and improves compliance with departmental
-                              policies, reducing equipment loss and manual
-                              tracking efforts.
+                              An automated system linking equipment to
+                              employees, and enhancing policy compliance to
+                              reduce loss and tracking efforts.
                             </Typography>
                           </Grid>
 
@@ -369,13 +366,11 @@ const Experience = () => {
                             </Typography>
 
                             <Typography variant="body1">
-                              A holistic training initiative designed to unify
-                              the team&apos;s approach to web development,
-                              covering key web development topics. It includes
-                              interactive elements like peer-to-peer learning,
-                              practical exercises, and live coding sessions,
-                              resulting in improved team efficiency and code
-                              quality.
+                              A holistic training initiative unifying the
+                              team&apos;s web development approach with
+                              interactive learning, practical exercises, and
+                              live coding sessions, enhancing team efficiency
+                              and code quality.
                             </Typography>
                           </Grid>
 
@@ -738,6 +733,7 @@ const experienceStyles = {
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
+      gap: 4,
     },
     projectIconsGrid: {
       color: COLORS.lightGray,
