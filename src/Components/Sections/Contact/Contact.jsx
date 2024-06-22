@@ -106,38 +106,35 @@ const Contact = () => {
         },
         "KfYaBNTYu2G023mwM"
       )
-      .then(
-        (response) => {
-          console.log("Email sent", response.status, response.text);
-          setIsSubmitted(true); // Starts to make the form fade out
-          setTimeout(() => {
-            setShowAnimation(true);
-          }, 1000); // Give some time for the form to fade out before rendering the animation.
+      .then(() => {
+        setIsSubmitted(true); // Starts to make the form fade out
+        setTimeout(() => {
+          setShowAnimation(true);
+        }, 1000); // Give some time for the form to fade out before rendering the animation.
 
-          setTimeout(() => {
-            setIsSubmitted(false);
-          }, 4500);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 4500);
 
-          setTimeout(() => {
-            setSendingEmailInProgress(false);
-            setShowAnimation(false);
+        setTimeout(() => {
+          setSendingEmailInProgress(false);
+          setShowAnimation(false);
 
-            setFormData({
-              name: "",
-              email: "",
-              message: "",
-              error: {
-                isNameError: false,
-                isEmailError: false,
-                isMessageError: false,
-              },
-            }); // No need to reset form because email was successful.
-          }, 3000);
-        },
-        (error) => {
-          console.log("Failed to send email: ", error);
-        }
-      );
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            error: {
+              isNameError: false,
+              isEmailError: false,
+              isMessageError: false,
+            },
+          }); // No need to reset form because email was successful.
+        }, 3000);
+      })
+      .catch((error) => {
+        alert("Failed to send email. Please try again later.", error);
+      });
   };
 
   return (

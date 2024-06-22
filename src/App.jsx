@@ -34,6 +34,8 @@
 
 - Lazy loading is problematic. Consider finding another alternative to the code-splitting problem or just do away with it. 
 
+- When email sending faisl, either use the lottie animation for failing messages or react-toastify
+
 - See if you can use BrowserStack for testing across different browsers
 
 - Delayed, maybe ask reddit: Consider offloading the styling of the sections onto a different file/s
