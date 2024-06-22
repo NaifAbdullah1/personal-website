@@ -1,7 +1,5 @@
 /*
 
-- The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
-
 -On mobile, when we scroll over the DoIT projects, the performance takes a hit. Investigate why this is happening. Maybe we need to compress the images or heavily reduce the text on there (we can offload any important details to the dialog.)
 
 - EmailJS has a private key that we can use to secure our mailing service. Look into how we can incorporate it. This sounds like a security token. Also, investigate all security concerns from this contact form. I heard people can email other using YOUR email address. 
@@ -40,15 +38,18 @@
 
 - Delayed, maybe ask reddit: Consider offloading the styling of the sections onto a different file/s
 
-- Delayed, maybe at a later stage when we want to step up our website's quality: Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners
+- Delayed: Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners
 
-- Delayed, maybe at a later stage when we want to step up our website's quality: For the remaining sections, consider implementing this: https://codesandbox.io/p/sandbox/sticky-parallax-3hsg6?file=%2Fsrc%2Findex.tsx
+- Delayed: For the remaining sections, consider implementing this: https://codesandbox.io/p/sandbox/sticky-parallax-3hsg6?file=%2Fsrc%2Findex.tsx
 Here's the full doc: https://www.react-spring.dev/docs/components/parallax
 
 -Delayed: In the experience section, we want to display company, tenure, and company link info, rle name, etc...
 Refer to the conversation with the consultant 
 Consider addign some hover animation on the company logo cards wherein if the user hovers over the card, the card either will fade into the details above. Just make sure to make it onClick (rather than onHover) when on mobile. Use the isOnMobile react library for this one. This one is a great example: https://codesandbox.io/p/sandbox/animated-card-component-using-reactjs-yvhil?file=%2Fsrc%2Findex.js
 Alternatively, we can make clicking the card result in expanding it with further information  
+
+- Delayed for quality control phase: The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
+
 */
 
 import ProgressBar from "react-scroll-progress-bar";
