@@ -263,10 +263,11 @@ const Experience = () => {
               </Card>
               <Grid sx={RESPONSIVE_STYLING.mobileResponsiveTextAlignment}>
                 <Typography variant="body1">
-                  At UW-Madison&apos;s DoIT, I developed web utilities for
-                  scheduling, asset management, and budgeting, enhancing
-                  efficiency and user satisfaction. I also created a ReactJS
-                  training course, improving team consistency and project speed.
+                  As a full stack web developer at UW-Madison&apos;s IT
+                  Department, I developed a ReactJS and NodeJS-based staff
+                  management utility for over 90 employees, collaborating with
+                  stakeholders and an Agile Scrum team to achieve remarkable
+                  advancements in the platform.
                 </Typography>
                 <br />
                 <br />

@@ -1,7 +1,5 @@
 /*
 
-- Summarize "Project Role"s
-
 - Complete the smucker cards
 
 - EmailJS has a private key that we can use to secure our mailing service. Look into how we can incorporate it. This sounds like a security token. Also, investigate all security concerns from this contact form. I heard people can email other using YOUR email address. 
