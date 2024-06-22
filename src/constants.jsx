@@ -12,7 +12,8 @@ export const COLORS = {
     },
   },
   grayBlurBackground: {
-    backgroundColor: "#1F22259A",
+    backgroundColor: "rgba(31, 34, 37, 0.6)", // This supposidly should help with the IOS problem where the company cards don't have the blurry background, this is supposed to be a fallback.
+    //backgroundColor: "#1F22259A",
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
     boxShadow: "none",

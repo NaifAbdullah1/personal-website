@@ -50,6 +50,9 @@ Alternatively, we can make clicking the card result in expanding it with further
 
 - Delayed for quality control phase: The correct way to solve the problem in which the height of the form's card changes for a split second is to set a constant height for the card when the user submits the form. And then set the height back to "auto" when the form re-appears. We've added  the onExited and onEntered functions to the form's CSSTransition group. It sort of fixed the problem of the split second rendering. But it works sporadically. Look into it later, but for now, it's good.
 
+- Delayed: We made a change to COLORS.grayBlurBackground. First, try to revert that change to see if it's actually causing us problems in IOS. 
+If the reversion of that change did cause problems with the blurryness of the cards' background, then implement that change again (use RGBA colors) and ensure that this change won't cause any problems for working platforms. Test on the live site only. 
+
 */
 
 import ProgressBar from "react-scroll-progress-bar";
