@@ -15,3 +15,105 @@ I designed and implemented a database schema to link employees to issued equipme
 A holistic training initiative designed to unify the team&apos;s approach to web development, covering key web development topics. It includes interactive elements like peer-to-peer learning, practical exercises, and live coding sessions, resulting in improved team efficiency and code quality.
 -
 I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality.
+
+
+____________________________________________
+Dialog content: 
+
+const doitCards = useMemo(() => {
+    const financialForecastingSystem = {
+      overlayImage:
+        "./assets/sections/experience/doit/forecast80-horizontal.webp",
+      overlayImageAltText: "Financial Forecasting Background",
+      overlayTitle: "Financial Forecasting System",
+      projectRole:
+        "I led the development of an advanced budgeting system by integrating various APIs to retrieve employee pay details and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control. The system replaced manual processes, providing detailed spending analyses and improving budget forecasting and fiscal control for better financial decision-making.",
+      accomplishments: {
+        first: {
+          icon: <AttachMoneyIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Streamlined Budgeting Process",
+          description:
+            "Developed an advanced Budgeting System that eliminated the need for manual data entry and calculations, thereby streamlining the budgeting process and significantly reducing errors. This automation led to increased efficiency and accuracy in financial data management.",
+        },
+        second: {
+          icon: <QueryStatsIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Comprehensive Spending Analysis",
+          description:
+            "Implemented a feature that provided detailed, multi-faceted spending analyses, enabling managers to break down costs by shift type and closely monitor operational cost trends. This granular insight empowered managers to better understand and control departmental expenses.",
+        },
+        third: {
+          icon: <VerifiedIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Enhanced Financial Decision-Making",
+          description:
+            "Introduced advanced analytics and forecasting capabilities that improved budget forecasting and fiscal control. This innovation offered comprehensive financial insights, reducing the manual workload and helping the department make more informed financial decisions, leading to more efficient budget planning and resource allocation.",
+        },
+      },
+    };
+
+    const inventoryManagementSystem = {
+      overlayImage:
+        "./assets/sections/experience/doit/inventory80-horizontal.webp",
+      overlayImageAltText: "Inventory Management Background",
+      overlayTitle: "Inventory Management System",
+      projectRole:
+        "I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss. The automated solution links issued equipment to employees, sends automatic return reminders, and improves compliance with departmental policies, reducing equipment loss and manual tracking efforts.",
+      accomplishments: {
+        first: {
+          icon: (
+            <ContentPasteSearchIcon sx={extendedStyles.accomplishmentsIcon} />
+          ),
+          title: "Automated Asset Tracking",
+          description:
+            "Developed an Inventory Management System that automated asset tracking by linking issued equipment to employee records via a comprehensive database schema using foreign keys. This automation reduced manual tracking efforts and enhanced the accuracy of asset management.",
+        },
+        second: {
+          icon: (
+            <MarkUnreadChatAltIcon sx={extendedStyles.accomplishmentsIcon} />
+          ),
+          title: "Equipment Return Reminders",
+          description:
+            "Implemented an automated reminder system that issued equipment return notifications to employees at the end of their employment. This proactive measure mitigated equipment loss, ensuring timely returns and safeguarding departmental resources.",
+        },
+        third: {
+          icon: <LocalPoliceIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Enhanced Policy Compliance",
+          description:
+            "The system significantly improved compliance with departmental policies by providing a reliable and transparent process for managing equipment returns. This initiative minimized asset losses and enhanced resource accountability, leading to greater operational efficiency.",
+        },
+      },
+    };
+
+    const reactJsCourse = {
+      overlayImage: "./assets/sections/experience/doit/group80-horizontal.webp",
+      overlayImageAltText: "Group meeting",
+      overlayTitle: "ReactJS Training Course",
+      projectRole:
+        "I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality. The holistic training initiative designed to unify the team's approach to web development covers key topics in web development, incorporating interactive elements like peer-to-peer learning, practical exercises, and live coding sessions, resulting in improved team efficiency and code quality.",
+      accomplishments: {
+        first: {
+          icon: <SchoolIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Tailored Curriculum Design",
+          description:
+            "The ReactJS training program tailored to the varied experience levels of the development team, covering essential topics such as HTTP requests, component creation, and inter-component communication, cookie management, and so much more. The curriculum ensured a unified approach to web development while catering to both experienced developers and new recruits.",
+        },
+        second: {
+          icon: <AutoFixHighIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Interactive Learning Experience",
+          description:
+            "Crafted an interactive training program featuring peer-to-peer learning, practical exercises, code challenges, group discussions, and live coding sessions. Leveraged previous teaching experience to employ diverse teaching methods, fostering high engagement and effective learning outcomes among team members.",
+        },
+        third: {
+          icon: <Diversity3Icon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Boosted Team Efficiency",
+          description:
+            "The ReactJS training course significantly enhanced team efficiency and code quality, resulting in faster project completion times and a consistent development approach. This initiative played a pivotal role in unifying the team's skill set and establishing a standardized framework for web development, driving success across projects.",
+        },
+      },
+    };
+
+    return {
+      financialForecastingSystem,
+      inventoryManagementSystem,
+      reactJsCourse,
+    };
+  }, []);

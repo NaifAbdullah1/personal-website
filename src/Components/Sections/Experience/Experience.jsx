@@ -81,13 +81,13 @@ const Experience = () => {
       overlayImageAltText: "Financial Forecasting Background",
       overlayTitle: "Financial Forecasting System",
       projectRole:
-        "I led the development of an advanced budgeting system by integrating various APIs to retrieve employee pay details and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control. The system replaced manual processes, providing detailed spending analyses and improving budget forecasting and fiscal control for better financial decision-making.",
+        "I automated the process of budget forecasting by developing an advanced budgeting system. I integrated various APIs to retrieve employee pay and scheduling data, enabling precise cost calculations and providing managers with comprehensive financial insights for enhanced budget forecasting and fiscal control.",
       accomplishments: {
         first: {
           icon: <AttachMoneyIcon sx={extendedStyles.accomplishmentsIcon} />,
           title: "Streamlined Budgeting Process",
           description:
-            "Developed an advanced Budgeting System that eliminated the need for manual data entry and calculations, thereby streamlining the budgeting process and significantly reducing errors. This automation led to increased efficiency and accuracy in financial data management.",
+            "This system I developed has eliminated the need for manual data entry and calculations, thereby streamlining the budgeting process and significantly reducing errors. This automation led to increased efficiency and accuracy in financial data management.",
         },
         second: {
           icon: <QueryStatsIcon sx={extendedStyles.accomplishmentsIcon} />,
@@ -99,7 +99,7 @@ const Experience = () => {
           icon: <VerifiedIcon sx={extendedStyles.accomplishmentsIcon} />,
           title: "Enhanced Financial Decision-Making",
           description:
-            "Introduced advanced analytics and forecasting capabilities that improved budget forecasting and fiscal control. This innovation offered comprehensive financial insights, reducing the manual workload and helping the department make more informed financial decisions, leading to more efficient budget planning and resource allocation.",
+            "Introduced advanced analytics capabilities that improved fiscal control. This innovation offered comprehensive financial insights and helped the department make more informed financial decisions, leading to more efficient budget planning and resource allocation.",
         },
       },
     };
@@ -110,7 +110,7 @@ const Experience = () => {
       overlayImageAltText: "Inventory Management Background",
       overlayTitle: "Inventory Management System",
       projectRole:
-        "I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss. The automated solution links issued equipment to employees, sends automatic return reminders, and improves compliance with departmental policies, reducing equipment loss and manual tracking efforts.",
+        "I designed and implemented a database schema to link employees to issued equipment using foreign keys, developed automated scripts to send equipment return reminders, and integrated the system into our existing infrastructure to streamline asset tracking and reduce equipment loss. The automated solution links issued equipment to employees, sends automatic return reminders, and improves compliance with departmental policies, reducing equipment loss and manual tracking efforts.",
       accomplishments: {
         first: {
           icon: (
@@ -118,7 +118,7 @@ const Experience = () => {
           ),
           title: "Automated Asset Tracking",
           description:
-            "Developed an Inventory Management System that automated asset tracking by linking issued equipment to employee records via a comprehensive database schema using foreign keys. This automation reduced manual tracking efforts and enhanced the accuracy of asset management.",
+            "Automated asset tracking by linking issued equipment to employee records via a database schema using foreign keys. This automation reduced manual tracking efforts and enhanced the accuracy of asset management.",
         },
         second: {
           icon: (
@@ -126,7 +126,7 @@ const Experience = () => {
           ),
           title: "Equipment Return Reminders",
           description:
-            "Implemented an automated reminder system that issued equipment return notifications to employees at the end of their employment. This proactive measure mitigated equipment loss, ensuring timely returns and safeguarding departmental resources.",
+            "Implemented an automated reminder system that issued equipment return notifications to employees at the end of their tenure. This proactive measure mitigated equipment loss, ensuring timely equipment returns and safeguarding departmental resources.",
         },
         third: {
           icon: <LocalPoliceIcon sx={extendedStyles.accomplishmentsIcon} />,
@@ -142,25 +142,25 @@ const Experience = () => {
       overlayImageAltText: "Group meeting",
       overlayTitle: "ReactJS Training Course",
       projectRole:
-        "I designed and conducted a comprehensive ReactJS training course, assessing team skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality. The holistic training initiative designed to unify the team's approach to web development covers key topics in web development, incorporating interactive elements like peer-to-peer learning, practical exercises, and live coding sessions, resulting in improved team efficiency and code quality.",
+        "I designed a comprehensive ReactJS training course, assessing team's skill levels, crafting a tailored curriculum, and using interactive teaching methods to standardize our web development approach, ultimately boosting team efficiency and code quality. This training initiative was designed to unify the team's approach to web development. It incorporated interactive elements like peer-to-peer learning, practical exercises, and live coding sessions, resulting in improved team efficiency and code quality.",
       accomplishments: {
         first: {
-          icon: <SchoolIcon sx={extendedStyles.accomplishmentsIcon} />,
-          title: "Tailored Curriculum Design",
+          icon: <Diversity3Icon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Boosted Team Efficiency",
           description:
-            "The ReactJS training program tailored to the varied experience levels of the development team, covering essential topics such as HTTP requests, component creation, and inter-component communication, cookie management, and so much more. The curriculum ensured a unified approach to web development while catering to both experienced developers and new recruits.",
+            "The ReactJS training course significantly enhanced team efficiency and code quality, resulting in faster project completion times and establishing a standardized framework for web development, driving success across projects.",
         },
         second: {
           icon: <AutoFixHighIcon sx={extendedStyles.accomplishmentsIcon} />,
           title: "Interactive Learning Experience",
           description:
-            "Crafted an interactive training program featuring peer-to-peer learning, practical exercises, code challenges, group discussions, and live coding sessions. Leveraged previous teaching experience to employ diverse teaching methods, fostering high engagement and effective learning outcomes among team members.",
+            "I leveraged previous teaching experience to employ diverse teaching methods such as peer-to-peer learning, practical exercises, and code challenges. This fostered effective learning outcomes among team members, which translated in faster project turnaround times.",
         },
         third: {
-          icon: <Diversity3Icon sx={extendedStyles.accomplishmentsIcon} />,
-          title: "Boosted Team Efficiency",
+          icon: <SchoolIcon sx={extendedStyles.accomplishmentsIcon} />,
+          title: "Tailored Curriculum Design",
           description:
-            "The ReactJS training course significantly enhanced team efficiency and code quality, resulting in faster project completion times and a consistent development approach. This initiative played a pivotal role in unifying the team's skill set and establishing a standardized framework for web development, driving success across projects.",
+            "This ReactJS training program tailored to the varied experience levels of the development team, covering essential topics such as HTTP requests, component creation, and inter-component communication, cookie management, and so much more. The curriculum ensured a unified approach to web development.",
         },
       },
     };
