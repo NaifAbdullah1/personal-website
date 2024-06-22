@@ -14,7 +14,7 @@ const StyledFab = styled(Fab)(({ theme, show }) => ({
   backgroundColor: COLORS.purple,
   color: "#FFFFFF",
   opacity: show ? 1 : 0,
-  visibility: show ? 1 : 0,
+  visibility: show ? "visible" : "hidden",
   transition: "opacity 0.5s ease, visibility 0.5s ease",
   pointerEvents: show ? "auto" : "none", // Prevent clickable-ness when not visible
   boxShadow: theme.shadows[3],
@@ -50,7 +50,10 @@ const BackToTopButton = () => {
   };
 
   return (
-    <StyledFab show={showButton} onClick={handleScrollToTop}>
+    <StyledFab
+      show={showButton ? "true" : undefined}
+      onClick={handleScrollToTop}
+    >
       <ArrowCircleUpIcon sx={{ fontSize: "2rem", ml: "4px", mt: "3px" }} />
     </StyledFab>
   );
