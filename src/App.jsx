@@ -1,5 +1,8 @@
 /*
 
+- Think about how we can make a different looking dialog box without disclosing too much details.
+Last resort: Follow a similar format to the previous DoIT cards. But this is the LAST resort. Redundant contnet results in bored users. 
+
 - Complete the smucker cards
 
 - EmailJS has a private key that we can use to secure our mailing service. Look into how we can incorporate it. This sounds like a security token. Also, investigate all security concerns from this contact form. I heard people can email other using YOUR email address. 

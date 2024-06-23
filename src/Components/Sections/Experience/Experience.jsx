@@ -30,7 +30,6 @@ import {
   AutoFixHigh as AutoFixHighIcon,
 } from "@mui/icons-material";
 
-import ComingSoonAnimation from "../../misc/ComingSoonAnimation.jsx";
 import { useMemo, useState } from "react";
 import {
   COLORS,
@@ -391,7 +390,15 @@ const Experience = () => {
               </Grid>
             </Grid>
 
-            <Grid item container xs={12} sm={12}>
+            <Grid
+              item
+              container
+              xs={12}
+              sm={12}
+              sx={
+                experienceStyles.spacingBetweenCompanyLogoCardsAndTenureDetails
+              }
+            >
               <Card sx={experienceStyles.companyLogoCard}>
                 <CardContent style={experienceStyles.companyLogoCardPadding}>
                   <Box
@@ -402,13 +409,58 @@ const Experience = () => {
                   />
                 </CardContent>
               </Card>
+              <Grid sx={RESPONSIVE_STYLING.mobileResponsiveTextAlignment}>
+                <Typography variant="body1">
+                  At The J. M. Smucker Co., I developed, enhanced, and
+                  maintained crucial applications and websites, including
+                  revamping an internal web auditing utility, redesigning
+                  DunkinAtHome.com, and ensuring CCPA compliance for cookie
+                  consent banners.
+                </Typography>
+                <br />
+                <br />
+                <Typography variant="h2">Main Project:</Typography>
+                <br />
+                <Grid
+                  container
+                  sx={experienceStyles.doit.highlightedProjectsCards}
+                >
+                  <Grid container sx={experienceStyles.doit.projectsCardsRow}>
+                    <Grid item xs={12} sm={12}>
+                      <Card sx={extendedStyles.droidCard}>
+                        <CardContent
+                          sx={experienceStyles.doit.projectCardContent}
+                        >
+                          <Grid>
+                            <Grid sx={experienceStyles.doit.projectIconsGrid}>
+                              <SchoolIcon
+                                sx={experienceStyles.doit.projectIcons}
+                              />
+                            </Grid>
+                            <Typography variant="h2">
+                              The Overhaul of &quot;DROID&quot;
+                            </Typography>
 
-              <Grid
-                item
-                container
-                sx={{ justifyContent: "center", alignItems: "center" }}
-              >
-                <ComingSoonAnimation />
+                            <Typography variant="body1">
+                              I revamped DROID, an internal web auditing
+                              utility, to improve its performance and database
+                              stability.
+                            </Typography>
+                          </Grid>
+
+                          <Button
+                            variant="outlined"
+                            endIcon={<ArrowForwardIosIcon />}
+                            sx={extendedStyles.doitLearnMoreBtn}
+                            onClick={() => handleOpenDialog("reactJsCourse")}
+                          >
+                            Learn more
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
@@ -795,6 +847,11 @@ const extendedStyles = {
   courseCard: {
     ...experienceBaseStyles.projectCard,
     backgroundImage: "url(./assets/sections/experience/doit/group95.webp)",
+  },
+  droidCard: {
+    ...experienceBaseStyles.projectCard,
+    backgroundImage:
+      "url(./assets/sections/experience/smucker/droid1005025Blurred.webp)",
   },
 };
 
