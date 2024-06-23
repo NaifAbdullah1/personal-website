@@ -30,7 +30,8 @@
     "react-transition-group": "^4.4.5",
     "react-type-animation": "^3.2.0",
     "rollup-preserve-directives": "^1.1.1",
-    "sass": "^1.77.0"
+    "sass": "^1.77.0",
+    "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

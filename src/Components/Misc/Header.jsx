@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
-import { COLORS, FONTS } from "../constants.jsx";
+import { COLORS, FONTS } from "../../constants.jsx";
 
 // This doesn't include the first section, the "hero"
 const sections = ["about", "experience", "portfolio", "contact"];

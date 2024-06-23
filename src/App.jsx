@@ -6,6 +6,8 @@
 
 - Make sure to understand how styled components work. Especially the Resume one. 
 
+- Look into making the scrolling smooth using "smooth scrollbar" libraries. The following site is an example of what we want for our site in terms of scrolling smoothness: https://www.playground.it/en
+
 - Resolve any console errors or suppress them if needed. 
 
 - Dig through your hard drive for professional photos to add
@@ -44,7 +46,7 @@ If the reversion of that change did cause problems with the blurryness of the ca
 */
 
 import ProgressBar from "react-scroll-progress-bar";
-import Header from "./components/Header.jsx";
+import Header from "./components/misc/Header.jsx";
 import AnimatedCursor from "react-animated-cursor";
 import Hero from "./components/sections/hero/Hero.jsx";
 import { isMobileOnly } from "react-device-detect";
@@ -58,7 +60,7 @@ import { CssBaseline } from "@mui/material";
 import React, { Suspense } from "react";
 import BackToTopButton from "./components/misc/BackToTopButton.jsx";
 
-// Lzy-loaded components:
+// Lazy-loaded components:
 //const Hero = React.lazy(() => import("./components/sections/hero/Hero.jsx"));
 const About = React.lazy(() => import("./components/sections/about/About.jsx"));
 const Experience = React.lazy(() =>
