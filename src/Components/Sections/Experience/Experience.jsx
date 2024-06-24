@@ -28,6 +28,7 @@ import {
   School as SchoolIcon,
   Diversity3 as Diversity3Icon,
   AutoFixHigh as AutoFixHighIcon,
+  ScreenSearchDesktop as ScreenSearchDesktopIcon,
 } from "@mui/icons-material";
 
 import { useMemo, useState } from "react";
@@ -433,12 +434,12 @@ const Experience = () => {
                         >
                           <Grid>
                             <Grid sx={experienceStyles.doit.projectIconsGrid}>
-                              <SchoolIcon
+                              <ScreenSearchDesktopIcon
                                 sx={experienceStyles.doit.projectIcons}
                               />
                             </Grid>
                             <Typography variant="h2">
-                              The Overhaul of &quot;DROID&quot;
+                              DROID: A Web-Auditing Software
                             </Typography>
 
                             <Typography variant="body1">
