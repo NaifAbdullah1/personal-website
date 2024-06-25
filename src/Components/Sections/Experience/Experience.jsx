@@ -444,8 +444,8 @@ const Experience = () => {
 
                             <Typography variant="body1">
                               I revamped DROID, an internal web auditing
-                              utility, to improve its performance and database
-                              stability.
+                              software, to significantly boost its performance
+                              and stability.
                             </Typography>
                           </Grid>
 
