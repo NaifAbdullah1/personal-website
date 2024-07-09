@@ -66,7 +66,7 @@ const Experience = () => {
                 <CardContent style={experienceStyles.companyLogoCardPadding}>
                   <Box
                     component="img"
-                    src="./assets/sections/experience/saudia/saudia-skyteam.png"
+                    src="./assets/sections/experience/snbc/snbc-logo-transparent.webp"
                     alt="Saudia Logo"
                     sx={experienceStyles.companyLogoSizing}
                   />
@@ -77,9 +77,7 @@ const Experience = () => {
                 item
                 container
                 sx={{ justifyContent: "center", alignItems: "center" }}
-              >
-                <ComingSoonAnimation />
-              </Grid>
+              ></Grid>
             </Grid>
             */}
 
