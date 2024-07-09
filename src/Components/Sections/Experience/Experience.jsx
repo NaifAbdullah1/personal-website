@@ -26,17 +26,30 @@ import {
 import DoITDialog from "./dialogs/DoITDialog.jsx";
 
 const Experience = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [dialogsOpenState, setDialogsOpenState] = useState({
+    snbc: false, // SNB Capital
+    doit: false, // UW-Madison's Division of IT
+    smkr: false, // Smucker
+  });
   const [cardId, setCardId] = useState("");
 
   const handleOpenDialog = (cardId) => {
+    let jobCode = cardId.substring(0, 4);
+
     // To force a change in the props of DoITDialog (which will trigger the useEffect to update the dialog's data), we'll first force-close the dialog before opening it
-    setIsDialogOpen(false);
+    setDialogsOpenState({
+      snbc: false,
+      doit: false,
+      smkr: false,
+    });
 
     // The Timeout will ensure that the state is changed to false before setting it to true again
     setTimeout(() => {
-      setIsDialogOpen(true);
-      setCardId(cardId);
+      setDialogsOpenState((prev) => ({
+        ...prev,
+        [jobCode]: true,
+      }));
+      setCardId(cardId.split("-")[1]);
     }, 0);
   };
 
@@ -143,7 +156,9 @@ const Experience = () => {
                             endIcon={<ArrowForwardIosIcon />}
                             sx={extendedStyles.doitLearnMoreBtn}
                             onClick={() =>
-                              handleOpenDialog("financialForecastingSystem")
+                              handleOpenDialog(
+                                "doit-financialForecastingSystem"
+                              )
                             }
                           >
                             Learn more
@@ -179,7 +194,7 @@ const Experience = () => {
                             endIcon={<ArrowForwardIosIcon />}
                             sx={extendedStyles.doitLearnMoreBtn}
                             onClick={() =>
-                              handleOpenDialog("inventoryManagementSystem")
+                              handleOpenDialog("doit-inventoryManagementSystem")
                             }
                           >
                             Learn more
@@ -218,7 +233,9 @@ const Experience = () => {
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
                             sx={extendedStyles.doitLearnMoreBtn}
-                            onClick={() => handleOpenDialog("reactJsCourse")}
+                            onClick={() =>
+                              handleOpenDialog("doit-reactJsCourse")
+                            }
                           >
                             Learn more
                           </Button>
@@ -305,7 +322,9 @@ const Experience = () => {
             </Grid>
           </Grid>
 
-          {isDialogOpen && <DoITDialog cardId={cardId} isOpen={isDialogOpen} />}
+          {dialogsOpenState.doit && (
+            <DoITDialog cardId={cardId} isOpen={dialogsOpenState.doit} />
+          )}
         </Grid>
       </Container>
     </section>
