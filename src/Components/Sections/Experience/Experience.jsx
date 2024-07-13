@@ -24,6 +24,7 @@ import {
   RESPONSIVE_STYLING,
 } from "../../../constants.jsx";
 import DoITDialog from "./dialogs/DoITDialog.jsx";
+import SmuckerDialog from "./dialogs/SmuckerDialog.jsx";
 
 const Experience = () => {
   const [dialogsOpenState, setDialogsOpenState] = useState({
@@ -305,14 +306,16 @@ const Experience = () => {
                             </Typography>
                           </Grid>
 
+                          {/*
                           <Button
                             variant="outlined"
                             endIcon={<ArrowForwardIosIcon />}
                             sx={extendedStyles.doitLearnMoreBtn}
-                            onClick={() => handleOpenDialog("reactJsCourse")}
+                            onClick={() => handleOpenDialog("smkr-droid")}
                           >
                             Learn more
                           </Button>
+                          */}
                         </CardContent>
                       </Card>
                     </Grid>
@@ -324,6 +327,9 @@ const Experience = () => {
 
           {dialogsOpenState.doit && (
             <DoITDialog cardId={cardId} isOpen={dialogsOpenState.doit} />
+          )}
+          {dialogsOpenState.smkr && (
+            <SmuckerDialog isOpen={dialogsOpenState.smkr} />
           )}
         </Grid>
       </Container>
@@ -405,20 +411,21 @@ const extendedStyles = {
   forecastCard: {
     ...experienceBaseStyles.projectCard,
     backgroundImage:
-      "url(./assets/sections/experience/doit/forecast95-vert.webp)",
+      "url(./assets/sections/experience/doit/forecast95-card.webp)",
   },
   inventoryCard: {
     ...experienceBaseStyles.projectCard,
-    backgroundImage: "url(./assets/sections/experience/doit/inventory95.webp)",
+    backgroundImage:
+      "url(./assets/sections/experience/doit/inventory95-card.webp)",
   },
   courseCard: {
     ...experienceBaseStyles.projectCard,
-    backgroundImage: "url(./assets/sections/experience/doit/group95.webp)",
+    backgroundImage: "url(./assets/sections/experience/doit/group95-card.webp)",
   },
   droidCard: {
     ...experienceBaseStyles.projectCard,
     backgroundImage:
-      "url(./assets/sections/experience/smucker/droid1005025Blurred.webp)",
+      "url(./assets/sections/experience/smucker/droid-darkened-blurred.webp)",
   },
 };
 

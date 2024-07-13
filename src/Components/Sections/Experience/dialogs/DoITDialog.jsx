@@ -43,7 +43,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const DoITDialog = ({ cardId, isOpen }) => {
-  const [learnMoreDialog, setLearnMoreDialog] = useState({
+  const [dialogDetails, setDialogDetails] = useState({
     isOpen: false,
     overlayImage: "",
     overlayTitle: "",
@@ -72,8 +72,7 @@ const DoITDialog = ({ cardId, isOpen }) => {
 
   const doitCards = useMemo(() => {
     const financialForecastingSystem = {
-      overlayImage:
-        "./assets/sections/experience/doit/forecast80-horizontal.webp",
+      overlayImage: "./assets/sections/experience/doit/forecast80-dialog.webp",
       overlayImageAltText: "Financial Forecasting Background",
       overlayTitle: "Financial Forecasting System",
       projectRole:
@@ -101,8 +100,7 @@ const DoITDialog = ({ cardId, isOpen }) => {
     };
 
     const inventoryManagementSystem = {
-      overlayImage:
-        "./assets/sections/experience/doit/inventory80-horizontal.webp",
+      overlayImage: "./assets/sections/experience/doit/inventory80-dialog.webp",
       overlayImageAltText: "Inventory Management Background",
       overlayTitle: "Inventory Management System",
       projectRole:
@@ -134,7 +132,7 @@ const DoITDialog = ({ cardId, isOpen }) => {
     };
 
     const reactJsCourse = {
-      overlayImage: "./assets/sections/experience/doit/group80-horizontal.webp",
+      overlayImage: "./assets/sections/experience/doit/group80-dialog.webp",
       overlayImageAltText: "Group meeting",
       overlayTitle: "ReactJS Training Course",
       projectRole:
@@ -170,7 +168,7 @@ const DoITDialog = ({ cardId, isOpen }) => {
 
   useEffect(() => {
     if (doitCards[cardId]) {
-      setLearnMoreDialog({
+      setDialogDetails({
         isOpen: isOpen,
         overlayImage: doitCards[cardId].overlayImage,
         overlayImageAltText: doitCards[cardId].overlayImageAltText,
@@ -188,13 +186,13 @@ const DoITDialog = ({ cardId, isOpen }) => {
 
   return (
     <Dialog
-      open={learnMoreDialog.isOpen}
+      open={dialogDetails.isOpen}
       TransitionComponent={Transition}
       aria-labelledby="Learn more about the project"
       aria-describedby="Dialog of clicked project"
       onClose={() =>
-        setLearnMoreDialog({
-          ...learnMoreDialog,
+        setDialogDetails({
+          ...dialogDetails,
           isOpen: false,
           cardId: "",
         })
@@ -206,8 +204,8 @@ const DoITDialog = ({ cardId, isOpen }) => {
         <IconButton
           aria-label="Close"
           onClick={() =>
-            setLearnMoreDialog({
-              ...learnMoreDialog,
+            setDialogDetails({
+              ...dialogDetails,
               isOpen: false,
               cardId: "",
             })
@@ -222,15 +220,15 @@ const DoITDialog = ({ cardId, isOpen }) => {
           <Grid item container sx={dialogStyles.dialogImageParentGrid}>
             <Box
               component="img"
-              src={learnMoreDialog.overlayImage}
-              alt={learnMoreDialog.overlayImageAltText}
+              src={dialogDetails.overlayImage}
+              alt={dialogDetails.overlayImageAltText}
               sx={dialogStyles.dialogHeaderImage}
             />
             <Grid sx={dialogStyles.dialogOverlayCardGrid}>
               <Card sx={dialogStyles.dialogCardOverlay}>
                 <CardContent sx={dialogStyles.overlayCardContent}>
                   <Typography variant="h2" sx={dialogStyles.cardTitle}>
-                    {learnMoreDialog.overlayTitle}
+                    {dialogDetails.overlayTitle}
                   </Typography>
                 </CardContent>
               </Card>
@@ -269,7 +267,7 @@ const DoITDialog = ({ cardId, isOpen }) => {
                     />
                     <Typography variant="h2">Project Role</Typography>
                     <Typography variant="body2">
-                      {learnMoreDialog.projectRole}
+                      {dialogDetails.projectRole}
                     </Typography>
                   </CardContent>
                 </Card>
@@ -284,12 +282,12 @@ const DoITDialog = ({ cardId, isOpen }) => {
                 <Grid item xs={12} md={3.5} sx={dialogStyles.dialogCardGrid}>
                   <Card sx={dialogStyles.card}>
                     <CardContent>
-                      {learnMoreDialog.accomplishments.first.icon}
+                      {dialogDetails.accomplishments.first.icon}
                       <Typography variant="h2">
-                        {learnMoreDialog.accomplishments.first.title}
+                        {dialogDetails.accomplishments.first.title}
                       </Typography>
                       <Typography variant="body2">
-                        {learnMoreDialog.accomplishments.first.description}
+                        {dialogDetails.accomplishments.first.description}
                       </Typography>
                     </CardContent>
                   </Card>
@@ -298,12 +296,12 @@ const DoITDialog = ({ cardId, isOpen }) => {
                 <Grid item xs={12} md={3.5} sx={dialogStyles.dialogCardGrid}>
                   <Card sx={dialogStyles.card}>
                     <CardContent>
-                      {learnMoreDialog.accomplishments.second.icon}
+                      {dialogDetails.accomplishments.second.icon}
                       <Typography variant="h2">
-                        {learnMoreDialog.accomplishments.second.title}
+                        {dialogDetails.accomplishments.second.title}
                       </Typography>
                       <Typography variant="body2">
-                        {learnMoreDialog.accomplishments.second.description}
+                        {dialogDetails.accomplishments.second.description}
                       </Typography>
                     </CardContent>
                   </Card>
@@ -312,12 +310,12 @@ const DoITDialog = ({ cardId, isOpen }) => {
                 <Grid item xs={12} md={3.5} sx={dialogStyles.dialogCardGrid}>
                   <Card sx={dialogStyles.card}>
                     <CardContent>
-                      {learnMoreDialog.accomplishments.third.icon}
+                      {dialogDetails.accomplishments.third.icon}
                       <Typography variant="h2">
-                        {learnMoreDialog.accomplishments.third.title}
+                        {dialogDetails.accomplishments.third.title}
                       </Typography>
                       <Typography variant="body2">
-                        {learnMoreDialog.accomplishments.third.description}
+                        {dialogDetails.accomplishments.third.description}
                       </Typography>
                     </CardContent>
                   </Card>
