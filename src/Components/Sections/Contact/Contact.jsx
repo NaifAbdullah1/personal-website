@@ -46,7 +46,7 @@ const Contact = () => {
   // Matches if it contains only alphabet (capital or small letters) and/or hyphens (but no lone hyphens)
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const messagePattern = /^(?=.*\S).+$/; // Matches if it contains at least one non-whitespace character.
+  const messagePattern = /^(?=.*\S)[\s\S]+$/; // Matches if it contains at least one non-whitespace character.
 
   const handleChange = (eventTarget) => {
     const { name, value } = eventTarget;
