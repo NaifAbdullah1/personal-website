@@ -8,14 +8,6 @@ const PhotoViewer = () => {
 
   const images = [
     {
-      src: "./assets/misc/gallery/smucker-shirt.webp",
-      caption: "Orientation at The J. M. Smucker Co.",
-    },
-    {
-      src: "./assets/misc/gallery/uw-madison.webp",
-      caption: "Orientation at the University of Wisconsin-Madison",
-    },
-    {
       src: "./assets/misc/gallery/smucker-team.webp",
       caption: "J.M Smucker Co. Colleagues",
     },
@@ -23,6 +15,10 @@ const PhotoViewer = () => {
     {
       src: "./assets/misc/gallery/recwell.webp",
       caption: "University of Wisconsin-Madison: Recreation and Wellbeing",
+    },
+    {
+      src: "./assets/misc/gallery/smucker-shirt.webp",
+      caption: "Orientation at The J. M. Smucker Co.",
     },
     {
       src: "./assets/misc/gallery/doit-team.webp",

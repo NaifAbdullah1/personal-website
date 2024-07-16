@@ -1,6 +1,6 @@
 .tetris-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Three columns */
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
   grid-auto-rows: minmax(200px, auto); /* Automatic row height */
   gap: 10px; /* Gap between grid items */
   width: 95%;
@@ -13,7 +13,6 @@
   cursor: pointer;
 }
 
-.tetris-grid :nth-child(1),
-.tetris-grid :nth-child(4) {
+.tetris-grid :nth-child(2) {
   grid-row: span 2;
 }
