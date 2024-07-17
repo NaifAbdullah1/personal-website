@@ -32,7 +32,7 @@ const Header = () => {
     // Loop through the sections to find the one being viewed
     let newActiveSection = "hero"; // because it's the default
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
+      const sectionTop = section.offsetTop - 400; // -400 so that the corresponding nav link gets highlighted when the section's content is taking up about >=50% of the viewport
       const sectionHeight = section.offsetHeight;
       const sectionBottom = sectionTop + sectionHeight;
       if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
