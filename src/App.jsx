@@ -27,6 +27,12 @@ Last resort: Follow a similar format to the previous DoIT cards. But this is the
 
 - See if you can use BrowserStack for testing across different browsers
 
+- For the sections' header, make them sticky at the center rather than sticky to the top. Also, add the line animation we saw on the example site. 
+
+- In the hero page, on page load, the logo should fade in and appear from right to left. 
+
+- Delayed: Once you get a nice personal image. Maybe replace the logo with the image. 
+
 - Delayed, maybe ask reddit: Consider offloading the styling of the sections onto a different file/s
 
 - Delayed: Implement this on the hero page: https://react-scroll-parallax.damnthat.tv/docs/examples/advanced-banners

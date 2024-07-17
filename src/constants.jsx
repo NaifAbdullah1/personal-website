@@ -79,7 +79,7 @@ export const GLOBAL_STYLING = {
   stickySectionHeader: {
     ...RESPONSIVE_STYLING.mobileResponsiveTextAlignment,
     position: "sticky",
-    top: "90px",
+    top: "40%",
   },
   card: {
     ...COLORS.grayBlurBackground,
